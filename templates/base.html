@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- meta data -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="Description" content="Bake It 'Til You Make it - online baking recipes book"/>
+		<meta name="author" content="Rebecca Tracey-Timoney">
+        
+        <!-- favicon -->
+        <link rel="shortcut icon" href="" title="Bake It 'Til You Make It' Thumbnail Image">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> <!-- MaterializeCSS Import -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous"> <!-- Font Awesome Import-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css"> <!-- style.css import-->
+        {% block styles %}
+        {% endblock %}
+
+        <!-- Page title -->
+        <title>Bake It 'Til You Make It</title>
+    </head>
+    <body>
+        
+        <h1>Base title</h1>
+        {% block content %}
+        {% endblock %}
+
+
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> <!-- jQuery Import -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> <!-- MaterializeCSS Import -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script> <!-- JQuery Form Validation -->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script> <!-- Sweet Alert Import-->
+		<script src="{{ url_for('static', filename='js/script.js') }}"></script> <!-- script.js Import-->
+        {% block scripts %}
+        {% endblock %} 
+
+    </body>
+</html>
