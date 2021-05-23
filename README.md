@@ -45,24 +45,34 @@ The recipe database encourages users to create an account that will allow them t
 
 ## UX 
 ### Project Goals
-The primary goal of Blank! is to provide a web-based interactive game, that is intuitive and entertaining, through a fill-in-the-blank game, designed to test the users music knowledge.
+The primary goal of **Bake It 'Til You Make It** is to provide a web-based application, that is simplistic and intuitive in design, that allows users to create, search, save and share their favourite baking recipes on a database.
 
-This is the second of four Milestone Projects that the developer must complete during their Full Stack Web Development Program at The Code Institute. 
+This is the third of four Milestone Projects that the developer must complete during their Full Stack Web Development Program at The Code Institute. 
 
-The main requirements were to design, develop and implement a dynamic front-end web application using **HTML5**, **CSS3** and **JavaScript**.
+The main requirements were to build a full-stack website allowing users to manage a common dataset (in this instance, baking recipes) using **HTML5**, **CSS3**, **JavaScript**, **Python**, **Flask** and **MongoDB**.
 
 #### Player Goals
 The player is looking for:
-- A fun and entertaining game to play
-- Control over the page settings
-- An intuitive and vibrant interface, that needs little to no instructions
-- Visual and audio rewards during game mode
+- A searchable database to locate recipes of their choice.
+- A easy-to-use user management system with **CRUD** conventions to:
+
+    - Create a user account.
+    - See their user information, as applicable.
+    - Edit their user account.
+    - Delete their user account.
+- A easy-to-use dataset management system with **CRUD** conventions to:
+
+    - Create recipes.
+    - Read recipe dashboards.
+    - Edit their own recipe creations.
+    - Delete their own recipe creations.
+- A intuitive and aesthetically pleasing interface.
 
 #### Developer / Site Owner Goals
 The Developer is looking to:
-- Create a fun and entertaining game they would play themselves
-- Demonstrate their proficiency in a variety of software development skills, using newly learned languages and libraries and API's to achieve this goal
-- Deploy a project they are proud and excited to have on their portfolio
+- Create an inviting, community-drive application that they themselves would use to share their passion for baking.
+- Demonstrate their proficiency in a variety of software development skills, using newly learned languages and libraries as well as a document database system.
+- Deploy a project they are proud and excited to have on their portfolio.
 
 
 ### User Stories
