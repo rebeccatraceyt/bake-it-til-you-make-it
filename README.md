@@ -186,9 +186,13 @@ A scope was defined in order to clearly identify what needed to be done in order
 
 <strong>3. <u>Structure</u></strong>
 
-The information architecture was organized in a **hierarchial tree structure** in order to ensure that users could navigate through the site with ease and efficiency, with the following results: 
+The information architecture was organized in order to ensure that users could navigate through the site with ease and efficiency, with the following results: 
 
-![Site Map](assets/readme-files/site-map.png)
+**Information Architecture for User Management:**
+![Information Architecture for User Management](static/images/readme-files/user-management-ia.png)
+
+**Information Architecture for Baking Respository Management:**
+![Information Architecture for Baking Respository Management](static/images/readme-files/baking-repo-ia.png)
 
 <strong>4. <u>Skeleton</u></strong>
 
