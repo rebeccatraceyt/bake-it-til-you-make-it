@@ -76,20 +76,27 @@ The Developer is looking to:
 
 
 ### User Stories
-**As a player, I want to:**
+**As a User, I want to:**
 
-1. Choose my own username, to personalize my game-playing experience.
-2. Intuitively navigate to game mode, to have an easy gaming experience.
-3. Have a clear score counter, to keep track of my score as I play.
-4. Have a clear time counter, to keep track of time elapsed.
-5. Get visual/auditory feedback on answers I choose, to see whether they were correct.
-6. Have the ability to toggle sound effects on or off, to suit my preference.
-7. Have to ability to choose the game theme (Day vs. Night Mode), to suit my preference.
-8. View my highest session score.
-9. Control what happens at the end of the game, to decide what to do next.
-10. Provide suggestions to the developer to upgrade the game, enhancing my user experience.
-11. Connect with the developer on a social platform of my choosing to see their other projects.
+1. Intuitively navigate to the search function to find recipes on the database. 
+2. View the selected recipe's dashboard to get necessary information.
+3. Seek contact information to send useful feedback to Developer / Site Owner.
 
+**As a Non-Registered User, I want to:**
+
+1. Navigate to Sign-Up page to Register an account.
+
+**As a Registered User, I want to:**
+
+1. Log into my account to gain access to the full functionality of the site.
+2. Navigate to my user profile to edit my account information.
+3. Navigate to my user profile to delete my account information.
+4. Navigate to my recipes page to view my uploaded recipes.
+5. Navigate to upload page to add my recipe to the database.
+6. View my own recipe's dashboard to edit recipe as needed.
+7. View my own recipe's dashboard to delete recipe.
+8. Use a save function to save my favourite recipes from other users.
+9. Navigate to my favourites page to view the recipes I have saved from other users.
 
 ### Development Planes
 
