@@ -157,10 +157,10 @@ The website needs to enable the **client** to:
 With these goals in mind, a strategy table was created to determine the trade-off between importance and viability with the following results:
 
 **Strategy Table for User Management:**
-![Strategy Table for User Management](static/images/readme-files/user-management-st.png)
+![Strategy Table for User Management](static/images/readme-files/user-management-st.png "User Management Strategy Table")
 
 **Strategy Table for Baking Respository Management:**
-![Strategy Table for Baking Respository Management](static/images/readme-files/baking-repo-st.png)
+![Strategy Table for Baking Respository Management](static/images/readme-files/baking-repo-st.png "Baking Repository Strategy Table")
 
 <strong>2. <u>Scope</u></strong>
 
@@ -208,57 +208,20 @@ A scope was defined in order to clearly identify what needed to be done in order
 The information architecture was organized in order to ensure that users could navigate through the site with ease and efficiency, with the following results: 
 
 **Information Architecture for User Management:**
-![Information Architecture for User Management](static/images/readme-files/user-management-ia.png)
+![Information Architecture for User Management](static/images/readme-files/user-management-ia.png "User Management Information Architecture")
 
 **Information Architecture for Baking Respository Management:**
-![Information Architecture for Baking Respository Management](static/images/readme-files/baking-repo-ia.png)
+![Information Architecture for Baking Respository Management](static/images/readme-files/baking-repo-ia.png "Baking Repository Information Architecture")
 
 <strong>4. <u>Skeleton</u></strong>
 
-Wireframe mockups were created in a [Figma Workspace](https://www.figma.com/file/aOGtRrWkTHhGUGqInODSdN/Blank "Link to Blank! Figma Workspace") with providing a positive user experience in mind:
-
-Main Page:
-
-- Welcome Modal:
-
-     ![Welcome Modal](assets/readme-files/welcome-mockup.png "Welcome Modal Wireframe")
+Wireframe mockups were created in a [Figma Workspace]( "Link to Bake It Figma Workspace") with providing a positive user experience in mind:
 
 - Home Page:
 
-     ![Home Page](assets/readme-files/home-mockup.png "Home Page Wireframe")
-
-Game Mode:
-
-- **As Seen on TV** Game Page:
-
-     ![Main Game Page](assets/readme-files/tv-mockup.png "Game Mode Page Wireframe")
-
-- **Chart Toppers** Game Page:
-
-     ![Main Game Page](assets/readme-files/chart-mockup.png "Game Mode Page Wireframe")
-
-- **Throwback** Game Page:
-
-     ![Main Game Page](assets/readme-files/throwback-mockup.png "Game Mode Page Wireframe")
-
-- **At The Movies** Game Page:
-
-     ![Main Game Page](assets/readme-files/movie-mockup.png "Game Mode Page Wireframe")
+     ![Strategy Table for Baking Respository Management](static/images/readme-files/.png "Baking Repository Strategy Table")
 
 
-Finished Page:
-
-- **With** High Score:
-
-     ![With High Score](assets/readme-files/hs-mockup.png "Finished with High Score Wireframe")
-
-- **Without** High Score:
-
-     ![Without High Score](assets/readme-files/nohs-mockup.png "Finished without High Score Wireframe")
-
-- Form:
-
-     ![Suggestions Form](assets/readme-files/form-mockup.png "Suggestions Form Wireframe")
 
 
 <strong>5. <u>Surface</u></strong>
@@ -268,34 +231,28 @@ Finished Page:
 
      - The chosen colour scheme was specifically selected in order to define the tone of the application.
 
-     - As the theme of the game is music related, the colour scheme mirrors the atmospheric setting of a music venue.
+     - Drawing from research conducted on food-related imagery and online sites, a colour palette was developed to create an ambient and familiar environment throughout the site.
 
-     - A General palette was created, with this atmosphere in mind, and was used in designing graphics and complimentary text colour:
+     - The selected colours are widely used in baking (e.g. in icing and decoration) and, therefore, reflects a sense of nostalgic familiarity.
 
-          ![Light (Day Mode)](assets/readme-files/gen-palette.png "General Colour Palette")
-
-     - Drawing from research conducted on stage lights, and using the color contrast tool available at [Material.io](https://material.io/ "Link to material.io Homepage"), two colour palettes were created for a day-to-night feature toggle:
-
-          - Light (Day Mode):
-
-               ![Light (Day Mode)](assets/readme-files/light-mode.png "Light Mode Colour Palette")
-
-          - Dark (Night Mode):
-
-               ![Dark (Night Mode)](assets/readme-files/dark-mode.png "DArk Mode Colour Palette")
+          ![Colour Palette](static/images/readme-files/palette.png "Colour Palette")
 
 
 - <strong>Typography</strong>
 
      - The primary font chosen is [Roboto](https://fonts.google.com/specimen/Roboto?preview.text_type=custom&query=roboto). A sans-serif typeface, Roboto is geometrically shaped and is easily readable.
 
-     - The Secondary font (accent font) chosen is [Shadows into Light Two](https://fonts.google.com/specimen/Shadows+Into+Light+Two?preview.text_type=custom). A handwritten script typeface, it has rounded curves to emphasis a more playful and casual environment.
+        ![Roboto Typeface Example](static/images/readme-files/roboto-ex.png "Roboto Typeface Example")
 
-     - The charismatic combination of the two typefaces compliments the artistic aesthetic and entertaining theme set by the colour palette.
+     - The Secondary font (accent font) chosen is [Indie Flower](https://fonts.google.com/specimen/Indie+Flower?query=indie#standard-styles). A handwritten script typeface, it has bubbly, rounded edges to emphasis the homely-handmade recipe book nostalgia.
+
+        ![Indie Flower Typeface Example](static/images/readme-files/indieflower-ex.png "Indie Flower Typeface Example")
+
+     - The charismatic combination of the two typefaces compliments the soft and familiar theme set by the colour palette and overall appearance of the site.
 
 - <strong>Imagery</strong>
 
-     - The imagery used was created by the developer using the application [Procreate](https://procreate.art/) in order to create a consistency of the elements while maintaining the look and feel of the application
+     - The imagery used was created by the developer using the application [Procreate](https://procreate.art/) in order to create a consistency of the elements while maintaining the look and feel of the application.
 
 [Back to top ⇧](#table-of-contents)
 
