@@ -25,21 +25,21 @@ The recipe database encourages users to create an account that will allow them t
     2. [Existing Features](#Existing-Features)
     3. [Features to Implement in the future](#Features-to-Implement-in-the-future)
 3. [Issues and Bugs](#Issues-and-Bugs)
-4. [Technologies Used](#Technologies-Used)
-     1. [Main Languages Used](#Main-Languages-Used)
-     2. [Frameworks, Libraries & Programs Used](#Frameworks-Libraries-&-Programs-Used)
-5. [Testing](#Testing) ☞ **[Testing.md](TESTING.md)**
-6. [Deployment](#Deployment)
-     1. [Deploying on GitHub Pages](#Deploying-on-GitHub-Pages)
-     2. [Forking the Repository](#Forking-the-Repository)
-     3. [Creating a Clone](#Creating-a-Clone)
-7. [Credits](#Credits)
-     1. [Audio](#Audio) ☞ **[Credits.md](CREDITS.md)**
-     2. [Code](#Code)
-8. [Acknowledgements](#Acknowledgements)
+4. [Information Architecture](#Information-Architecture)
+5. [Technologies Used](#Technologies-Used)
+     1. [Languages Used](#Main-Languages-Used)
+     2. [Tools Used](#Tools-Used)
+     2. [Libraries Used](#Libraries-Used)
+6. [Testing](#Testing) ☞ **[Testing.md](TESTING.md)**
+7. [Deployment](#Deployment)
+     1. [1. Database Creation](#1-Database-Creation)
+     2. [1. Local Copy Creation](#2-Local-Copy-Creation)
+     3. [1. Heroku App Creation](#3-Heroku-App-Creation)
+8. [Credits](#Credits)
+9. [Acknowledgements](#Acknowledgements)
 ***
 
-![Blank! Responsiveness](assets/readme-files/responsive.png)
+![Bake It 'til You Make It Responsiveness](assets/readme-files/responsive.png)
 
 ***
 
@@ -222,8 +222,6 @@ Wireframe mockups were created in a [Figma Workspace]( "Link to Bake It Figma Wo
      ![Strategy Table for Baking Respository Management](static/images/readme-files/.png "Baking Repository Strategy Table")
 
 
-
-
 <strong>5. <u>Surface</u></strong>
 
 
@@ -280,137 +278,50 @@ Each page of the game features a consistently responsive and intuitive navigatio
                     </li>
                </ul>
      </dd>
-     <dt>
-          <a href="https://rebeccatraceyt.github.io/WhatTheBlank/as-seen-on-tv.html" target="_blank" alt="Blank! As Seen On TV Game Page">Game Play Page</a>
-     </dt>
-     <dd>
-          There are four identical game-play pages in total, each representing a different category of music. Each page is individually styled, but the general layout and functionality are the same in order to maintain consistency throughout the game. Each page has the following features:
-          <ul>
-               <li>
-                    <strong>Menu Section</strong> - The Menu section is conventionally placed on the left of the screen, taking up 30% of the viewport width on larger screens and 30% of the viewport height on smaller screens. It displays:
-                         <ul>
-                              <li>
-                                   <strong>Category Buttons</strong> - Allowing users to navigate to other categories, as they wish.
-                              </li>
-                              <li>
-                                   <strong>Footer</strong> - Depending on the device, the footer will be automatically displayed or be hidden in a <strong>sliding footer</strong>, providing links to the developers chosen social media as well as a <strong>form</strong>, allowing users to make suggestions for improvement.
-                              </li>
-                         </ul>
-               </li>
-               <li>
-                    <strong>Game Play Section</strong> - The Game Play section takes up the remainder of the page, providing ample game playing space. Within the game play, there are a number of features to create a more interactive environment for the user to enjoy:
-                    <ul>
-                         <li>
-                              <strong>Questions and Answers</strong> - The primary focus of the section is the questions and answers. These are called in at random and take up the majority of the space, in order to sustain readability.
-                         </li>
-                         <li>
-                              <strong>Heads Up Display</strong> - Conveniently placed in the players eye-line, the heads up display provides gaming functions such as:
-                                   <ul>
-                                        <li>
-                                             <strong>Score Counter</strong> - Starting of, the score counter is represented by a star icon to represent a score and, as the player starts playing, it is replaced and incremented by 1 each time the player gets the answer correct, the score counter provides visual feedback for user to know how they are doing.
-                                        </li>
-                                        <li>
-                                             <strong>Time Keeper</strong> - The time keeper function provides realtime time elapse of how long the player has been playing that particular round for. This is then displayed at the end.
-                                        </li>
-                                        <li>
-                                             <strong>Home Button</strong> - A home button allows the user to return to the home page.
-                                        </li>
-                                        <li>
-                                             <strong>Restart Button</strong> - A restart button allows the user to refresh the page, starting back at 0, for their convenience.
-                                        </li>
-                                   </ul>
-                         </li>
-                         <li>
-                              <strong>Game End</strong> - Once the player has answered all questions, they will be directed to the game-end feature. This is still a part of the game-play page, showing the conditional information based on the users score. This was to avoid redirecting to another page, and allowed for custom styling for each page.
-                         </li>
-                    </ul>
-               </li>
-          </ul>
-     </dd>
-</dl>
 
 ### Existing Features
-- **Personalized Player Name** - When the user first opens the page, they will be prompted to enter a player name of their choice. This name is then used to personalize their in-game experience.
-
-- **Logo** - Appearing on every page for brand recognition. Clicking the logo will return the user to the home page, as expected.
-
-- **Mute Button** - Appearing on every page for convenience, this feature allows the user to choose their sound preferences, then stores this choice in the pages' `sessionStorage`, applying it to all pages on the site. The button uses appropriate icons to represent the sound state.
-
-- **Dark Mode Toggle** - Appearing on every page for convenience, this feature allows the user to control the theme to be used, allowing a selection between 'light mode' and 'dark mode'. Each providing a different colour experience for the user. Should the user already have a stored system theme on their device, the page will use this as default.
-
-- **Social Icons** - On each page, in the footer (regardless of whether this is the standard or sliding footer) the developers' chosen social platforms are displayed using appropriate icons.
-
-- **Suggestions Form** - As well as the social media icons, there is also a form feature, allowing users to submit their suggestions or comments to the developer. The form uses an appropriate icon for consistency. On form submission, both the developer and the user will receive an email, confirming the message has been sent.
-<div align="center">
-     <img src="assets/readme-files/email-test.png" alt="Automated Suggestions Email">
-</div>
-
-- **Answer Feedback** - The answer buttons provide users with both visual and aural feedback, displaying whether they are correct in their answer choice.
-
-- **Score Counter** - Incrementing by 1 each time the correct answer is selected, the counter provides real-time information as to the players score. It is represented by a star icon on page-load as a visual cue of what will be there during play. This is then displayed at game end. The score is then compared to the session High Score for competitiveness purposes.
-
-- **Time Counter** - A time counter, displaying the time elapsed since page load, gives users feedback on how long they have been playing, in minutes and seconds. This is then displayed at game end.
-
-- **Page Loader** - As the questions are being called in JavaScript, there is a slight delay in loading. In order to create a more user-friendly experience, a loader icon (appropriately shaped as a compact disc) displays first on all game pages, until the questions have been loaded.
-
-- **Session Storage** - The `sessionStorage` function is used to store user information such as **username**, player's **high score** and the chosen **user preferences**.
-
-- **404 page** - A 404 page is provided, should something go wrong, with a **call-to-action** button, redirecting the user back to the homepage.
+- **EXAMPLE** - 
 
 ### Features to Implement in the future
-- There are two categories that the developer would like to implement in future releases:
-     - **Beat The Clock**
-          - Allowing users to race against the clock in their chosen category. 
-          - The developer did try to implement this feature in the current release but it created a bug that was, unfortunately, beyond their skill level. After further learning, the developer hopes to apply this to future releases.
-     - **Random Round**
-          - A category that would call in questions from all categories, in no particular order, creating a completely random set of questions for players.
-          - The developer held off on this feature in the current release in order to further develop their skills to be able to implement the feature properly. Although a simplified version could have been implemented, the developer believed that this would not do the name justice.
-- An online leadership board, allowing players to see the High Scores of other players.
-     - This would require the use of a database in order to implement.
-- Branching out into other versions of the game, for example:
-     - Famous Sayings
-          - Poets
-          - Literature
-          - Idioms
-          - Quotes
-     - Movie Quotes
-          - Cult Classics
-          - Action
-          - Family
-          - Random
-     - Although this was the original plan for the game, the developer scaled the scope down, choosing to focus on one version; Music.
-- Creating a timer delay for players to choose when the clock starts
-     - Although the developer did research and try to implement this in the current release, it was not to be. As each answer is called into an array, and is conditional (checking whether the answer is correct), there was a problem with using a click event, where it would not register the click of a wrong answer, therefore the timer would not start. They tried to design a landing page for each category in order to create a button the player could press to enter the game and, thus, start the timer. This felt counter-intuitive as it was unnecessarily creating steps for the user. The developer hopes to gain more knowledge and, hopefully, implement this feature in the future.
 
 [Back to top ⇧](#table-of-contents)
 
 ## Issues and Bugs 
 The developer ran into a number of issues during the development of the websites, with the noteworthy ones listed below, along with solutions or ideas to implement in the future.
 
-**Sliding Footer Bug** - A bug was detected in the sliding footer feature when being implemented. As the developer sourced and edited the code from [JSFiddle](http://jsfiddle.net/nathanbweb/JHu7j/), the problem lay in integrating that code with the original. The sourced code was overriding the html within the code and, as such, created problems with the graphics that were to be used. In order to fix this, the developer instead toggled the necessary classes and elements. In their research, the developer found a similar problem on [Stack Overflow](https://stackoverflow.com/questions/15345784/change-icon-on-click-toggle/15345885) where they then implemented this into their code, with success.
-
-**Game Play Categories issues** - The original plan for the game was to use one page and iterate an array depending on the category button that the user clicked. This method created an overlapping issue within the JavaScript `script.js` file and the page would not function as designed. In order to save the functionality of the game, the developer decided to divide the categories into their own pages (both `.html` and `.js`), with each page executing their own functions during game-play.
-
-**Game Ending Page issues** - In the original design, there was to be a separate page that players would be redirected to after answering all questions, thus completing the quiz. The page content would change, depending on which of the two probable outcomes of game play (*high score* or *no high score*) the user had. Straight away, the developer faced a similar problem to the **Game Play Categories** issue, where there became an overwhelming overlap in the `script.js` file. To over come this, the developer removed the ending page entirely, and directly applied the end of the game to each specific category. This allowed for a high score in each category as well as an accurate pointing system that was not possible with one page.
-
-**Mute Button Bug** - One of the biggest challenges the developer met in the developmental process was the *mute button* feature. The feature allows users to manage the audio setting of the game, toggling the sound effects on and off. In implementing this feature, the developer's knowledge was challenged to the fullest in ensuring that the preference the user set on one page would carry through to the next page. In their learning, the developer was able to create the necessary functions and conditions that allowed the feature to work, storing the preference for the next page. Although it tested their knowledge, the reward of successfully implementation was worth it. 
-
-**Email Validation Issue** - For the **Suggestions Form** the design was to create a modal form that could only be submitted once all areas were complete and, on submission, the user would receive a success message, providing them with the necessary feedback. The problem with this was that, by default, the modal button would override this validation, closing the modal regardless of whether the user had actually inputted any information or not. In order to rectify this, the developer used the [jQuery Validation](https://jqueryvalidation.org/ "Link to jQuery Validation page") plugin that would allow for jQuery to validate the form, which could then allow for a conditional response, when the form was validated.
-
-**Background image bug** - There is a background image rendered for both the **welcome menu** and **homepage**. With the known issue regarding `background-size: cover` and ios devices, the developer had to create a work-around to be able to call on the background image conditional to the current  set theme. In order to do this, the images had to be rendered in JavaScript, as opposed to CSS.
-
-**Common variables in JavaScript Issue** - The JavaScript was divided into five files, one for each game category (for functionality), and one for common variables and functions, e.g. form validation. The problem with this was that some variables needed to be called in both the **category** file and **script** file. This overlap lead to errors in testing as to separately declare the variables in each page would throw an `already declared` error, but to declare them in only one would cause validation errors. In order to fix this, the developer changed each of the internal js file types to `type="module"` and used `import` and `export` as needed. This avoided the validation issue while maintaining functionality. 
 
 
 [Back to top ⇧](#table-of-contents)
 
+## Information Architecture
+
+[Back to top ⇧](#table-of-contents)
+
 ## Technologies Used
-### Main Languages Used
+### Languages Used
 - [HTML5](https://en.wikipedia.org/wiki/HTML5 "Link to HTML Wiki")
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets "Link to CSS Wiki")
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript "Link to JavaScript Wiki")
+- [Python](https://www.python.org/ "Link to Python Homepage)
 
-### Frameworks, Libraries & Programs Used
+### Tools Used
+- [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/ "Link to download Visual Studio Code Insiders") 
+     - VSCode was used as the preferred IDE.
+- [Git](https://git-scm.com/ "Link to Git homepage")
+     - Git was used for version control to commit to Git and push to Heroku.
+- [GitHub](https://github.com/ "Link to GitHub")
+     - GitHub was used to store the project repository, after pushing.
+- [Figma](https://www.figma.com/ "Link to Figma homepage")
+     - Figma was used to create the wireframes during the design phase of the project.
+- [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage")
+     - Am I Responsive was used in order to validate the responsiveness of the design throughout the process, and to generate mockup imagery to be used.
+- [Procreate](https://procreate.art/ "Link to ProCreate homepage")
+     - Procreate was used to create and edit images as well as using the colour picker tool to ensure consistency throughout.
+- [Imgbb](https://imgbb.com/ "Link to Imgbb site") 
+     - ImgBB was used to externally host images used.
+
+
+### Libraries Used
 - [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/ "Link to Bootstrap page")
      - Bootstrap was used to implement the responsiveness of the site, using bootstrap classes.
 - [jQuery](https://jquery.com/ "Link to jQuery page")
@@ -419,18 +330,18 @@ The developer ran into a number of issues during the development of the websites
     - Google fonts was used to import the fonts "Shaodows Into Light Two" and "Roboto" into the style.css file. These fonts were used throughout the project.
 - [Font Awesome](https://fontawesome.com/ "Link to FontAwesome")
      - Font Awesome was used on all pages throughout the website to import icons for UX purposes.
-- [Git](https://git-scm.com/ "Link to Git homepage")
-     - Git was used for version control by utilizing the GitPod terminal to commit to Git and push to GitHub.
-- [GitHub](https://github.com/ "Link to GitHub")
-     - GitHub was used to store the project after pushing.
 - [jQuery Validation](https://jqueryvalidation.org/ "Link to jQuery Validation page")
      - jQuery Validation was used to simplify form validation for the **Suggestions Form**.
 - [SweetAlert2](https://sweetalert2.github.io/ "Link to Sweet Alert 2 page")
      - SweetAlert2 was used to customise the **Suggestions Form** success message for UX purposes.
-- [Figma](https://www.figma.com/ "Link to Figma homepage")
-     - Figma was used to create the wireframes during the design phase of the project.
-- [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage")
-     - Am I Responsive was used in order to validate the responsiveness of the design throughout the process, and to generate mockup imagery to be used.
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/ "Link to Flask Homepage")
+     - Flask was used as the web framework for the application.
+- [PyMongo](https://pypi.org/project/pymongo/ "Link to PyMongo information")
+     - PyMongo was used a communication line between the MongoDB database and Python.
+- [Jinja](http://jinja.pocoo.org/docs/2.10/ "Link to Jinja information")
+     - Jinja templating language was used to simplify and display backend data in html.
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information")
+     - Werkzeug was used for password hashing and authentication.
 
 [Back to top ⇧](#table-of-contents)
 
@@ -439,62 +350,150 @@ The developer ran into a number of issues during the development of the websites
 Testing information can be found in a separate testing [file](TESTING.md "Link to testing file")
 
 ## Deployment
+To further develop this project, a clone can be made using the following steps:
+### 1. Database Creation
+The application is connected to a [MongoDB Atlas](https://mongodb.com/ "Link to MongoDB Homeapage") Cluster. A Project database can be created using the following steps:
 
-This project was developed using [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/ "Link to Visual Studio Code site"), committed to git and pushed to GitHub using the computer terminal.
+1. Log into [MongoDB](https://account.mongodb.com/account/login "Link to MongoDB login page") or [create an account](https://account.mongodb.com/account/register "Link to MongoDB sign-up page").
+2. Locate and select the `New Project` button on the right side of the page, and give your project a name. Navigate to the project page.
+3. Locate and select the `Create a New Cluster` button on the right side of the page. Once selected:
+     - Choose **Shared Cluster** which is a free option.
+     - Select your **Cloud Provider** and **Region** (in this instance :**AWS** and **Ireland**).
+     - Click on **Cluster Tier** and select tier of preference (in this instance: **Basic M0 tier**).
+     - Click on **Cluster Name** and create your cluster name.
+4. Locate and select `Database Access` on the left side of the page. Once selected, click `Add New Database User`:
+     - Choose `Password` for the **Authentication Method**
+     - Enter a username and password of your choosing
+     - Ensure `Read and write to any database` is selected in **Database User Privileges**
+     - Add User
+5. Locate and select `Network Access` under `Database Access` on the left side of the page. Once selected, click `Add IP Address`:
+     - Select `Allow Access from anywhere` (This is not recommended for full-production applications).
+     - Select `Confirm`.
+6. Locate and select `Clusters` on the left side of the page (must be provisioned first).
+7. Click `Collections`, then `+ Create Database` to start adding documents to your database collections:
+     - Enter chosen `Database Name`
+     - Enter chosen `Collection Name`
+     - Select `Create`
+8. Click `Create Collection` and create the necessary collections. See [Information Architecture](#Information-Architecture) for reference of the collections created for this project.
 
-### Deploying on GitHub Pages
-To deploy this page to GitHub Pages from its GitHub repository, the following steps were taken:
+### 2. Local Copy Creation
+A Local Clone of the repository can be made in two ways:
 
-1. Log into [GitHub](https://github.com/login "Link to GitHub login page") or [create an account](https://github.com/join "Link to GitHub create account page").
-2. Locate the [GitHub Repository](https://github.com/rebeccatraceyt/WhatTheBlank "Link to GitHub Repo").
-3. At the top of the repository, select Settings from the menu items.
-4. Scroll down the Settings page to the "GitHub Pages" section.
-5. Under "Source" click the drop-down menu labelled "None" and select "Master Branch".
-6. Upon selection, the page will automatically refresh meaning that the website is now deployed.
-7. Scroll back down to the "GitHub Pages" section to retrieve the deployed link.
-8. At the time of submitting this Milestone project the Development Branch and Master Branch are identical.
+- **Forking the Repository:**
 
-### Forking the Repository
-By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps:
+     By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps:
 
-1. Log into [GitHub](https://github.com/login "Link to GitHub login page") or [create an account](https://github.com/join "Link to GitHub create account page").
-2. Locate the [GitHub Repository](https://github.com/rebeccatraceyt/WhatTheBlank "Link to GitHub Repo").
-3. At the top of the repository, on the right side of the page, select "Fork".
-4. You should now have a copy of the original repository in your GitHub account.
+     1. Log into [GitHub](https://github.com/login "Link to GitHub login page") or [create an account](https://github.com/join "Link to GitHub create account page").
+     2. Locate the [GitHub Repository](https://github.com/rebeccatraceyt/WhatTheBlank "Link to GitHub Repo").
+     3. At the top of the repository, on the right side of the page, select "Fork".
+     4. You should now have a copy of the original repository in your GitHub account.
 
-### Creating a Clone
-How to run this project locally:
-1. Install the [GitPod Browser](https://www.gitpod.io/docs/browser-extension/ "Link to Gitpod Browser extension download") Extension for Chrome.
-2. After installation, restart the browser.
-3. Log into [GitHub](https://github.com/login "Link to GitHub login page") or [create an account](https://github.com/join "Link to GitHub create account page").
-2. Locate the [GitHub Repository](https://github.com/rebeccatraceyt/WhatTheBlank "Link to GitHub Repo").
-5. Click the green "GitPod" button in the top right corner of the repository.
-This will trigger a new gitPod workspace to be created from the code in github where you can work locally.
+-  **Creating a Clone**
 
-How to run this project within a local IDE, such as VSCode:
+     How to run this project locally:
+     1. Install the [GitPod Browser](https://www.gitpod.io/docs/browser-extension/ "Link to Gitpod Browser extension download") Extension for Chrome.
+     2. After installation, restart the browser.
+     3. Log into [GitHub](https://github.com/login "Link to GitHub login page") or [create an account](https://github.com/join "Link to GitHub create account page").
+     2. Locate the [GitHub Repository](https://github.com/rebeccatraceyt/bake-it-til-you-make-it "Link to GitHub Repo").
+     5. Click the green "GitPod" button in the top right corner of the repository.
+     This will trigger a new gitPod workspace to be created from the code in github where you can work locally.
 
-1. Log into [GitHub](https://github.com/login "Link to GitHub login page") or [create an account](https://github.com/join "Link to GitHub create account page").
-2. Locate the [GitHub Repository](https://github.com/rebeccatraceyt/WhatTheBlank "Link to GitHub Repo").
-3. Under the repository name, click "Clone or download".
-4. In the Clone with HTTPs section, copy the clone URL for the repository.
-5. In your local IDE open the terminal.
-6. Change the current working directory to the location where you want the cloned directory to be made.
-7. Type 'git clone', and then paste the URL you copied in Step 3.
+     How to run this project within a local IDE, such as VSCode:
+
+     1. Log into [GitHub](https://github.com/login "Link to GitHub login page") or [create an account](https://github.com/join "Link to GitHub create account page").
+     2. Locate the [GitHub Repository](https://github.com/rebeccatraceyt/bake-it-til-you-make-it "Link to GitHub Repo").
+     3. Under the repository name, click "Clone or download".
+     4. In the Clone with HTTPs section, copy the clone URL for the repository.
+     5. In your local IDE open the terminal.
+     6. Change the current working directory to the location where you want the cloned directory to be made.
+     7. Type 'git clone', and then paste the URL you copied in Step 3.
+     ```
+     git clone https://github.com/USERNAME/REPOSITORY
+     ```
+     8. Press Enter. Your local clone will be created.
+
+     (Further reading and troubleshooting on cloning a repository from GitHub [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository "Link to GitHub troubleshooting"))
+
+Once a local clone is created, the environment variables have to be set:
+
+1. Create a `.gitignore` file in the project's root directory.
+2. In the terminal window, type `touch env.py` to create the file that will contain the environment variables. 
+3. Add `env.py` to the `.gitignore` file.
+4. Within the `env.py` file, enter the project's environment variables:
 ```
-git clone https://github.com/USERNAME/REPOSITORY
-```
-8. Press Enter. Your local clone will be created.
+import os
 
-Further reading and troubleshooting on cloning a repository from GitHub [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository "Link to GitHub troubleshooting")
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", <your_secret_key>)
+os.environ.setdefault("MONGO_URI", "mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority" )
+os.environ.setdefault("MONGO_DBNAME", <your_mongo_db_name>)
+```
+For the `MONGO_URI` ensure to replace `<username>`, `<password>`, `<cluster_name>` and `<database_name>` with the appropriate alternatives.
+
+
+
+### 3. Heroku App Creation
+The website requires back-end technology, including a server, application and database. It is because of this that the project was deployed on **Heroku**, a container-based cloud Platform as a Service. There are two ways to deploy on Heroku:
+
+- Using the Heroku Command Line Interface
+- Connect to GitHub Repository (the developer recommends this method)
+
+Before deployment can be carried out on Heroku, the following steps must be carried out:
+
+1. Create a `requirements.txt` file to install all requirements. In the terminal window, type the following command:
+```
+pip3 install -r requirements.txt
+```
+2. Create a `Profile` file so that Heroku knows which file runs the app. In the terminal window, type the following command:
+```
+echo web: python app.py > Procfile
+
+```
+*Remove the blank line that may occur at the end of the Procfile to avoid any issues*
+
+
+3. Push the two files to the repository:
+```
+git add requirements.txt
+git commit -m "Add requirements.txt"
+
+git add Procfile 
+git commit -m "Add Procfile"
+
+git push
+
+```
+Once these steps are completed, continue with the process:
+
+1. Log into [Heroku](https://id.heroku.com/login "Link to Heroku login page") or [create an account](https://signup.heroku.com/login "Link to Heroku sign-up page").
+2. Select the `New` button on the top-right of the page, and choose `Create New App`. Give your app a unique name and set the region (in this instance: **Europe**). Then click `Create App`.
+3. Navigate to the `Deploy` tab on the dashboard and select `Connect to GitHub`.
+4. Search for the repository name (ensuring it is spelled correctly). Once located, click `Connect`. 
+5. Navigate to the `Setting` tab on the dashboard and select `Reveal Config Vars`, entering the necessary key/values as below:
+
+| Key | Value |
+ --- | ---
+IP | 0.0.0.0
+PORT | 5000
+SECRET_KEY | `<your_secret_key>`
+MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority`
+MONGO_DBNAME | `<your_mongo_db_name>`
+
+6. Navigate back to the `Deploy` tab and scroll down to `Automatic Deploys`.
+7. Ensure that the `master` branch is selected, then select `Enable Automatic Deploys`.
+
+Heroku will receive the pushed code from the GitHub repository and host the application with the required packages set out. 
+
+The deployed version can now be viewed by selecting `View App` in the top-right of the page.
+
 
 [Back to top ⇧](#table-of-contents)
 
 ## Credits 
 
 ### Audio
-The sound effects and song lyrics that are used in this website are for educational purposes only. There is no copyright infringement intended.
 
-Music and sound effect credits can be found in a separate [file](CREDITS.md "Link to credits file")
 
 ### Code 
 The developer consulted multiple sites in order to better understand the code they were trying to implement. For code that was copied and edited, the developer made sure to reference this within the code. The following sites were used on a more regular basis:
@@ -503,7 +502,7 @@ The developer consulted multiple sites in order to better understand the code th
 - [Bootstrap](https://getbootstrap.com/ "Link to BootStrap page")
 - [JSfiddle](https://jsfiddle.net/ "Link to JSfiddle page")
 
-For the basic functionality of the game play mode of the site, the developer sourced a similar project by [JamesQQuick](https://github.com/jamesqquick/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript "Link to Build-A-Quiz repo") and was able to edit and manipulate it in order to design the game to their specifications.
+
 
 [Back to top ⇧](#table-of-contents)
 
