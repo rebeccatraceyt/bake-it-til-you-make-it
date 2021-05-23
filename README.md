@@ -106,46 +106,61 @@ In order to design and create a web-based interactive game, the developer distin
 
 Broken into three categories, the website will focus on the following target audiences:
 - **Roles:**
-     - New Players
-     - Current Players
-     - Returning Players
+     - Bakers of all levels
+     - New Users (Non-Registered)
+     - Return Users (Registered)
 
 - **Demographic:**
-     - Music Lovers
-     - Aged 10 years and up
-     - Quiz Lovers
+     - Passion for baking
+     - Food lovers
+     - All ages (encouraging family fun)
 
 - **Psychographics:**
      - Personality & Attitudes:
-          - Extroverted
-          - Fun-driven
-          - Knowledgeable when it comes to music
+          - Organised
+          - Creative
      - Values:
-          - Modern
-          - Nostalgic
-          - Friendship
+          - Community
+          - Nostalgia
      - Lifestyles:
-          - Fun-seeking
-          - Music interest
-          - Competitiveness
+          - Food interests
+          - Outgoing
 
 The website needs to enable the **user** to:
-- Play with ease, navigating without complications or instructions
-- Choose their preferred music category
-- Control sound settings
-- Control light/dark settings
-- See High Score
-- Provide suggestions and feedback to the developer
-- Connect with developer through social links
+- Register/Login to an account
+- Search Recipe database by:
+    - Name
+    - Category
+    - Level
+- View Recipe Dashboard with the following information:
+    - Name
+    - Image URL
+    - Description
+    - Category
+    - Serving Size
+    - Time
+    - Level
+    - Ingredients
+    - Directions
+- Upload and access their own recipes
+- Save and access their favourite recipes from other users
+- Get in contact with site owner
 
 The website needs to enable the **client** to:
-- Enjoy playing their own game
+- Provide a community-driven recipe database
+- Use the website themselves:
+    - Share their favourite recipes
+    - Find new recipes
+    - Connect with a community that shares their interests
 - Allow for user feedback and suggestions
-- Communicate with users on social links
 
 With these goals in mind, a strategy table was created to determine the trade-off between importance and viability with the following results:
 
-![Strategy Table](assets/readme-files/strategy-table.png)
+**Strategy Table for User Management:**
+![Strategy Table for User Management](static/images/readme-files/user-management-st.png)
+
+**Strategy Table for Baking Respository Management:**
+![Strategy Table for Baking Respository Management](static/images/readme-files/baking-repo-st.png)
 
 <strong>2. <u>Scope</u></strong>
 
