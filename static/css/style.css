@@ -1,0 +1,41 @@
+/*------------------------------------------------------- Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto:wght@300;400;700&display=swap');
+
+/*------------------------------------------------------- Root Variables */
+
+/* General Root Variables */
+:root {
+    /* Font variables */ 
+    --bodyfont: 'Roboto', sans-serif;
+    --titlefont: 'Indie Flower', cursive;    
+    
+    /* Colour Variables */
+    --blue: #bbf2ed;
+    --purple: #8985b0;
+    --pink: #e7c8e0;
+    --green: #c4dac9;
+    --yellow: #f1ecc9;
+}
+
+/*------------------------------------------------------- Special Styling */
+body {
+    font-family: var(--bodyfont);
+}
+
+
+
+
+
+/*------------------------------------------------------- Media Queries */
+
+/* Breakpoint to maintain structural integrity on a Tablet device */
+@media (min-width: 700px) and (max-width: 991px) {
+
+}
+
+/* Breakpoint to maintain structural integrity on a Laptop Screen */
+@media (min-width: 991px){ 
+
+}
+
+/*------------------------------------------------------- 404 Page Styling */
