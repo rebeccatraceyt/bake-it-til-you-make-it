@@ -27,9 +27,9 @@ The recipe database encourages users to create an account that will allow them t
 3. [Issues and Bugs](#Issues-and-Bugs)
 4. [Information Architecture](#Information-Architecture)
 5. [Technologies Used](#Technologies-Used)
-     1. [Languages Used](#Main-Languages-Used)
-     2. [Tools Used](#Tools-Used)
-     2. [Libraries Used](#Libraries-Used)
+     1. [Languages](#Languages)
+     2. [Tools](#Tools)
+     2. [Libraries](#Libraries)
 6. [Testing](#Testing) ☞ **[Testing.md](TESTING.md)**
 7. [Deployment](#Deployment)
      1. [1. Database Creation](#1-Database-Creation)
@@ -278,11 +278,13 @@ Each page of the game features a consistently responsive and intuitive navigatio
                     </li>
                </ul>
      </dd>
+</dl>
 
 ### Existing Features
 - **EXAMPLE** - 
 
 ### Features to Implement in the future
+- **EXAMPLE** - 
 
 [Back to top ⇧](#table-of-contents)
 
@@ -298,13 +300,13 @@ The developer ran into a number of issues during the development of the websites
 [Back to top ⇧](#table-of-contents)
 
 ## Technologies Used
-### Languages Used
+### Languages
 - [HTML5](https://en.wikipedia.org/wiki/HTML5 "Link to HTML Wiki")
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets "Link to CSS Wiki")
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript "Link to JavaScript Wiki")
-- [Python](https://www.python.org/ "Link to Python Homepage)
+- [Python](https://www.python.org/ "Link to Python Homepage")
 
-### Tools Used
+### Tools
 - [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/ "Link to download Visual Studio Code Insiders") 
      - VSCode was used as the preferred IDE.
 - [Git](https://git-scm.com/ "Link to Git homepage")
@@ -321,7 +323,7 @@ The developer ran into a number of issues during the development of the websites
      - ImgBB was used to externally host images used.
 
 
-### Libraries Used
+### Libraries
 - [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/ "Link to Bootstrap page")
      - Bootstrap was used to implement the responsiveness of the site, using bootstrap classes.
 - [jQuery](https://jquery.com/ "Link to jQuery page")
@@ -358,7 +360,7 @@ The application is connected to a [MongoDB Atlas](https://mongodb.com/ "Link to 
 2. Locate and select the `New Project` button on the right side of the page, and give your project a name. Navigate to the project page.
 3. Locate and select the `Create a New Cluster` button on the right side of the page. Once selected:
      - Choose **Shared Cluster** which is a free option.
-     - Select your **Cloud Provider** and **Region** (in this instance :**AWS** and **Ireland**).
+     - Select your **Cloud Provider** and **Region** (in this instance: **AWS** and **Ireland**).
      - Click on **Cluster Tier** and select tier of preference (in this instance: **Basic M0 tier**).
      - Click on **Cluster Name** and create your cluster name.
 4. Locate and select `Database Access` on the left side of the page. Once selected, click `Add New Database User`:
@@ -384,7 +386,7 @@ A Local Clone of the repository can be made in two ways:
      By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps:
 
      1. Log into [GitHub](https://github.com/login "Link to GitHub login page") or [create an account](https://github.com/join "Link to GitHub create account page").
-     2. Locate the [GitHub Repository](https://github.com/rebeccatraceyt/WhatTheBlank "Link to GitHub Repo").
+     2. Locate the [GitHub Repository](https://github.com/rebeccatraceyt/bake-it-til-you-make-it "Link to GitHub Repo").
      3. At the top of the repository, on the right side of the page, select "Fork".
      4. You should now have a copy of the original repository in your GitHub account.
 
@@ -445,10 +447,9 @@ Before deployment can be carried out on Heroku, the following steps must be carr
 ```
 pip3 install -r requirements.txt
 ```
-2. Create a `Profile` file so that Heroku knows which file runs the app. In the terminal window, type the following command:
+2. Create a `Procfile` file so that Heroku knows which file runs the app. In the terminal window, type the following command:
 ```
 echo web: python app.py > Procfile
-
 ```
 *Remove the blank line that may occur at the end of the Procfile to avoid any issues*
 
@@ -462,7 +463,6 @@ git add Procfile
 git commit -m "Add Procfile"
 
 git push
-
 ```
 Once these steps are completed, continue with the process:
 
@@ -491,18 +491,11 @@ The deployed version can now be viewed by selecting `View App` in the top-right 
 [Back to top ⇧](#table-of-contents)
 
 ## Credits 
-
-### Audio
-
-
-### Code 
 The developer consulted multiple sites in order to better understand the code they were trying to implement. For code that was copied and edited, the developer made sure to reference this within the code. The following sites were used on a more regular basis:
 - [Stack Overflow](https://stackoverflow.com/ "Link to Stack Overflow page")
 - [W3Schools](https://www.w3schools.com/ "Link to W3Schools page")
 - [Bootstrap](https://getbootstrap.com/ "Link to BootStrap page")
 - [JSfiddle](https://jsfiddle.net/ "Link to JSfiddle page")
-
-
 
 [Back to top ⇧](#table-of-contents)
 
