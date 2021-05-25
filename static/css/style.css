@@ -15,11 +15,15 @@
     --pink: #e7c8e0;
     --green: #c4dac9;
     --yellow: #f1ecc9;
-    --text: rgb(37, 12, 12); 
+    --white: #ffffff;
+    --text: #332925;
+
 }
 
 /*------------------------------------------------------- Special Styling */
 body {
+    max-width: 100vw;
+    max-height: 100vh;
     font-family: var(--bodyfont);
     background-color: var(--purple);
 }
@@ -33,14 +37,19 @@ button:focus {
     https://codingyaar.com/responsive-bootstrap-navbar-center-logo/ */
 .navbar {
     display: inline;
-    width: 100%;
-    min-height: 20vh;
-    background: url(../images/navbar-bg.png) repeat-x top;
+    width: 100vw;
+    min-height: 15vh;
+    border: 0;
+
+    background-image: url(../images/nav-bg.png);
+    background-color: var(--white);
+    background-repeat: repeat-x;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    overflow: auto;
+
+    font-family: var(--titlefont);
     position: fixed;
     z-index: 100;
 }
@@ -54,36 +63,47 @@ button:focus {
 .navbar .navbar-nav .nav-link:hover{
     color: #808080;
 }
-.navbar img {
+.navbar-brand img {
+    position: absolute;
     width: 35vw;
     height: auto;
+    z-index: 101;
 }
 
-/* Defines actions to be taken by navbar on scroll - For mobile devices */
-.scroll-nav.scrolled {
-    background-color: var(--purple);
-    transition: background-color 150ms linear;
+.navbar-collapse {
+    float: right;
+    min-width: 100vw;
+    max-height: 100vh;
+    padding: 15%;
+    z-index: 102;
+
+    font-size: 1.5rem; 
+    text-align: right;
+    color: var(--text); 
+    line-height: 130%;
 }
 
 #main-section {
-    padding-top: 30vh;
+    padding-top: 25vh;
 }
+
 
 /* Styling for navbar toggler */
 .custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(37, 12, 12)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(51, 41, 37)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
     /* Sourced from Stack Overflow to re-colour the toggle button on mobile devices (RGB value had to be entered instead of root variable).
     https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggler-color */
 } 
 .custom-toggler{
-    border-color: var(--purple);
+    border-color: transparent;
 }
 .custom-toggler:active {
-    border-color: var(--purple);
+    border-color: transparent;
 } 
 .navbar-toggler {
     margin: 12px 12px 12px 0px;
-}
+} 
+ 
 
 
 
