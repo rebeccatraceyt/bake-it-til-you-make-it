@@ -18,6 +18,8 @@
     --white: #ffffff;
     --text: #332925;
 
+    --bg-color: #f1ecc9f1;
+
 }
 
 /*------------------------------------------------------- Special Styling */
@@ -26,7 +28,15 @@ body {
     max-height: 100vh;
     font-family: var(--bodyfont);
     color: var(--text);
-    background-color: var(--purple);
+    
+    background-color: var(--blue); 
+    background-image: url("../images/paper-texture.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 button:focus {
@@ -105,7 +115,13 @@ button:focus {
     padding-top: 25vh;
 }
 
- 
+
+/*------------------------------------------------------- Homepage Styling */
+#home-header {
+    width: 100vw;
+    height: 40vh;
+}
+
 /*------------------------------------------------------- Footer Styling */
 footer {
     background-image: url(../images/nav-bg.png);
@@ -125,6 +141,7 @@ footer ul {
 }
 
 .hide-disclaimer {
+    /* Disclaimer notice is hidden by default */
     display: none;
 }
 
