@@ -9,7 +9,7 @@
 		<meta name="author" content="Rebecca Tracey-Timoney">
         
         <!-- favicon -->
-        <link rel="shortcut icon" href="" title="Bake It 'Til You Make It' Thumbnail Image">
+        <link rel="shortcut icon" href="static/images/favicon.png" title="Bake It 'Til You Make It' Thumbnail Image">
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap Import -->
@@ -25,15 +25,15 @@
     <body>
 
         <nav class="navbar navbar-expand-lg navbar-fixed-top scroll-nav">
-            <a class="navbar-brand d-lg-none" href="#"><img src="../static/images/logo.png"></a>
+            <a class="navbar-brand d-lg-none" href="{{ url_for('home') }}"><img src="../static/images/logo.png"></a>
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#hamburger-nav"
                 aria-controls="hamburger-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="hamburger-nav">
-                <ul class="navbar-nav mx-auto ">
+                <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Register</a>
@@ -41,7 +41,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Login</a>
                     </li>
-                    <a class="d-none d-lg-block" href="#"><img src="../static/images/logo.png"></a>
+                    <a class="d-none d-lg-block" href="{{ url_for('home') }}"><img src="../static/images/logo.png"></a>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Find A Recipe</a>
                     </li>
@@ -52,12 +52,22 @@
             </div>
         </nav>
 
-        <section id="main-section">
+        <section id="main-section" aria-label="Main Section for each page">
             {% block content %}
             {% endblock %}
         </section>
         
 
+        <footer class="text-center fixed-bottom" aria-label="Footer containing Social Icons">
+
+            <div id="disclaimer" class="hide-disclaimer">
+                <p>This website is created by Rebecca Tracey-Timoney for educational purpose only.</p> <p>Copyright for the recipes on this website go to the original recipe owner.</p> 
+            </div>    
+            <i class="fas fa-exclamation-circle" onclick="showDisclaimer()"></i> Disclaimer
+            <div>  &copy; Rebecca Tracey-Timoney <span id="date-text"></span> </div>
+
+            
+        </footer>
 
 
         <!-- Scripts -->

@@ -25,6 +25,7 @@ body {
     max-width: 100vw;
     max-height: 100vh;
     font-family: var(--bodyfont);
+    color: var(--text);
     background-color: var(--purple);
 }
 
@@ -57,11 +58,12 @@ button:focus {
     float: right;
 }
 .navbar .navbar-nav .nav-link {
-    color: #000000;
+    color: var(--text);
+    font-family: var(--titlefont);
     font-size: 1.1em;
 }
 .navbar .navbar-nav .nav-link:hover{
-    color: #808080;
+    color: var(--text);
 }
 .navbar-brand img {
     position: absolute;
@@ -69,7 +71,6 @@ button:focus {
     height: auto;
     z-index: 101;
 }
-
 .navbar-collapse {
     float: right;
     min-width: 100vw;
@@ -82,11 +83,6 @@ button:focus {
     color: var(--text); 
     line-height: 130%;
 }
-
-#main-section {
-    padding-top: 25vh;
-}
-
 
 /* Styling for navbar toggler */
 .custom-toggler .navbar-toggler-icon {
@@ -103,8 +99,34 @@ button:focus {
 .navbar-toggler {
     margin: 12px 12px 12px 0px;
 } 
- 
 
+/*------------------------------------------------------- Main Section Styling */
+#main-section {
+    padding-top: 25vh;
+}
+
+ 
+/*------------------------------------------------------- Footer Styling */
+footer {
+    background-image: url(../images/nav-bg.png);
+    background-color: var(--white);
+    background-repeat: repeat-x;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+footer ul {
+    font-family: var(--titlefont);
+    color: var(--text);
+    font-size: 1.3em;
+    margin: 2% 0%;
+}
+
+.hide-disclaimer {
+    display: none;
+}
 
 
 /*------------------------------------------------------- Media Queries */
