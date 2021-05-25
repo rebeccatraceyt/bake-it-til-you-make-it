@@ -24,19 +24,16 @@
     </head>
     <body>
 
-        
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="nav-link d-none d-sm-block d-lg-none" href="#">
-                <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top scroll-nav">
+            <a class="navbar-brand d-lg-none" href="#"><img src="../static/images/logo.png"></a>
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#hambuger-nav"
+                aria-controls="hambuger-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="nav">
+            <div class="collapse navbar-collapse" id="hambuger-nav">
+                <ul class="navbar-nav mx-auto ">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
+                        <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Register</a>
@@ -44,11 +41,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Login</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link d-none d-md-block" href="#">
-                            <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
-                        </a>
-                    </li>
+                    <a class="d-none d-lg-block" href="#"><img src="../static/images/logo.png"></a>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Find A Recipe</a>
                     </li>
@@ -59,8 +52,11 @@
             </div>
         </nav>
 
-        {% block content %}
-        {% endblock %}
+        <section id="main-section">
+            {% block content %}
+            {% endblock %}
+        </section>
+        
 
 
 
