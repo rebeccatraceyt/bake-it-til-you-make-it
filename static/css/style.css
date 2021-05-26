@@ -6,8 +6,8 @@
 /* General Root Variables */
 :root {
     /* Font variables */ 
-    --bodyfont: 'Roboto', sans-serif;
-    --titlefont: 'Indie Flower', cursive;
+    --body-font: 'Roboto', sans-serif;
+    --accent-font: 'Indie Flower', cursive;
     --text: #332925;    
     
     /* Colour Variables */
@@ -30,7 +30,7 @@ html, body, #notebook-bg {
     min-height: 100vh;
 }
 body {
-    font-family: var(--bodyfont);
+    font-family: var(--body-font);
     color: var(--text);
     
     background-color: var(--yellow); 
@@ -57,7 +57,7 @@ button:focus {
     margin: auto;
     padding-top: 7vh;
     
-    font-family: var(--titlefont);
+    font-family: var(--accent-font);
     background: url("../images/bg-sm.png");
     background-position: top;
     background-repeat: repeat-x;
@@ -70,7 +70,7 @@ button:focus {
 }
 .navbar .navbar-nav .nav-link {
     color: var(--text);
-    font-family: var(--titlefont);
+    font-family: var(--accent-font);
     font-size: 1.1em;
 }
 .navbar .navbar-nav .nav-link:hover{
@@ -127,7 +127,7 @@ button:focus {
 /*------------------------------------------------------- Homepage Styling */
 #home-title {
     max-width: 100vw;
-    height: 20vh;
+    height: auto;
     border-bottom: 3px inset var(--nav-border);
 }
 #home-title img {
@@ -141,11 +141,23 @@ button:focus {
     border-bottom: 3px inset var(--nav-border);
 }
 #home-bio h4, h5 {
-    font-family: var(--titlefont);
+    font-family: var(--accent-font);
     font-size: 1.2em;
 }
 #home-bio p {
     font-size: .9em;
+}
+.home-btn a {
+    /* Referenced and edited from:
+        https://stackoverflow.com/questions/8357058/how-to-make-an-html-anchor-tag-or-link-look-like-a-button  */
+    display: table;
+    width: 115px;
+    background: var(--text);
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--white);
+    line-height: 25px;
+    font-family: var(--accent-font);
 }
 
 /*------------------------------------------------------- Footer Styling */
@@ -164,7 +176,7 @@ footer {
 }
 
 footer ul {
-    font-family: var(--titlefont);
+    font-family: var(--accent-font);
     color: var(--text);
     font-size: 1.3em;
     margin: 2%;
