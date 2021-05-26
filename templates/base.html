@@ -3,7 +3,7 @@
     <head>
         <!-- meta data -->
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0 , maximum-scale=1, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<meta name="Description" content="Bake It 'Til You Make it - online baking recipes book"/>
 		<meta name="author" content="Rebecca Tracey-Timoney">
@@ -23,8 +23,7 @@
         <title>Bake It 'Til You Make It</title>
     </head>
     <body>
-
-        <nav class="navbar navbar-expand-lg navbar-fixed-top scroll-nav">
+        <nav class="navbar navbar-expand-lg sticky-top scroll-nav">
             <a class="navbar-brand d-lg-none" href="{{ url_for('home') }}"><img src="../static/images/logo.png"></a>
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#hamburger-nav"
                 aria-controls="hamburger-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,7 +55,6 @@
             {% block content %}
             {% endblock %}
         </section>
-        
 
         <footer class="text-center fixed-bottom" aria-label="Footer containing Social Icons">
 

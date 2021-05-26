@@ -17,55 +17,64 @@
     --yellow: #f1ecc9;
     --white: #ffffff;
     --text: #332925;
-
-    --bg-color: #f1ecc9f1;
+    --nav-purple: #9894b9;
 
 }
 
 /*------------------------------------------------------- Special Styling */
+html, body, #notebook-bg {
+    max-width:100vw;
+    min-height: 100vh;
+}
 body {
-    max-width: 100vw;
-    max-height: 100vh;
     font-family: var(--bodyfont);
     color: var(--text);
     
-    background-color: var(--blue); 
-    background-image: url("../images/paper-texture.png");
-    background-repeat: repeat;
-    background-attachment: fixed;
+    background-color: var(--yellow); 
+    background-image: url("../images/wood-texture.png");
+    background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
 
+    display: block;
+}
 button:focus {
     outline: none;
+}
+
+#main-section {
+    margin: 10% 5%; 
+    padding: 10% 2%;
+    background-image: url("../images/paper-texture.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    box-shadow: 5px 14px 20px 4px grey;  
 }
 
 /*------------------------------------------------------- Navbar Styling */
 /* Sourced and edited from:
     https://codingyaar.com/responsive-bootstrap-navbar-center-logo/ */
 .navbar {
-    display: inline;
-    width: 100vw;
-    min-height: 15vh;
+    max-width: 90vw;
+    min-height: 10vh;
     border: 0;
-
-    background-image: url(../images/nav-bg.png);
-    background-color: var(--white);
+    margin: auto;
+    padding-top: 8vh;
+    
+    font-family: var(--titlefont);
+    background: url("../images/bg-sm.png");
+    background-position: top;
     background-repeat: repeat-x;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 
-    font-family: var(--titlefont);
-    position: fixed;
-    z-index: 100;
-}
-.navbar button {
-    float: right;
 }
 .navbar .navbar-nav .nav-link {
     color: var(--text);
@@ -76,16 +85,11 @@ button:focus {
     color: var(--text);
 }
 .navbar-brand img {
-    position: absolute;
-    width: 35vw;
+    width: 30vw;
     height: auto;
-    z-index: 101;
 }
 .navbar-collapse {
-    float: right;
-    min-width: 100vw;
-    max-height: 100vh;
-    padding: 15%;
+    padding: 5%;
     z-index: 102;
 
     font-size: 1.5rem; 
@@ -95,6 +99,9 @@ button:focus {
 }
 
 /* Styling for navbar toggler */
+.navbar-toggler {
+    margin: 12px 12px 70px 0px;
+} 
 .custom-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(51, 41, 37)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
     /* Sourced from Stack Overflow to re-colour the toggle button on mobile devices (RGB value had to be entered instead of root variable).
@@ -106,21 +113,19 @@ button:focus {
 .custom-toggler:active {
     border-color: transparent;
 } 
-.navbar-toggler {
-    margin: 12px 12px 12px 0px;
-} 
+
+/* Defines actions to be taken by navbar on scroll - For mobile devices */
+.scroll-nav.scrolled {
+    background-color: var(--nav-purple) !important;
+    transition: background-color 200ms linear;
+}
 
 /*------------------------------------------------------- Main Section Styling */
 #main-section {
-    padding-top: 25vh;
+    margin-top: 0;
 }
-
 
 /*------------------------------------------------------- Homepage Styling */
-#home-header {
-    width: 100vw;
-    height: 40vh;
-}
 
 /*------------------------------------------------------- Footer Styling */
 footer {
@@ -131,13 +136,17 @@ footer {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    max-width: 95vw;
+    max-height: 7vh;
+    margin: 0 5%;
 }
 
 footer ul {
     font-family: var(--titlefont);
     color: var(--text);
     font-size: 1.3em;
-    margin: 2% 0%;
+    margin: 2%;
 }
 
 .hide-disclaimer {
