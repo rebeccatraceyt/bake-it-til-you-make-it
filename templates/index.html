@@ -6,24 +6,73 @@
     </div>
 
     <div class="container-fluid">
-        <div id="home-bio" class="row">
-            <div class="col-12 col-lg-6">
-                <h4>Welcome Bakers!</h4>
-                <p>
-                    Our little community is designed to inspire all,
-                    so share your favouirte recipes and find your next creation.
-                    Get your baking hat on and don't forget:
-                </p>
-                <h5>Get Inspired | Get Creative</h5>
+        <div class="row">
+            <div id="home-bio" class="col-12 col-lg-6">
+                <div class="row">
+                    <div class="col-12">
+                        <h4>Welcome Bakers!</h4>
+                        <p>
+                            Our little community is designed to inspire all,
+                            so share your favouirte recipes and find your next creation.
+                            Get your baking hat on and don't forget:
+                        </p>
+                        <h5>Get Inspired | Get Creative</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-6 col-lg-12 home-btn">
+                                <a href="#">Sign Up</a>
+                            </div>
+                            <div class="col-6 col-lg-12 home-btn">
+                                <a href="#">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-12 col-lg-6">
-                <div class="row">
-                    <div class="col-6 col-lg-12 home-btn">
-                        <a href="#">Sign Up</a>
-                    </div>
-                    <div class="col-6 col-lg-12 home-btn">
-                        <a href="#">Login</a>
-                    </div>
+                <div id="latestRecipes" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for recipe in latest_recipes %}
+                                <div class="carousel-item active">
+                                    <div class="card">
+                                        <img class="card-img-top" src="{{ recipe.recipe_url }}" alt="Recipe Image">
+                                        <div class="card-body">
+                                            <h3><a class="  href="{{ url_for('get_recipes', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
+                                            <ul class="recipe-details">
+                                                <li class="recipe-details-item">
+                                                    <i class="far fa-clock"></i>
+                                                    <span class="value">{{ recipe.prep_time }}</span>
+                                                    <span class="title">Minutes</span>
+                                                </li>
+                                                <li class="recipe-details-item">
+                                                    <i class="far fa-user"></i>
+                                                    <span class="value">{{ recipe.serving }}</span>
+                                                    <span class="title">Serving(s)</span>
+                                                </li>
+                                                <li class="recipe-details-item">
+                                                    <i class="far fa-user"></i>
+                                                    <span class="value">{{ recipe.prep_time }}</span>
+                                                    <span class="title">Minutes</span>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    
+                    <a class="carousel-control-prev" href="#latestRecipes" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#latestRecipes" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
         </div>

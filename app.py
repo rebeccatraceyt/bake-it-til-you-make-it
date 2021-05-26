@@ -3,7 +3,7 @@ import os
 from flask import (
         Flask, flash, render_template, 
         redirect, request, session, url_for)
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo, DESCENDING
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
     import env
@@ -21,7 +21,12 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("index.html")
+    """
+    Home page displays the last 4 recipes added
+    """
+    latest_recipes = mongo.db.recipes.find().sort('_id', DESCENDING).limit(4)
+    return render_template(
+        "index.html", latest_recipes=latest_recipes)
 
 @app.route("/get_recipes")
 def get_recipes():
