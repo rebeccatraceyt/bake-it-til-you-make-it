@@ -158,6 +158,7 @@ button:focus {
     color: var(--white);
     line-height: 25px;
     font-family: var(--accent-font);
+    margin: auto;
 }
 
 /*------------------------------------------------------- Footer Styling */

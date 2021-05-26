@@ -33,6 +33,13 @@ def get_recipes():
     recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes)
 
+@app.route("/recipe/<recipe_id>")
+def recipe(recipe_id):
+    """
+    Displays the full recipe
+    """
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("recipe.html", recipe=recipe, title="Recipe")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

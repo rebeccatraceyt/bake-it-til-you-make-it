@@ -38,13 +38,13 @@
                             {% for recipe in latest_recipes %}
                                 <div class="carousel-item active">
                                     <div class="card">
-                                        <img class="card-img-top" src="{{ recipe.recipe_url }}" alt="Recipe Image">
+                                        <img class="card-img-top" src="{{ recipe.recipe_img }}" alt="Recipe Image">
                                         <div class="card-body">
-                                            <h3><a class="  href="{{ url_for('get_recipes', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
+                                            <h3><a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
                                             <ul class="recipe-details">
                                                 <li class="recipe-details-item">
                                                     <i class="far fa-clock"></i>
-                                                    <span class="value">{{ recipe.prep_time }}</span>
+                                                    <span class="value">{{ recipe.total_time }}</span>
                                                     <span class="title">Minutes</span>
                                                 </li>
                                                 <li class="recipe-details-item">
@@ -54,8 +54,8 @@
                                                 </li>
                                                 <li class="recipe-details-item">
                                                     <i class="far fa-user"></i>
-                                                    <span class="value">{{ recipe.prep_time }}</span>
-                                                    <span class="title">Minutes</span>
+                                                    <span class="value">{{ recipe.difficulty }}</span>
+                                                    <span class="title">Level </span>
                                                 </li>
 
                                             </ul>
