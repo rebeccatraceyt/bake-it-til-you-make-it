@@ -7,7 +7,8 @@
 :root {
     /* Font variables */ 
     --bodyfont: 'Roboto', sans-serif;
-    --titlefont: 'Indie Flower', cursive;    
+    --titlefont: 'Indie Flower', cursive;
+    --text: #332925;    
     
     /* Colour Variables */
     --blue: #bbf2ed;
@@ -16,8 +17,10 @@
     --green: #c4dac9;
     --yellow: #f1ecc9;
     --white: #ffffff;
-    --text: #332925;
+
+    /* Misc. Colour Variables */
     --nav-purple: #9894b9;
+    --nav-border: #3329256e;
 
 }
 
@@ -44,18 +47,6 @@ button:focus {
     outline: none;
 }
 
-#main-section {
-    margin: 10% 5%; 
-    padding: 10% 2%;
-    background-image: url("../images/paper-texture.png");
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    box-shadow: 5px 14px 20px 4px grey;  
-}
-
 /*------------------------------------------------------- Navbar Styling */
 /* Sourced and edited from:
     https://codingyaar.com/responsive-bootstrap-navbar-center-logo/ */
@@ -75,6 +66,7 @@ button:focus {
     -o-background-size: cover;
     background-size: cover;
 
+    border-bottom: 3px inset var(--nav-border);
 }
 .navbar .navbar-nav .nav-link {
     color: var(--text);
@@ -122,10 +114,28 @@ button:focus {
 
 /*------------------------------------------------------- Main Section Styling */
 #main-section {
-    margin-top: 0;
+    margin: 0 5% 10% 5%; 
+    padding: 10% 2%;
+    background-image: url("../images/paper-texture.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    box-shadow: 5px 14px 20px 4px grey;  
 }
 
 /*------------------------------------------------------- Homepage Styling */
+#home-title {
+    text-align: center;
+}
+#home-title h1 {
+    font-family: var(--titlefont);
+    font-size: 2rem;
+}
+#home-title h3 {
+    font-size: 1rem;
+}
 
 /*------------------------------------------------------- Footer Styling */
 footer {
