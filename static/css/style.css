@@ -134,6 +134,19 @@ button:focus {
     width: 100%;
     height: auto;
 }
+#home-bio {
+    padding-top: 5vh;
+    padding-bottom: 3vh;
+    text-align: center;
+    border-bottom: 3px inset var(--nav-border);
+}
+#home-bio h4, h5 {
+    font-family: var(--titlefont);
+    font-size: 1.2em;
+}
+#home-bio p {
+    font-size: .9em;
+}
 
 /*------------------------------------------------------- Footer Styling */
 footer {
