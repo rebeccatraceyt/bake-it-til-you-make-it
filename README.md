@@ -238,11 +238,11 @@ Wireframe mockups were created in a [Figma Workspace]( "Link to Bake It Figma Wo
 
 - <strong>Typography</strong>
 
-     - The primary font chosen is [Roboto](https://fonts.google.com/specimen/Roboto?preview.text_type=custom&query=roboto). A sans-serif typeface, Roboto is geometrically shaped and is easily readable.
+     - The primary font chosen is [Work Sans](https://fonts.google.com/specimen/Work+Sans "Link to Work Sans Google Fonts page"). A sans-serif typeface, Work Sans is simplistic in design and optimised for screen display, making it easily readable.
 
-        ![Roboto Typeface Example](static/images/readme-files/roboto-ex.png "Roboto Typeface Example")
+        ![Work Sans Typeface Example](static/images/readme-files/worksans-ex.png "Work Sans Typeface Example")
 
-     - The Secondary font (accent font) chosen is [Indie Flower](https://fonts.google.com/specimen/Indie+Flower?query=indie#standard-styles). A handwritten script typeface, it has bubbly, rounded edges to emphasis the homely-handmade recipe book nostalgia.
+     - The Secondary font (accent font) chosen is [Indie Flower](https://fonts.google.com/specimen/Indie+Flower "Link to Indie Flower Google Fonts page"). A handwritten script typeface, it has bubbly, rounded edges to emphasis the homely-handmade recipe book nostalgia.
 
         ![Indie Flower Typeface Example](static/images/readme-files/indieflower-ex.png "Indie Flower Typeface Example")
 
@@ -329,7 +329,7 @@ The developer ran into a number of issues during the development of the websites
 - [jQuery](https://jquery.com/ "Link to jQuery page")
      - jQuery was used to simplify the JavaScript code used.
 - [Google Fonts](https://fonts.google.com/ "Link to Google Fonts")
-    - Google fonts was used to import the fonts "Shaodows Into Light Two" and "Roboto" into the style.css file. These fonts were used throughout the project.
+    - Google fonts was used to import the fonts "Indie Flower" and "Work Sans" into the style.css file. These fonts were used throughout the project.
 - [Font Awesome](https://fontawesome.com/ "Link to FontAwesome")
      - Font Awesome was used on all pages throughout the website to import icons for UX purposes.
 - [jQuery Validation](https://jqueryvalidation.org/ "Link to jQuery Validation page")
