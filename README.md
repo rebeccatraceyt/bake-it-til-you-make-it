@@ -291,6 +291,7 @@ Each page of the game features a consistently responsive and intuitive navigatio
 ## Issues and Bugs 
 The developer ran into a number of issues during the development of the websites, with the noteworthy ones listed below, along with solutions or ideas to implement in the future.
 
+**Home Page -** On the recipe card panel of the Homepage, there was a styling issue with the `ul` element whereby the `li` elements nested would not conform to the styling that was needed to be readable. The `li` elements, due to the Bootstrap styling, would only display in a `inline` format, which caused padding issues within the card. In order to avoid this, and to maintain the design, the `ul` was removed and replaced with Bootstrap grid styling. This was done after researching similar issues.
 
 
 [Back to top ⇧](#table-of-contents)
