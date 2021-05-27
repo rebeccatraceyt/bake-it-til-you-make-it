@@ -18,16 +18,27 @@
     --yellow: #f1ecc9;
     --white: #ffffff;
 
-    /* Misc. Colour Variables */
+    /* Misc Colour Variables */
     --nav-purple: #9894b9;
     --nav-border: #3329256e;
+    --grey-bg: rgba(75, 75, 75, 0.432);
 
 }
 
 /*------------------------------------------------------- Special Styling */
-html, body, #notebook-bg {
+html, body {
     max-width:100vw;
     min-height: 100vh;
+}
+html{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+* {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
 }
 body {
     font-family: var(--body-font);
@@ -42,6 +53,13 @@ body {
     background-size: cover;
 
     display: block;
+}
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
 }
 button:focus {
     outline: none;
@@ -147,19 +165,35 @@ button:focus {
 #home-bio p {
     font-size: .9em;
 }
-.home-btn a {
+#home-btn a {
     /* Referenced and edited from:
         https://stackoverflow.com/questions/8357058/how-to-make-an-html-anchor-tag-or-link-look-like-a-button  */
     display: table;
-    width: 115px;
+    min-width: 60%;
     background: var(--text);
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     color: var(--white);
-    line-height: 25px;
+    line-height: 30px;
     font-family: var(--accent-font);
     margin: auto;
+    font-size: 1.5em;
 }
+#home-carousel {
+    max-height: 30rem;
+    padding: 5%;
+    margin: 5% 0;
+    background-color: var(--grey-bg);
+}
+#card-img {
+    max-height: 15rem;
+    overflow: hidden;
+    object-fit: cover;
+}
+#card-body {
+
+}
+
 
 /*------------------------------------------------------- Footer Styling */
 footer {

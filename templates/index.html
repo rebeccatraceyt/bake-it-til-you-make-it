@@ -21,11 +21,11 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="row">
-                            <div class="col-6 col-lg-12 home-btn">
+                        <div id="home-btn" class="row">
+                            <div class="col-6 col-lg-12">
                                 <a href="#">Sign Up</a>
                             </div>
-                            <div class="col-6 col-lg-12 home-btn">
+                            <div class="col-6 col-lg-12">
                                 <a href="#">Login</a>
                             </div>
                         </div>
@@ -34,30 +34,32 @@
             </div>
             <div class="col-12 col-lg-6">
                 <div id="latestRecipes" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
+                        <div id="home-carousel" class="carousel-inner">
+                            <h3>Latest Creations:</h3>
                             {% for recipe in latest_recipes %}
                                 <div class="carousel-item active">
                                     <div class="card">
-                                        <img class="card-img-top" src="{{ recipe.recipe_img }}" alt="Recipe Image">
+                                        <div id="card-img">
+                                            <img id="recipe-img" class="card-img-top" src="{{ recipe.recipe_img }}" alt="Recipe Image">
+                                        </div>
                                         <div class="card-body">
                                             <h3><a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
                                             <ul class="recipe-details">
-                                                <li class="recipe-details-item">
+                                                <li class="recipe-details-item list-inline-item">
                                                     <i class="fas fa-clock"></i>
                                                     <span class="value">{{ recipe.total_time }}</span>
                                                     <span class="title">Minutes</span>
                                                 </li>
-                                                <li class="recipe-details-item">
+                                                <li class="recipe-details-item list-inline-item">
                                                     <i class="fas fa-user"></i>
                                                     <span class="value">{{ recipe.serving }}</span>
                                                     <span class="title">Serving(s)</span>
                                                 </li>
-                                                <li class="recipe-details-item">
+                                                <li class="recipe-details-item list-inline-item">
                                                     <i class="fas fa-mitten"></i>
                                                     <span class="value">{{ recipe.difficulty }}</span>
                                                     <span class="title">Level </span>
                                                 </li>
-
                                             </ul>
                                         </div>
                                     </div>
@@ -69,6 +71,7 @@
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
+
                     <a class="carousel-control-next" href="#latestRecipes" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
