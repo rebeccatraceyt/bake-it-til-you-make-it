@@ -13,8 +13,7 @@
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap Import -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" 
-            integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous"> <!-- Font Awesome Import-->
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script> <!-- Iconify Import-->
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css"> <!-- style.css import-->
         {% block styles %}
         {% endblock %}
@@ -57,11 +56,10 @@
         </section>
 
         <footer class="text-center fixed-bottom" aria-label="Footer containing Social Icons">
-
-            <div id="disclaimer" class="hide-disclaimer">
+            <div id="disclaimer" class="hide-disclaimer" onclick="hideDisclaimer()">
                 <p>This website is created by Rebecca Tracey-Timoney for educational purpose only.</p> <p>Copyright for the recipes on this website go to the original recipe owner.</p> 
             </div>    
-            <i class="fas fa-exclamation-circle" onclick="showDisclaimer()"></i> Disclaimer
+            <span class="iconify" data-icon="bi:exclamation-circle-fill" data-inline="false" onclick="showDisclaimer()"></span> Disclaimer
             <div>  &copy; Rebecca Tracey-Timoney <span id="date-text"></span> </div>
         </footer>
 
