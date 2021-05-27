@@ -42,25 +42,56 @@
                                         <div id="card-img">
                                             <img id="recipe-img" class="card-img-top" src="{{ recipe.recipe_img }}" alt="Recipe Image">
                                         </div>
-                                        <div class="card-body">
+                                        <div id="card-body">
                                             <h3><a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
-                                            <ul class="recipe-details">
-                                                <li class="recipe-details-item list-inline-item">
-                                                    <i class="fas fa-clock"></i>
+                                            <div class="row">
+                                                <div class="col-6 col-lg-12">
+                                                    <div>
+                                                        <span class="iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
+                                                        <span class="value">{{ recipe.total_time }}</span>
+                                                        <span class="title">Minutes</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="iconify" data-icon="majesticons:users" data-inline="true"></span>
+                                                        <span class="value">{{ recipe.serving }}</span>
+                                                        <span class="title">Serving(s)</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-lg-12">
+                                                    <div>
+                                                        <span class="iconify" data-icon="fa-solid:mitten" data-inline="true"></span>
+                                                        <span class="value">{{ recipe.difficulty }}</span>
+                                                        <span class="title">Level </span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
+                                                        <span class="title">Baker </span>
+                                                        <!-- <span class="value">{{ recipe.baker }}</span> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <ul id="recipe-details">
+                                                <li class="recipe-details-item">
+                                                    <span class="iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
                                                     <span class="value">{{ recipe.total_time }}</span>
                                                     <span class="title">Minutes</span>
                                                 </li>
-                                                <li class="recipe-details-item list-inline-item">
-                                                    <i class="fas fa-user"></i>
+                                                <li class="recipe-details-item">
+                                                    <span class="iconify" data-icon="majesticons:users" data-inline="true"></span>
                                                     <span class="value">{{ recipe.serving }}</span>
                                                     <span class="title">Serving(s)</span>
                                                 </li>
-                                                <li class="recipe-details-item list-inline-item">
-                                                    <i class="fas fa-mitten"></i>
+                                                <li class="recipe-details-item">
+                                                    <span class="iconify" data-icon="fa-solid:mitten" data-inline="true"></span>
                                                     <span class="value">{{ recipe.difficulty }}</span>
                                                     <span class="title">Level </span>
                                                 </li>
-                                            </ul>
+                                                <li class="recipe-details-item">
+                                                    <span class="iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
+                                                    <span class="title">Created by: </span>
+                                                    <!-- <span class="value">{{ recipe.baker }}</span>
+                                                </li>
+                                            </ul> -->
                                         </div>
                                     </div>
                                 </div>

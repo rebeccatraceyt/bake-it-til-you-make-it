@@ -183,7 +183,13 @@ button:focus {
     max-height: 30rem;
     padding: 5%;
     margin: 5% 0;
-    background-color: var(--grey-bg);
+}
+#home-carousel h3 {
+    color: var(--white);
+    font-family: var(--accent-font);
+}
+.carousel-item {
+    box-shadow: 5px 5px 5px 5px var(--grey-bg); 
 }
 #card-img {
     max-height: 15rem;
@@ -191,9 +197,14 @@ button:focus {
     object-fit: cover;
 }
 #card-body {
-
+    padding: 5%;
+    min-width: 100%;
+    margin: auto;
 }
-
+#card-body a {
+    font-size: .9em;
+    color: var(--text);
+}
 
 /*------------------------------------------------------- Footer Styling */
 footer {
