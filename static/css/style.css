@@ -55,7 +55,7 @@ button:focus {
     min-height: 10vh;
     border: 0;
     margin: auto;
-    padding-top: 7vh;
+    padding-top: 40px;
     
     font-family: var(--accent-font);
     background: url("../images/bg-sm.png");

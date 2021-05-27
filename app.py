@@ -22,16 +22,12 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     """
-    Home page displays the last 4 recipes added
+    Home page displays the 4 latest recipes
     """
     latest_recipes = mongo.db.recipes.find().sort('_id', DESCENDING).limit(4)
     return render_template(
-        "index.html", latest_recipes=latest_recipes)
+        "index.html", latest_recipes=latest_recipes, title="Home")
 
-@app.route("/get_recipes")
-def get_recipes():
-    recipes = mongo.db.recipes.find()
-    return render_template("recipes.html", recipes=recipes)
 
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
@@ -39,7 +35,9 @@ def recipe(recipe_id):
     Displays the full recipe
     """
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("recipe.html", recipe=recipe, title="Recipe")
+    return render_template(
+        "recipe.html", recipe=recipe, title="Recipe")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
