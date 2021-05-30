@@ -122,7 +122,8 @@ button:focus {
 
 /*------------------------------------------------------- Main Section Styling */
 #main-section {
-    margin: 0 5% 10% 5%; 
+    margin: 0 5% 0% 5%; 
+    padding-bottom: 5%;
     background-image: url("../images/paper-texture.png");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -250,11 +251,13 @@ footer ul {
         font-size: 2.3em;
     }
     #home-carousel {
+        padding-left: 10%;
+        padding-right: 10%;
         min-height: 43rem;
-        padding: 5% 10%;
+        max-width: 100%;
     }
     #home-carousel h3 {
-        font-size: 2em;
+        font-size: 2.3em;
     }
     #card-img {
         min-height: 25rem;
@@ -296,7 +299,7 @@ footer ul {
         margin: 0 3%; 
         background: transparent;
         max-height: 15vh;
-        padding-top: 90px;
+        padding-top: 15vh;
         border: none;
     }
     .navbar-nav > li {
@@ -313,14 +316,45 @@ footer ul {
 
     /* -- Main Page Section -- */
     #main-section {
-        margin-bottom: 0;
-        padding-bottom: 4%;
         background: transparent;
         box-shadow: 0px 0px grey;
     }
 
     /* -- Homepage -- */
-    
+    #home-title {
+        padding-top: 3vh;
+        border: none;
+    }
+    #home-sec {
+        padding: 2%;
+    }
+    #home-bio {
+        padding: 0;
+        margin: auto;
+        border: none;
+    }
+    #home-bio h4 {
+        font-size: 2.5em;
+    }
+    #home-bio h5, p {
+        font-size: 1.8em;
+    }
+    #home-btn a {
+        min-width: 40%;
+        max-width: 40%;
+        font-size: 1.4em;
+        padding: 15px;
+        margin: 5px auto;
+    }
+    #home-carousel {
+        padding: 2%;
+        margin: 0;
+    }
+    #home-carousel h3 {
+        font-size: 2em;
+    }
+
+
 }
 
 /*------------------------------------------------------- 404 Page Styling */

@@ -5,9 +5,9 @@
         <img src="../static/images/header.png" alt="Bake It 'Til You Make It Header">
     </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div id="home-bio" class="col-12 col-lg-6">
+    <div id="home-sec" class="container-fluid">
+        <div class="d-flex row flex-row-reverse">
+            <div id="home-bio" class="col-12 col-lg-6 ">
                 <div class="row">
                     <div class="col-12">
                         <h4>Welcome Bakers!</h4>
@@ -32,10 +32,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-6">
-                <div id="latestRecipes" class="carousel slide" data-ride="carousel">
-                        <div id="home-carousel" class="carousel-inner">
-                            <h3>Latest Creations:</h3>
+            <div id="home-carousel" class="col-12 col-lg-6">
+                <div id="latestRecipes" class="carousel slide carousel-fade" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <h3>Latest Creations</h3>
                             {% for recipe in latest_recipes %}
                                 <div class="carousel-item active">
                                     <div class="card">
@@ -45,7 +45,7 @@
                                         <div id="card-body">
                                             <h3><a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
                                             <div class="row">
-                                                <div class="col-6 col-lg-12">
+                                                <div class="col-6">
                                                     <div>
                                                         <span class="iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
                                                         <span class="value">{{ recipe.total_time }}</span>
@@ -53,15 +53,14 @@
                                                     </div>
                                                     <div>
                                                         <span class="iconify" data-icon="majesticons:users" data-inline="true"></span>
+                                                        <span class="title">Serves</span>
                                                         <span class="value">{{ recipe.serving }}</span>
-                                                        <span class="title">Serving(s)</span>
                                                     </div>
                                                 </div>
-                                                <div class="col-6 col-lg-12">
+                                                <div class="col-6">
                                                     <div>
                                                         <span class="iconify" data-icon="fa-solid:mitten" data-inline="true"></span>
                                                         <span class="value">{{ recipe.difficulty }}</span>
-                                                        <span class="title">Level </span>
                                                     </div>
                                                     <div>
                                                         <span class="iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
