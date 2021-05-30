@@ -231,6 +231,7 @@ footer ul {
 
 /* Breakpoint to maintain structural integrity on a Tablet device */
 @media (min-width: 700px) and (max-width: 991px) {
+
     /* -- Navbar -- */
     .navbar {
         padding-top: 80px;
@@ -271,12 +272,15 @@ footer ul {
 
 /* Breakpoint to maintain structural integrity on a Laptop Screen */
 @media (min-width: 991px){ 
+
+    /* -- Background -- */
     #lg-wrapper {
         max-width: 90vw;
-        margin: 2% 5%; 
+
+        margin: auto; 
 
         background-image: url("../images/bg-lg.png");
-        background-repeat: repeat-y;
+        background-repeat: no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -286,23 +290,37 @@ footer ul {
         padding-left: 7%;
 
     }
+
+    /* -- Navbar -- */
     .navbar {
+        margin: 0 3%; 
         background: transparent;
         max-height: 15vh;
         padding-top: 90px;
+        border: none;
     }
     .navbar-nav > li {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     #lg-logo img {
         width: 10vw;
         height: auto;
     }
-    #main-section {
-        margin: 0;
-        background: transparent;
+    .scroll-nav.scrolled {
+        background-image: url("../images/paper-texture.png") !important;
     }
+
+    /* -- Main Page Section -- */
+    #main-section {
+        margin-bottom: 0;
+        padding-bottom: 4%;
+        background: transparent;
+        box-shadow: 0px 0px grey;
+    }
+
+    /* -- Homepage -- */
+    
 }
 
 /*------------------------------------------------------- 404 Page Styling */
