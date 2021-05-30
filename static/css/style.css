@@ -27,7 +27,7 @@
 
 /*------------------------------------------------------- Special Styling */
 html, body {
-    max-width:100vw;
+    max-width: 100vw;
     min-height: 100vh;
 }
 body {
@@ -271,7 +271,38 @@ footer ul {
 
 /* Breakpoint to maintain structural integrity on a Laptop Screen */
 @media (min-width: 991px){ 
+    #lg-wrapper {
+        max-width: 90vw;
+        margin: 2% 5%; 
 
+        background-image: url("../images/bg-lg.png");
+        background-repeat: repeat-y;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+        box-shadow: 13px 19px 8px 2px grey;
+        padding-left: 7%;
+
+    }
+    .navbar {
+        background: transparent;
+        max-height: 15vh;
+        padding-top: 90px;
+    }
+    .navbar-nav > li {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #lg-logo img {
+        width: 10vw;
+        height: auto;
+    }
+    #main-section {
+        margin: 0;
+        background: transparent;
+    }
 }
 
 /*------------------------------------------------------- 404 Page Styling */
