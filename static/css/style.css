@@ -54,6 +54,9 @@ li {
 button:focus {
     outline: none;
 }
+.iconify {
+    color: var(--text);
+}
 
 /*------------------------------------------------------- Navbar Styling */
 /* Sourced and edited from:
@@ -114,7 +117,8 @@ button:focus {
     border-color: transparent;
 } 
 
-/* Defines actions to be taken by navbar on scroll - For mobile devices */
+/* Defines actions to be taken by navbar on scroll - For mobile devices
+    Sourced from https://jsfiddle.net/we9L9h2r/ */
 .scroll-nav.scrolled {
     background-color: var(--nav-purple) !important;
     transition: background-color 200ms linear;
@@ -196,9 +200,18 @@ button:focus {
     margin: auto;
 }
 #card-body a {
-    font-size: .9em;
     color: var(--text);
 }
+
+/* Sourced from Stack Overflow to re-colour the carousel control buttons (RGB value had to be entered instead of root variable).
+    https://stackoverflow.com/questions/46249541/change-arrow-colors-in-bootstraps-carousel */
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23c4dac9' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+.carousel-control-prev-icon {
+   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23c4dac9' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important; 
+}
+
 
 /*------------------------------------------------------- Footer Styling */
 footer {
@@ -334,10 +347,13 @@ footer ul {
         border: none;
     }
     #home-bio h4 {
-        font-size: 2.5em;
+        font-size: 4em;
     }
-    #home-bio h5, p {
-        font-size: 1.8em;
+    #home-bio p {
+        font-size: 1.5em;
+    }
+    #home-bio h5 {
+        font-size: 2em;
     }
     #home-btn a {
         min-width: 40%;
@@ -347,13 +363,17 @@ footer ul {
         margin: 5px auto;
     }
     #home-carousel {
+        max-width: 40%;
+        max-height: 40rem;
         padding: 2%;
         margin: 0;
     }
     #home-carousel h3 {
         font-size: 2em;
     }
-
+    #card-img {
+        max-height: 20rem;
+    }
 
 }
 
