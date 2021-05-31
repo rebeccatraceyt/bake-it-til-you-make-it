@@ -17,6 +17,7 @@
     --green: #c4dac9;
     --yellow: #f1ecc9;
     --white: #ffffff;
+    --red: #b65353;
 
     /* Misc Colour Variables */
     --nav-purple: #9894b9;
@@ -44,7 +45,7 @@ body {
 
     display: block;
 }
-a {
+a:hover {
     text-decoration: none;
 }
 
@@ -180,6 +181,10 @@ button:focus {
     margin: auto;
     font-size: 1.5em;
 }
+#home-btn a:hover {
+    background: var(--white);
+    color: var(--text);
+}
 #home-carousel {
     max-height: 30rem;
     padding: 5%;
@@ -213,6 +218,45 @@ button:focus {
 }
 .carousel-control-prev-icon {
    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23c4dac9' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important; 
+}
+
+/*------------------------------------------------------- Recipe Page Styling */
+
+/* Reference: https://jsfiddle.net/chriscoyier/KVjFQ/1/ */
+#ingredients {
+    justify-content: center;
+}
+#ingredient-line {
+    border-right: 1px solid var(--red);
+    border-top: 1px solid var(--border-line);
+    border-left: 1px solid var(--border-line);
+    border-bottom: 1px dotted var(--border-line);
+    max-width: 2%;
+
+    background-image: url("../images/notepad-bg.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#ingredient-list {
+    border-left: 1px solid var(--red);
+    border-top: 1px solid var(--border-line);
+    border-right: 1px solid var(--border-line);
+    border-bottom: 1px dotted var(--border-line);
+    max-width: 98%;
+
+    background-image: url("../images/notepad-bg.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#ingredient-list p {
+    border-bottom: 1px dotted var(--border-line);
+    text-transform: capitalize;
 }
 
 

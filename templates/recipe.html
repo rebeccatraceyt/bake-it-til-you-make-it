@@ -1,25 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!-- <h2>EXTENDING BASE</h2>
-    <p>
-            {{ recipe.recipe_name }}<br>
-            {{ recipe.recipe_img }}<br>
-            {{ recipe.recipe_url }}<br>
-            {{ recipe.description }}<br>
-            {{ recipe.difficulty }}<br>
-            {{ recipe.serving }}<br>
-            {{ recipe.total_time }}<br>
-            {{ recipe.ingredients }}<br>
-            {{ recipe.directions }}<br>
-            {{ recipe.baker }}<br>
-    </p> -->
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <h1>{{ recipe.recipe_name }}</h1>
-            </div>
-        </div>
         <div class="row">
             <div class="col-12 col-lg-6">
                 <h3>{{ recipe.recipe_name }}</h3>
@@ -41,14 +23,19 @@
                             <span class="value">{{ recipe.difficulty }}</span>
                             <span class="title">Level </span>
                         </div>
-                        <div>
-                            <span class="iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
-                            <span class="title">Baker </span>
-                            <!-- <span class="value">{{ recipe.baker }}</span> -->
-                        </div>
                     </div>
                     <div class="col-6">
-                        
+                        <div id="recipe-btn">
+                            <a href="#"><span class="iconify" data-icon="clarity:heart-solid" data-inline="true"></span> Favourite</a>
+                        </div>
+                        <div id="recipe-btn">
+                            <a href="#"><span class="iconify" data-icon="fa-solid:edit" data-inline="true"></span> Edit</a>
+                        </div>
+                        <div id="recipe-btn">
+                            <a href="#"><span class="iconify" data-icon="ic:baseline-delete-forever" data-inline="true"></span> Delete</a>
+                        </div>
+                        <!-- {% if session.user|lower == recipe.baker|lower %} -->
+                        <!-- {% endif %} -->
                     </div>
                 </div>
             </div>
@@ -59,7 +46,18 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-6"></div>
+            <div class="col-12 col-lg-6">
+                <h3>Ingredients</h3>
+                <div id="ingredients" class="row">
+                    <div id="ingredient-line" class="col-2"></div>
+                
+                    <div id="ingredient-list" class="col-10">
+                        {% for ingredient in recipe.ingredients %}
+                            <p>{{ ingredient }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
             <div class="col-12 col-lg-6"></div>
         </div>
     </div>
