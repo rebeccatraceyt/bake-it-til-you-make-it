@@ -307,22 +307,11 @@ footer ul {
         height: 98vh;
         margin: 0;
         padding-right: 0;
-        /* background-image: url("../images/paper-texture.png");
-        background-repeat: no-repeat;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover; */
-
-        /* box-shadow: 13px 19px 8px 2px grey;
-        padding-left: 7%; */
     }
     #lg-left img {
         height: 98vh;
-
     }
     #lg-right {
-       
         background-image: url("../images/paper-texture.png");
         background-repeat: no-repeat;
         -webkit-background-size: cover;
@@ -366,11 +355,11 @@ footer ul {
     #main-section {
         background: transparent;
         box-shadow: 0px 0px grey;
+        padding-bottom: 2%;
     }
 
     /* -- Homepage -- */
     #home-title {
-        padding-top: 3vh;
         border: none;
     }
     #home-sec {
@@ -398,7 +387,7 @@ footer ul {
         margin: 5px auto;
     }
     #home-carousel {
-        max-width: 40%;
+        max-width: 45%;
         max-height: 40rem;
         padding: 2%;
         margin: 0;
