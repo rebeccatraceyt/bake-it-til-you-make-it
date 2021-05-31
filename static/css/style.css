@@ -137,6 +137,7 @@ button:focus {
     -o-background-size: cover;
     background-size: cover;
     box-shadow: 5px 14px 20px 4px grey;  
+    border-bottom: 3px inset var(--border-line);
 }
 
 /*------------------------------------------------------- Homepage Styling */
@@ -230,7 +231,6 @@ footer {
     margin: auto;
     padding: 2%;
     text-align: center;
-    border-top: 3px inset var(--border-line);
 }
 
 footer ul {
@@ -325,7 +325,7 @@ footer ul {
 
         overflow: auto;
         box-shadow: 13px 19px 8px 2px grey;
-        padding-left: calc(100vw - 100%);
+        padding-left: 0;
     }
 
     /* -- Navbar -- */
@@ -340,7 +340,6 @@ footer ul {
         min-width: 90vw;
         max-height: 15vh;
         padding-top: 15vh;
-        border: none;
     }
     .navbar-nav > li {
         padding-left: 10px;
@@ -359,9 +358,6 @@ footer ul {
     }
 
     /* -- Homepage -- */
-    #home-title {
-        border: none;
-    }
     #home-sec {
         padding: 2%;
     }
