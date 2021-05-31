@@ -41,9 +41,9 @@
                                     <div class="card">
                                         <div id="card-img">
                                             {% if recipe.recipe_img %}
-                                                <img id="recipe-img" class="card-img-top" src="{{ recipe.recipe_img }}" alt="Recipe Image">
+                                                <img class="recipe-img" class="card-img-top" src="{{ recipe.recipe_img }}" alt="Recipe Image">
                                             {% else %}
-                                                <img id="recipe-img" class="card-img-top" src="{{ url_for('static', filename='images/no-img.png') }}" alt="Alternative Recipe Image">
+                                                <img class="recipe-img" class="card-img-top" src="{{ url_for('static', filename='images/no-img.png') }}" alt="Alternative Recipe Image">
                                             {% endif %}
                                         </div>
                                         <hr id="home-hr">

@@ -197,7 +197,7 @@ button:focus {
     justify-content: center;
     align-content: center;
 }
-#recipe-img {
+.recipe-img {
     padding: 2%;
     margin: auto;
     display: flex;
@@ -393,6 +393,10 @@ footer ul {
         max-height: 15vh;
         padding-top: 15vh;
     }
+    .navbar-collapse {
+        /* removes unwanted hanging padding to avoid conflict */
+        padding-bottom: 0;
+    }
     .navbar-nav > li {
         padding-left: 10px;
         padding-right: 10px;
@@ -442,6 +446,12 @@ footer ul {
         font-size: 2em;
     }
 
+    /* -- Register -- */
+    #register-page {
+        padding-top: 5vh;
+    }
+
+    /* -- Footer -- */
     footer {
         max-width: 93vw;
         margin: auto;

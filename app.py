@@ -5,6 +5,7 @@ from flask import (
         redirect, request, session, url_for)
 from flask_pymongo import PyMongo, DESCENDING
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -27,6 +28,42 @@ def home():
     latest_recipes = mongo.db.recipes.find().sort('_id', DESCENDING).limit(4)
     return render_template(
         "index.html", latest_recipes=latest_recipes, title="Home")
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    """
+    Allows user to register an account on the database,
+    rendering register.html.
+    
+    Prevention of username duplicates included.
+    """
+    
+    if request.method == "POST":
+        # Checks if username already exists
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()}
+        )
+        # Prevents duplicates
+        if existing_user:
+            flash("Username already exists, try another")
+            return redirect(url_for("register"))
+        
+        # Sends collected data to user collection
+        register = {
+            "username": request.form.get("username").lower(),
+            "email": request.form.get("email").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "user_img": request.form.get("user_img"),
+            "favourite_recipes": []
+        }
+        mongo.db.users.insert_one(register)
+        
+        # Welcomes user to session
+        session["user"] = request.form.get("username").lower()
+        flash("Welcome, Baker {}!".format(request.form.get("username")))
+        return redirect(url_for("home", username=session["user"]))
+    return render_template("register.html")
 
 
 @app.route("/recipe/<recipe_id>")
