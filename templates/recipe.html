@@ -41,7 +41,11 @@
             </div>
             <div class="col-12 col-lg-6">
                 <div id="card-img">
-                    <img src="{{ recipe.recipe_img }}" alt="Recipe Image">
+                    {% if recipe.recipe_img %}
+                        <img src="{{ recipe.recipe_img }}" alt="Recipe Image">
+                    {% else %}
+                        <img id="recipe-img" class="card-img-top" src="{{ url_for('static', filename='images/no-img.png') }}" alt="Alternative Recipe Image">
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -58,7 +62,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-6"></div>
+            <div class="col-12 col-lg-6">
+                <h3>Directions</h3>
+
+            </div>
         </div>
     </div>
 

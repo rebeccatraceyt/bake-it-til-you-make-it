@@ -185,11 +185,6 @@ button:focus {
     background: var(--white);
     color: var(--text);
 }
-#home-carousel {
-    max-height: 30rem;
-    padding: 5%;
-    margin: 5% 0;
-}
 #home-carousel h3 {
     color: var(--white);
     font-family: var(--accent-font);
@@ -198,9 +193,22 @@ button:focus {
     box-shadow: 5px 5px 5px 5px var(--grey-bg); 
 }
 #card-img {
-    max-height: 15rem;
-    overflow: hidden;
+    max-height: 30%;
+    justify-content: center;
+    align-content: center;
+}
+#recipe-img {
+    padding: 2%;
+    margin: auto;
+    display: flex;
+    width: 100%;
+    height: 400px;
     object-fit: cover;
+}
+#home-hr {
+    width: 90%;
+    background-color: var(--text);
+    margin: auto;
 }
 #card-body {
     padding: 5%;
@@ -426,18 +434,14 @@ footer ul {
         padding: 15px;
         margin: 5px auto;
     }
-    #home-carousel {
-        max-width: 45%;
-        max-height: 40rem;
-        padding: 2%;
-        margin: 0;
+    #latestRecipes {
+        max-width: 80%;
+        margin: auto;
     }
     #home-carousel h3 {
         font-size: 2em;
     }
-    #card-img {
-        max-height: 20rem;
-    }
+
     footer {
         max-width: 93vw;
         margin: auto;
