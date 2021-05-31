@@ -20,7 +20,7 @@
 
     /* Misc Colour Variables */
     --nav-purple: #9894b9;
-    --nav-border: #3329256e;
+    --border-line: #3329256e;
     --grey-bg: rgba(75, 75, 75, 0.432);
 
 }
@@ -62,7 +62,7 @@ button:focus {
 /* Sourced and edited from:
     https://codingyaar.com/responsive-bootstrap-navbar-center-logo/ */
 .navbar {
-    max-width: 90vw;
+    max-width: 95vw;
     min-height: 10vh;
     border: 0;
     margin: auto;
@@ -77,7 +77,7 @@ button:focus {
     -o-background-size: cover;
     background-size: cover;
 
-    border-bottom: 3px inset var(--nav-border);
+    border-bottom: 3px inset var(--border-line);
 }
 .navbar .navbar-nav .nav-link {
     color: var(--text);
@@ -119,14 +119,16 @@ button:focus {
 
 /* Defines actions to be taken by navbar on scroll - For mobile devices
     Sourced from https://jsfiddle.net/we9L9h2r/ */
-.scroll-nav.scrolled {
+#scroll-nav.scrolled {
     background-color: var(--nav-purple) !important;
     transition: background-color 200ms linear;
+    border-bottom: 3px inset var(--border-line);
 }
 
 /*------------------------------------------------------- Main Section Styling */
 #main-section {
-    margin: 0 5% 0% 5%; 
+    max-width: 95vw;
+    margin: auto; 
     padding-bottom: 5%;
     background-image: url("../images/paper-texture.png");
     background-repeat: no-repeat;
@@ -141,7 +143,7 @@ button:focus {
 #home-title {
     max-width: 100vw;
     height: auto;
-    border-bottom: 3px inset var(--nav-border);
+    border-bottom: 3px inset var(--border-line);
 }
 #home-title img {
     width: 100%;
@@ -151,7 +153,7 @@ button:focus {
     padding-top: 5vh;
     padding-bottom: 3vh;
     text-align: center;
-    border-bottom: 3px inset var(--nav-border);
+    border-bottom: 3px inset var(--border-line);
 }
 #home-bio h4, h5 {
     font-family: var(--accent-font);
@@ -215,7 +217,7 @@ button:focus {
 
 /*------------------------------------------------------- Footer Styling */
 footer {
-    background-image: url("../images/nav-bg.png");
+    background-image: url("../images/paper-texture.png");
     background-color: var(--white);
     background-repeat: repeat-x;
     -webkit-background-size: cover;
@@ -224,15 +226,19 @@ footer {
     background-size: cover;
 
     max-width: 95vw;
-    max-height: 15vh;
-    margin: 0 5%;
+    min-height: 8vh;
+    margin: auto;
+    padding: 2%;
+    text-align: center;
+    border-top: 3px inset var(--border-line);
 }
 
 footer ul {
     font-family: var(--accent-font);
     color: var(--text);
     font-size: 1.3em;
-    margin: 2%;
+    
+    margin: auto;
 }
 
 .hide-disclaimer {
@@ -290,27 +296,59 @@ footer ul {
 @media (min-width: 991px){ 
 
     /* -- Background -- */
-    #lg-wrapper {
-        max-width: 90vw;
+    #content-div {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 15px;
+    }
+    #lg-left {
+        padding-top: 10px;
+        max-width: 3vw;
+        height: 98vh;
+        margin: 0;
+        padding-right: 0;
+        /* background-image: url("../images/paper-texture.png");
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover; */
 
-        margin: auto; 
+        /* box-shadow: 13px 19px 8px 2px grey;
+        padding-left: 7%; */
+    }
+    #lg-left img {
+        height: 98vh;
 
-        background-image: url("../images/bg-lg.png");
+    }
+    #lg-right {
+       
+        background-image: url("../images/paper-texture.png");
         background-repeat: no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
 
-        box-shadow: 13px 19px 8px 2px grey;
-        padding-left: 7%;
+        min-width: 94vw;
+        height: 98vh;
+        margin-top: 10px;
 
+        overflow: auto;
+        box-shadow: 13px 19px 8px 2px grey;
+        padding-left: calc(100vw - 100%);
     }
 
     /* -- Navbar -- */
     .navbar {
-        margin: 0 3%; 
-        background: transparent;
+        background-image: url("../images/paper-texture.png");
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+        min-width: 90vw;
         max-height: 15vh;
         padding-top: 15vh;
         border: none;
@@ -322,9 +360,6 @@ footer ul {
     #lg-logo img {
         width: 10vw;
         height: auto;
-    }
-    .scroll-nav.scrolled {
-        background-image: url("../images/paper-texture.png") !important;
     }
 
     /* -- Main Page Section -- */
@@ -374,7 +409,10 @@ footer ul {
     #card-img {
         max-height: 20rem;
     }
-
+    footer {
+        max-width: 93vw;
+        margin: auto;
+    }
 }
 
 /*------------------------------------------------------- 404 Page Styling */
