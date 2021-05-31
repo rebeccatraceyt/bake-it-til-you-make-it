@@ -54,7 +54,6 @@
                 <h3>Ingredients</h3>
                 <div id="ingredients" class="row">
                     <div id="ingredient-line" class="col-2"></div>
-                
                     <div id="ingredient-list" class="col-10">
                         {% for ingredient in recipe.ingredients %}
                             <p>{{ ingredient }}</p>
@@ -64,6 +63,14 @@
             </div>
             <div class="col-12 col-lg-6">
                 <h3>Directions</h3>
+                <ol id="directions-list" type="1">
+                    {% for direction in recipe.directions %}
+                       <li>
+                           <!-- Reference: https://stackoverflow.com/questions/7537439/how-to-increment-a-variable-on-a-for-loop-in-jinja-template -->
+                            <span><strong>Step {{ loop.index }}: </strong></span> <br>{{ direction }}
+                       </li> 
+                    {% endfor %}
+                </ol>
 
             </div>
         </div>
