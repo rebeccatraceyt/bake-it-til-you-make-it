@@ -27,6 +27,9 @@ def user_logged_in(username):
     return False
 
 
+# ------- Home Page -------
+
+
 @app.route("/")
 @app.route("/home")
 def home():
@@ -36,6 +39,9 @@ def home():
     latest_recipes = mongo.db.recipes.find().sort('_id', DESCENDING).limit(4)
     return render_template(
         "index.html", latest_recipes=latest_recipes, title="Home")
+
+
+# ------- Register Page -------
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -75,6 +81,9 @@ def register():
     return render_template("register.html")
 
 
+# ------- Login Page -------
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """
@@ -108,6 +117,9 @@ def login():
 
 
 
+# ------- Logout Page -------
+
+
 @app.route("/logout")
 def logout():
     flash("See you soon Baker {}".format(
@@ -115,6 +127,9 @@ def logout():
     # User session cookies removal
     session.pop("user")
     return redirect(url_for("login"))
+
+
+# ------- Profile Page -------
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -138,6 +153,50 @@ def profile(username):
     
     return render_template(
         "profile.html", user=user, recipes=recipes)
+
+
+# ------- Edit Profile Page -------
+
+
+@app.route("/edit_user/<username>", methods=["GET", "POST"])
+def edit_user(username):
+    """
+    Allows user to edit profile
+    """
+    
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+
+    if not user_logged_in(username.lower()):
+        return redirect(url_for("login"))
+    
+    if "user" in session.keys():
+        # Update profile function
+        if request.method == "POST":
+            current_user = {
+                "username": user["username"],
+                "email": user["email"],
+                "password": user["password"],
+                "user_img": user["user_img"],
+                "favourite_recipes": user["favourite_recipes"]
+            }
+            update_user = {
+                "username": request.form.get("username"),
+                "email": user["email"],
+                "password": generate_password_hash(request.form.get("password")),
+                "user_img": request.form.get("user_img"),
+                "favourite_recipes": user["favourite_recipes"]
+            }
+            
+            mongo.db.users.replace_one(
+                current_user, update_user, True)
+            flash("Profile Updated!")
+            return render_template("login.html", user=user)
+    else:
+        return redirect(url_for("login"))
+
+    return render_template(
+        "edit_user.html", user=user)
 
 
 @app.route("/recipe/<recipe_id>")

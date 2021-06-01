@@ -3,5 +3,6 @@
 
     {{ user.username }}
     <a href="{{ url_for('logout') }}">Log Out</a></li>
+    <a href="{{ url_for('edit_user', username=session['user']) }}">Edit Profile</a></li>
     
 {% endblock %}
