@@ -19,7 +19,12 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# ------- Check User Login Function -------
+
 def user_logged_in(username):
+    """
+    Function checks login status of current user.
+    """
     if "user" in session.keys():
         if session["user"] == username:
             return True
@@ -28,7 +33,6 @@ def user_logged_in(username):
 
 
 # ------- Home Page -------
-
 
 @app.route("/")
 @app.route("/home")
@@ -42,7 +46,6 @@ def home():
 
 
 # ------- Register Page -------
-
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -78,11 +81,10 @@ def register():
         flash("Welcome, Baker {}!".format(
             request.form.get("username")))
         return redirect(url_for("profile", username=session["user"]))
-    return render_template("register.html")
+    return render_template("/user/register.html")
 
 
 # ------- Login Page -------
-
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -113,12 +115,10 @@ def login():
             flash("Incorrect Username and/or Password, please try again")
             return redirect(url_for("login"))
     
-    return render_template("login.html")
-
+    return render_template("/user/login.html")
 
 
 # ------- Logout Page -------
-
 
 @app.route("/logout")
 def logout():
@@ -130,7 +130,6 @@ def logout():
 
 
 # ------- Profile Page -------
-
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
@@ -152,11 +151,10 @@ def profile(username):
         return redirect(url_for("login"))
     
     return render_template(
-        "profile.html", user=user, recipes=recipes)
+        "/user/profile.html", user=user, recipes=recipes)
 
 
 # ------- Edit Profile Page -------
-
 
 @app.route("/edit_user/<username>", methods=["GET", "POST"])
 def edit_user(username):
@@ -196,8 +194,33 @@ def edit_user(username):
         return redirect(url_for("login"))
 
     return render_template(
-        "edit_user.html", user=user)
+        "/user/edit_user.html", user=user)
 
+
+# ------- Delete Profile Page -------
+
+@app.route("/delete_user/<username>")
+def delete_user(username):
+    """
+    Allows user to delete profile
+    """
+    
+    if not user_logged_in(username.lower()):
+        return redirect(url_for("login"))
+    
+    if "user" in session.keys():
+        mongo.db.users.remove(
+            {"username": username.lower()})
+        flash("Profile Deleted")
+        session.pop("user")
+        
+        return redirect(url_for("register"))
+    
+    else:
+        return redirect(url_for("login")) 
+
+
+# ------- Individual Recipe Page -------
 
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
@@ -206,8 +229,10 @@ def recipe(recipe_id):
     """
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template(
-        "recipe.html", recipe=recipe, title="Recipe")
+        "/recipe/recipe.html", recipe=recipe, title="Recipe")
 
+
+# ------- Declare special variables -------
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
