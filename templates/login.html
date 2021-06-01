@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="register-page" class="container-fluid">
+    <h3>Log In</h3>
+    <div class="row">
+        <form class="col-12" method="POST" action="{{ url_for('register') }}">
+                <!-- Username -->
+                <div class="row">
+                    <div class="col-12 form-group">
+                        <span class="iconify" data-icon="fa-solid:user-alt" data-inline="false"></span>
+                        <input id="username" name="username" type="text" placeholder="Username" minlength="5" 
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                    </div>
+                </div>
+                <!-- Email -->
+                <div class="row">
+                    <div class="col-12 form-group">
+                        <span class="iconify" data-icon="eva:email-fill" data-inline="false"></span>
+                        <input id="email" name="email" type="email"  
+                            placeholder="Email Address" minlength="3" class="validate" required>
+                    </div>
+                </div>
+                <!-- Password -->
+                <div class="row">
+                    <div class="col-12 form-group">
+                        <span class="iconify" data-icon="mdi:lock" data-inline="false"></span>
+                        <input id="password" name="password" type="password" placeholder="Password" 
+                            minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                    </div>
+                </div>
+                <!-- Confirm Password-->
+                <div class="row">
+                    <div class="col-12 form-group">
+                        <span class="iconify" data-icon="mdi:lock-check" data-inline="false"></span>
+                        <input id="confirm_password" name="confirm_password" type="password" placeholder="Confirm Password" 
+                            minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required> <br>
+                        <span id='message'></span>
+                    </div>
+                </div>
+                <!-- User Image -->
+                <div class="row">
+                    <div class="col-12 form-group">
+                        <span class="iconify" data-icon="teenyicons:user-square-solid" data-inline="false"></span>
+                        <input id="user_img" name="user_img" type="url" placeholder="User URL Image" class="validate" required>
+                    </div>
+                </div>
+                <!-- submit button -->
+                <div class="row">
+                    <button type="submit" class="col-12">
+                        Register <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <p class="center-align">
+                Already Registered? <a href="#" class="light-blue-text text-darken-4">Log In</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
