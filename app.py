@@ -19,6 +19,14 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+def user_logged_in(username):
+    if "user" in session.keys():
+        if session["user"] == username:
+            return True
+    
+    return False
+
+
 @app.route("/")
 @app.route("/home")
 def home():
@@ -42,8 +50,8 @@ def register():
     if request.method == "POST":
         # Checks if username already exists
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()}
-        )
+            {"username": request.form.get("username").lower()})
+        
         # Prevents duplicates
         if existing_user:
             flash("Username already exists, try another")
@@ -61,9 +69,33 @@ def register():
         
         # Welcomes user to session
         session["user"] = request.form.get("username").lower()
-        flash("Welcome, Baker {}!".format(request.form.get("username")))
-        return redirect(url_for("home", username=session["user"]))
+        flash("Welcome, Baker {}!".format(
+            request.form.get("username")))
+        return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    """
+    Displays User's recipes page
+    """
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+    
+    if not user_logged_in(username.lower()):
+        return redirect(url_for("login"))
+    
+    if "user" in session.keys():
+        if session["user"] == username:
+            recipes = list(
+                mongo.db.recipes.find({"baker": username.lower()}))
+        
+    else:
+        return redirect(url_for("login"))
+    
+    return render_template(
+        "profile.html", user=user, recipes=recipes)
 
 
 @app.route("/recipe/<recipe_id>")
