@@ -67,7 +67,7 @@ button:focus {
     min-height: 10vh;
     border: 0;
     margin: auto;
-    padding-top: 40px;
+    padding-top: 45px;
     
     font-family: var(--accent-font);
     background: url("../images/bg-sm.png");
@@ -390,8 +390,8 @@ footer ul {
         background-size: cover;
 
         min-width: 90vw;
-        max-height: 15vh;
-        padding-top: 15vh;
+        max-height: 10vh;
+        padding-top: 10vh;
     }
     .navbar-collapse {
         /* removes unwanted hanging padding to avoid conflict */
@@ -410,6 +410,7 @@ footer ul {
     #main-section {
         background: transparent;
         box-shadow: 0px 0px grey;
+        padding-top: 10%;
         padding-bottom: 2%;
     }
 

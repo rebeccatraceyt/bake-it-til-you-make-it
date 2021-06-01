@@ -4,7 +4,7 @@
 <div id="register-page" class="container-fluid">
     <h3>Log In</h3>
     <div class="row">
-        <form class="col-12" method="POST" action="{{ url_for('profile', username=session['user']) }}">
+        <form class="col-12" method="POST" action="{{ url_for('login') }}">
                 <!-- Username -->
                 <div class="row">
                     <div class="col-12 form-group">
@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-12">
             <p class="center-align">
-                Already Registered? <a href="#" class="light-blue-text text-darken-4">Log In</a>
+                Don't have an account? <a href="{{ url_for('register') }}">Sign Up</a>
             </p>
         </div>
     </div>
