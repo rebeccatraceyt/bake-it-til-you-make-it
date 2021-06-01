@@ -37,6 +37,14 @@
                         </button>
                         <div class="collapse navbar-collapse" id="hamburger-nav lg-nav">
                             <ul class="navbar-nav mx-auto">
+                                {% if session.user %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url_for('profile', username=session['user'] ) }}">My Recipes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">My Favourites</a>
+                                </li>
+                                {% else %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url_for('home') }}">Home</a>
                                 </li>
@@ -46,6 +54,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url_for('login') }}">Login</a>
                                 </li>
+                                {% endif %}
                                 <a id="lg-logo" class="d-none d-lg-block" href="{{ url_for('home') }}"><img src="../static/images/logo.png"></a>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Find A Recipe</a>
