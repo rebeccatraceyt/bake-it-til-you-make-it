@@ -293,6 +293,7 @@ The developer ran into a number of issues during the development of the websites
 
 **Home Page -** On the recipe card panel of the Homepage, there was a styling issue with the `ul` element whereby the `li` elements nested would not conform to the styling that was needed to be readable. The `li` elements, due to the Bootstrap styling, would only display in a `inline` format, which caused padding issues within the card. In order to avoid this, and to maintain the design, the `ul` was removed and replaced with Bootstrap grid styling. This was done after researching similar issues.
 
+**Edit User -** In creating the edit functionality on the `edit_user.html`, the initial code used was `update_one` in order to change the user information. A problem arose because the developer wanted only select user information to change but, in using `update_one`, the entire collection changed and the fields that the developer did not allow to change would be wiped from the system and cause value errors. In looking for solutions, the developer found a similar issue on [Stack Overflow](https://stackoverflow.com/questions/30605638/why-does-upsert-a-record-using-update-one-raise-valueerror "Solution to problem on Stack Overflow") that suggested using `replace_one` as an alternative, with the `upsert` equal to `True` in order to update the specified fields only. 
 
 [Back to top ⇧](#table-of-contents)
 

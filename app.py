@@ -1,4 +1,3 @@
-from logging import debug
 import os
 from flask import (
         Flask, flash, render_template, 
@@ -188,6 +187,8 @@ def edit_user(username):
             
             mongo.db.users.replace_one(
                 current_user, update_user, True)
+            # replace used - issue with update
+            
             flash("Profile Updated!")
             return render_template("/user/login.html", user=user)
     else:
