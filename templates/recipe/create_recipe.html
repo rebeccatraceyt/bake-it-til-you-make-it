@@ -2,7 +2,126 @@
 {% block content %}
 
     <section aria-label="Create a recipe Page">
-        
+        <div class="container-fluid form-bg">
+            <div class="row">
+                <div class="col-12">
+                    <h3>Create A Recipe</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <form class="col-12" method="POST" action="">
+
+                    <!-- Recipe Name -->
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <label for="recipe_name">Recipe Name</label>
+                            <input id="recipe_name" class="form-control" name="recipe_name" type="text"  minlength="3" aria-describedby="recipe_name" required />
+                        </div>
+                    </div>
+
+                    <!-- Image URL -->
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <label for="recipe_img">Recipe Image<small>(URL)</small></label>
+                            <input id="recipe_img" class="form-control" name="recipe_img" type="url" aria-describedby="recipe_img" pattern="https?://.+" required />
+                        </div>
+                    </div>
+
+                    <!-- Recipe Source -->
+                    <div class="row">
+                        <div class="col-12 form-group">
+                           <label for="recipe_url">Recipe Source<small>(URL)</small></label>
+                            <input id="recipe_url" class="form-control" name="recipe_url" type="url" aria-describedby="recipe_url" pattern="https?://.+" required />
+                        </div>
+                    </div>
+
+                    <!-- Category and Level -->
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="sr-only" for="category">Choose Baking Category</label>
+                                    <select id="category" name="category" class="form-control" required>
+                                        <option value="" disabled selected>Choose Baking Category</option>
+                                        {% for category in categories %}
+                                            <option value="{{ category.category }}">{{ category.category }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <label class="sr-only"  for="level">Choose Baking Level</label>
+                                    <select id="level" name="level" class="form-control" required>
+                                        <option value="" disabled selected>Choose Baking Level</option>
+                                        {% for level in levels %}
+                                            <option value="{{ level.difficulty }}">{{ level.difficulty }}</option>
+                                        {% endfor %}
+                                    </select> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prep time and Servings -->
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="total_time">Total Time</label>
+                                    <input id="total_time" class="form-control" name="total_time" type="time" aria-describedby="total_time" required />
+                                </div>
+                                <div class="col-6">
+                                    <label for="servings">Servings</label>
+                                    <input type="number" id="servings" class="form-control" name="servings" min="1" aria-describedby="servings" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="row">
+                        <div class="col-12 form-group">
+                           <label for="description">Recipe Description</label>
+                           <textarea id="description" class="form-control" name="description" aria-describedby="description" minlength="3" maxlength="300" rows="3" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Ingredients -->
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <label for="ingredients">Ingredients</label>
+                            <input id="ingredients" class="form-control" name="ingredients" type="text" aria-describedby="ingredients" minlength="3" required />
+                        </div>
+                        <div class="col-12">
+                            <a href="#">
+                                <p>Add Ingredient</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Directions -->
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <label for="directions">Directions</label>
+                            <input id="directions" class="form-control" name="directions" type="text" aria-describedby="directions" minlength="3" required />
+                        </div>
+                        <div class="col-12">
+                            <a href="#">
+                                <p>Add Direction</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="row">
+                        <div class="col-12 form-group text-align">
+                            <button class="btn btn-primary" type="submit" name="action">Add Recipe</button>
+                            <a href="{{ url_for('profile', username=session['user']) }}" class="back  btn btn-cancel" >Cancel</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </section>
 
 {% endblock %}

@@ -264,7 +264,9 @@ def create_recipe():
         user = session["user"].lower()
         
         if user == session["user"].lower():
-            return render_template("/recipe/create_recipe.html")
+            categories = mongo.db.categories.find().sort("category", 1)
+            levels = mongo.db.level.find().sort("difficulty", 1)
+            return render_template("/recipe/create_recipe.html", categories=categories, levels=levels)
         
         else:
             return redirect(url_for("home"))
