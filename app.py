@@ -218,7 +218,7 @@ def edit_user(username):
         "/user/edit_user.html", user=user)
 
 
-# ------- Delete Profile Page -------
+# ------- Delete Profile -------
 
 @app.route("/delete_user/<username>")
 def delete_user(username):
@@ -302,6 +302,7 @@ def create_recipe():
 
 
 # ------- Edit Recipe Page -------
+
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     """
@@ -352,7 +353,21 @@ def edit_recipe(recipe_id):
     
     else:
         return redirect(url_for("login"))
+
+
+# ------- Delete Recipe -------
+
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    """
+    Allows user to delete their uploaded
+    """
     
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Recipe Deleted")
+
+    return redirect(url_for("profile", username=session["user"]))
+
 
 # ------- Declaration of special variables -------
 

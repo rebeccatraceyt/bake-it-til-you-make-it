@@ -38,7 +38,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (direction < max_directions) {
             direction++;
-            $(direction_row).append('<div class="col-12 form-group dir-input"><textarea id="directions" class="form-control" type="text" name="directions" maxlength="300" rows="1" required/></textarea><label for="directions"></label><a href="#" class="remove_field">Delete</a></div>')
+            $(direction_row).append('<div class="col-12 form-group dir-input"><textarea id="directions" class="form-control" type="text" name="directions" maxlength="300" rows="3" required/></textarea><label for="directions"></label><a href="#" class="remove_field">Delete</a></div>')
         }
     });
 
