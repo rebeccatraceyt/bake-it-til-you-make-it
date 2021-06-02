@@ -233,6 +233,46 @@ def recipe(recipe_id):
         "/recipe/recipe.html", recipe=recipe, title="Recipe")
 
 
+# ------- Create Recipe Page -------
+
+@app.route("/create_recipe", methods=["GET", "POST"])
+def create_recipe():
+    """
+    Registered users can upload their favourite recipes.
+    """
+    
+    if request.method == "POST":
+        recipe = {
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_img": request.form.get("recipe_img"),
+            "recipe_url": request.form.get("recipe_url"),
+            "description": request.form.get("description"),
+            "category": request.form.get("category"),
+            "difficulty": request.form.get("difficulty"),
+            "serving": request.form.get("serving"),
+            "total_time": request.form.get("total_time"),
+            "ingredients": request.form.getlist("ingredients"),
+            "directions": request.form.getlist("directions"),
+            "baker": session["user"]
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe Shared")
+        return redirect(url_for("profile", username=session["user"]))
+    
+    # checking that the user is in session
+    if "user" in session:
+        user = session["user"].lower()
+        
+        if user == session["user"].lower():
+            return render_template("/recipe/create_recipe.html")
+        
+        else:
+            return redirect(url_for("home"))
+    
+    else:
+        return redirect(url_for("login"))
+    
+
 # ------- Declaration of special variables -------
 
 if __name__ == "__main__":

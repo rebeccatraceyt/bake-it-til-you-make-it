@@ -5,6 +5,7 @@
         {{ user.username }}
         <a href="{{ url_for('logout') }}">Log Out</a></li>
         <a href="{{ url_for('edit_user', username=session['user']) }}">Edit Profile</a></li>
+        <a href="{{ url_for('create_recipe') }}">Create A Recipe</a></li>
     </section>
     
 {% endblock %}
