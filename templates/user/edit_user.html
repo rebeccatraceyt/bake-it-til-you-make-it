@@ -1,79 +1,82 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div id="register-page" class="container-fluid">
-    <h3>Edit {{ user.username }}'s Profile </h3>
-    <div class="row">
-        <form class="col-12" method="POST" action="{{ url_for('edit_user', username=session['user']) }}">
-            <!-- Username -->
+    <section aria-label="Edit User Page">
+        <div id="register-page" class="container-fluid">
+            <h3>Edit {{ user.username }}'s Profile </h3>
             <div class="row">
-                <div class="col-12 form-group">
-                    <span class="iconify" data-icon="fa-solid:user-alt" data-inline="false"></span>
-                    <input id="username" name="username" type="text" value="{{ user.username }}" minlength="5" 
-                        maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                </div>
-            </div>
-            <!-- Password -->
-            <div class="row">
-                <div class="col-12 form-group">
-                    <span class="iconify" data-icon="mdi:lock" data-inline="false"></span>
-                    <input id="password" name="password" type="password" placeholder="New Password" 
-                        minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                </div>
-            </div>
-            <!-- Confirm Password-->
-            <div class="row">
-                <div class="col-12 form-group">
-                    <span class="iconify" data-icon="mdi:lock-check" data-inline="false"></span>
-                    <input id="confirm_password" name="confirm_password" type="password" placeholder="Confirm New Password" 
-                        minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required> <br>
-                    <span id='message'></span>
-                </div>
-            </div>
-            <!-- User Image -->
-            <div class="row">
-                <div class="col-12 form-group">
-                    <span class="iconify" data-icon="teenyicons:user-square-solid" data-inline="false"></span>
-                    <input id="user_img" name="user_img" type="url" value="{{ user.user_img }}" class="validate" required>
-                </div>
-            </div>
-            <!-- submit button -->
-            <div class="row">
-                <button type="submit" class="col-12">
-                    Save Changes <i class="fas fa-sign-in-alt"></i>
-                </button>
-                <a href="{{ url_for('profile', username=session['user']) }}">Cancel</a>
-            </div>
-            <div class="row">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Delete
-                </button>
+                <form class="col-12" method="POST" action="{{ url_for('edit_user', username=session['user']) }}">
+                    <!-- Username -->
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <span class="iconify" data-icon="fa-solid:user-alt" data-inline="false"></span>
+                            <input id="username" name="username" type="text" value="{{ user.username }}" minlength="5" 
+                                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        </div>
+                    </div>
+                    <!-- Password -->
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <span class="iconify" data-icon="mdi:lock" data-inline="false"></span>
+                            <input id="password" name="password" type="password" placeholder="New Password" 
+                                minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        </div>
+                    </div>
+                    <!-- Confirm Password-->
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <span class="iconify" data-icon="mdi:lock-check" data-inline="false"></span>
+                            <input id="confirm_password" name="confirm_password" type="password" placeholder="Confirm New Password" 
+                                minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required> <br>
+                            <span id='message'></span>
+                        </div>
+                    </div>
+                    <!-- User Image -->
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            <span class="iconify" data-icon="teenyicons:user-square-solid" data-inline="false"></span>
+                            <input id="user_img" name="user_img" type="url" value="{{ user.user_img }}" class="validate" required>
+                        </div>
+                    </div>
+                    <!-- submit button -->
+                    <div class="row">
+                        <button type="submit" class="col-12">
+                            Save Changes <i class="fas fa-sign-in-alt"></i>
+                        </button>
+                        <a href="{{ url_for('profile', username=session['user']) }}">Cancel</a>
+                    </div>
+                    <div class="row">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Delete
+                        </button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Confirm Your Choice</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <h4>Are you sure you want to <strong>DELETE</strong> your profile?</h4>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary">
-                                    <a href="{{ url_for('delete_user', username=user.username) }}">Delete</a>
-                                </button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Confirm Your Choice</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4>Are you sure you want to <strong>DELETE</strong> your profile?</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary">
+                                            <a href="{{ url_for('delete_user', username=user.username) }}">Delete</a>
+                                        </button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
-        </form>
-    </div>
+        </div>
+    </section>
 
 {% endblock %}

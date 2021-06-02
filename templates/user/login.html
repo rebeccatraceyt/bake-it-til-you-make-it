@@ -1,42 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div id="register-page" class="container-fluid">
-    <h3>Log In</h3>
-    <div class="row">
-        <form class="col-12" method="POST" action="{{ url_for('login') }}">
-                <!-- Username -->
-                <div class="row">
-                    <div class="col-12 form-group">
-                        <span class="iconify" data-icon="fa-solid:user-alt" data-inline="false"></span>
-                        <input id="username" name="username" type="text" placeholder="Username" minlength="5" 
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                    </div>
-                </div>
-                <!-- Password -->
-                <div class="row">
-                    <div class="col-12 form-group">
-                        <span class="iconify" data-icon="mdi:lock" data-inline="false"></span>
-                        <input id="password" name="password" type="password" placeholder="Password" 
-                            minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                    </div>
-                </div>
-                <!-- login button -->
-                <div class="row">
-                    <button type="submit" class="col-12">
-                        Log In <i class="fas fa-sign-in-alt"></i>
-                    </button>
-                </div>
-        </form>
-    </div>
+    <section aria-label="User Log in Page">
+        <div id="register-page" class="container-fluid">
+            <h3>Log In</h3>
+            <div class="row">
+                <form class="col-12" method="POST" action="{{ url_for('login') }}">
+                        <!-- Username -->
+                        <div class="row">
+                            <div class="col-12 form-group">
+                                <span class="iconify" data-icon="fa-solid:user-alt" data-inline="false"></span>
+                                <input id="username" name="username" type="text" placeholder="Username" minlength="5" 
+                                    maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            </div>
+                        </div>
+                        <!-- Password -->
+                        <div class="row">
+                            <div class="col-12 form-group">
+                                <span class="iconify" data-icon="mdi:lock" data-inline="false"></span>
+                                <input id="password" name="password" type="password" placeholder="Password" 
+                                    minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            </div>
+                        </div>
+                        <!-- login button -->
+                        <div class="row">
+                            <button type="submit" class="col-12">
+                                Log In <i class="fas fa-sign-in-alt"></i>
+                            </button>
+                        </div>
+                </form>
+            </div>
 
-    <div class="row">
-        <div class="col-12">
-            <p class="center-align">
-                Don't have an account? <a href="{{ url_for('register') }}">Sign Up</a>
-            </p>
+            <div class="row">
+                <div class="col-12">
+                    <p class="center-align">
+                        Don't have an account? <a href="{{ url_for('register') }}">Sign Up</a>
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </section>
 
 {% endblock %}

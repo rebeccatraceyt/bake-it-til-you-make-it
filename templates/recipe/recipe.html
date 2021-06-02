@@ -1,80 +1,81 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <h3>{{ recipe.recipe_name }}</h3>
-                <p>{{ recipe.description }}</p>
+    <section aria-label="Individual recipe dashboard">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                        <h3>{{ recipe.recipe_name }}</h3>
+                        <p>{{ recipe.description }}</p>
+                        <div class="row">
+                            <div class="col-6">
+                                <div>
+                                    <span class="iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
+                                    <span class="value">{{ recipe.total_time }}</span>
+                                    <span class="title">Minutes</span>
+                                </div>
+                                <div>
+                                    <span class="iconify" data-icon="majesticons:users" data-inline="true"></span>
+                                    <span class="value">{{ recipe.serving }}</span>
+                                    <span class="title">Serving(s)</span>
+                                </div>
+                                <div>
+                                    <span class="iconify" data-icon="fa-solid:mitten" data-inline="true"></span>
+                                    <span class="value">{{ recipe.difficulty }}</span>
+                                    <span class="title">Level </span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div id="recipe-btn">
+                                    <a href="#"><span class="iconify" data-icon="clarity:heart-solid" data-inline="true"></span> Favourite</a>
+                                </div>
+                                <div id="recipe-btn">
+                                    <a href="#"><span class="iconify" data-icon="fa-solid:edit" data-inline="true"></span> Edit</a>
+                                </div>
+                                <div id="recipe-btn">
+                                    <a href="#"><span class="iconify" data-icon="ic:baseline-delete-forever" data-inline="true"></span> Delete</a>
+                                </div>
+                                <!-- {% if session.user|lower == recipe.baker|lower %} -->
+                                <!-- {% endif %} -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div id="card-img">
+                            {% if recipe.recipe_img %}
+                                <img src="{{ recipe.recipe_img }}" alt="Recipe Image">
+                            {% else %}
+                                <img id="recipe-img" class="card-img-top" src="{{ url_for('static', filename='images/no-img.png') }}" alt="Alternative Recipe Image">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
-                    <div class="col-6">
-                        <div>
-                            <span class="iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
-                            <span class="value">{{ recipe.total_time }}</span>
-                            <span class="title">Minutes</span>
-                        </div>
-                        <div>
-                            <span class="iconify" data-icon="majesticons:users" data-inline="true"></span>
-                            <span class="value">{{ recipe.serving }}</span>
-                            <span class="title">Serving(s)</span>
-                        </div>
-                        <div>
-                            <span class="iconify" data-icon="fa-solid:mitten" data-inline="true"></span>
-                            <span class="value">{{ recipe.difficulty }}</span>
-                            <span class="title">Level </span>
+                    <div class="col-12 col-lg-6">
+                        <h3>Ingredients</h3>
+                        <div id="ingredients" class="row">
+                            <div id="ingredient-line" class="col-2"></div>
+                            <div id="ingredient-list" class="col-10">
+                                {% for ingredient in recipe.ingredients %}
+                                    <p>{{ ingredient }}</p>
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div id="recipe-btn">
-                            <a href="#"><span class="iconify" data-icon="clarity:heart-solid" data-inline="true"></span> Favourite</a>
-                        </div>
-                        <div id="recipe-btn">
-                            <a href="#"><span class="iconify" data-icon="fa-solid:edit" data-inline="true"></span> Edit</a>
-                        </div>
-                        <div id="recipe-btn">
-                            <a href="#"><span class="iconify" data-icon="ic:baseline-delete-forever" data-inline="true"></span> Delete</a>
-                        </div>
-                        <!-- {% if session.user|lower == recipe.baker|lower %} -->
-                        <!-- {% endif %} -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div id="card-img">
-                    {% if recipe.recipe_img %}
-                        <img src="{{ recipe.recipe_img }}" alt="Recipe Image">
-                    {% else %}
-                        <img id="recipe-img" class="card-img-top" src="{{ url_for('static', filename='images/no-img.png') }}" alt="Alternative Recipe Image">
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <h3>Ingredients</h3>
-                <div id="ingredients" class="row">
-                    <div id="ingredient-line" class="col-2"></div>
-                    <div id="ingredient-list" class="col-10">
-                        {% for ingredient in recipe.ingredients %}
-                            <p>{{ ingredient }}</p>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <h3>Directions</h3>
-                <ol id="directions-list" type="1">
-                    {% for direction in recipe.directions %}
-                       <li>
-                           <!-- Reference: https://stackoverflow.com/questions/7537439/how-to-increment-a-variable-on-a-for-loop-in-jinja-template -->
-                            <span><strong>Step {{ loop.index }}: </strong></span> <br>{{ direction }}
-                       </li> 
-                    {% endfor %}
-                </ol>
+                    <div class="col-12 col-lg-6">
+                        <h3>Directions</h3>
+                        <ol id="directions-list" type="1">
+                            {% for direction in recipe.directions %}
+                            <li>
+                                <!-- Reference: https://stackoverflow.com/questions/7537439/how-to-increment-a-variable-on-a-for-loop-in-jinja-template -->
+                                    <span><strong>Step {{ loop.index }}: </strong></span> <br>{{ direction }}
+                            </li> 
+                            {% endfor %}
+                        </ol>
 
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-
+    </section>
 
 {% endblock %}

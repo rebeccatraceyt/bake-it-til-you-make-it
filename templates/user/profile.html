@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {{ user.username }}
-    <a href="{{ url_for('logout') }}">Log Out</a></li>
-    <a href="{{ url_for('edit_user', username=session['user']) }}">Edit Profile</a></li>
+    <section aria-label="User Profile Page">
+        {{ user.username }}
+        <a href="{{ url_for('logout') }}">Log Out</a></li>
+        <a href="{{ url_for('edit_user', username=session['user']) }}">Edit Profile</a></li>
+    </section>
     
 {% endblock %}
