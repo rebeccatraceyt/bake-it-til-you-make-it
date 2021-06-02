@@ -3,9 +3,12 @@
 
     <section aria-label="User Profile Page">
         {{ user.username }}
-        <a href="{{ url_for('logout') }}">Log Out</a></li>
-        <a href="{{ url_for('edit_user', username=session['user']) }}">Edit Profile</a></li>
-        <a href="{{ url_for('create_recipe') }}">Create A Recipe</a></li>
+        <a href="{{ url_for('logout') }}">Log Out</a>
+        <a href="{{ url_for('edit_user', username=session['user']) }}">Edit Profile</a>
+        <a href="{{ url_for('create_recipe') }}">Create A Recipe</a>
+        {% for recipe in recipes %}
+        <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a>
+        {% endfor %}
     </section>
     
 {% endblock %}

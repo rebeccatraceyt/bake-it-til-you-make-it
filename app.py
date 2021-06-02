@@ -24,6 +24,7 @@ def user_logged_in(username):
     """
     Function checks login status of current user.
     """
+    
     if "user" in session.keys():
         if session["user"] == username:
             return True
@@ -39,9 +40,12 @@ def home():
     """
     Home page displays the 4 latest recipes
     """
-    latest_recipes = mongo.db.recipes.find().sort('_id', DESCENDING).limit(4)
+    
+    latest_recipes = mongo.db.recipes.find().sort(
+        '_id', DESCENDING).limit(4)
     return render_template(
-        "index.html", latest_recipes=latest_recipes, title="Home")
+        "index.html", 
+        latest_recipes=latest_recipes, title="Home")
 
 
 # ------- Register Page -------
@@ -58,7 +62,8 @@ def register():
     if request.method == "POST":
         # Checks if username already exists
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+            {"username": request.form.get(
+                "username").lower()})
         
         # Prevents duplicates
         if existing_user:
@@ -69,7 +74,8 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
-            "password": generate_password_hash(request.form.get("password")),
+            "password": generate_password_hash(
+                request.form.get("password")),
             "user_img": request.form.get("user_img"),
             "favourite_recipes": []
         }
@@ -79,7 +85,8 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Welcome, Baker {}!".format(
             request.form.get("username")))
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for(
+            "profile", username=session["user"]))
     return render_template("/user/register.html")
 
 
@@ -90,6 +97,7 @@ def login():
     """
     Allows users to login to account
     """
+    
     if request.method == "POST":
         # checking if user exists
         existing_user = mongo.db.users.find_one(
@@ -107,11 +115,13 @@ def login():
                     "profile", username=session["user"]))
             else:
                 # if the password does not match
-                flash("Incorrect Username and/or Password, please try again")
+                flash(
+                    "Incorrect Username and/or Password, please try again")
                 return redirect(url_for("login"))
         else:
             # username does not exist
-            flash("Incorrect Username and/or Password, please try again")
+            flash(
+                "Incorrect Username and/or Password, please try again")
             return redirect(url_for("login"))
     
     return render_template("/user/login.html")
@@ -121,6 +131,10 @@ def login():
 
 @app.route("/logout")
 def logout():
+    """
+    Allows current session user to log out.
+    """
+    
     flash("See you soon Baker {}".format(
         request.form.get("username")))
     # User session cookies removal
@@ -135,6 +149,7 @@ def profile(username):
     """
     Displays User's recipes page
     """
+    
     user = mongo.db.users.find_one(
         {"username": session["user"]})
     
@@ -144,13 +159,15 @@ def profile(username):
     if "user" in session.keys():
         if session["user"] == username:
             recipes = list(
-                mongo.db.recipes.find({"baker": username.lower()}))
+                mongo.db.recipes.find(
+                    {"baker": username.lower()}))
         
     else:
         return redirect(url_for("login"))
     
     return render_template(
-        "/user/profile.html", user=user, recipes=recipes)
+        "/user/profile.html", 
+        user=user, recipes=recipes)
 
 
 # ------- Edit Profile Page -------
@@ -175,22 +192,25 @@ def edit_user(username):
                 "email": user["email"],
                 "password": user["password"],
                 "user_img": user["user_img"],
-                "favourite_recipes": user["favourite_recipes"]
+                "favourite_recipes": user[
+                    "favourite_recipes"]
             }
             update_user = {
                 "username": request.form.get("username"),
                 "email": user["email"],
-                "password": generate_password_hash(request.form.get("password")),
+                "password": generate_password_hash(
+                    request.form.get("password")),
                 "user_img": request.form.get("user_img"),
-                "favourite_recipes": user["favourite_recipes"]
+                "favourite_recipes": user[
+                    "favourite_recipes"]
             }
             
             mongo.db.users.replace_one(
                 current_user, update_user, True)
-            # replace used - issue with update
             
             flash("Profile Updated!")
-            return render_template("/user/login.html", user=user)
+            return render_template(
+                "/user/login.html", user=user)
     else:
         return redirect(url_for("login"))
 
@@ -228,9 +248,12 @@ def recipe(recipe_id):
     """
     Displays the full recipe
     """
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    
+    recipe = mongo.db.recipes.find_one(
+        {"_id": ObjectId(recipe_id)})
     return render_template(
-        "/recipe/recipe.html", recipe=recipe, title="Recipe")
+        "/recipe/recipe.html", 
+        recipe=recipe, title="Recipe")
 
 
 # ------- Create Recipe Page -------
@@ -257,7 +280,8 @@ def create_recipe():
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Shared")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for(
+            "profile", username=session["user"]))
     
     # checking that the user is in session
     if "user" in session:
@@ -266,7 +290,59 @@ def create_recipe():
         if user == session["user"].lower():
             categories = mongo.db.categories.find().sort("category", 1)
             difficulty = mongo.db.level.find().sort("difficulty", 1)
-            return render_template("/recipe/create_recipe.html", categories=categories, difficulty=difficulty)
+            return render_template(
+                "/recipe/create_recipe.html", 
+                categories=categories, difficulty=difficulty)
+        
+        else:
+            return redirect(url_for("home"))
+    
+    else:
+        return redirect(url_for("login"))
+
+
+# ------- Edit Recipe Page -------
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+    """
+    User can edit the recipe they uploaded
+    """
+    
+    recipe_author = mongo.db.recipes.find_one(
+        {"_id": ObjectId(recipe_id)})
+    
+    if not user_logged_in(recipe_author["baker"]):
+        return redirect(url_for("login"))
+    
+    if request.method == "POST":
+        update_recipe = {
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_img": request.form.get("recipe_img"),
+            "recipe_url": request.form.get("recipe_url"),
+            "description": request.form.get("description"),
+            "category": request.form.get("category"),
+            "difficulty": request.form.get("difficulty"),
+            "serving": request.form.get("serving"),
+            "total_time": request.form.get("total_time"),
+            "ingredients": request.form.getlist("ingredients"),
+            "directions": request.form.getlist("directions"),
+            "baker": session["user"]
+        }
+        mongo.db.recipes.update(
+            {"_id": ObjectId(recipe_id)}, update_recipe)
+        flash("Recipe Updated!")
+        
+        return redirect(url_for("recipe", recipe_id=recipe_id))
+    
+    recipe = mongo.db.recipes.find_one(
+        {"_id": ObjectId(recipe_id)})
+    
+    if "user" in session.keys():
+        user = session["user"].lower()
+        
+        if user == session["user"].lower():
+            return render_template(
+                "/recipe/edit_recipe.html", recipe=recipe)
         
         else:
             return redirect(url_for("home"))
