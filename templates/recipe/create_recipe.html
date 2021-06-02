@@ -50,10 +50,10 @@
                                     </select>
                                 </div>
                                 <div class="col-6">
-                                    <label class="sr-only"  for="level">Choose Baking Level</label>
-                                    <select id="level" name="level" class="form-control" required>
+                                    <label class="sr-only"  for="difficulty">Choose Baking Level</label>
+                                    <select id="difficulty" name="difficulty" class="form-control" required>
                                         <option value="" disabled selected>Choose Baking Level</option>
-                                        {% for level in levels %}
+                                        {% for level in difficulty %}
                                             <option value="{{ level.difficulty }}">{{ level.difficulty }}</option>
                                         {% endfor %}
                                     </select> 
@@ -68,11 +68,25 @@
                             <div class="row">
                                 <div class="col-6">
                                     <label for="total_time">Total Time</label>
-                                    <input id="total_time" class="form-control" name="total_time" type="time" aria-describedby="total_time" required />
+                                    <select name="total_time" id="total_time" name="total_time" class="form-control" aria-describedby="total_time" required>
+                                        <option value="" disabled selected>Select Time</option>
+                                        <option value="Less than 20">Less than 20 min</option>
+                                        {% for time in range(20, 120, 10) %}
+                                            <option value="{{ time }}">{{ time }} min</option>
+                                        {% endfor %}
+                                        <option value="More than 120">More than 120 min</option>
+                                    </select>
                                 </div>
                                 <div class="col-6">
-                                    <label for="servings">Servings</label>
-                                    <input type="number" id="servings" class="form-control" name="servings" min="1" aria-describedby="servings" required />
+                                    <label for="serving">Serves:</label>
+                                    <select name="serving" id="serving" name="serving" class="form-control" aria-describedby="serving" required>
+                                        <option value="" disabled selected>Select number of Servings</option>
+                                        <option value="1 person">1 person</option>
+                                        {% for num in range(1, 21) %}
+                                            <option value="{{ num }}">{{ num }} people</option>
+                                        {% endfor %}
+                                        <option value="More than 20">More than 20 people</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
