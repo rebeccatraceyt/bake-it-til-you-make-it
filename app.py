@@ -341,8 +341,11 @@ def edit_recipe(recipe_id):
         user = session["user"].lower()
         
         if user == session["user"].lower():
+            categories = mongo.db.categories.find().sort("category", 1)
+            difficulty = mongo.db.level.find().sort("difficulty", 1)
             return render_template(
-                "/recipe/edit_recipe.html", recipe=recipe)
+                "/recipe/edit_recipe.html", 
+                recipe=recipe, categories=categories, difficulty=difficulty)
         
         else:
             return redirect(url_for("home"))

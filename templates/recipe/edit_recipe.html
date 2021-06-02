@@ -1,22 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <section aria-label="Create a recipe Page">
+    <section aria-label="Edit recipe Page">
         <div class="container-fluid form-bg">
             <div class="row">
                 <div class="col-12">
-                    <h3>Create A Recipe</h3>
+                    <h3>Edit Recipe {{ recipe.recipe_name }}</h3>
                 </div>
             </div>
 
             <div class="row">
-                <form class="col-12" method="POST" action="{{ url_for('add_recipe') }}">
+                <form class="col-12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
 
                     <!-- Recipe Name -->
                     <div class="row">
                         <div class="col-12 form-group">
                             <label for="recipe_name">Recipe Name</label>
-                            <input id="recipe_name" class="form-control" name="recipe_name" type="text"  minlength="3" aria-describedby="recipe_name" required />
+                            <input id="recipe_name" class="form-control" name="recipe_name" type="text" minlength="3" aria-describedby="recipe_name" value="{{ recipe.recipe_name }}" required />
                         </div>
                     </div>
 
@@ -24,7 +24,7 @@
                     <div class="row">
                         <div class="col-12 form-group">
                             <label for="recipe_img">Recipe Image<small>(URL)</small></label>
-                            <input id="recipe_img" class="form-control" name="recipe_img" type="url" aria-describedby="recipe_img" pattern="https?://.+" required />
+                            <input id="recipe_img" class="form-control" name="recipe_img" type="url" aria-describedby="recipe_img" pattern="https?://.+" value="{{ recipe.recipe_img }}" required />
                         </div>
                     </div>
 
@@ -32,7 +32,7 @@
                     <div class="row">
                         <div class="col-12 form-group">
                            <label for="recipe_url">Recipe Source<small>(URL)</small></label>
-                            <input id="recipe_url" class="form-control" name="recipe_url" type="url" aria-describedby="recipe_url" pattern="https?://.+" required />
+                            <input id="recipe_url" class="form-control" name="recipe_url" type="url" aria-describedby="recipe_url" pattern="https?://.+" value="{{ recipe.recipe_url }}" required />
                         </div>
                     </div>
 
@@ -43,7 +43,7 @@
                                 <div class="col-6">
                                     <label for="category">Baking Category</label>
                                     <select id="category" name="category" class="form-control" required>
-                                        <option value="" disabled selected>Choose Baking Category</option>
+                                        <option value="" disabled selected>{{ recipe.category }}</option>
                                         {% for category in categories %}
                                             <option value="{{ category.category }}">{{ category.category }}</option>
                                         {% endfor %}
@@ -52,7 +52,7 @@
                                 <div class="col-6">
                                     <label for="difficulty">Baking Level</label>
                                     <select id="difficulty" name="difficulty" class="form-control" required>
-                                        <option value="" disabled selected>Choose Baking Level</option>
+                                        <option value="" disabled selected>{{ recipe.difficulty }}</option>
                                         {% for level in difficulty %}
                                             <option value="{{ level.difficulty }}">{{ level.difficulty }}</option>
                                         {% endfor %}
@@ -69,7 +69,7 @@
                                 <div class="col-6">
                                     <label for="total_time">Total Time</label>
                                     <select name="total_time" id="total_time" name="total_time" class="form-control" aria-describedby="total_time" required>
-                                        <option value="" disabled selected>Select Time</option>
+                                        <option value="" disabled selected>{{ recipe.total_time }}</option>
                                         <option value="Less than 20">Less than 20 min</option>
                                         {% for time in range(20, 120, 10) %}
                                             <option value="{{ time }}">{{ time }} min</option>
@@ -80,7 +80,7 @@
                                 <div class="col-6">
                                     <label for="serving">Serves:</label>
                                     <select name="serving" id="serving" name="serving" class="form-control" aria-describedby="serving" required>
-                                        <option value="" disabled selected>Select number of Servings</option>
+                                        <option value="" disabled selected>{{ recipe.serving }}</option>
                                         <option value="1 person">1 person</option>
                                         {% for num in range(2, 21) %}
                                             <option value="{{ num }}">{{ num }} people</option>
@@ -96,16 +96,25 @@
                     <div class="row">
                         <div class="col-12 form-group">
                            <label for="description">Recipe Description</label>
-                           <textarea id="description" class="form-control" name="description" aria-describedby="description" minlength="3" maxlength="300" rows="3" required></textarea>
+                           <textarea id="description" class="form-control" name="description" aria-describedby="description" minlength="3" maxlength="300" rows="3" required>{{ recipe.description }}</textarea>
                         </div>
                     </div>
 
                     <!-- Ingredients -->
                     <div class="row ingredient-row">
-                        <div class="col-12 form-group ing-input">
-                            <label for="ingredients">Ingredients</label>
-                            <input id="ingredients" class="form-control" name="ingredients" type="text" aria-describedby="ingredients" minlength="3" required />
-                        </div>
+                        {% for ingredient in recipe.ingredients %}
+                            <div class="col-12 form-group ing-input">
+                                {% if loop.index == 1 %}
+                                    <!-- Avoids repetition of label -->
+                                    <label for="ingredients">Ingredients</label>
+                                {% endif %}
+                                <input id="ingredients" class="form-control" name="ingredients" type="text" aria-describedby="ingredients" minlength="3" value="{{ ingredient }}" required />
+                                <!-- Prevents deletion of first ingredient row -->
+                                {% if loop.index != 1 %}
+                                    <a href="#" class="remove_field">Delete</a>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
                     </div>
 
                     <!--Add Ingredient button-->
@@ -119,10 +128,19 @@
 
                     <!-- Directions -->
                     <div class="row direction-row">
-                        <div class="col-12 form-group dir-input">
-                            <label for="directions">Directions</label>
-                            <textarea id="directions" class="form-control" name="directions" type="text" aria-describedby="directions" minlength="3" maxlength="300" rows="3"  required ></textarea>
-                        </div>
+                        {% for direction in recipe.directions %}
+                            <div class="col-12 form-group dir-input">
+                                {% if loop.index == 1 %}
+                                    <!-- Avoids repetition of label -->
+                                    <label for="directions">Directions</label>
+                                {% endif %}
+                                <textarea id="directions" class="form-control" name="directions" type="text" aria-describedby="directions" minlength="3" maxlength="300" rows="3" required >{{ direction }}</textarea>
+                                <!-- Prevents deletion of first ingredient row -->
+                                {% if loop.index != 1 %}
+                                    <a href="#" class="remove_field">Delete</a>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
                     </div>
 
                     <div class="row">
@@ -136,13 +154,39 @@
                     <!-- Buttons -->
                     <div class="row">
                         <div class="col-12 form-group text-align">
-                            <button class="btn btn-primary" type="submit" name="action">Add Recipe</button>
-                            <a href="{{ url_for('profile', username=session['user']) }}" class="back  btn btn-cancel" >Cancel</a>
+                            <button class="btn btn-primary" type="submit" name="action">Save Changes</button>
+                            <a href="{{ url_for('recipe', recipe_id=recipe_id) }}" class="back  btn btn-cancel" >Cancel</a>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteRecipeModal">
+                                Delete
+                            </button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteRecipeModal" tabindex="-1" role="dialog" aria-labelledby="deleteRecipeModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteRecipeModal">Confirm Your Choice</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Are you sure you want to <strong>DELETE</strong> the recipe?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                        <a href="{{ url_for('delete_recipe', recipe_id=recipe_id) }}">Delete</a>
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>             
 
 {% endblock %}
