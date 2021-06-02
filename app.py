@@ -189,7 +189,7 @@ def edit_user(username):
             mongo.db.users.replace_one(
                 current_user, update_user, True)
             flash("Profile Updated!")
-            return render_template("login.html", user=user)
+            return render_template("/user/login.html", user=user)
     else:
         return redirect(url_for("login"))
 
@@ -232,7 +232,7 @@ def recipe(recipe_id):
         "/recipe/recipe.html", recipe=recipe, title="Recipe")
 
 
-# ------- Declare special variables -------
+# ------- Declaration of special variables -------
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
