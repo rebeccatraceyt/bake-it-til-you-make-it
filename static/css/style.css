@@ -399,11 +399,12 @@ footer ul {
     }
     .navbar-collapse {
         /* removes unwanted hanging padding to avoid conflict */
-        padding-bottom: 0;
+        padding: 2vh 0 0 0;
     }
     .navbar-nav > li {
         padding-left: 10px;
         padding-right: 10px;
+        padding-top: 2vh;
     }
     #lg-logo img {
         width: 10vw;
