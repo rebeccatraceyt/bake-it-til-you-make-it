@@ -2,7 +2,7 @@ import os
 from flask import (
         Flask, flash, render_template, 
         redirect, request, session, url_for)
-from flask_pymongo import PyMongo, pymongo
+from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -52,6 +52,23 @@ def home():
 @app.route("/find_recipes")
 def find_recipes():
     recipes = list(mongo.db.recipes.find())
+    return render_template("/recipe/find_recipes.html", recipes=recipes)
+
+
+# ------- Search for Recipes -------
+@app.route("/search", methods=['GET', 'POST'])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({
+        "$text": {"$search": query}}
+    ))
+    
+    if len(recipes) == 0:
+        flash(f"No recipe results for {query}")
+        
+    else:
+        flash(f"Your search for {query} returned {len(recipes)} result(s)!")
+    
     return render_template("/recipe/find_recipes.html", recipes=recipes)
 
 
