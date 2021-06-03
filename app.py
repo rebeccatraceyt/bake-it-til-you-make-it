@@ -86,7 +86,7 @@ def register():
         flash("Welcome, Baker {}!".format(
             request.form.get("username")))
         return redirect(url_for(
-            "profile", username=session["user"]))
+            "my_recipes", username=session["user"]))
     return render_template("/user/register.html")
 
 
@@ -112,7 +112,7 @@ def login():
                 flash("Welcome back, {}".format(
                     request.form.get("username")))
                 return redirect(url_for(
-                    "profile", username=session["user"]))
+                    "my_recipes", username=session["user"]))
             else:
                 # if the password does not match
                 flash(
@@ -142,10 +142,10 @@ def logout():
     return redirect(url_for("login"))
 
 
-# ------- Profile Page -------
+# ------- My Recipes Page -------
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
+@app.route("/my_recipes/<username>", methods=["GET", "POST"])
+def my_recipes(username):
     """
     Displays User's recipes page
     """
@@ -166,11 +166,14 @@ def profile(username):
         return redirect(url_for("login"))
     
     return render_template(
-        "/user/profile.html", 
+        "/user/my_recipes.html", 
         user=user, recipes=recipes)
 
 
-# ------- Edit Profile Page -------
+# ------- My Favourites Page -------
+
+
+# ------- Edit User Page -------
 
 @app.route("/edit_user/<username>", methods=["GET", "POST"])
 def edit_user(username):
@@ -281,7 +284,7 @@ def create_recipe():
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Shared")
         return redirect(url_for(
-            "profile", username=session["user"]))
+            "my_recipes", username=session["user"]))
     
     # checking that the user is in session
     if "user" in session:
@@ -366,7 +369,7 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Deleted")
 
-    return redirect(url_for("profile", username=session["user"]))
+    return redirect(url_for("my_recipes", username=session["user"]))
 
 
 # ------- Declaration of special variables -------

@@ -137,7 +137,7 @@
                     <div class="row">
                         <div class="col-12 form-group text-align">
                             <button class="btn btn-primary" type="submit" name="action">Add Recipe</button>
-                            <a href="{{ url_for('profile', username=session['user']) }}" class="back  btn btn-cancel" >Cancel</a>
+                            <a href="{{ url_for('my_recipes', username=session['user']) }}" class="back  btn btn-cancel" >Cancel</a>
                         </div>
                     </div>
                 </form>

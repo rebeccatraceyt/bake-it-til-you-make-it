@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <section aria-label="User Profile Page">
+    <section aria-label="User's 'My Recipes' Page">
         {{ user.username }}
         <a href="{{ url_for('logout') }}">Log Out</a>
         <a href="{{ url_for('edit_user', username=session['user']) }}">Edit Profile</a>
