@@ -305,6 +305,36 @@ def add_to_favourites(recipe_id):
     return redirect(url_for("recipe", recipe_id=recipe_id))
 
 
+# ------- Remove From Favourites -------
+@app.route("/remove_from_favourites/<recipe_id>", methods=['GET', 'POST'])
+def remove_from_favourites(recipe_id):
+    """
+    Allows user to remove favourited recipe from favourites
+    """
+    
+    user = mongo.db.users.find_one({"username": session["user"]})
+    
+    favourites = user["favourite_recipes"]
+    
+    if ObjectId(recipe_id) in favourites:
+        mongo.db.users.update({"username": session['user']},
+                              {"$pull": {
+                                  "favourite_recipes": ObjectId(recipe_id)
+                              }})
+        
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)},
+                                {'$inc': {
+                                    'favourite_count': -1
+                                }})
+        
+        flash("Recipe removed from My Favourites")
+        return redirect(url_for('my_favourites', user=user['username'], recipe_id=recipe_id))
+    
+    else:
+        flash("You must be logged in!")
+        return redirect(url_for("login"))
+
+
 # ------- Individual Recipe Page -------
 
 @app.route("/recipe/<recipe_id>")
