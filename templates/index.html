@@ -37,8 +37,8 @@
                     <div id="latestRecipes" class="carousel slide carousel-fade" data-ride="carousel">
                             <div class="carousel-inner">
                                 <h3>Latest Creations</h3>
-                                {% for recipe in latest_recipes %}
-                                    <div class="carousel-item active">
+                                {% for recipe in recipes %}
+                                    <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
                                         <div class="card">
                                             <div id="card-img">
                                                 {% if recipe.recipe_img %}
@@ -70,8 +70,7 @@
                                                         </div>
                                                         <div>
                                                             <span class="iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
-                                                            <span class="title">Baker </span>
-                                                            <!-- <span class="value">{{ recipe.baker }}</span> -->
+                                                            <span class="value">{{ recipe.category }}</span>
                                                         </div>
                                                     </div>
                                                 </div>

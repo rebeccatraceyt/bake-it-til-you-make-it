@@ -2,7 +2,7 @@ import os
 from flask import (
         Flask, flash, render_template, 
         redirect, request, session, url_for)
-from flask_pymongo import PyMongo, DESCENDING
+from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -41,11 +41,11 @@ def home():
     Home page displays the 4 latest recipes
     """
     
-    latest_recipes = mongo.db.recipes.find().sort(
-        '_id', DESCENDING).limit(4)
+    latest_recipes = mongo.db.recipes.find().sort("_id", 1).limit(4)
+    
     return render_template(
         "index.html", 
-        latest_recipes=latest_recipes, title="Home")
+        recipes=latest_recipes, title="Home")
 
 
 # ------- Register Page -------
