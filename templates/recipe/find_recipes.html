@@ -20,16 +20,27 @@
             </div>
         </form>
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown button
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="CategoryFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Search by Category
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu" aria-labelledby="CategoryFilter">
                 <a class="dropdown-item" href="{{ url_for('category_filter', id='Bread') }}">Bread</a>
                 <a class="dropdown-item" href="{{ url_for('category_filter', id='Cake') }}">Cake</a>
                 <a class="dropdown-item" href="{{ url_for('category_filter', id='Cookie') }}">Cookie</a>
                 <a class="dropdown-item" href="{{ url_for('category_filter', id='Pastry') }}">Pastry</a>
             </div>
         </div>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="DifficultyFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Search by Difficulty
+            </button>
+            <div class="dropdown-menu" aria-labelledby="DifficultyFilter">
+                <a class="dropdown-item" href="{{ url_for('difficulty_filter', id='Easy') }}">Easy</a>
+                <a class="dropdown-item" href="{{ url_for('difficulty_filter', id='Medium') }}">Medium</a>
+                <a class="dropdown-item" href="{{ url_for('difficulty_filter', id='Hard') }}">Hard</a>
+            </div>
+        </div>
+
         {% for recipe in recipes %}
             <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a>
         {% endfor %}

@@ -79,6 +79,12 @@ def category_filter(id):
     return render_template("/recipe/find_recipes.html", recipes=recipes)
 
 
+@app.route("/difficulty_filter/<id>")
+def difficulty_filter(id):
+    recipes = list(mongo.db.recipes.find({"difficulty": id}))
+    return render_template("/recipe/find_recipes.html", recipes=recipes)
+
+
 # ------- Register Page -------
 
 @app.route("/register", methods=["GET", "POST"])
