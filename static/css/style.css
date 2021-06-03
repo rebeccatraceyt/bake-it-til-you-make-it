@@ -293,8 +293,10 @@ footer ul {
     font-family: var(--accent-font);
     color: var(--text);
     font-size: 1.3em;
-    
-    margin: auto;
+    padding-left: 0;
+}
+footer li {
+    display: inline;
 }
 
 .hide-disclaimer {
@@ -462,6 +464,7 @@ footer ul {
         max-width: 93vw;
         margin: auto;
     }
+    
 }
 
 /*------------------------------------------------------- 404 Page Styling */
