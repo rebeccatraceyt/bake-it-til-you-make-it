@@ -56,3 +56,30 @@ $('#suggestionForm').validate({
     },
 
 });
+
+// EmailJs Function
+$('#form-submit').click(function (event) {
+    // reference: https://stackoverflow.com/questions/5127813/call-mvc-3-client-side-validation-manually-for-ajax-posts
+    event.preventDefault();
+    if($('#suggestionForm').valid()) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Thank You!',
+            text: 'Your message has been received',
+            showConfirmButton: false,
+            timer: 1500
+        });
+        $('#form-modal').modal('hide');
+        sendMail();
+    }
+});
+
+function sendMail(){
+    // reference: CI tutorial and https://www.youtube.com/watch?v=x7Ewtay0Q78
+    let tempParams = {
+        user_name: document.getElementById("name").value,
+        user_email: document.getElementById("email").value,
+        user_msg: document.getElementById("message").value,
+    };
+    emailjs.send('service_kqnk8br', 'template_tif41mk', tempParams);
+}

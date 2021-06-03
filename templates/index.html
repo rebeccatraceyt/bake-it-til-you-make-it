@@ -44,10 +44,10 @@
                 <div id="home-carousel" class="col-12 col-lg-6">
                     <div id="latestRecipes" class="carousel slide carousel-fade" data-ride="carousel">
                             <div class="carousel-inner">
-                                <h3>Latest Creations</h3>
                                 {% for recipe in recipes %}
                                     <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
                                         <div class="card">
+                                            <h2>Latest Creations</h2>
                                             <div id="card-img">
                                                 {% if recipe.recipe_img %}
                                                     <img class="recipe-img" class="card-img-top" src="{{ recipe.recipe_img }}" alt="Recipe Image">
