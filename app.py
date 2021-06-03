@@ -142,37 +142,6 @@ def logout():
     return redirect(url_for("login"))
 
 
-# ------- My Recipes Page -------
-
-@app.route("/my_recipes/<username>", methods=["GET", "POST"])
-def my_recipes(username):
-    """
-    Displays User's recipes page
-    """
-    
-    user = mongo.db.users.find_one(
-        {"username": session["user"]})
-    
-    if not user_logged_in(username.lower()):
-        return redirect(url_for("login"))
-    
-    if "user" in session.keys():
-        if session["user"] == username:
-            recipes = list(
-                mongo.db.recipes.find(
-                    {"baker": username.lower()}))
-        
-    else:
-        return redirect(url_for("login"))
-    
-    return render_template(
-        "/user/my_recipes.html", 
-        user=user, recipes=recipes)
-
-
-# ------- My Favourites Page -------
-
-
 # ------- Edit User Page -------
 
 @app.route("/edit_user/<username>", methods=["GET", "POST"])
@@ -244,6 +213,67 @@ def delete_user(username):
         return redirect(url_for("login")) 
 
 
+# ------- My Recipes Page -------
+
+@app.route("/my_recipes/<username>", methods=["GET", "POST"])
+def my_recipes(username):
+    """
+    Displays User's recipes page
+    """
+    
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+    
+    if not user_logged_in(username.lower()):
+        return redirect(url_for("login"))
+    
+    if "user" in session.keys():
+        if session["user"] == username:
+            recipes = list(
+                mongo.db.recipes.find(
+                    {"baker": username.lower()}))
+        
+    else:
+        return redirect(url_for("login"))
+    
+    return render_template(
+        "/user/my_recipes.html", 
+        user=user, recipes=recipes)
+
+
+# ------- My Favourites Page -------
+
+@app.route("/my_favourites/<username>", methods=["GET", "POST"])
+def my_favourites(username):
+    """
+    Displays recipes the user has 'favourited'
+    """
+
+    if not user_logged_in(username.lower()):
+        return redirect(url_for("login"))
+    
+    if "user" in session.keys():
+        user = mongo.db.users.find_one(
+            {"username": session["user"]})
+        favourite_recipes = user["favourite_recipes"]
+        
+        favourites = mongo.db.recipes.find(
+            {"_id": {
+                "$in": favourite_recipes }
+            })
+        
+        recommended = mongo.db.recipes.find().sort(
+            "favourite_count", 1).limit(3)
+        
+    else:
+        flash("You must be logged in")
+        return redirect(url_for("login"))
+    
+    return render_template("/user/my_favourites.html", user=user, 
+                           favourites=favourites, recommended=recommended)
+          
+
+
 # ------- Individual Recipe Page -------
 
 @app.route("/recipe/<recipe_id>")
@@ -279,7 +309,8 @@ def create_recipe():
             "total_time": request.form.get("total_time"),
             "ingredients": request.form.getlist("ingredients"),
             "directions": request.form.getlist("directions"),
-            "baker": session["user"]
+            "baker": session["user"],
+            "favourite_count": int(0)
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Shared")
@@ -319,21 +350,21 @@ def edit_recipe(recipe_id):
         return redirect(url_for("login"))
     
     if request.method == "POST":
-        update_recipe = {
-            "recipe_name": request.form.get("recipe_name"),
-            "recipe_img": request.form.get("recipe_img"),
-            "recipe_url": request.form.get("recipe_url"),
-            "description": request.form.get("description"),
-            "category": request.form.get("category"),
-            "difficulty": request.form.get("difficulty"),
-            "serving": request.form.get("serving"),
-            "total_time": request.form.get("total_time"),
-            "ingredients": request.form.getlist("ingredients"),
-            "directions": request.form.getlist("directions"),
-            "baker": session["user"]
-        }
-        mongo.db.recipes.update(
-            {"_id": ObjectId(recipe_id)}, update_recipe)
+        mongo.db.recipes.update_one(
+            {"_id": ObjectId(recipe_id)}, {
+                '$set': {
+                   "recipe_name": request.form.get("recipe_name"),
+                    "recipe_img": request.form.get("recipe_img"),
+                    "recipe_url": request.form.get("recipe_url"),
+                    "description": request.form.get("description"),
+                    "category": request.form.get("category"),
+                    "difficulty": request.form.get("difficulty"),
+                    "serving": request.form.get("serving"),
+                    "total_time": request.form.get("total_time"),
+                    "ingredients": request.form.getlist("ingredients"),
+                    "directions": request.form.getlist("directions"), 
+                }
+            })
         flash("Recipe Updated!")
         
         return redirect(url_for("recipe", recipe_id=recipe_id))
