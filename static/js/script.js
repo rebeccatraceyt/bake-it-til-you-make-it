@@ -29,3 +29,30 @@ $('#password, #confirm_password').on('keyup', function () {
   } else 
     $('#message').html('Passwords do not match, try again').css('color', 'red');
 });
+
+// Checking if form is valid - reference: https://codepen.io/tetnuc/pen/gRqOEO
+$('#suggestionForm').validate({
+    rules: {
+        name: {
+            required: true
+        },
+        email: {
+            required: true
+        },
+        message: {
+            required: true
+        }
+    },
+    messages: {
+        name: {
+            required: "Please complete all fields"
+        },
+        email: {
+            required: "Please complete all fields"
+        },
+        message: {
+            required: "Please complete all fields"
+        }
+    },
+
+});

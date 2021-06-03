@@ -172,7 +172,7 @@ button:focus {
     /* Referenced and edited from:
         https://stackoverflow.com/questions/8357058/how-to-make-an-html-anchor-tag-or-link-look-like-a-button  */
     display: table;
-    min-width: 60%;
+    min-width: 100%;
     background: var(--text);
     padding: 10px;
     border-radius: 8px;
@@ -180,14 +180,21 @@ button:focus {
     line-height: 30px;
     font-family: var(--accent-font);
     margin: auto;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 #home-btn a:hover {
     background: var(--white);
     color: var(--text);
 }
+#home-carousel h2 {
+    text-align: center;
+    font-size: 2em;
+    padding: 10px 30px 0px 30px;
+    color: var(--text);
+    font-family: var(--accent-font);
+}
 #home-carousel h3 {
-    color: var(--white);
+    color: var(--text);
     font-family: var(--accent-font);
 }
 .carousel-item {
@@ -199,7 +206,7 @@ button:focus {
     align-content: center;
 }
 .recipe-img {
-    padding: 2%;
+    padding: 0% 2% 2% 2%;
     margin: auto;
     display: flex;
     width: 100%;
@@ -288,7 +295,6 @@ footer {
     padding: 2%;
     text-align: center;
 }
-
 footer ul {
     font-family: var(--accent-font);
     color: var(--text);
@@ -303,7 +309,78 @@ footer li {
     /* Disclaimer notice is hidden by default */
     display: none;
 }
+.iconify.footer-btn {
+    cursor: pointer;
+}
+.iconify.footer-btn:hover {
+    color: var(--white);
+}
 
+/*------------------------------------------------------- Form Modal */
+.form-content {
+    background-image: url("../images/paper-texture.png");
+    color: var(--text);
+    border-radius: 10px;
+}
+.form-header {
+    
+    border: none;
+    padding-bottom: 0;
+    font-family: var(--accent-font);
+    letter-spacing: 1px;
+}
+.form-header h4 {
+    font-size: 1.8em;
+}
+.form-header p {
+    margin-bottom: 0;
+}
+.form-header.iconify {
+    color: var(--white);
+}
+.form-body {
+    padding-top: 1rem;
+}
+/* Edited from W3School's example to style contact form 
+        reference: https://www.w3schools.com/howto/howto_css_contact_form.asp */
+.form-body input[type='text'], input[type='email'], textarea {
+    width: 100%;
+    padding: 7px;
+    border: 2px solid var(--white);
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 1px;
+    resize: none;
+}
+.form-btn {
+    float: right;
+    background-color: var(--text);
+    color: var(--white);
+}
+.form-btn:hover {
+    background-color: var(--white);
+    color: var(--text);
+}
+/* Edited from W3School's CSS placeholder example for better readability and consistency 
+    reference: https://www.w3schools.com/howto/howto_css_placeholder.asp */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--text);;
+    font-family: var(--accent-font);
+    opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--text);;
+    font-family: var(--accent-font);
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--text);;
+    font-family: var(--accent-font);
+}
+.error {
+    /* Default class with JQuery Form Validator plugin */
+    color: var(--white);
+    font-weight: 700;
+}
 
 /*------------------------------------------------------- Media Queries */
 
@@ -417,7 +494,6 @@ footer li {
     #main-section {
         background: transparent;
         box-shadow: 0px 0px grey;
-        padding-top: 10%;
         padding-bottom: 2%;
     }
 
@@ -449,6 +525,9 @@ footer li {
     #latestRecipes {
         max-width: 80%;
         margin: auto;
+    }
+    #home-carousel h2 {
+        text-align: left;
     }
     #home-carousel h3 {
         font-size: 2em;

@@ -66,6 +66,7 @@
                         </nav>
 
                         <section id="main-section" aria-label="Main Section unique to each page">
+                            
                             {% block content %}
                             {% endblock %}
                         </section>
@@ -76,8 +77,8 @@
                                     <div id="disclaimer" class="hide-disclaimer col-12" onclick="hideDisclaimer()">
                                         <p>This website is created by Rebecca Tracey-Timoney for educational purpose only. <br> Copyright for the recipes on this website go to the original recipe owner.</p> 
                                     </div>   
-                                    <div class="col-12">
-                                        <span><i class="iconify" data-icon="bi:exclamation-circle-fill" data-inline="true" onclick="showDisclaimer()"></i> Disclaimer</span>
+                                    <div class="col-12 footer-btn">
+                                        <span><i class="iconify footer-btn" data-icon="bi:exclamation-circle-fill" data-inline="true" onclick="showDisclaimer()"></i> Disclaimer</span>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -86,15 +87,15 @@
                                         <ul>
                                             <li>
                                                 <a href="https://www.linkedin.com/in/rebeccatraceytimoney/" target="_blank" rel="noopener" aria-label="Linkedin - Rebecca Tracey-Timoney">
-                                                    <i class="iconify" data-icon="brandico:linkedin-rect" data-inline="true"></i>
+                                                    <i class="iconify footer-btn" data-icon="brandico:linkedin-rect" data-inline="true"></i>
                                                 </a> 
                                             </li>
                                             <li>
-                                                <i class="iconify" data-icon="entypo:chat" data-inline="false" data-toggle="modal" data-target="#form-modal"></i>
+                                                <i class="iconify footer-btn" data-icon="entypo:chat" data-inline="false" data-toggle="modal" data-target="#form-modal"></i>
                                             </li>
                                             <li>
                                                 <a href="https://github.com/rebeccatraceyt" target="_blank" rel="noopener" aria-label="Github - rebeccatraceyt">
-                                                    <i class="iconify" data-icon="jam:github" data-inline="true"></i>
+                                                    <i class="iconify footer-btn" data-icon="jam:github" data-inline="true"></i>
                                                 </a>
                                             </li>
                                         </ul>
@@ -106,7 +107,7 @@
                             </div>
                         </footer>
 
-                        <div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-label="suggestion-form" aria-hidden="true">
+                        <div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-label="contact-form" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content form-content">
                                     <div class="modal-header form-header">
@@ -115,14 +116,14 @@
                                             <p>Get in touch with the Developer!</p>
                                         </div> 
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span><i class="fas fa-times btn-click"></i></span>
+                                            <span class="iconify" data-icon="akar-icons:circle-x" data-inline="false"></span>
                                         </button>
                                     </div>
                                     <div class="modal-body form-body">
                                         <form id="suggestionForm" aria-label="Suggestions Form">                                
-                                            <input type="text" name="pName" id="pName" placeholder="Name" aria-label="Enter Name" required>
-                                            <input type="email" name="pEmail" id="pEmail" placeholder="Email" aria-label="Enter Email" required>
-                                            <textarea name="pMessage" id="pMessage" placeholder="Leave a message or suggestion" aria-label="Enter Message" rows="4" required></textarea>
+                                            <input type="text" name="name" id="name" placeholder="Name" aria-label="Enter Name" required>
+                                            <input type="email" name="email" id="email" placeholder="Email" aria-label="Enter Email" required>
+                                            <textarea name="message" id="message" placeholder="Leave a message" aria-label="Enter Message" rows="4" required></textarea>
                                             <input id="form-submit" type="submit" class="btn btn-click form-btn" aria-label="Submit Button" value="Send">
                                         </form>
                                     </div>
