@@ -248,30 +248,61 @@ def my_favourites(username):
     """
     Displays recipes the user has 'favourited'
     """
-
+    
+    user = mongo.db.users.find_one(
+                {"username": session["user"]})
+    
     if not user_logged_in(username.lower()):
         return redirect(url_for("login"))
+    
+    if "user" in session.keys():
+        if session["user"] == username:
+            favourite_recipes = user["favourite_recipes"]
+            
+            favourites = mongo.db.recipes.find(
+                {"_id": {"$in": favourite_recipes}})
+            
+            recommended = mongo.db.recipes.find().sort(
+                "favourite_count", -1).limit(3)
+    else:
+        flash("You must be logged in")
+        return redirect(url_for("login"))
+    
+    return render_template("/user/my_favourites.html", user=user, 
+                           recommended=recommended, favourites=favourites,
+                           favourite_recipes=favourite_recipes)
+          
+
+# ------- Add to Favourites -------
+
+@app.route("/add_to_favourites/<recipe_id>", methods=["GET", "POST"])
+def add_to_favourites(recipe_id):
+    """
+    Added recipe to the current users 'favourites'
+    """
     
     if "user" in session.keys():
         user = mongo.db.users.find_one(
             {"username": session["user"]})
         favourite_recipes = user["favourite_recipes"]
         
-        favourites = mongo.db.recipes.find(
-            {"_id": {
-                "$in": favourite_recipes }
-            })
-        
-        recommended = mongo.db.recipes.find().sort(
-            "favourite_count", 1).limit(3)
+        if ObjectId(recipe_id) not in favourite_recipes:
+            mongo.db.users.update_one({"username": session["user"]},
+                            {"$push": {
+                                "favourite_recipes" : ObjectId(recipe_id)}})
+
+            mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)},
+                                        {"$inc": {"favourite_count": 1}})
+        else: 
+            flash("Already Added to favourites")
+            return redirect(url_for("recipe", recipe_id=recipe_id))
         
     else:
-        flash("You must be logged in")
-        return redirect(url_for("login"))
+        flash("You must be logged in to add to favourites!")
+        return redirect(url_for('login'))
     
-    return render_template("/user/my_favourites.html", user=user, 
-                           favourites=favourites, recommended=recommended)
-          
+    flash("Added to my favourites")
+    return redirect(url_for("recipe", recipe_id=recipe_id))
 
 
 # ------- Individual Recipe Page -------

@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-6">
                             <div id="recipe-btn">
-                                <a href="#"><span class="iconify" data-icon="clarity:heart-solid" data-inline="true"></span> Favourite</a>
+                                <a href="{{url_for('add_to_favourites', recipe_id=recipe._id)}}"><span class="iconify" data-icon="clarity:heart-solid" data-inline="true"></span> Favourite</a>
                             </div>
                             {% if session.user|lower == recipe.baker|lower %}
                                 <div id="recipe-btn">
