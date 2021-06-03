@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <section aria-label="User's 'My Favourites' Page">
+        <h1>{{ user.username }}'s Favourites</h1>
+        <a href="{{ url_for('logout') }}">Log Out</a>
+        <a href="{{ url_for('edit_user', username=session['user']) }}">Edit Profile</a>
+        <a href="{{ url_for('create_recipe') }}">Create A Recipe</a>
+        {% for rec in recommended %}
+        <a class="" href="{{ url_for('recipe', recipe_id=rec._id) }}">full recommended recipe</a>
+        {% endfor %}
+    </section>
+    
+{% endblock %}
