@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<section aria-label="Find Recipes Page">
+        {% for recipe in recipes %}
+            <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a>
+        {% endfor %}
+	</section>
+{% endblock %}
