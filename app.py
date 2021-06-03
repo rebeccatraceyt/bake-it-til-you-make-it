@@ -72,6 +72,13 @@ def search():
     return render_template("/recipe/find_recipes.html", recipes=recipes)
 
 
+# ------- Filtered Search for Recipes -------
+@app.route("/category_filter/<id>")
+def category_filter(id):
+    recipes = list(mongo.db.recipes.find({"category": id}))
+    return render_template("/recipe/find_recipes.html", recipes=recipes)
+
+
 # ------- Register Page -------
 
 @app.route("/register", methods=["GET", "POST"])
