@@ -48,6 +48,13 @@ def home():
         recipes=latest_recipes, title="Home")
 
 
+# ------- Find Recipes Page -------
+@app.route("/find_recipes")
+def find_recipes():
+    recipes = list(mongo.db.recipes.find())
+    return render_template("/recipe/find_recipes.html", recipes=recipes)
+
+
 # ------- Register Page -------
 
 @app.route("/register", methods=["GET", "POST"])
