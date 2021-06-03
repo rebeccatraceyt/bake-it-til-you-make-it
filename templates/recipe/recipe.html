@@ -27,7 +27,11 @@
                         </div>
                         <div class="col-6">
                             {% if session.user %}
-                                {% if favourited %}
+                                {% if session.user|lower == recipe.baker|lower %}
+                                    <div class="recipe-btn">
+                                        <a href=""><span class="iconify" data-icon="ant-design:delete-filled" data-inline="false"></span> Your recipe</a>
+                                    </div>
+                                {% elif favourited %}
                                     <div class="recipe-btn">
                                         <a href="{{url_for('remove_from_favourites', recipe_id=recipe._id)}}"><span class="iconify" data-icon="ant-design:delete-filled" data-inline="false"></span> Remove from Favourites</a>
                                     </div>

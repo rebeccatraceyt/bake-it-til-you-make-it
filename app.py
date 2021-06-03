@@ -473,9 +473,19 @@ def delete_recipe(recipe_id):
     Allows user to delete their uploaded
     """
     
-    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    if "user" in session.keys():
+        
+        mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+        
+        mongo.db.users.update({},
+                              {"$pull": {
+                                  "favourite_recipes": ObjectId(recipe_id)}},
+                              multi=True)
+    else: 
+        flash("You must be logged in")
+        return redirect(url_for('login'))
+    
     flash("Recipe Deleted")
-
     return redirect(url_for("my_recipes", username=session["user"]))
 
 
