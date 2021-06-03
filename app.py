@@ -328,7 +328,7 @@ def remove_from_favourites(recipe_id):
                                 }})
         
         flash("Recipe removed from My Favourites")
-        return redirect(url_for('my_favourites', user=user['username'], recipe_id=recipe_id))
+        return redirect(url_for('recipe', recipe_id=recipe_id))
     
     else:
         flash("You must be logged in!")
@@ -345,9 +345,24 @@ def recipe(recipe_id):
     
     recipe = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})
+    
+    # checking that the user is in session
+    if "user" in session:
+        user = mongo.db.users.find_one({"username": session['user']})
+        favourites = user['favourite_recipes']
+        
+        if ObjectId(recipe_id) in favourites:
+            favourited = True
+
+        else:
+            favourited = False
+    
+    else:
+        favourited = False
+        
     return render_template(
-        "/recipe/recipe.html", 
-        recipe=recipe, title="Recipe")
+        "/recipe/recipe.html", recipe=recipe, 
+        favourited=favourited, title="Recipe")
 
 
 # ------- Create Recipe Page -------
