@@ -14,9 +14,6 @@ $(document).ready(function () {
     var add_direction = $(".add-dir-btn");
     var direction = 1;
 
-    /* -----------------------
-        create_recipe.html 
-    ----------------------- */
     // Append New Ingredient
     $(add_ingredient).click(function (e) {
         e.preventDefault();
@@ -48,9 +45,4 @@ $(document).ready(function () {
         $(this).parent('div').remove();
         direction--;
     });
-
-    /* -----------------------
-        edit_recipe.html 
-    ----------------------- */
-
 });
