@@ -10,6 +10,19 @@
                     <div class="row">
                         <div class="col-6">
                             <div>
+                                {% if recipe.category == 'Bread' %}
+                                    <span class="iconify" data-icon="emojione-monotone:bread" data-inline="false"></span>
+                                {% elif recipe.category == 'Cake' %}
+                                    <span class="iconify" data-icon="mdi:cupcake" data-inline="false"></span>
+                                {% elif recipe.category == 'Biscuit' %}
+                                    <span class="iconify" data-icon="fa-solid:cookie-bite" data-inline="false"></span>
+                                {% else %}
+                                    <span class="iconify" data-icon="mdi:food-croissant" data-inline="false"></span>
+                                {% endif %}
+                                <span class="value">{{ recipe.category }}</span>
+                            </div>
+
+                            <div>
                                 <span class="iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
                                 <span class="value">{{ recipe.total_time }}</span>
                                 <span class="title">Minutes</span>
@@ -20,10 +33,11 @@
                                 <span class="title">Serving(s)</span>
                             </div>
                             <div>
-                                <span class="iconify" data-icon="fa-solid:mitten" data-inline="true"></span>
+                                <span class="iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
                                 <span class="value">{{ recipe.difficulty }}</span>
                                 <span class="title">Level </span>
                             </div>
+                            
                         </div>
                         <div class="col-6">
                             {% if session.user %}

@@ -44,7 +44,7 @@
                                                 {% if recipe.recipe_img %}
                                                     <img class="recipe-img" class="card-img-top" src="{{ recipe.recipe_img }}" alt="Recipe Image">
                                                 {% else %}
-                                                    <img class="recipe-img" class="card-img-top" src="{{ url_for('static', filename='images/no-img.png') }}" alt="Alternative Recipe Image">
+                                                    <img class="recipe-img" class="card-img-top" src="{{ url_for('static', filename='images/default-img.png') }}" alt="Alternative Recipe Image">
                                                 {% endif %}
                                             </div>
                                             <hr id="home-hr">
@@ -65,11 +65,19 @@
                                                     </div>
                                                     <div class="col-6">
                                                         <div>
-                                                            <span class="iconify" data-icon="fa-solid:mitten" data-inline="true"></span>
+                                                            <span class="iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
                                                             <span class="value">{{ recipe.difficulty }}</span>
                                                         </div>
                                                         <div>
-                                                            <span class="iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
+                                                            {% if recipe.category == 'Bread' %}
+                                                                <span class="iconify" data-icon="emojione-monotone:bread" data-inline="false"></span>
+                                                            {% elif recipe.category == 'Cake' %}
+                                                                <span class="iconify" data-icon="mdi:cupcake" data-inline="false"></span>
+                                                            {% elif recipe.category == 'Biscuit' %}
+                                                                <span class="iconify" data-icon="fa-solid:cookie-bite" data-inline="false"></span>
+                                                            {% else %}
+                                                                <span class="iconify" data-icon="mdi:food-croissant" data-inline="false"></span>
+                                                            {% endif %}
                                                             <span class="value">{{ recipe.category }}</span>
                                                         </div>
                                                     </div>
