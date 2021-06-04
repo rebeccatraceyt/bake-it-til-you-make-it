@@ -17,11 +17,11 @@
             </div>
 
             <div class="row create-bg">
-                <form id="create-label" class="col-12" method="POST" action="{{ url_for('create_recipe') }}">
+                <form class="col-12" method="POST" action="{{ url_for('create_recipe') }}">
 
                     <!-- Recipe Name -->
                     <div class="row">
-                        <div class="col-12 form-group">
+                        <div class="col-12 form-group create-label">
                             <label for="recipe_name"><span class="iconify" data-icon="ic:round-drive-file-rename-outline" data-inline="true"></span> Recipe Name</label>
                             <input id="recipe_name" class="form-control" name="recipe_name" type="text"  minlength="3" aria-describedby="recipe_name" required />
                         </div>
@@ -29,7 +29,7 @@
 
                     <!-- Image URL -->
                     <div class="row">
-                        <div class="col-12 form-group">
+                        <div class="col-12 form-group create-label">
                             <label for="recipe_img"><i class="far fa-images"></i> Recipe Image <small>(URL)</small></label>
                             <input id="recipe_img" class="form-control" name="recipe_img" type="url" aria-describedby="recipe_img" pattern="https?://.+" />
                         </div>
@@ -37,7 +37,7 @@
 
                     <!-- Recipe Source -->
                     <div class="row">
-                        <div class="col-12 form-group">
+                        <div class="col-12 form-group create-label">
                            <label for="recipe_url"><span class="iconify" data-icon="akar-icons:book" data-inline="true"></span> Recipe Source <small>(URL)</small></label>
                             <input id="recipe_url" class="form-control" name="recipe_url" type="url" aria-describedby="recipe_url" pattern="https?://.+" />
                         </div>
@@ -45,7 +45,7 @@
 
                     <!-- Category and Level -->
                     <div class="row">
-                        <div class="col-12 form-group">
+                        <div class="col-12 form-group create-label">
                             <div class="row">
                                 <div class="col-6">
                                     <label for="category"><span class="iconify" data-icon="ion:file-tray" data-inline="true"></span> Category</label>
@@ -71,7 +71,7 @@
 
                     <!-- Prep time and Servings -->
                     <div class="row">
-                        <div class="col-12 form-group">
+                        <div class="col-12 form-group create-label">
                             <div class="row">
                                 <div class="col-6">
                                     <label for="total_time"><span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span> Total Time</label>
@@ -101,14 +101,14 @@
 
                     <!-- Description -->
                     <div class="row">
-                        <div class="col-12 form-group">
+                        <div class="col-12 form-group create-label">
                            <label for="description"><i class="far fa-file-alt"></i> Recipe Description</label>
                            <textarea id="description" class="form-control" name="description" aria-describedby="description" minlength="3" maxlength="300" rows="3" required></textarea>
                         </div>
                     </div>
 
                     <!-- Ingredients -->
-                    <div class="row ingredient-row">
+                    <div class="row ingredient-row create-label">
                         <div class="col-12 form-group ing-input">
                             <label for="ingredients"><i class="fas fa-list-ul"></i> Ingredients</label>
                             <input id="ingredients" class="form-control" name="ingredients" type="text" aria-describedby="ingredients" minlength="3" required />
@@ -117,7 +117,7 @@
 
                     <!--Add Ingredient button-->
                     <div class="row">
-                        <div class="col-12 form-group">
+                        <div class="col-12 form-group create-label">
                             <a href="#">
                                 <p class="add-ing-btn"><i class="far fa-plus-square"></i> Add Ingredient</p>
                             </a>
@@ -125,7 +125,7 @@
                     </div>
 
                     <!-- Directions -->
-                    <div class="row direction-row">
+                    <div class="row direction-row create-label">
                         <div class="col-12 form-group dir-input">
                             <label for="directions"><i class="fas fa-list-ol"></i> Directions</label>
                             <textarea id="directions" class="form-control" name="directions" type="text" aria-describedby="directions" minlength="3" maxlength="300" rows="2"  required ></textarea>
@@ -133,7 +133,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-12 form-group">
+                        <div class="col-12 form-group create-label">
                             <a href="#">
                                 <p class="add-dir-btn"><i class="far fa-plus-square"></i> Add Direction</p>
                             </a>

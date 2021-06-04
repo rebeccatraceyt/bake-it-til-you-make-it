@@ -395,28 +395,21 @@ button:focus {
 }
 
 /* Specific to Edit User */
-#edit-btns {
+.edit-btn {
+    text-align: center;
+    display: flex;
     justify-content: center;
     margin: auto;
-    padding: 0 20px;
+    padding: 20px;
     font-size: 1.3em;
 }
-.edit-btn button {
-    background: var(--text);
+.edit-btn button, .edit-btn a {
+    min-width: 80%;
+    background-color: var(--text);
     color: var(--white);
-    border: none;
-    padding: 10px 20px;
     border-radius: 10px;
     box-shadow: 3px 3px 3px 3px var(--grey-bg); 
-}
-.edit-btn a {
-    display: inline-block;
-    background: var(--text);
-    padding: 10px;
-
-    border-radius: 10px;
-    color: var(--white);
-    box-shadow: 3px 3px 3px 3px var(--grey-bg); 
+    padding: 10px 15px;
 }
 .edit-btn button:hover, .edit-btn a:hover {
     background: var(--white);
@@ -450,6 +443,7 @@ button:focus {
     padding-left: 5px;
 }
 .add-ing-btn, .add-dir-btn, .remove_field {
+    font-size: 1.1em;
     float: right;
     color: var(--text);
 }
@@ -463,6 +457,10 @@ button:focus {
     min-width: 80%;
     background-color: var(--text);
     color: var(--white);
+}
+.create-btn button:hover, .create-btn a:hover {
+    background-color: var(--white);
+    color: var(--text);
 }
 
 
@@ -717,13 +715,25 @@ footer li {
     #login-page.page-padding {
         min-height: 30vh;
     }
-    #edit-btns {
-        max-width: 60%;
+    .edit-btn {
+        max-width: 40%;
         font-size: 1.5em;
     }
     #delete-user-btn {
         max-width: 70%;
         font-size: 1em;
+    }
+
+    /* -- Create/Edit Recipe Profile */
+    .create-bg {
+        margin: 1% 10%;
+    }
+    .create-label label {
+        font-size: 1.3em;
+    }
+    .create-btn button, .create-btn a {
+        min-width: 60%;
+        max-width: 60%;
     }
 }
 
