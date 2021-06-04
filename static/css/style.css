@@ -264,15 +264,44 @@ button:focus {
     resize: none;
     box-shadow: 5px 10px 10px var(--grey-bg);
 }
-#search-btn {
+#search-btns {
+    margin-bottom: 20px;
 }
-#search-btn button {
+#search-btns button {
     width: 20%;
     font-size: 1.8em;
-    background: var(--white);
+    background: var(--text);
     border: none;
     border-radius: 50px;
     box-shadow: 3px 3px 3px 3px var(--grey-bg); 
+}
+.search-btn.iconify {
+    color: var(--white);
+}
+#search-btns button:hover{
+    background: var(--white);
+}
+.search-btn.iconify:hover{
+    color: var(--text);
+}
+#search-filter {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+#search-filter button {
+    width: 100%;
+    padding: 5px;
+    background-color: var(--white);
+    box-shadow: 3px 3px 3px 3px var(--grey-bg); 
+}
+.dropdown-menu {
+    background-color: var(--text);
+}
+.dropdown-item {
+    color: var(--white);
+    width: 50%;
+
 }
 
 
