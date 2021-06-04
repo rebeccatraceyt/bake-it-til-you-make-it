@@ -22,50 +22,55 @@
                 <div class="container-fluid">
                     <div class="row accounts-label">
                         <form class="col-12" method="POST" action="{{ url_for('register') }}">
-                                <!-- Username -->
-                                <div class="row">
-                                    <div class="col-12 form-group">
-                                        <label for="username"><i class="fas fa-user"></i> Username</label>
-                                        <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="username" required>
-                                    </div>
+                            
+                            <!-- Username -->
+                            <div class="row">
+                                <div class="col-12 form-group">
+                                    <label for="username"><i class="fas fa-user"></i> Username</label>
+                                    <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="username" required>
                                 </div>
+                            </div>
 
-                                <!-- Email -->
-                                <div class="row">
-                                    <div class="col-12 form-group">
-                                        <label for="email"><i class="fas fa-envelope-open"></i> Email</label>
-                                        <input id="email" name="email" type="email" minlength="3" class="form-control" aria-describedby="email" required>
-                                    </div>
+                            <!-- Email -->
+                            <div class="row">
+                                <div class="col-12 form-group">
+                                    <label for="email"><i class="fas fa-envelope-open"></i> Email</label>
+                                    <input id="email" name="email" type="email" minlength="3" class="form-control" aria-describedby="email" required>
                                 </div>
-                                <!-- User Image -->
-                                <div class="row">
-                                    <div class="col-12 form-group">
-                                        <label for="email"><i class="fas fa-image"></i> Profile Picture</label><br>
-                                        <small>Copy & Paste image URL </small><br>
-                                        <input id="user_img" name="user_img" type="url" class="form-control" aria-describedby="user_img" required>
-                                    </div>
+                            </div>
+
+                            <!-- User Image -->
+                            <div class="row">
+                                <div class="col-12 form-group">
+                                    <label for="user_img"><i class="fas fa-image"></i> Profile Picture</label><br>
+                                    <small>Copy & Paste image URL </small><br>
+                                    <input id="user_img" name="user_img" type="url" class="form-control" aria-describedby="user_img" required>
                                 </div>
-                                <!-- Password -->
-                                <div class="row">
-                                    <div class="col-12 form-group">
-                                        <label for="email"><i class="iconify" data-icon="mdi:lock" data-inline="true"></i> Password</label>
-                                        <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="password" required>
-                                    </div>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="row">
+                                <div class="col-12 form-group">
+                                    <label for="password"><i class="iconify" data-icon="mdi:lock" data-inline="true"></i> Password</label>
+                                    <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="password" required>
                                 </div>
-                                <!-- Confirm Password-->
-                                <div class="row">
-                                    <div class="col-12 form-group">
-                                        <label for="email"><i class="iconify" data-icon="mdi:lock-check" data-inline="true"></i> Confirm Password</label>
-                                        <input id="confirm_password" name="confirm_password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="confirm_password" required> <br>
-                                        <span id='message'></span>
-                                    </div>
+                            </div>
+
+                            <!-- Confirm Password-->
+                            <div class="row">
+                                <div class="col-12 form-group">
+                                    <label for="confirm_password"><i class="iconify" data-icon="mdi:lock-check" data-inline="true"></i> Confirm Password</label>
+                                    <input id="confirm_password" name="confirm_password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="confirm_password" required> <br>
+                                    <span id='message'></span>
                                 </div>
-                                <!-- submit button -->
-                                <div class="row">
-                                    <button type="submit" class="col-12 accounts-btn">
-                                        Register <i class="fas fa-sign-in-alt"></i>
-                                    </button>
-                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="row">
+                                <button type="submit" class="col-12 accounts-btn">
+                                    Register <i class="fas fa-sign-in-alt"></i>
+                                </button>
+                            </div>
                         </form>
                     </div>
 

@@ -2,42 +2,62 @@
 {% block content %}
 
     <section aria-label="User Log in Page">
-        <div id="register-page" class="container-fluid">
-            <h3>Log In</h3>
-            <div class="row">
-                <form class="col-12" method="POST" action="{{ url_for('login') }}">
-                        <!-- Username -->
-                        <div class="row">
-                            <div class="col-12 form-group">
-                                <span class="iconify" data-icon="fa-solid:user-alt" data-inline="false"></span>
-                                <input id="username" name="username" type="text" placeholder="Username" minlength="5" 
-                                    maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                            </div>
-                        </div>
-                        <!-- Password -->
-                        <div class="row">
-                            <div class="col-12 form-group">
-                                <span class="iconify" data-icon="mdi:lock" data-inline="false"></span>
-                                <input id="password" name="password" type="password" placeholder="Password" 
-                                    minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                            </div>
-                        </div>
-                        <!-- login button -->
-                        <div class="row">
-                            <button type="submit" class="col-12">
-                                Log In <i class="fas fa-sign-in-alt"></i>
-                            </button>
-                        </div>
-                </form>
-            </div>
+        <!-- Banner image -->
+        <div class="banner-img">
+            <img src="../static/images/banner.png" alt="Bake It Til You Make it Banner Image">
+        </div>
 
+        <div id="login-page" class="container-fluid page-padding">
+
+            <!-- Page Title -->
             <div class="row">
-                <div class="col-12">
-                    <p class="center-align">
-                        Don't have an account? <a href="{{ url_for('register') }}">Sign Up</a>
-                    </p>
+                <div class="col-12 page-title">
+                    <h2>Log In</h2>
+                    <p>Sign into your account and start baking!</p>
                 </div>
             </div>
+
+            <!-- Log In Form -->
+            <div class="row accounts-bg">
+                <div class="contiainer-fluid">
+                    <div class="row accounts-label">
+                        <form class="col-12" method="POST" action="{{ url_for('login') }}">
+
+                            <!-- Username -->
+                            <div class="row">
+                                <div class="col-12 form-group">
+                                    <label for="username"><i class="fas fa-user"></i> Username</label>
+                                    <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="username" required>
+                                </div>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="row">
+                                <div class="col-12 form-group">
+                                    <label for="password"><i class="iconify" data-icon="mdi:lock" data-inline="true"></i> Password</label>
+                                    <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="password" required>
+                                </div>
+                            </div>
+
+                            <!-- Submit button -->
+                            <div class="row">
+                                <button type="submit" class="col-12 accounts-btn">
+                                    Log In <i class="fas fa-sign-in-alt"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 accounts-link">
+                            <p>
+                                Don't have an account? <a href="{{ url_for('register') }}">Sign Up</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
         </div>
     </section>
 

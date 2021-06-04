@@ -345,6 +345,7 @@ button:focus {
     margin: auto;
     padding: 30px 10px 10px 10px;
     border-radius: 10px;
+    justify-content: center;
 }
 .accounts-label label {
     text-align: center;
@@ -382,6 +383,9 @@ button:focus {
 .accounts-link a:hover{
     background-color: var(--white);
     color: var(--text);
+}
+#login-page.page-padding {
+    min-height: 65vh;
 }
 
 /*------------------------------------------------------- Individual Recipe Page */
@@ -632,6 +636,9 @@ footer li {
     .accounts-link {
         font-size: 1.2em;
     }
+    #login-page.page-padding {
+        min-height: 30vh;
+    }
 }
 
 /* Breakpoint to maintain structural integrity on a Laptop Screen */
@@ -812,10 +819,13 @@ footer li {
         padding-left: 35px;
     }
     .accounts-btn {
-        max-width: 40%;
+        max-width: 50%;
     }
     .accounts-link {
         font-size: 1.2em;
+    }
+    #login-page.page-padding {
+        min-height: 30vh;
     }
 
     /* -- Footer -- */
