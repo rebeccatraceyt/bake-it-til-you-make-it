@@ -32,19 +32,29 @@
     </head>
     <body>
 
+        <!-- Section containing Navbar, Page Content and Footer -->
         <section aria-label="Main Site Section - with Navigation, Page Content and Footer">
             <div id="content-div" class="container-fluid">
                 <div class="row no-gutters">
+
+                    <!-- Img of Spirals for 'Notebook' effect on lg screens -->
                     <div id="lg-left" class="d-none d-lg-block col-lg-2">
                         <img src="../static/images/left-bg.png" alt="Spiral Notebook Image for Notebook styling">
                     </div>
+
+                    <!-- Main section on lg screens -->
                     <div id="lg-right" class="col-12 col-lg-10">
+
+                        <!-- Navbar -->
                         <nav id="scroll-nav" class="navbar navbar-expand-lg sticky-top">
+
                             <a class="navbar-brand d-lg-none" href="{{ url_for('home') }}"><img src="../static/images/logo.png"></a>
+                            
                             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#hamburger-nav"
                                 aria-controls="hamburger-nav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
+
                             <div class="collapse navbar-collapse" id="hamburger-nav">
                                 <ul class="navbar-nav mx-auto">
                                     <li class="nav-item">
@@ -73,12 +83,15 @@
                             </div>
                         </nav>
 
+                        <!-- Block content section for each page-->
                         <section id="main-section" aria-label="Main Section unique to each page">
                             
                             {% block content %}
                             {% endblock %}
+
                         </section>
 
+                        <!-- Footer section -->
                         <footer aria-label="Footer Containing Copyright and Disclaimer information">
                             <div class="container-fluid">
                                 <div class="row">
@@ -107,13 +120,11 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="col-12">
-                                        
-                                    </div>
                                 </div>
                             </div>
                         </footer>
 
+                        <!-- Footer modal for chat function -->
                         <div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-label="contact-form" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content form-content">
