@@ -58,7 +58,8 @@ button:focus {
 .iconify {
     color: var(--text);
 }
-.users-name {
+.db-name {
+    /* For text coming from db collection */
     font-family: var(--body-font);
     font-size: smaller;
 }
@@ -462,7 +463,7 @@ button:focus {
     display: flex;
     justify-content: center;
     margin: auto;
-    padding: 20px;
+    padding: 10px 15px;
 }
 .create-btn button, .create-btn a {
     min-width: 80%;
@@ -473,6 +474,12 @@ button:focus {
 .create-btn button:hover, .create-btn a:hover {
     background-color: var(--white);
     color: var(--text);
+}
+#delete-recipe-btn {
+    text-align: center;
+    padding: 15px;
+    margin: auto;
+    font-size: .7em;
 }
 
 
