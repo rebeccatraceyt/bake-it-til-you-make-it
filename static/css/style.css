@@ -754,6 +754,13 @@ footer li {
         min-width: 60%;
         max-width: 60%;
     }
+    #delete-recipe-btn {
+        text-align: center;
+        padding: 15px;
+        margin: auto;
+        max-width: 50%;
+        font-size: .7em;
+    }
 }
 
 /* Breakpoint to maintain structural integrity on a Laptop Screen */
