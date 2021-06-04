@@ -192,6 +192,9 @@ button:focus {
     background: var(--white);
     color: var(--text);
 }
+#home-carousel.col-12 {
+    padding: 3% 2%;
+}
 #home-carousel h2 {
     text-align: center;
     font-size: 2em;
@@ -280,10 +283,6 @@ button:focus {
     border-bottom: 1px dotted var(--border-line);
     text-transform: capitalize;
 }
-
-/*------------------------------------------------------- Find A Recipe Page */
-
-
 
 /*------------------------------------------------------- Footer */
 footer {
