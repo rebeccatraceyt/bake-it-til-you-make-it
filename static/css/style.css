@@ -293,7 +293,8 @@ button:focus {
 #search-filter button {
     width: 100%;
     padding: 5px;
-    background-color: var(--white);
+    background-color: var(--text);
+    color: var(--white);
     box-shadow: 3px 3px 3px 3px var(--grey-bg); 
 }
 .dropdown-menu {
@@ -661,6 +662,47 @@ footer li {
         font-size: 2.2em;
     }
     
+    /* -- Find Recipes -- */
+    #search-sec {
+        padding: 1% 5%;
+    }
+    #search-title h2 {
+        font-size: 4em;
+    }
+    #search-title p {
+        font-size: 1.5em;
+    }
+    #search-function {
+        padding: 0 20%;
+    }
+    #search-bar input[type='text'] {
+        width: 100%;
+        font-size: 1.5em;
+    }
+    #search-btns button {
+        width: 40%;
+    } 
+    #search-filter {
+        width: 25%;
+    }
+    #search-filter button {
+        font-size: 1.3em;
+    }
+    #search-recipes {
+        padding-top: 40px;
+    }
+    #search-cards {
+        padding: 0 7px;
+    }
+    #search-cards h3 {
+        font-family: var(--accent-font);
+        font-size: 2em;
+    }
+    .recipe-img.search-img {
+        /* Accomodated the col size change on search page */
+        height: 400px;
+    }
+
 
     /* -- Register -- */
     #register-page {
