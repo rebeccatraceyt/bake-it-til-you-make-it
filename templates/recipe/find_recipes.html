@@ -24,12 +24,12 @@
                 <div id="search-function" class="col-12">
                     <form action="{{ url_for('search')}}" method="POST">
                         <div class="container-fluid">
-                            <div class="row">
-                                <div id="search-bar" class="col-12">
+                            <div class="row no-gutters">
+                                <div id="search-bar" class="col-sm-12 col-md-10">
                                     <input type="text" name="query" id="query" minlength="3" placeholder=" What are you looking for?" class="validate" required>
                                     <label class="sr-only" for="query">Search Bar</label>
                                 </div>
-                                <div id="search-btns" class="col-12">
+                                <div id="search-btns" class="col-sm-12 col-md-2">
                                     <button type="submit">
                                         <i class="search-btn iconify" data-icon="el:search" data-inline="true">Search</i>
                                     </button>
@@ -71,13 +71,13 @@
             <!-- Recipe Cards  -->
             <div id="search-recipes" class="row">
                 {% for recipe in recipes %}
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <div id="search-cards" class="card">
+                    <div id="search-cards" class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
 
                             {% if recipe.recipe_img %}
-                                <img class="recipe-img" class="card-img-top" src="{{ recipe.recipe_img }}" alt="Recipe Image">
+                                <img class="recipe-img search-img card-img-top" src="{{ recipe.recipe_img }}" alt="Recipe Image">
                             {% else %}
-                                <img class="recipe-img" class="card-img-top" src="{{ url_for('static', filename='images/default-img.png') }}" alt="Alternative Recipe Image">
+                                <img class="recipe-img search-img card-img-top" src="{{ url_for('static', filename='images/default-img.png') }}" alt="Alternative Recipe Image">
                             {% endif %}
 
                             <div class="card-body">
