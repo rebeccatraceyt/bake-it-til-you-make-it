@@ -375,8 +375,13 @@ button:focus {
 .accounts-link a {
     background: var(--text);
     padding: 5px 10px;
-    border-radius: 8px;
+    border-radius: 20px;
     color: var(--white);
+    box-shadow: 3px 3px 3px 3px var(--grey-bg); 
+}
+.accounts-link a:hover{
+    background-color: var(--white);
+    color: var(--text);
 }
 
 /*------------------------------------------------------- Individual Recipe Page */
