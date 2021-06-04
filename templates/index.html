@@ -58,7 +58,6 @@
                             {% for recipe in recipes %}
                                 <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
                                     <div class="card">
-                                        <h2>Latest Creations</h2>
                                         <div id="card-img">
                                             {% if recipe.recipe_img %}
                                                 <img class="recipe-img" class="card-img-top" src="{{ recipe.recipe_img }}" alt="Recipe Image">
@@ -66,7 +65,6 @@
                                                 <img class="recipe-img" class="card-img-top" src="{{ url_for('static', filename='images/default-img.png') }}" alt="Alternative Recipe Image">
                                             {% endif %}
                                         </div>
-                                        <hr id="home-hr">
                                         <div id="card-body">
                                             <h3><a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
                                             <div class="row">
