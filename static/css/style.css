@@ -58,6 +58,11 @@ button:focus {
 .iconify {
     color: var(--text);
 }
+.page-title {
+    font-family: var(--accent-font);
+    font-size: 1.9em;
+    padding: 2% 1% 0% 1%;
+}
 
 /*------------------------------------------------------- Navbar */
 /* Sourced and edited from:
@@ -245,11 +250,6 @@ button:focus {
 #search-title {
     text-align: center;
 }
-#search-title h2 {
-    font-family: var(--accent-font);
-    font-size: 1.9em;
-    padding: 2% 1% 0% 1%;
-}
 #search-function {
     text-align: center;
 }
@@ -267,21 +267,20 @@ button:focus {
     margin-top: 5px;
     margin-bottom: 20px;
 }
-#search-btns button {
+#search-btns button{
     width: 20%;
-    font-size: 1.6em;
     background: var(--text);
     border: none;
     border-radius: 20px;
     box-shadow: 3px 3px 3px 3px var(--grey-bg); 
 }
-.search-btn.iconify {
+#search-btns i {
+    padding: 5px;
     color: var(--white);
+    font-size: 2em;
 }
 #search-btns button:hover{
     background: var(--white);
-}
-.search-btn.iconify:hover{
     color: var(--text);
 }
 #search-filter {
@@ -317,7 +316,6 @@ button:focus {
     font-family: var(--accent-font);
     font-size: 1.6em;
 }
-
 
 /*------------------------------------------------------- Individual Recipe Page */
 
@@ -425,7 +423,7 @@ footer li {
 }
 /* Edited from W3School's example to style contact form 
         reference: https://www.w3schools.com/howto/howto_css_contact_form.asp */
-.form-body input[type='text'], input[type='email'], textarea {
+.form-body input[type='text'], .form-body input[type='email'], .form-body textarea {
     width: 100%;
     padding: 7px;
     border: 2px solid var(--grey-bg);
@@ -469,6 +467,11 @@ footer li {
 /* Breakpoint to maintain structural integrity on a Tablet device */
 @media (min-width: 700px) and (max-width: 991px) {
 
+    /* -- Special Styling -- */
+    .page-title {
+        font-size: 4em;
+    }
+    
     /* -- Navbar -- */
     .navbar {
         padding-top: 80px;
@@ -516,9 +519,6 @@ footer li {
     #search-sec {
         padding: 3% 4%;
     }
-    #search-title h2 {
-        font-size: 4em;
-    }
     #search-title p {
         padding: 0 100px;
         font-size: 1.5em;
@@ -542,13 +542,18 @@ footer li {
         padding: 0 7px;
     }
     .recipe-img.search-img {
-        /* Accomodated the col size change on search page */
+        /* Accommodated the col size change on search page */
         height: 300px;
     }
 }
 
 /* Breakpoint to maintain structural integrity on a Laptop Screen */
 @media (min-width: 991px){ 
+
+    /* -- Special Styling -- */
+    .page-title {
+        font-size: 4em;
+    }
 
     /* -- Background -- */
     #content-div {
@@ -666,9 +671,6 @@ footer li {
     #search-sec {
         padding: 1% 5%;
     }
-    #search-title h2 {
-        font-size: 4em;
-    }
     #search-title p {
         font-size: 1.5em;
     }
@@ -699,15 +701,13 @@ footer li {
         font-size: 2em;
     }
     .recipe-img.search-img {
-        /* Accomodated the col size change on search page */
+        /* Accommodated the col size change on search page */
         height: 400px;
     }
 
 
     /* -- Register -- */
-    #register-page {
-        padding-top: 5vh;
-    }
+
 
     /* -- Footer -- */
     footer {

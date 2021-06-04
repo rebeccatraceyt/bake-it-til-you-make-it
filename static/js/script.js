@@ -27,7 +27,7 @@ $('#password, #confirm_password').on('keyup', function () {
   if ($('#password').val() == $('#confirm_password').val()) {
     $('#message').html('Passwords match!').css('color', 'green');
   } else 
-    $('#message').html('Passwords do not match, try again').css('color', 'red');
+    $('#message').html('Passwords do not match').css('color', 'red');
 });
 
 // Checking if form is valid - reference: https://codepen.io/tetnuc/pen/gRqOEO
