@@ -70,6 +70,7 @@
 
             <!-- Recipe Cards  -->
             <div id="search-recipes" class="row">
+
                 {% for recipe in recipes %}
                     <div id="search-cards" class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card">
@@ -108,13 +109,13 @@
                                         </div>
                                         <div>
                                             {% if recipe.category == 'Bread' %}
-                                                <span class="recipe-icon iconify" data-icon="emojione-monotone:bread" data-inline="false"></span>
+                                                <span class="recipe-icon iconify" data-icon="emojione-monotone:bread" data-inline="true"></span>
                                             {% elif recipe.category == 'Cake' %}
-                                                <span class="recipe-icon iconify" data-icon="mdi:cupcake" data-inline="false"></span>
+                                                <span class="recipe-icon iconify" data-icon="mdi:cupcake" data-inline="true"></span>
                                             {% elif recipe.category == 'Biscuit' %}
-                                                <span class="recipe-icon iconify" data-icon="fa-solid:cookie-bite" data-inline="false"></span>
+                                                <span class="recipe-icon iconify" data-icon="fa-solid:cookie-bite" data-inline="true"></span>
                                             {% else %}
-                                                <span class="recipe-icon iconify" data-icon="mdi:food-croissant" data-inline="false"></span>
+                                                <span class="recipe-icon iconify" data-icon="mdi:food-croissant" data-inline="true"></span>
                                             {% endif %}
                                             <span class="value">{{ recipe.category }}</span>
                                         </div>
