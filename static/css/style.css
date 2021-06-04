@@ -876,6 +876,14 @@ footer li {
     #login-page.page-padding {
         min-height: 30vh;
     }
+    #edit-btns {
+        max-width: 70%;
+        font-size: 1.5em;
+    }
+    #delete-user-btn {
+        max-width: 70%;
+        font-size: 1em;
+    }
 
     /* -- Footer -- */
     footer {
