@@ -2,20 +2,27 @@
 {% block content %}
 
     <section aria-label="Create a recipe Page">
-        <div class="container-fluid form-bg">
+        <!-- Banner image -->
+        <div class="banner-img">
+            <img src="../static/images/banner.png" alt="Bake It Til You Make it Banner Image">
+        </div>
+
+        <div class="container-fluid page-padding">
+            
+            <!-- Page Title -->
             <div class="row">
-                <div class="col-12">
-                    <h3>Create A Recipe</h3>
+                <div class="col-12 page-title">
+                    <h2>Create A Recipe</h2>
                 </div>
             </div>
 
-            <div class="row">
-                <form class="col-12" method="POST" action="{{ url_for('create_recipe') }}">
+            <div class="row create-bg">
+                <form id="create-label" class="col-12" method="POST" action="{{ url_for('create_recipe') }}">
 
                     <!-- Recipe Name -->
                     <div class="row">
                         <div class="col-12 form-group">
-                            <label for="recipe_name">Recipe Name</label>
+                            <label for="recipe_name"><span class="iconify" data-icon="ic:round-drive-file-rename-outline" data-inline="true"></span> Recipe Name</label>
                             <input id="recipe_name" class="form-control" name="recipe_name" type="text"  minlength="3" aria-describedby="recipe_name" required />
                         </div>
                     </div>
@@ -23,16 +30,16 @@
                     <!-- Image URL -->
                     <div class="row">
                         <div class="col-12 form-group">
-                            <label for="recipe_img">Recipe Image<small>(URL)</small></label>
-                            <input id="recipe_img" class="form-control" name="recipe_img" type="url" aria-describedby="recipe_img" pattern="https?://.+" required />
+                            <label for="recipe_img"><i class="far fa-images"></i> Recipe Image <small>(URL)</small></label>
+                            <input id="recipe_img" class="form-control" name="recipe_img" type="url" aria-describedby="recipe_img" pattern="https?://.+" />
                         </div>
                     </div>
 
                     <!-- Recipe Source -->
                     <div class="row">
                         <div class="col-12 form-group">
-                           <label for="recipe_url">Recipe Source<small>(URL)</small></label>
-                            <input id="recipe_url" class="form-control" name="recipe_url" type="url" aria-describedby="recipe_url" pattern="https?://.+" required />
+                           <label for="recipe_url"><span class="iconify" data-icon="akar-icons:book" data-inline="true"></span> Recipe Source <small>(URL)</small></label>
+                            <input id="recipe_url" class="form-control" name="recipe_url" type="url" aria-describedby="recipe_url" pattern="https?://.+" />
                         </div>
                     </div>
 
@@ -41,18 +48,18 @@
                         <div class="col-12 form-group">
                             <div class="row">
                                 <div class="col-6">
-                                    <label for="category">Baking Category</label>
+                                    <label for="category"><span class="iconify" data-icon="ion:file-tray" data-inline="true"></span> Category</label>
                                     <select id="category" name="category" class="form-control" required>
-                                        <option value="" disabled selected>Choose Baking Category</option>
+                                        <option value="" disabled selected>Select</option>
                                         {% for category in categories %}
                                             <option value="{{ category.category }}">{{ category.category }}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
                                 <div class="col-6">
-                                    <label for="difficulty">Baking Level</label>
+                                    <label for="difficulty"><span class="recipe-icon iconify" data-icon="mdi:chef-hat" data-inline="true"></span> Level</label>
                                     <select id="difficulty" name="difficulty" class="form-control" required>
-                                        <option value="" disabled selected>Choose Baking Level</option>
+                                        <option value="" disabled selected>Select</option>
                                         {% for level in difficulty %}
                                             <option value="{{ level.difficulty }}">{{ level.difficulty }}</option>
                                         {% endfor %}
@@ -67,9 +74,9 @@
                         <div class="col-12 form-group">
                             <div class="row">
                                 <div class="col-6">
-                                    <label for="total_time">Total Time</label>
+                                    <label for="total_time"><span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span> Total Time</label>
                                     <select name="total_time" id="total_time" name="total_time" class="form-control" aria-describedby="total_time" required>
-                                        <option value="" disabled selected>Select Time</option>
+                                        <option value="" disabled selected>Select</option>
                                         <option value="Less than 20">Less than 20 min</option>
                                         {% for time in range(20, 120, 10) %}
                                             <option value="{{ time }}">{{ time }} min</option>
@@ -78,9 +85,9 @@
                                     </select>
                                 </div>
                                 <div class="col-6">
-                                    <label for="serving">Serves:</label>
+                                    <label for="serving"><span class="recipe-icon iconify" data-icon="majesticons:users" data-inline="true"></span> Serves:</label>
                                     <select name="serving" id="serving" name="serving" class="form-control" aria-describedby="serving" required>
-                                        <option value="" disabled selected>Select number of Servings</option>
+                                        <option value="" disabled selected>Select</option>
                                         <option value="1 person">1 person</option>
                                         {% for num in range(2, 21) %}
                                             <option value="{{ num }}">{{ num }} people</option>
@@ -95,7 +102,7 @@
                     <!-- Description -->
                     <div class="row">
                         <div class="col-12 form-group">
-                           <label for="description">Recipe Description</label>
+                           <label for="description"><i class="far fa-file-alt"></i> Recipe Description</label>
                            <textarea id="description" class="form-control" name="description" aria-describedby="description" minlength="3" maxlength="300" rows="3" required></textarea>
                         </div>
                     </div>
@@ -103,7 +110,7 @@
                     <!-- Ingredients -->
                     <div class="row ingredient-row">
                         <div class="col-12 form-group ing-input">
-                            <label for="ingredients">Ingredients</label>
+                            <label for="ingredients"><i class="fas fa-list-ul"></i> Ingredients</label>
                             <input id="ingredients" class="form-control" name="ingredients" type="text" aria-describedby="ingredients" minlength="3" required />
                         </div>
                     </div>
@@ -112,7 +119,7 @@
                     <div class="row">
                         <div class="col-12 form-group">
                             <a href="#">
-                                <p class="add-ing-btn">Add Ingredient</p>
+                                <p class="add-ing-btn"><i class="far fa-plus-square"></i> Add Ingredient</p>
                             </a>
                         </div>
                     </div>
@@ -120,24 +127,27 @@
                     <!-- Directions -->
                     <div class="row direction-row">
                         <div class="col-12 form-group dir-input">
-                            <label for="directions">Directions</label>
-                            <textarea id="directions" class="form-control" name="directions" type="text" aria-describedby="directions" minlength="3" maxlength="300" rows="3"  required ></textarea>
+                            <label for="directions"><i class="fas fa-list-ol"></i> Directions</label>
+                            <textarea id="directions" class="form-control" name="directions" type="text" aria-describedby="directions" minlength="3" maxlength="300" rows="2"  required ></textarea>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-12 form-group">
                             <a href="#">
-                                <p class="add-dir-btn">Add Direction</p>
+                                <p class="add-dir-btn"><i class="far fa-plus-square"></i> Add Direction</p>
                             </a>
                         </div>
                     </div>
 
                     <!-- Buttons -->
-                    <div class="row">
-                        <div class="col-12 form-group text-align">
-                            <button class="btn btn-primary" type="submit" name="action">Add Recipe</button>
+                    <div class="row no-gutters">
+                        <div class="col-6 create-btn">
                             <a href="{{ url_for('my_recipes', username=session['user']) }}" class="back  btn btn-cancel" >Cancel</a>
+                        </div>
+
+                        <div class="col-6 create-btn">
+                            <button class="btn" type="submit" name="action">Add Recipe</button>
                         </div>
                     </div>
                 </form>

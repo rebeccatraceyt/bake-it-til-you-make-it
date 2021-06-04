@@ -429,6 +429,43 @@ button:focus {
     font-size: .7em;
 }
 
+/*------------------------------------------------------- Create/Edit Recipe Page */
+.create-bg {
+    background-image: url("../images/ruled-texture.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    box-shadow: 5px 14px 20px 4px grey; 
+
+    margin: auto;
+    padding: 30px 5px 10px 5px;
+    border-radius: 10px;
+    justify-content: center;
+}
+.create-label label {
+    text-align: center;
+    font-size: 1.1em;
+    padding-left: 5px;
+}
+.add-ing-btn, .add-dir-btn, .remove_field {
+    float: right;
+    color: var(--text);
+}
+.create-btn {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+}
+.create-btn button, .create-btn a {
+    min-width: 80%;
+    background-color: var(--text);
+    color: var(--white);
+}
+
+
 /*------------------------------------------------------- Individual Recipe Page */
 
 /* Reference: https://jsfiddle.net/chriscoyier/KVjFQ/1/ */
