@@ -261,6 +261,7 @@ button:focus {
     box-shadow: 5px 10px 10px var(--grey-bg);
 }
 #search-btns {
+    margin-top: 5px;
     margin-bottom: 20px;
 }
 #search-btns button {
@@ -284,6 +285,9 @@ button:focus {
     margin: auto;
     width: 100%;
     text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 3px inset var(--border-line);
+
 }
 #search-filter button {
     width: 100%;
@@ -298,6 +302,9 @@ button:focus {
     color: var(--white);
     width: 50%;
 
+}
+#search-cards {
+    margin-top: 20px;
 }
 
 
