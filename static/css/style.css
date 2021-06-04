@@ -245,6 +245,37 @@ button:focus {
    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23c4dac9' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important; 
 }
 
+/*------------------------------------------------------- Find A Recipe Page */
+#search-sec {
+    text-align: center;
+    padding: 4% 2%;
+}
+#search-title h2 {
+    font-family: var(--accent-font);
+    font-size: 1.9em;
+    padding: 2% 1% 0% 1%;
+}
+#search-bar input[type='text'] {
+    font-size: 1.3em;
+    width: 100%;
+    border: 2px solid var(--grey-bg);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    resize: none;
+    box-shadow: 5px 10px 10px var(--grey-bg);
+}
+#search-btn {
+}
+#search-btn button {
+    width: 20%;
+    font-size: 1.8em;
+    background: var(--white);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 3px 3px 3px 3px var(--grey-bg); 
+}
+
+
 /*------------------------------------------------------- Individual Recipe Page */
 
 /* Reference: https://jsfiddle.net/chriscoyier/KVjFQ/1/ */
@@ -354,7 +385,7 @@ footer li {
 .form-body input[type='text'], input[type='email'], textarea {
     width: 100%;
     padding: 7px;
-    border: 2px solid var(--white);
+    border: 2px solid var(--grey-bg);
     border-radius: 4px;
     margin-top: 6px;
     margin-bottom: 1px;

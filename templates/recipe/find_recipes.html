@@ -5,23 +5,41 @@
         <div class="banner-img">
             <img src="../static/images/banner.png" alt="Bake It Til You Make it Banner Image">
         </div>
-        <h2>Find a Recipe</h2>
-        <form action="{{ url_for('search')}}" method="post">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <input type="text" name="query" id="query" minlength="3" placeholder="  What are you looking for?" class="validate" required>
-                        <label for="query"></label>
-                    </div>
-                    <div class="col-12">
-                            <button type="submit" class="lighten-2 btn-small text-shadow">
-                                 <i class="material-icons">search</i>
-                            </button>
-                            <a href="{{ url_for('find_recipes') }}" class="black btn-small text-shadow">Reset</a>
-                    </div>
+        <div id="search-sec" class="container-fluid">
+            <div class="row">
+                <div id="search-title" class="col-12">
+                    <h2>Find Your Inspiration!</h2>
+                    <p>Browse through our collection to find your next creation!</p>
                 </div>
             </div>
-        </form>
+            <div class="row">
+                <div class="col-12">
+                    <form action="{{ url_for('search')}}" method="post">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div id="search-bar" class="col-12">
+                                    <input type="text" name="query" id="query" minlength="3" placeholder=" What are you looking for?" class="validate" required>
+                                    <label class="sr-only" for="query">Search Bar</label>
+                                </div>
+                                <div id="search-btn" class="col-12">
+                                    <button type="submit" class="lighten-2 btn-small text-shadow">
+                                        <i class="iconify" data-icon="el:search" data-inline="true">Search</i>
+                                    </button>
+                                    <button>
+                                        <a href="{{ url_for('find_recipes') }}" class="black btn-small text-shadow"><i class="iconify" data-icon="fa-solid:redo" data-inline="true">Reset</i></a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            
+            
+        </div>
+        
+        
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="CategoryFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Search by Category
