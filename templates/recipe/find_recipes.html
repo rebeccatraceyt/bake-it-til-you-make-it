@@ -21,7 +21,7 @@
 
             <!-- Search Bar -->
             <div class="row">
-                <div class="col-12">
+                <div id="search-function" class="col-12">
                     <form action="{{ url_for('search')}}" method="POST">
                         <div class="container-fluid">
                             <div class="row">
@@ -69,18 +69,18 @@
             </div>
 
             <!-- Recipe Cards  -->
-            <div id="search-cards" class="row">
-                <div class="col-sm-12 col-md-6 col-lg-4 mx-auto">
-                    {% for recipe in recipes %}
-                        <div class="card">
-                            <div id="card-img">
-                                {% if recipe.recipe_img %}
-                                    <img class="recipe-img" class="card-img-top" src="{{ recipe.recipe_img }}" alt="Recipe Image">
-                                {% else %}
-                                    <img class="recipe-img" class="card-img-top" src="{{ url_for('static', filename='images/default-img.png') }}" alt="Alternative Recipe Image">
-                                {% endif %}
-                            </div>
-                            <div id="card-body">
+            <div id="search-recipes" class="row">
+                {% for recipe in recipes %}
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div id="search-cards" class="card">
+
+                            {% if recipe.recipe_img %}
+                                <img class="recipe-img" class="card-img-top" src="{{ recipe.recipe_img }}" alt="Recipe Image">
+                            {% else %}
+                                <img class="recipe-img" class="card-img-top" src="{{ url_for('static', filename='images/default-img.png') }}" alt="Alternative Recipe Image">
+                            {% endif %}
+
+                            <div class="card-body">
                                 <h3><a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
                                 <div class="row">
                                     <div class="col-6">
@@ -116,8 +116,8 @@
                                 </div>
                             </div>
                         </div>
-                    {% endfor %}
-                </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
 	</section>
