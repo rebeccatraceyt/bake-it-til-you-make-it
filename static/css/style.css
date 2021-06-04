@@ -755,11 +755,8 @@ footer li {
         max-width: 60%;
     }
     #delete-recipe-btn {
-        text-align: center;
-        padding: 15px;
-        margin: auto;
         max-width: 50%;
-        font-size: .7em;
+        font-size: 1em;
     }
 }
 
@@ -969,9 +966,13 @@ footer li {
         margin: auto;
     }
     .create-btn button, .create-btn a {
-        font-size: 1.5em;
+        font-size: 1.3em;
         min-width: 50%;
         max-width: 50%;
+    }
+    #delete-recipe-btn {
+        max-width: 60%;
+        font-size: 1em;
     }
 
     /* -- Footer -- */
