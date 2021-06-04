@@ -627,7 +627,6 @@ footer li {
     .accounts-link {
         font-size: 1.2em;
     }
-    
 }
 
 /* Breakpoint to maintain structural integrity on a Laptop Screen */
@@ -791,8 +790,28 @@ footer li {
     }
 
 
-    /* -- Register -- */
-
+    /* -- Accounts Page -- */
+    .accounts-bg {
+        margin: 2% 35%;
+    }
+    .accounts-label input {
+        margin: auto;
+        max-width: 90%;
+    }
+    .accounts-label label {
+        margin: auto;
+        font-size: 1.3em;
+        padding-left: 35px;
+    }
+    .accounts-label small {
+        padding-left: 35px;
+    }
+    .accounts-btn {
+        max-width: 40%;
+    }
+    .accounts-link {
+        font-size: 1.2em;
+    }
 
     /* -- Footer -- */
     footer {
