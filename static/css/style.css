@@ -388,17 +388,20 @@ button:focus {
     background-color: var(--white);
     color: var(--text);
 }
+
+/* Specific to Login */
 #login-page.page-padding {
     min-height: 65vh;
 }
+
+/* Specific to Edit User */
 #edit-btns {
     justify-content: center;
     margin: auto;
     padding: 0 20px;
+    font-size: 1.3em;
 }
 .edit-btn button {
-    margin: auto;
-    font-size: 1.3em;
     background: var(--text);
     color: var(--white);
     border: none;
@@ -408,11 +411,9 @@ button:focus {
 }
 .edit-btn a {
     display: inline-block;
-    margin: auto;
-    min-width: 100%;
     background: var(--text);
     padding: 10px;
-    font-size: 1.3em;
+
     border-radius: 10px;
     color: var(--white);
     box-shadow: 3px 3px 3px 3px var(--grey-bg); 
@@ -423,7 +424,8 @@ button:focus {
 }
 #delete-user-btn {
     text-align: center;
-    margin: 20px 0;
+    padding: 15px;
+    margin: auto;
     font-size: .7em;
 }
 
@@ -677,6 +679,14 @@ footer li {
     }
     #login-page.page-padding {
         min-height: 30vh;
+    }
+    #edit-btns {
+        max-width: 60%;
+        font-size: 1.5em;
+    }
+    #delete-user-btn {
+        max-width: 70%;
+        font-size: 1em;
     }
 }
 
