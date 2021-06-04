@@ -141,6 +141,12 @@ button:focus {
     box-shadow: 5px 14px 20px 4px grey;  
     border-bottom: 3px inset var(--border-line);
 }
+.banner-img img{
+    /* Banner image for select pages */
+    width: 100%;
+    height: auto;
+    border-bottom: 3px inset var(--border-line);
+}
 
 /*------------------------------------------------------- Homepage */
 #home-title {
@@ -275,7 +281,7 @@ button:focus {
     text-transform: capitalize;
 }
 
-/*------------------------------------------------------- Create A Recipe Page */
+/*------------------------------------------------------- Find A Recipe Page */
 
 
 
