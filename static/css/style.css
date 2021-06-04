@@ -648,6 +648,7 @@ footer li {
 }
 .delete-footer {
     margin: auto;
+    border: none;
 }
 .delete-btn, .delete-btn a {
     background-color: var(--white);
