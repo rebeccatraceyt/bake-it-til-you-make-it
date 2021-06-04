@@ -613,7 +613,19 @@ footer li {
     #main-section {
         background: transparent;
         box-shadow: 0px 0px grey;
-        padding-bottom: 2%;
+        padding-bottom: 1%;
+    }
+
+    /* -- Recipe Cards -- */
+    .recipe-img {
+        width: 95%;
+        height: 500px;
+    }
+    .recipe-text span {
+        font-size: 1.3em;
+    }
+    .recipe-icon.iconify {
+        font-size: 1.3em;
     }
 
     /* -- Homepage -- */
@@ -645,16 +657,10 @@ footer li {
         max-width: 80%;
         margin: auto;
     }
-    #home-carousel h2 {
-        text-align: left;
-    }
     #home-carousel h3 {
-        font-size: 2em;
+        font-size: 2.2em;
     }
-    .recipe-img {
-        width: 95%;
-        height: 400px;
-    }
+    
 
     /* -- Register -- */
     #register-page {
