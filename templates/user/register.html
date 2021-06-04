@@ -2,66 +2,80 @@
 {% block content %}
 
     <section aria-label="User Registration Page">
-        <div id="register-page" class="container-fluid">
-            <h3>Sign Up</h3>
-            <div class="row">
-                <form class="col-12" method="POST" action="{{ url_for('register') }}">
-                        <!-- Username -->
-                        <div class="row">
-                            <div class="col-12 form-group">
-                                <span class="iconify" data-icon="fa-solid:user-alt" data-inline="false"></span>
-                                <input id="username" name="username" type="text" placeholder="Username" minlength="5" 
-                                    maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                            </div>
-                        </div>
-                        <!-- Email -->
-                        <div class="row">
-                            <div class="col-12 form-group">
-                                <span class="iconify" data-icon="eva:email-fill" data-inline="false"></span>
-                                <input id="email" name="email" type="email"  
-                                    placeholder="Email Address" minlength="3" class="validate" required>
-                            </div>
-                        </div>
-                        <!-- Password -->
-                        <div class="row">
-                            <div class="col-12 form-group">
-                                <span class="iconify" data-icon="mdi:lock" data-inline="false"></span>
-                                <input id="password" name="password" type="password" placeholder="Password" 
-                                    minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                            </div>
-                        </div>
-                        <!-- Confirm Password-->
-                        <div class="row">
-                            <div class="col-12 form-group">
-                                <span class="iconify" data-icon="mdi:lock-check" data-inline="false"></span>
-                                <input id="confirm_password" name="confirm_password" type="password" placeholder="Confirm Password" 
-                                    minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required> <br>
-                                <span id='message'></span>
-                            </div>
-                        </div>
-                        <!-- User Image -->
-                        <div class="row">
-                            <div class="col-12 form-group">
-                                <span class="iconify" data-icon="teenyicons:user-square-solid" data-inline="false"></span>
-                                <input id="user_img" name="user_img" type="url" placeholder="User URL Image" class="validate" required>
-                            </div>
-                        </div>
-                        <!-- submit button -->
-                        <div class="row">
-                            <button type="submit" class="col-12">
-                                Register <i class="fas fa-sign-in-alt"></i>
-                            </button>
-                        </div>
-                </form>
-            </div>
+        <!-- Banner image -->
+        <div class="banner-img">
+            <img src="../static/images/banner.png" alt="Bake It Til You Make it Banner Image">
+        </div>
 
+        <div class="container-fluid accounts-page">
             <div class="row">
-                <div class="col-12">
-                    <p class="center-align">
-                        Already Registered? <a href="{{ url_for('login') }}" >Log In</a>
-                    </p>
+                <div class="col-12 accounts-title">
+                    <h2 class="page-title">Sign Up</h2>
+                    <p>Create an account to save and share your favourite recipes!</p>
                 </div>
             </div>
+            
+            <div class="row accounts-bg">
+                <div class="container-fluid">
+                    <div class="row accounts-label">
+                        <form class="col-12" method="POST" action="{{ url_for('register') }}">
+                                <!-- Username -->
+                                <div class="row">
+                                    <div class="col-12 form-group">
+                                        <label for="username"><i class="iconify" data-icon="fa-solid:user-alt" data-inline="true"></i> Username</label>
+                                        <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="username" required>
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="row">
+                                    <div class="col-12 form-group">
+                                        <label for="email"><i class="iconify" data-icon="eva:email-fill" data-inline="true"></i> Email</label>
+                                        <input id="email" name="email" type="email" minlength="3" class="form-control" aria-describedby="email" required>
+                                    </div>
+                                </div>
+                                <!-- User Image -->
+                                <div class="row">
+                                    <div class="col-12 form-group">
+                                        <label for="email"><i class="iconify" data-icon="teenyicons:user-square-solid" data-inline="true"></i> Profile Picture</label><br>
+                                        <small>Copy & Paste image URL </small><br>
+                                        <input id="user_img" name="user_img" type="url" class="form-control" aria-describedby="user_img" required>
+                                    </div>
+                                </div>
+                                <!-- Password -->
+                                <div class="row">
+                                    <div class="col-12 form-group">
+                                        <label for="email"><i class="iconify" data-icon="mdi:lock" data-inline="true"></i> Password</label>
+                                        <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="password" required>
+                                    </div>
+                                </div>
+                                <!-- Confirm Password-->
+                                <div class="row">
+                                    <div class="col-12 form-group">
+                                        <label for="email"><i class="iconify" data-icon="mdi:lock-check" data-inline="true"></i> Confirm Password</label>
+                                        <input id="confirm_password" name="confirm_password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="confirm_password" required> <br>
+                                        <span id='message'></span>
+                                    </div>
+                                </div>
+                                <!-- submit button -->
+                                <div class="row">
+                                    <button type="submit" class="col-12 accounts-btn">
+                                        Register <i class="fas fa-sign-in-alt"></i>
+                                    </button>
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 accounts-link">
+                            <p>
+                                Already Registered? <a href="{{ url_for('login') }}" >Log In</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </section>
 

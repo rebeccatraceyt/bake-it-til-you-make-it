@@ -314,7 +314,59 @@ button:focus {
 }
 #search-cards h3 {
     font-family: var(--accent-font);
+    font-size: 1.2em;
+}
+
+/*------------------------------------------------------- Register Page */
+.accounts-page {
+    padding: 5% 7%;
+}
+.accounts-title {
+    text-align: center;
+    padding-bottom: 2px;
+}
+
+.accounts-bg {
+    background-image: url("../images/ruled-texture.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    box-shadow: 5px 14px 20px 4px grey; 
+    
+    margin: auto;
+    padding: 30px 10px 10px 10px;
+    border-radius: 10px;
+}
+.accounts-label label {
+    text-align: center;
+    font-size: 1.1em;
+    padding-left: 5px;
+}
+.accounts-btn {
+    margin: auto;
+    max-width: 70%;
     font-size: 1.6em;
+    background: var(--text);
+    color: var(--white);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px 3px var(--grey-bg); 
+}
+.accounts-btn:hover {
+    background-color: var(--white);
+    color: var(--text);
+}
+.accounts-link {
+    text-align: center;
+    padding: 25px 15px 0px 15px;
+}
+.accounts-link a {
+    background: var(--text);
+    padding: 5px 10px;
+    border-radius: 8px;
+    color: var(--white);
 }
 
 /*------------------------------------------------------- Individual Recipe Page */
@@ -669,7 +721,7 @@ footer li {
     
     /* -- Find Recipes -- */
     #search-sec {
-        padding: 1% 5%;
+        padding: 1% 3%;
     }
     #search-title p {
         font-size: 1.5em;
@@ -694,7 +746,8 @@ footer li {
         padding-top: 40px;
     }
     #search-cards {
-        padding: 0 7px;
+        margin: 15px 0;
+        padding: 0 5px;
     }
     #search-cards h3 {
         font-family: var(--accent-font);
