@@ -569,7 +569,6 @@ footer li {
     border-radius: 10px;
 }
 .form-header {
-    
     border: none;
     padding-bottom: 0;
     font-family: var(--accent-font);
@@ -580,9 +579,6 @@ footer li {
 }
 .form-header p {
     margin-bottom: 0;
-}
-.form-header.iconify {
-    color: var(--white);
 }
 .form-body {
     padding-top: 1rem;
@@ -626,6 +622,42 @@ footer li {
     /* Default class with JQuery Form Validator plugin */
     color: var(--white);
     font-weight: 700;
+}
+
+/*------------------------------------------------------- Delete Modals */
+.delete-content {
+    background-image: url("../images/paper-texture.png");
+    color: var(--text);
+    border-radius: 10px;
+}
+.delete-header {
+    border: none;
+}
+.delete-title {
+    font-family: var(--accent-font);
+    font-size: 2em;
+}
+.delete-hr {
+    background-color: var(--border-line);
+    width: 80%;
+}
+.delete-body {
+    margin: 5px 10px;
+    text-align: center;
+    font-size: 1em;
+}
+.delete-footer {
+    margin: auto;
+}
+.delete-btn, .delete-btn a {
+    background-color: var(--white);
+    color: var(--text);
+    font-size: 1.1em;
+    border-radius: 10px;
+}
+.delete-btn:hover, .delete-btn a:hover{
+    background-color: var(--text);
+    color: var(--white);
 }
 
 /*------------------------------------------------------- Media Queries */

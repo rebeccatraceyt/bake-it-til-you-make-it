@@ -79,18 +79,17 @@
                                 
                                 <!-- Modal -->
                                 <div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-labelledby="deleteUserModal" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="deleteUserModal">Confirm Your Choice</h5>
+                                    <div class="modal-dialog modal-dialog-centered " role="document">
+                                        <div class="modal-content delete-content">
+                                            <div class="modal-header delete-header">
+                                                <h5 class="modal-title delete-title" id="deleteUserModal">Confirm Your Choice</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button>
+                                                <span class="iconify" data-icon="akar-icons:circle-x" data-inline="false"></span>                                                </button>
                                             </div>
-                                            <div class="modal-body">
+                                            <div class="modal-body delete-body">
                                                 <h4>Are you sure you want to <strong>DELETE</strong> your profile?</h4>
                                             </div>
-                                            <div class="modal-footer">
+                                            <div class="modal-footer delete-footer">
                                                 <button type="button" class="btn btn-primary">
                                                     <a href="{{ url_for('delete_user', username=user.username) }}">Delete</a>
                                                 </button>
