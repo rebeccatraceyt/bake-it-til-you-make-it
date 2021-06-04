@@ -58,6 +58,10 @@ button:focus {
 .iconify {
     color: var(--text);
 }
+.users-name {
+    font-family: var(--body-font);
+    font-size: smaller;
+}
 
 /*------------------------------------------------------- Navbar */
 /* Sourced and edited from:
@@ -150,7 +154,7 @@ button:focus {
 
 /* For consistent design on all pages */
 .page-padding {
-    padding: 4%;
+    padding: 3% 4%;
 }
 .page-title {
     text-align: center;
@@ -386,6 +390,41 @@ button:focus {
 }
 #login-page.page-padding {
     min-height: 65vh;
+}
+#edit-btns {
+    justify-content: center;
+    margin: auto;
+    padding: 0 20px;
+}
+.edit-btn button {
+    margin: auto;
+    font-size: 1.3em;
+    background: var(--text);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px var(--grey-bg); 
+}
+.edit-btn a {
+    display: inline-block;
+    margin: auto;
+    min-width: 100%;
+    background: var(--text);
+    padding: 10px;
+    font-size: 1.3em;
+    border-radius: 10px;
+    color: var(--white);
+    box-shadow: 3px 3px 3px 3px var(--grey-bg); 
+}
+.edit-btn button:hover, .edit-btn a:hover {
+    background: var(--white);
+    color: var(--text);
+}
+#delete-user-btn {
+    text-align: center;
+    margin: 20px 0;
+    font-size: .7em;
 }
 
 /*------------------------------------------------------- Individual Recipe Page */
