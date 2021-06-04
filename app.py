@@ -62,6 +62,8 @@ def search():
     recipes = list(mongo.db.recipes.find({
         "$text": {"$search": query}}
     ))
+    recommended = mongo.db.recipes.find().sort(
+                "favourite_count", -1).limit(6)
     
     if len(recipes) == 0:
         flash(f"No recipe results for {query}")
@@ -69,7 +71,7 @@ def search():
     else:
         flash(f"Your search for {query} returned {len(recipes)} result(s)!")
     
-    return render_template("/recipe/find_recipes.html", recipes=recipes)
+    return render_template("/recipe/find_recipes.html", recipes=recipes, recommended=recommended)
 
 
 # ------- Filtered Search for Recipes -------

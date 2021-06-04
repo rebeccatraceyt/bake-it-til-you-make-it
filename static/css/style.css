@@ -268,20 +268,21 @@ button:focus {
 #search-btns {
     margin-top: 5px;
     margin-bottom: 20px;
+    word-spacing: 5px;
 }
-#search-btns button{
-    width: 20%;
-    background: var(--text);
+#search-btns button {
+    background: transparent;
     border: none;
-    border-radius: 20px;
-    box-shadow: 3px 3px 3px 3px var(--grey-bg); 
 }
 #search-btns i {
+    background: var(--text);
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px 3px var(--grey-bg);
     padding: 5px;
     color: var(--white);
     font-size: 2em;
 }
-#search-btns button:hover{
+#search-btns i:hover{
     background: var(--white);
     color: var(--text);
 }
@@ -318,6 +319,17 @@ button:focus {
     font-family: var(--accent-font);
     font-size: 1.2em;
 }
+#search-rec {
+    text-align: center;
+}
+#search-rec h3 {
+    font-family: var(--accent-font);
+    font-size: 1.8em;
+}
+#search-rec p {
+    font-size: 1.2em;
+}
+
 
 /*------------------------------------------------------- Accounts Page */
 /* Sign Up and Log In are style the same for consistency */
@@ -582,9 +594,6 @@ footer li {
         width: 100%;
         font-size: 1.5em;
     }
-    #search-btns button {
-        width: 40%;
-    }
     #search-filter {
         width: 50%;
     }
@@ -744,13 +753,14 @@ footer li {
         width: 100%;
         font-size: 1.5em;
     }
-    #search-btns button {
-        width: 40%;
+    #search-btns  {
+        margin-top: 0;
     } 
     #search-filter {
-        width: 25%;
+        width: 30%;
     }
     #search-filter button {
+        padding: 5px 20px;
         font-size: 1.3em;
     }
     #search-recipes {

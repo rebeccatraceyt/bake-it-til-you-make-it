@@ -59,11 +59,7 @@
                                 <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
                                     <div class="card">
 
-                                        {% if recipe.recipe_img %}
-                                            <img class="recipe-img card-img-top" src="{{ recipe.recipe_img }}" alt="Recipe Image">
-                                        {% else %}
-                                            <img class="recipe-img card-img-top" src="{{ url_for('static', filename='images/default-img.png') }}" alt="Alternative Recipe Image">
-                                        {% endif %}
+                                        <img class="recipe-img search-img card-img-top" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}">
 
                                         <div class="card-body">
                                             <h3><a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
