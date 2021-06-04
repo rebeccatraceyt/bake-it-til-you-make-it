@@ -150,7 +150,7 @@ button:focus {
 
 /* For consistent design on all pages */
 .page-padding {
-    padding: 4% 2%;
+    padding: 4%;
 }
 .page-title {
     text-align: center;
@@ -333,14 +333,6 @@ button:focus {
 
 /*------------------------------------------------------- Accounts Page */
 /* Sign Up and Log In are style the same for consistency */
-.accounts-page {
-    padding: 5% 7%;
-}
-.accounts-title {
-    text-align: center;
-    padding-bottom: 2px;
-}
-
 .accounts-bg {
     background-image: url("../images/ruled-texture.png");
     background-repeat: no-repeat;
@@ -357,6 +349,9 @@ button:focus {
 .accounts-label label {
     text-align: center;
     font-size: 1.1em;
+    padding-left: 5px;
+}
+.accounts-label small {
     padding-left: 5px;
 }
 .accounts-btn {
@@ -611,12 +606,28 @@ footer li {
     }
 
     /* -- Accounts Pages -- */
-    .accounts-page {
-        padding: 3% 4%;
+    .accounts-bg {
+        margin: 2% 10%;
     }
-    .accounts-title p {
-        font-size: 1.6em;
+    .accounts-label input {
+        margin: auto;
+        max-width: 90%;
     }
+    .accounts-label label {
+        margin: auto;
+        font-size: 1.3em;
+        padding-left: 25px;
+    }
+    .accounts-label small {
+        padding-left: 25px;
+    }
+    .accounts-btn {
+        max-width: 40%;
+    }
+    .accounts-link {
+        font-size: 1.2em;
+    }
+    
 }
 
 /* Breakpoint to maintain structural integrity on a Laptop Screen */
