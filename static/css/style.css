@@ -296,13 +296,15 @@ footer {
     text-align: center;
 }
 footer ul {
-    font-family: var(--accent-font);
+    font-family: var(--body-font);
     color: var(--text);
-    font-size: 1.3em;
     padding-left: 0;
 }
 footer li {
     display: inline;
+}
+#dev-info {
+    font-size: .8em; 
 }
 
 .hide-disclaimer {
@@ -310,6 +312,7 @@ footer li {
     display: none;
 }
 .iconify.footer-btn {
+    font-size: 1.3em;
     cursor: pointer;
 }
 .iconify.footer-btn:hover {
@@ -423,8 +426,6 @@ footer li {
     #card-body a {
         font-size: 1.3em;
     }
-
-
 }
 
 /* Breakpoint to maintain structural integrity on a Laptop Screen */
