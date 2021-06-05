@@ -169,8 +169,15 @@ button:focus {
 /*------------------------------------------------------- Recipe Cards */
 /* General styling for Recipe Cards throughout */
 .card {
-    border-radius: 15px;
+    background-image: url("../images/card-paper.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     padding-top: 15px;
+
+    
 }
 .recipe-img {
     padding: 2%;
@@ -243,6 +250,15 @@ button:focus {
 #home-carousel {
     padding: 3% 2%;
 }
+.carousel-inner {
+    /* Sourced from http://jsfiddle.net/Zw4QA/1/ */
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
+    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+}
 #home-carousel h3 {
     color: var(--text);
     font-family: var(--accent-font);
@@ -259,6 +275,14 @@ button:focus {
 /*------------------------------------------------------- Find Recipes Page */
 #search-function {
     text-align: center;
+}
+#search-cards > .card {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
+    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
 }
 #search-bar input[type='text'] {
     font-size: 1.3em;
@@ -319,6 +343,8 @@ button:focus {
 #search-cards {
     margin: 15px 2px;
     padding: 0;
+
+    
 }
 #search-cards h3 {
     font-family: var(--accent-font);

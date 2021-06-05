@@ -59,7 +59,7 @@
                                 <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
                                     <div class="card">
 
-                                        <img class="recipe-img search-img card-img-top" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}">
+                                        <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}"><img class="recipe-img search-img card-img-top" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}"></a>
 
                                         <div class="card-body">
                                             <h3><a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
