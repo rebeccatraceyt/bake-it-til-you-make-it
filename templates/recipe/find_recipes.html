@@ -77,7 +77,7 @@
                 <!-- Browse all recipes -->
                 <div id="search-recipes" class="row">
                     {% for recipe in recipes %}
-                        <div id="search-cards" class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="recipe-cards col-sm-12 col-md-6 col-lg-4">
                             <div class="card">
 
                                 <!-- Recipe Img -->
@@ -86,7 +86,7 @@
                                 <!-- Recipe Card Body -->
                                 <div class="card-body">
 
-                                    <h3><a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
+                                    <h3 class="recipe-name"><a href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
                                     
                                     <div class="row recipe-text">
 
@@ -138,7 +138,7 @@
                         <p>Change your search terms, or try one of our favourites:</p>
                     </div>
                     {% for rec in recommended %}
-                        <div id="search-cards" class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="recipe-cards col-sm-12 col-md-6 col-lg-4">
                             <div class="card">
 
                                 <!-- Recipe Img -->

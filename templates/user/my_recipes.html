@@ -40,16 +40,16 @@
                 <div class="col-12 col-lg-8">
                     <div class="row">
                         {% for recipe in recipes %}
-                            <div id="search-cards" class="col-sm-12 col-md-6">
+                            <div class="recipe-cards col-sm-12 col-md-6">
                                 <div class="card">
-
+                                    
                                     <!-- Recipe Img -->
                                     <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}"><img class="recipe-img search-img card-img-top" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}"></a>
 
                                     <!-- Recipe Card Body -->
                                     <div class="card-body">
 
-                                        <h3><a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
+                                        <h3 class="recipe-name"><a href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
                                         
                                         <div class="row recipe-text">
 

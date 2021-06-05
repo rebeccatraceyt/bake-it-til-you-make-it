@@ -41,7 +41,7 @@
                     <div class="row">
                         {% if favourite_recipes|length == 0 %}
                             {% for rec in recommended %}
-                                <div id="search-cards" class="col-sm-12 col-md-6">
+                                <div class="recipe-cards col-sm-12 col-md-6">
                                     <div class="card">
 
                                         <!-- Recipe Img -->
@@ -93,16 +93,16 @@
                             {% endfor %}
                         {% else %}
                             {% for favourite in favourites %}
-                                <div id="search-cards" class="col-sm-12 col-md-6">
+                                <div class="recipe-cards col-sm-12 col-md-6">
                                     <div class="card">
 
                                         <!-- Recipe Img -->
-                                        <a class="" href="{{ url_for('recipe', recipe_id=rec._id) }}"><img class="recipe-img search-img card-img-top" src="{{ rec.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ rec.recipe_name }}"></a>
-                                        
+                                        <a class="" href="{{ url_for('recipe', recipe_id=favourite._id) }}"><img class="recipe-img search-img card-img-top" src="{{ favourite.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ favourite.recipe_name }}"></a>
+
                                         <!-- Recipe Card Body -->
                                         <div class="card-body">
 
-                                            <h3><a class="" href="{{ url_for('recipe', recipe_id=favourite._id) }}">{{ favourite.recipe_name }}</a></h3>
+                                            <h3 class="recipe-name"><a href="{{ url_for('recipe', recipe_id=favourite._id) }}">{{ favourite.recipe_name }}</a></h3>
                                             
                                             <div class="row recipe-text">
 
