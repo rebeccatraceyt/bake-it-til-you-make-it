@@ -2,13 +2,89 @@
 {% block content %}
 
     <section aria-label="User's 'My Recipes' Page">
-        <h1>{{ user.username }}'s Recipes</h1>
-        <a href="{{ url_for('logout') }}">Log Out</a>
-        <a href="{{ url_for('edit_user', username=session['user']) }}">Edit Profile</a>
-        <a href="{{ url_for('create_recipe') }}">Create A Recipe</a>
-        {% for recipe in recipes %}
-        <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a>
-        {% endfor %}
+
+        <!-- Banner image -->
+        <div class="banner-img">
+            <img src="../static/images/banner.png" alt="Bake It Til You Make it Banner Image">
+        </div>
+
+        <div class="container-fluid page-padding">
+
+             <!-- Page Title -->
+            <div class="row">
+                <div class="col-12 page-title">
+                    <h2><span class="db-name">{{ user.username }}</span>'s Recipes</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <img class="recipe-img card-img-top" src="{{ user.user_img }}"  alt="User's Profile Image">
+                    <a class="profile-btn" href="{{ url_for('logout') }}">Log Out</a>
+                    <a class="profile-btn" href="{{ url_for('edit_user', username=session['user']) }}">Edit Profile</a>
+                    <a class="profile-btn" href="{{ url_for('create_recipe') }}">Create A Recipe</a>
+                    
+
+                </div>
+
+                <div class="col-12 col-lg-8">
+                    {% for recipe in recipes %}
+                        <div id="search-cards" class="col-sm-12 col-md-6 col-lg-4">
+                            <div class="card">
+
+                                <!-- Recipe Img -->
+                                <img class="recipe-img search-img card-img-top" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}">
+
+                                <!-- Recipe Card Body -->
+                                <div class="card-body">
+
+                                    <h3><a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
+                                    
+                                    <div class="row recipe-text">
+
+                                        <div class="col-6">
+                                            <div>
+                                                <span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
+                                                <span class="value">{{ recipe.total_time }}</span>
+                                                <span class="title">Mins</span>
+                                            </div>
+                                            <div>
+                                                <span class="recipe-icon iconify" data-icon="majesticons:users" data-inline="true"></span>
+                                                <span class="title">Serves</span>
+                                                <span class="value">{{ recipe.serving }}</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-6">
+                                            <div>
+                                                <span class="recipe-icon iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
+                                                <span class="value">{{ recipe.difficulty }}</span>
+                                            </div>
+                                            <div>
+                                                {% if recipe.category == 'Bread' %}
+                                                    <span class="recipe-icon iconify" data-icon="emojione-monotone:bread" data-inline="true"></span>
+                                                {% elif recipe.category == 'Cake' %}
+                                                    <span class="recipe-icon iconify" data-icon="mdi:cupcake" data-inline="true"></span>
+                                                {% elif recipe.category == 'Biscuit' %}
+                                                    <span class="recipe-icon iconify" data-icon="fa-solid:cookie-bite" data-inline="true"></span>
+                                                {% else %}
+                                                    <span class="recipe-icon iconify" data-icon="mdi:food-croissant" data-inline="true"></span>
+                                                {% endif %}
+                                                <span class="value">{{ recipe.category }}</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+        </div>
+       
     </section>
     
 {% endblock %}
