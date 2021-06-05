@@ -1116,6 +1116,9 @@ footer li {
     }
 
     /* -- My Recipes/Favourites Profile */
+    .profile-info {
+        overflow: hidden;
+    }
     .profile-img {
         width: 80%;
         height: 400px;
@@ -1131,6 +1134,10 @@ footer li {
     .profile-recipes {
         border: none;
         padding-top: 0;
+    }
+    .profile-scroll.row {
+        overflow: auto;
+        height: 700px;
     }
 
     /* -- Footer -- */

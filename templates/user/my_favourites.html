@@ -16,7 +16,7 @@
                 <!-- Profile Information -->
                 <div class="col-12 col-lg-4">
                     <div class="profile-info container-fluid">
-                        <div class="row">
+                        <div class="profile-no-scroll row">
                             <div class=" profile-img col-sm-12 col-md-6 col-lg-12">
                                 <img src="{{ user.user_img }}"  alt="User's Profile Image">
                             </div>
@@ -46,7 +46,7 @@
                 <!-- Favourited Recipes -->
                 <div class="col-12 col-lg-8">
                     <div class="profile-recipes container-fluid">
-                        <div class="row">
+                        <div class="profile-scroll row">
                             {% if favourite_recipes|length == 0 %}
                                 {% for rec in recommended %}
                                     <div class="recipe-cards col-sm-12 col-md-6">
