@@ -517,8 +517,6 @@ li {
 /*------------------------------------------------------- My Recipes/Favourites Page */
 .profile-info {
     margin: 20px auto;
-    padding-bottom: 20px;
-    border-bottom: 3px inset var(--border-line);
 }
 .profile-img {
     background-image: url("../images/card-paper.png");
@@ -567,11 +565,12 @@ li {
 }
 .profile-btns a:hover {
     color: var(--text);
-    background: var(--white);
-
-
-        border-top: 3px inset var(--border-line);
-
+    background: var(--white);        
+}
+.profile-recipes {
+    border-top: 3px inset var(--border-line);
+    margin: 10px auto;
+    padding-top: 10px;
 }
 
 /*------------------------------------------------------- Individual Recipe Page */
@@ -897,6 +896,10 @@ footer li {
         line-height: 40px;
         font-size: 1.5em;
     }
+    .profile-recipes {
+        margin: 15px auto;
+        padding-top: 30px;
+    }
 }
 
 /* Breakpoint to maintain structural integrity on a Laptop Screen */
@@ -1124,6 +1127,10 @@ footer li {
         min-width: 50%;
         max-width: 50%;
         font-size: 1.5em;
+    }
+    .profile-recipes {
+        border: none;
+        padding-top: 0;
     }
 
     /* -- Footer -- */
