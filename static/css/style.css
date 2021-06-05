@@ -361,16 +361,21 @@ button:focus {
     padding-left: 5px;
 }
 .accounts-btn {
+    display: flex;
+    justify-content: center;
+}
+.accounts-btn button {
     margin: auto;
     max-width: 70%;
     font-size: 1.6em;
     background: var(--text);
     color: var(--white);
     border: none;
+    padding: 5px 10px;
     border-radius: 20px;
     box-shadow: 3px 3px 3px 3px var(--grey-bg); 
 }
-.accounts-btn:hover {
+.accounts-btn button:hover {
     background-color: var(--white);
     color: var(--text);
 }
@@ -415,6 +420,7 @@ button:focus {
 .edit-btn button:hover, .edit-btn a:hover {
     background: var(--white);
     color: var(--text);
+    border: none;
 }
 #delete-user-btn {
     text-align: center;
@@ -773,9 +779,6 @@ footer li {
     .accounts-label small {
         padding-left: 25px;
     }
-    .accounts-btn {
-        max-width: 40%;
-    }
     .accounts-link {
         font-size: 1.2em;
     }
@@ -984,9 +987,6 @@ footer li {
     }
     .accounts-label small {
         padding-left: 35px;
-    }
-    .accounts-btn {
-        max-width: 50%;
     }
     .accounts-link {
         font-size: 1.2em;
