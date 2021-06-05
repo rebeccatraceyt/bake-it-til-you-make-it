@@ -293,7 +293,7 @@ li {
 
 /*------------------------------------------------------- Find Recipes Page */
 #search-function {
-    text-align: center;
+    margin: auto;
 }
 #search-bar {
     background-color: var(--white);
@@ -327,7 +327,6 @@ li {
     margin: auto;
 }
 #filter-text h2 {
-    padding: 2px;
     width: 100%;
     font-size: 1.1em;
     color: var(--white);
@@ -727,6 +726,10 @@ footer li {
         width: 95%;
         height: 500px;
     }
+    .recipe-cards {
+        margin: 10px auto;
+        padding: 0 7px;
+    }
 
     /* -- Main Page Section -- */
     .page-padding {
@@ -773,20 +776,15 @@ footer li {
     }
     
     /* -- Find Recipes -- */
-    #search-bar input[type='text'] {
-        width: 100%;
-        font-size: 1.5em;
+    #search-function {
+        max-width: 70%;
     }
     #search-filter {
-        width: 50%;
+        max-width: 50%;
     }
     #search-recipes {
         margin-top: 30px;
         padding-top: 20px;
-    }
-    .recipe-cards {
-        margin: 10px auto;
-        padding: 0 7px;
     }
     .recipe-img.search-img {
         /* Accommodated the col size change on search page */
