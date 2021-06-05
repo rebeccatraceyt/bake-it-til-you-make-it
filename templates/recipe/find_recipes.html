@@ -24,47 +24,49 @@
                         <div class="container-fluid">
                             <div class="row no-gutters">
 
-                                <!-- Search Bar -->
-                                <div id="search-bar" class="col-sm-12 col-md-10">
-                                    <input type="text" name="query" id="query" minlength="3" placeholder=" What are you looking for?" class="validate" required>
-                                    <label class="sr-only" for="query">Search Bar</label>
+                                <div id="search-bar" class="col-12 input-group border rounded-pill p-1">
+                                    <!-- ref: https://bootstrapious.com/p/bootstrap-search-bar -->
+                                    <input type="search" name="query" id="query" minlength="3" placeholder=" What are you looking for?" aria-describedby="button-addon3" class="form-control">
+                                    <div class="input-group-append border-0">
+                                        <button id="button-addon3" type="button" class="btn"><i class="fa fa-search"></i></button>
+                                    </div>
                                 </div>
 
-                                <!-- Search buttons -->
-                                <div id="search-btns" class="col-sm-12 col-md-2">
-                                    <button type="submit">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <a href="{{ url_for('find_recipes') }}"><i class="fas fa-redo-alt"></i></a>
-                                    
-                                </div>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
 
+
             <!-- Dropdown Filters -->
             <div id="search-filter" class="row">
-                <div class="col-6 dropdown">
-                    <button class="btn dropdown-toggle" type="button" id="CategoryFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Category
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="CategoryFilter">
-                        <a class="dropdown-item" href="{{ url_for('category_filter', id='Bread') }}">Bread</a>
-                        <a class="dropdown-item" href="{{ url_for('category_filter', id='Cake') }}">Cake</a>
-                        <a class="dropdown-item" href="{{ url_for('category_filter', id='Biscuit') }}">Biscuit</a>
-                        <a class="dropdown-item" href="{{ url_for('category_filter', id='Pastry') }}">Pastry</a>
-                    </div>
-                </div>
-                <div class="col-6 dropdown">
-                    <button class="btn dropdown-toggle" type="button" id="DifficultyFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Difficulty
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="DifficultyFilter">
-                        <a class="dropdown-item" href="{{ url_for('difficulty_filter', id='Easy') }}">Easy</a>
-                        <a class="dropdown-item" href="{{ url_for('difficulty_filter', id='Medium') }}">Medium</a>
-                        <a class="dropdown-item" href="{{ url_for('difficulty_filter', id='Hard') }}">Hard</a>
+                <a id="filter-text" class="btn" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <h2>Refine your search: </h2>
+                </a>               
+                <div class="collapse" id="collapseExample">
+                <div class="row">
+                        <div class="col-6 dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="CategoryFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Category
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="CategoryFilter">
+                                <a class="dropdown-item" href="{{ url_for('category_filter', id='Bread') }}">Bread</a>
+                                <a class="dropdown-item" href="{{ url_for('category_filter', id='Cake') }}">Cake</a>
+                                <a class="dropdown-item" href="{{ url_for('category_filter', id='Biscuit') }}">Biscuit</a>
+                                <a class="dropdown-item" href="{{ url_for('category_filter', id='Pastry') }}">Pastry</a>
+                            </div>
+                        </div>
+                        <div class="col-6 dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="DifficultyFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Difficulty
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="DifficultyFilter">
+                                <a class="dropdown-item" href="{{ url_for('difficulty_filter', id='Easy') }}">Easy</a>
+                                <a class="dropdown-item" href="{{ url_for('difficulty_filter', id='Medium') }}">Medium</a>
+                                <a class="dropdown-item" href="{{ url_for('difficulty_filter', id='Hard') }}">Hard</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

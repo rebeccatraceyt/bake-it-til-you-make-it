@@ -56,6 +56,9 @@ li {
 button:focus {
     outline: none;
 }
+a:focus {
+    outline: none;
+}
 .iconify {
     color: var(--text);
 }
@@ -295,49 +298,49 @@ button:focus {
 #search-function {
     text-align: center;
 }
-#search-bar input[type='text'] {
-    font-size: 1.3em;
-    padding: 5px;
-    width: 100%;
-    border: 2px solid var(--light-box);
-    border-radius: 10px;
-    margin-bottom: 10px;
-    resize: none;
-    box-shadow: 5px 10px 10px var(--light-box);
+#search-bar {
+    background-color: var(--white);
+    font-size: 1em;
+    -webkit-box-shadow: var(--dark-box) 0px 0 10px;
+    -moz-box-shadow: var(--dark-box) 0 0 10px;
+    box-shadow: var(--dark-box) 0 0 10px;
 }
-#search-btns {
-    margin-top: 5px;
-    margin-bottom: 20px;
-    word-spacing: 5px;
-}
-#search-btns button {
-    background: transparent;
+input.form-control {
+    background-color: transparent;
     border: none;
 }
-#search-btns i {
-    background: var(--text);
-    border-radius: 20px;
-    box-shadow: 3px 3px 3px 3px var(--light-box);
-    padding: 5px;
-    color: var(--white);
-    font-size: 2em;
-}
-#search-btns i:hover{
-    background: var(--white);
-    color: var(--text);
-}
 #search-filter {
-    margin: auto;
+    background-color: var(--text);
+    max-width: 85%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    vertical-align: auto;
+
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: var(--dark-box) 0px 0 10px;
+    -moz-box-shadow: var(--dark-box) 0 0 10px;
+    box-shadow: var(--dark-box) 0 0 10px;
+}
+#filter-text {    
     width: 100%;
-    text-align: center;
-    padding-bottom: 20px;
+    margin: auto;
+}
+#filter-text h2 {
+    padding: 20px;
+    width: 100%;
+    font-size: 1.1em;
+    color: var(--white);
 }
 #search-filter button {
     width: 100%;
     padding: 5px;
     background-color: var(--text);
     color: var(--white);
-    box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
 .dropdown-menu {
     background-color: var(--text);
