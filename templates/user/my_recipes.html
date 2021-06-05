@@ -44,8 +44,8 @@
                                 <div class="card">
 
                                     <!-- Recipe Img -->
-                                    <a class="" href="{{ url_for('recipe', recipe_id=rec._id) }}"><img class="recipe-img search-img card-img-top" src="{{ rec.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ rec.recipe_name }}"></a>
-                                    
+                                    <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}"><img class="recipe-img search-img card-img-top" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}"></a>
+
                                     <!-- Recipe Card Body -->
                                     <div class="card-body">
 

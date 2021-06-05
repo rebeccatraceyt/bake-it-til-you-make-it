@@ -22,7 +22,8 @@
     /* Misc Colour Variables */
     --nav-purple: #9894b9;
     --border-line: #3329256e;
-    --grey-bg: rgba(75, 75, 75, 0.432);
+    --dark-box: rgba(0,0,0,0.8);
+    --light-box: rgba(0, 0, 0, 0.534);
 
 }
 
@@ -187,7 +188,7 @@ button:focus {
     width: 95%;
     height: 300px;
     object-fit: cover;
-    box-shadow: 5px 5px 5px 5px var(--grey-bg); 
+    box-shadow: 5px 5px 5px 5px var(--light-box); 
 }
 .card a {
     color: var(--text);
@@ -255,13 +256,14 @@ button:focus {
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
-    -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
-    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
-    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+    -webkit-box-shadow: var(--dark-box) 0px 0 10px;
+    -moz-box-shadow: var(--dark-box) 0 0 10px;
+    box-shadow: var(--dark-box) 0 0 10px;
 }
 #home-carousel h3 {
     color: var(--text);
     font-family: var(--accent-font);
+    font-size: 1.5em;
 }
 /* Sourced from Stack Overflow to re-colour the carousel control buttons (RGB value had to be entered instead of root variable).
     https://stackoverflow.com/questions/46249541/change-arrow-colors-in-bootstraps-carousel */
@@ -280,19 +282,19 @@ button:focus {
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
-    -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
-    -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
-    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+    -webkit-box-shadow: var(--dark-box) 0px 0 10px;
+    -moz-box-shadow: var(--dark-box) 0 0 10px;
+    box-shadow: var(--dark-box) 0 0 10px;
 }
 #search-bar input[type='text'] {
     font-size: 1.3em;
     padding: 5px;
     width: 100%;
-    border: 2px solid var(--grey-bg);
+    border: 2px solid var(--light-box);
     border-radius: 10px;
     margin-bottom: 10px;
     resize: none;
-    box-shadow: 5px 10px 10px var(--grey-bg);
+    box-shadow: 5px 10px 10px var(--light-box);
 }
 #search-btns {
     margin-top: 5px;
@@ -306,7 +308,7 @@ button:focus {
 #search-btns i {
     background: var(--text);
     border-radius: 20px;
-    box-shadow: 3px 3px 3px 3px var(--grey-bg);
+    box-shadow: 3px 3px 3px 3px var(--light-box);
     padding: 5px;
     color: var(--white);
     font-size: 2em;
@@ -326,7 +328,7 @@ button:focus {
     padding: 5px;
     background-color: var(--text);
     color: var(--white);
-    box-shadow: 3px 3px 3px 3px var(--grey-bg); 
+    box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
 .dropdown-menu {
     background-color: var(--text);
@@ -342,9 +344,7 @@ button:focus {
 }
 #search-cards {
     margin: 15px 2px;
-    padding: 0;
-
-    
+    padding: 0;   
 }
 #search-cards h3 {
     font-family: var(--accent-font);
@@ -399,7 +399,7 @@ button:focus {
     border: none;
     padding: 5px 10px;
     border-radius: 20px;
-    box-shadow: 3px 3px 3px 3px var(--grey-bg); 
+    box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
 .accounts-btn button:hover {
     background-color: var(--white);
@@ -414,7 +414,7 @@ button:focus {
     padding: 5px 10px;
     border-radius: 20px;
     color: var(--white);
-    box-shadow: 3px 3px 3px 3px var(--grey-bg); 
+    box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
 .accounts-link a:hover{
     background-color: var(--white);
@@ -440,7 +440,7 @@ button:focus {
     background-color: var(--text);
     color: var(--white);
     border-radius: 10px;
-    box-shadow: 3px 3px 3px 3px var(--grey-bg); 
+    box-shadow: 3px 3px 3px 3px var(--light-box); 
     padding: 10px 15px;
 }
 .edit-btn button:hover, .edit-btn a:hover {
@@ -482,7 +482,7 @@ button:focus {
     font-size: 1.1em;
     float: right;
     color: var(--white);
-    box-shadow: 3px 3px 3px 3px var(--grey-bg); 
+    box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
 .remove_field {
     margin-top: 5px;
@@ -501,7 +501,7 @@ button:focus {
     min-width: 80%;
     background-color: var(--text);
     color: var(--white);
-    box-shadow: 3px 3px 3px 3px var(--grey-bg); 
+    box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
 .create-btn button:hover, .create-btn a:hover {
     background-color: var(--white);
@@ -635,7 +635,7 @@ footer li {
 .form-body input[type='text'], .form-body input[type='email'], .form-body textarea {
     width: 100%;
     padding: 7px;
-    border: 2px solid var(--grey-bg);
+    border: 2px solid var(--light-box);
     border-radius: 4px;
     margin-top: 6px;
     margin-bottom: 1px;
@@ -764,8 +764,8 @@ footer li {
         padding-right: 10%;
         max-width: 100%;
     }
-    #home-carousel h3 {
-        font-size: 2.3em;
+    #home-carousel h3 > a {
+        font-size: 1.2em;
     }
     
     /* -- Find Recipes -- */
@@ -781,7 +781,7 @@ footer li {
         padding-top: 20px;
     }
     #search-cards {
-        margin: auto;
+        margin: 10px auto;
         padding: 0 7px;
     }
     .recipe-img.search-img {
@@ -921,7 +921,7 @@ footer li {
     /* -- Recipe Cards -- */
     .recipe-img {
         width: 95%;
-        height: 500px;
+        height: 100%;
     }
     .recipe-text span {
         font-size: 1.3em;
@@ -985,7 +985,7 @@ footer li {
         padding-top: 40px;
     }
     #search-cards {
-        margin: 15px 0;
+        margin: 15px auto;
         padding: 0 5px;
     }
     #search-cards h3 {
