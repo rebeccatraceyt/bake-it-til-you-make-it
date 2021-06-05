@@ -53,11 +53,8 @@ a:hover {
 li {
     list-style-type: none;
 }
-button:focus {
-    outline: none;
-}
-a:focus {
-    outline: none;
+:focus {
+    outline:0 !important;
 }
 .iconify {
     color: var(--text);
@@ -305,42 +302,42 @@ a:focus {
     -moz-box-shadow: var(--dark-box) 0 0 10px;
     box-shadow: var(--dark-box) 0 0 10px;
 }
-input.form-control {
+#search-bar input.form-control {
     background-color: transparent;
     border: none;
 }
 #search-filter {
     background-color: var(--text);
-    max-width: 85%;
+    max-width: 90%;
     margin: 20px auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    vertical-align: auto;
+    padding: 2px;
 
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
     -webkit-box-shadow: var(--dark-box) 0px 0 10px;
     -moz-box-shadow: var(--dark-box) 0 0 10px;
     box-shadow: var(--dark-box) 0 0 10px;
 }
 #filter-text {    
-    width: 100%;
+    max-width: 90%;
     margin: auto;
 }
 #filter-text h2 {
-    padding: 20px;
+    padding: 2px;
     width: 100%;
     font-size: 1.1em;
     color: var(--white);
 }
 #search-filter button {
+    margin-bottom: 10px;
     width: 100%;
-    padding: 5px;
-    background-color: var(--text);
-    color: var(--white);
+    padding: 10px;
+    background-color: var(--white);
+    color: var(--text);
 }
 .dropdown-menu {
     background-color: var(--text);
