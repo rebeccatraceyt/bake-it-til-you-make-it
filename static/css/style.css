@@ -482,6 +482,21 @@ button:focus {
     font-size: .7em;
 }
 
+/*------------------------------------------------------- My Recipes/Favourites Page */
+.profile-btns {
+    margin: 20px auto;
+    padding: 5px;
+    text-align: center;
+}
+.profile-btn {
+    margin: 5px auto;
+    padding: 5px;
+    background-color: var(--text);
+    border-radius: 10px;
+}
+.profile-btn a {
+    color: var(--white);
+}
 
 /*------------------------------------------------------- Individual Recipe Page */
 
