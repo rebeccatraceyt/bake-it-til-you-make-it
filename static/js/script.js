@@ -33,24 +33,24 @@ $('#password, #confirm_password').on('keyup', function () {
 // Checking if form is valid - reference: https://codepen.io/tetnuc/pen/gRqOEO
 $('#suggestionForm').validate({
     rules: {
-        name: {
+        uname: {
             required: true
         },
-        email: {
+        uemail: {
             required: true
         },
-        message: {
+        umessage: {
             required: true
         }
     },
     messages: {
-        name: {
+        uname: {
             required: "Please complete all fields"
         },
-        email: {
+        uemail: {
             required: "Please complete all fields"
         },
-        message: {
+        umessage: {
             required: "Please complete all fields"
         }
     },
@@ -77,9 +77,9 @@ $('#form-submit').click(function (event) {
 function sendMail(){
     // reference: CI tutorial and https://www.youtube.com/watch?v=x7Ewtay0Q78
     let tempParams = {
-        user_name: document.getElementById("name").value,
-        user_email: document.getElementById("email").value,
-        user_msg: document.getElementById("message").value,
+        user_name: document.getElementById("uname").value,
+        user_email: document.getElementById("uemail").value,
+        user_msg: document.getElementById("umessage").value,
     };
     emailjs.send('service_kqnk8br', 'template_tif41mk', tempParams);
 }
