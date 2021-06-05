@@ -315,9 +315,9 @@ li {
     align-items: center;
     padding: 2px;
 
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
     -webkit-box-shadow: var(--dark-box) 0px 0 10px;
     -moz-box-shadow: var(--dark-box) 0 0 10px;
     box-shadow: var(--dark-box) 0 0 10px;
@@ -779,6 +779,9 @@ footer li {
     #search-function {
         max-width: 70%;
     }
+    #search-bar input, #search-bar button { 
+        font-size: 1.3em;
+    }
     #search-filter {
         max-width: 50%;
     }
@@ -978,21 +981,20 @@ footer li {
     
     /* -- Find Recipes -- */
     #search-function {
-        padding: 0 20%;
+        max-width: 50%;
     }
-    #search-bar input[type='text'] {
-        width: 100%;
+    #search-bar input, #search-bar button { 
         font-size: 1.5em;
     }
-    #search-btns  {
-        margin-top: 0;
-    } 
     #search-filter {
-        width: 30%;
+        padding: 10px;
+        max-width: 30%;
+    }
+    #filter-text h2 {
+        font-size: 1.3em;
     }
     #search-filter button {
         padding: 5px 20px;
-        font-size: 1.3em;
     }
     #search-recipes {
         padding-top: 40px;
