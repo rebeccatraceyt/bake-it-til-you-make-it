@@ -515,6 +515,11 @@ li {
 }
 
 /*------------------------------------------------------- My Recipes/Favourites Page */
+.profile-info {
+    margin: 20px auto;
+    padding-bottom: 20px;
+    border-bottom: 3px inset var(--border-line);
+}
 .profile-img {
     background-image: url("../images/card-paper.png");
     background-repeat: no-repeat;
@@ -523,7 +528,7 @@ li {
     -o-background-size: cover;
     background-size: cover;
 
-    padding: 2%;
+    padding: 5px;
     margin: auto;
     display: flex;
     width: 95%;
@@ -546,18 +551,27 @@ li {
     object-fit: cover;
 }
 .profile-btns {
-    margin: 20px auto;
-    padding: 5px;
+    margin: 10px auto;
     text-align: center;
 }
-.profile-btn {
-    margin: 5px auto;
-    padding: 5px;
-    background-color: var(--text);
-    border-radius: 10px;
-}
-.profile-btn a {
+.profile-btns a {
+    display: table;
+    min-width: 90%;
+    background: var(--text);
+    padding: 10px 5px;
+    border-radius: 8px;
     color: var(--white);
+    line-height: 20px;
+    font-family: var(--accent-font);
+    margin: 5px auto;
+}
+.profile-btns a:hover {
+    color: var(--text);
+    background: var(--white);
+
+
+        border-top: 3px inset var(--border-line);
+
 }
 
 /*------------------------------------------------------- Individual Recipe Page */
@@ -876,6 +890,13 @@ footer li {
         width: 80%;
         height: 300px;
     }
+    .profile-btns {
+        margin: auto;
+    }
+    .profile-btns a {
+        line-height: 40px;
+        font-size: 1.5em;
+    }
 }
 
 /* Breakpoint to maintain structural integrity on a Laptop Screen */
@@ -1095,6 +1116,14 @@ footer li {
     .profile-img {
         width: 80%;
         height: 400px;
+    }
+    .profile-btns {
+        margin: 20px auto;
+    }
+    .profile-btns a {
+        min-width: 50%;
+        max-width: 50%;
+        font-size: 1.5em;
     }
 
     /* -- Footer -- */
