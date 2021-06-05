@@ -12,25 +12,36 @@
         <div class="container-fluid page-padding">
 
             <div class="row">
+
+                <!-- Profile Information -->
                 <div class="col-12 col-lg-4">
-                    <img class="recipe-img card-img-top" src="{{ user.user_img }}"  alt="User's Profile Image">
-                    
-                    <div class="row profile-btns no-gutters">
-                        <div class="col-6 col-lg-12 profile-btn">
-                            <a href="{{ url_for('edit_user', username=session['user']) }}">Edit Profile</a>
-                        </div>
-                        <div class="col-6 col-lg-12 profile-btn">
-                            <a href="{{ url_for('create_recipe') }}">Create Recipe</a>
-                        </div>
-                        <div class="col-6 col-lg-12 profile-btn">
-                            <a href="{{ url_for('my_favourites', username=session['user']) }}">My Favourites</a>  
-                        </div>
-                        <div class="col-6 col-lg-12 profile-btn">
-                            <a href="{{ url_for('logout') }}">Log Out</a>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class=" profile-img col-sm-12 col-md-6 col-lg-12">
+                                <img src="{{ user.user_img }}"  alt="User's Profile Image">
+                            </div>
+
+                            <div class="col-sm-12 col-md-6 col-lg-12">
+                                <div class="row profile-btns no-gutters">
+                                    <div class="col-6 col-md-12 profile-btn">
+                                        <a href="{{ url_for('edit_user', username=session['user']) }}">Edit Profile</a>
+                                    </div>
+                                    <div class="col-6 col-md-12 profile-btn">
+                                        <a href="{{ url_for('create_recipe') }}">Create Recipe</a>
+                                    </div>
+                                    <div class="col-6 col-md-12 profile-btn">
+                                        <a href="{{ url_for('my_favourites', username=session['user']) }}">My Favourites</a>  
+                                    </div>
+                                    <div class="col-6 col-md-12 profile-btn">
+                                        <a href="{{ url_for('logout') }}">Log Out</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Uploaded Recipes -->
                 <div class="col-12 col-lg-8">
                     <div class="row">
                         {% for recipe in recipes %}

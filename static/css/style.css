@@ -515,6 +515,36 @@ li {
 }
 
 /*------------------------------------------------------- My Recipes/Favourites Page */
+.profile-img {
+    background-image: url("../images/card-paper.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    padding: 2%;
+    margin: auto;
+    display: flex;
+    width: 95%;
+    height: 200px;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+    -webkit-box-shadow: var(--dark-box) 0px 0 10px;
+    -moz-box-shadow: var(--dark-box) 0 0 10px;
+    box-shadow: var(--dark-box) 0 0 10px;
+}
+.profile-img img {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    
+    width: 100%;
+    object-fit: cover;
+}
 .profile-btns {
     margin: 20px auto;
     padding: 5px;
@@ -840,6 +870,12 @@ footer li {
         max-width: 50%;
         font-size: 1em;
     }
+
+    /* -- My Recipes/Favourites Profile */
+    .profile-img {
+        width: 80%;
+        height: 300px;
+    }
 }
 
 /* Breakpoint to maintain structural integrity on a Laptop Screen */
@@ -1004,7 +1040,6 @@ footer li {
         height: 400px;
     }
 
-
     /* -- Accounts Page -- */
     .accounts-bg {
         margin: 2% 35%;
@@ -1054,6 +1089,12 @@ footer li {
     #delete-recipe-btn {
         max-width: 60%;
         font-size: 1em;
+    }
+
+    /* -- My Recipes/Favourites Profile */
+    .profile-img {
+        width: 80%;
+        height: 400px;
     }
 
     /* -- Footer -- */
