@@ -126,7 +126,7 @@ def register():
             request.form.get("username")))
         return redirect(url_for(
             "my_recipes", username=session["user"]))
-    return render_template("/emplates/user/register.html")
+    return render_template("user/register.html")
 
 
 # ------- Login Page -------
