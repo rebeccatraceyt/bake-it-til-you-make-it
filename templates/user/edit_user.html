@@ -2,19 +2,13 @@
 {% block content %}
 
     <section aria-label="Edit User Page">
-        <!-- Banner image -->
-        <div class="banner-img">
-            <img src="../static/images/banner.png" alt="Bake It Til You Make it Banner Image">
+         <!-- Page Title -->
+        <div class="page-banner">
+            <h2>Edit <span class="db-name">{{ user.username }}</span>'s Profile</h2>
         </div>
 
+        <!-- Page Content -->
         <div class="container-fluid page-padding">
-
-             <!-- Page Title -->
-            <div class="row">
-                <div class="col-12 page-title">
-                    <h2>Edit <span class="db-name">{{ user.username }}</span>'s Profile</h2>
-                </div>
-            </div>
 
             <!-- Edit User Form -->
             <div class="row accounts-bg">

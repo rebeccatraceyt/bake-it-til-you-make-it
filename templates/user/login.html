@@ -2,26 +2,25 @@
 {% block content %}
 
     <section aria-label="User Log in Page">
-        <!-- Banner image -->
-        <div class="banner-img">
-            <img src="../static/images/banner.png" alt="Bake It Til You Make it Banner Image">
+        <!-- Page Title -->
+        <div class="page-banner">
+            <h2>Log In</h2>
         </div>
 
+        <!-- Page Content -->
         <div id="login-page" class="container-fluid page-padding">
-
-            <!-- Page Title -->
-            <div class="row">
-                <div class="col-12 page-title">
-                    <h2>Log In</h2>
-                    <p>Sign into your account and start baking!</p>
-                </div>
-            </div>
 
             <!-- Log In Form -->
             <div class="row accounts-bg">
                 <div class="contiainer-fluid">
                     <div class="row accounts-label">
                         <form class="col-12" method="POST" action="{{ url_for('login') }}">
+
+                            <div class="row">
+                                <div class="col-12 page-intro">
+                                    <p>Sign into your account and start baking!</p>
+                                </div>
+                            </div>
 
                             <!-- Username -->
                             <div class="row">

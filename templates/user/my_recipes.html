@@ -3,19 +3,13 @@
 
     <section aria-label="User's 'My Recipes' Page">
 
-        <!-- Banner image -->
-        <div class="banner-img">
-            <img src="../static/images/banner.png" alt="Bake It Til You Make it Banner Image">
+        <!-- Page Title -->
+        <div class="page-banner">
+            <h2><span class="db-name">{{ user.username }}</span>'s <br> Recipes</h2>
         </div>
 
+        <!-- Page Content -->
         <div class="container-fluid page-padding">
-
-             <!-- Page Title -->
-            <div class="row">
-                <div class="col-12 page-title">
-                    <h2><span class="db-name">{{ user.username }}</span>'s Recipes</h2>
-                </div>
-            </div>
 
             <div class="row">
                 <div class="col-12 col-lg-4">

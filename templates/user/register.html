@@ -2,26 +2,25 @@
 {% block content %}
 
     <section aria-label="User Registration Page">
-        <!-- Banner image -->
-        <div class="banner-img">
-            <img src="../static/images/banner.png" alt="Bake It Til You Make it Banner Image">
+         <!-- Page Title -->
+        <div class="page-banner">
+            <h2>Sign Up</h2>
         </div>
 
+        <!-- Page Content -->
         <div class="container-fluid page-padding">
-
-            <!-- Page Title -->
-            <div class="row">
-                <div class="col-12 page-title">
-                    <h2>Sign Up</h2>
-                    <p>Create an account to save and share your favourite recipes!</p>
-                </div>
-            </div>
             
             <!-- Sign In Form -->
             <div class="row accounts-bg">
                 <div class="container-fluid">
                     <div class="row accounts-label">
                         <form class="col-12" method="POST" action="{{ url_for('register') }}">
+
+                            <div class="row">
+                                <div class="col-12 page-intro">
+                                    <p>Create an account to save and share your favourite recipes!</p>
+                                </div>
+                            </div>
                             
                             <!-- Username -->
                             <div class="row">

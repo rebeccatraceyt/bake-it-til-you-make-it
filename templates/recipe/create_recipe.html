@@ -2,19 +2,14 @@
 {% block content %}
 
     <section aria-label="Create a recipe Page">
-        <!-- Banner image -->
-        <div class="banner-img">
-            <img src="../static/images/banner.png" alt="Bake It Til You Make it Banner Image">
+
+        <!-- Page Title -->
+        <div class="page-banner">
+            <h2>Create A Recipe</h2>
         </div>
 
+        <!-- Page Content -->
         <div class="container-fluid page-padding">
-            
-            <!-- Page Title -->
-            <div class="row">
-                <div class="col-12 page-title">
-                    <h2>Create A Recipe</h2>
-                </div>
-            </div>
 
             <div class="row create-bg">
                 <form class="col-12" method="POST" action="{{ url_for('create_recipe') }}">
