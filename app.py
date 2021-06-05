@@ -52,7 +52,7 @@ def home():
 @app.route("/find_recipes")
 def find_recipes():
     recipes = list(mongo.db.recipes.find())
-    return render_template("templates/recipe/find_recipes.html", recipes=recipes)
+    return render_template("recipe/find_recipes.html", recipes=recipes)
 
 
 # ------- Search for Recipes -------
@@ -71,20 +71,20 @@ def search():
     else:
         flash(f"Your search for {query} returned {len(recipes)} result(s)!")
     
-    return render_template("templates/find_recipes.html", recipes=recipes, recommended=recommended)
+    return render_template("find_recipes.html", recipes=recipes, recommended=recommended)
 
 
 # ------- Filtered Search for Recipes -------
 @app.route("/category_filter/<id>")
 def category_filter(id):
     recipes = list(mongo.db.recipes.find({"category": id}))
-    return render_template("templates/recipe/find_recipes.html", recipes=recipes)
+    return render_template("recipe/find_recipes.html", recipes=recipes)
 
 
 @app.route("/difficulty_filter/<id>")
 def difficulty_filter(id):
     recipes = list(mongo.db.recipes.find({"difficulty": id}))
-    return render_template("templates/recipe/find_recipes.html", recipes=recipes)
+    return render_template("recipe/find_recipes.html", recipes=recipes)
 
 
 # ------- Register Page -------
@@ -126,7 +126,7 @@ def register():
             request.form.get("username")))
         return redirect(url_for(
             "my_recipes", username=session["user"]))
-    return render_template("templates/user/register.html")
+    return render_template("/emplates/user/register.html")
 
 
 # ------- Login Page -------
@@ -163,7 +163,7 @@ def login():
                 "Incorrect Username and/or Password, please try again")
             return redirect(url_for("login"))
     
-    return render_template("templates/user/login.html")
+    return render_template("user/login.html")
 
 
 # ------- Logout Page -------
@@ -221,12 +221,12 @@ def edit_user(username):
             
             flash("Profile Updated!")
             return render_template(
-                "templates/user/login.html", user=user)
+                "user/login.html", user=user)
     else:
         return redirect(url_for("login"))
 
     return render_template(
-        "templates/user/edit_user.html", user=user)
+        "user/edit_user.html", user=user)
 
 
 # ------- Delete Profile -------
@@ -276,7 +276,7 @@ def my_recipes(username):
         return redirect(url_for("login"))
     
     return render_template(
-        "templates/user/my_recipes.html", 
+        "user/my_recipes.html", 
         user=user, recipes=recipes)
 
 
@@ -307,7 +307,7 @@ def my_favourites(username):
         flash("You must be logged in")
         return redirect(url_for("login"))
     
-    return render_template("templates/user/my_favourites.html", user=user, 
+    return render_template("user/my_favourites.html", user=user, 
                            recommended=recommended, favourites=favourites,
                            favourite_recipes=favourite_recipes)
           
@@ -400,7 +400,7 @@ def recipe(recipe_id):
         favourited = False
         
     return render_template(
-        "templates/recipe/recipe.html", recipe=recipe, 
+        "recipe/recipe.html", recipe=recipe, 
         favourited=favourited, title="Recipe")
 
 
@@ -440,7 +440,7 @@ def create_recipe():
             categories = mongo.db.categories.find().sort("category", 1)
             difficulty = mongo.db.level.find().sort("difficulty", 1)
             return render_template(
-                "templates/recipe/create_recipe.html", 
+                "recipe/create_recipe.html", 
                 categories=categories, difficulty=difficulty)
         
         else:
@@ -494,7 +494,7 @@ def edit_recipe(recipe_id):
             categories = mongo.db.categories.find().sort("category", 1)
             difficulty = mongo.db.level.find().sort("difficulty", 1)
             return render_template(
-                "templates/recipe/edit_recipe.html", 
+                "recipe/edit_recipe.html", 
                 recipe=recipe, categories=categories, difficulty=difficulty)
         
         else:
