@@ -483,7 +483,7 @@ li {
     background-color: var(--text);
     padding: 5px 10px;
     border-radius: 10px;
-    font-size: 1.1em;
+    font-size: .9em;
     float: right;
     color: var(--white);
     box-shadow: 3px 3px 3px 3px var(--light-box); 
@@ -502,7 +502,7 @@ li {
     padding: 10px 15px;
 }
 .create-btn button, .create-btn a {
-    min-width: 80%;
+    min-width: 90%;
     background-color: var(--text);
     color: var(--white);
     box-shadow: 3px 3px 3px 3px var(--light-box); 
@@ -516,6 +516,7 @@ li {
     padding: 15px;
     margin: auto;
     font-size: .7em;
+    margin-bottom: 2%;
 }
 
 /*------------------------------------------------------- My Recipes/Favourites Page */
@@ -905,9 +906,8 @@ footer li {
     .create-label label {
         font-size: 1.2em;
     }
-    .create-btn button, .create-btn a {
-        min-width: 60%;
-        max-width: 60%;
+    .create-btns {
+        margin: 1% 10%;
     }
     #delete-recipe-btn {
         max-width: 50%;
@@ -1133,12 +1133,10 @@ footer li {
         font-size: 1.2em;
     }
     .create-btns {
-        margin: auto;
+        margin: 1% 20%;
     }
     .create-btn button, .create-btn a {
         font-size: 1.3em;
-        min-width: 50%;
-        max-width: 50%;
     }
     #delete-recipe-btn {
         max-width: 60%;
