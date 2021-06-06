@@ -13,15 +13,15 @@
             <div class="d-flex row flex-row-reverse">
 
                 <!-- Recipe Image -->
-                <div id="recipe-img-box" class="col-12 col-lg-6">
+                <div id="recipe-img-box" class="col-12 col-md-6">
                     <div id="recipe-img">
                         <img src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}">
                     </div>
                 </div>
 
                 <!-- Recipe Information -->
-                <div class="col-12 col-lg-6">
-                    <div id="rec-info" class="row ">
+                <div id="recipe-info-box" class="col-12 col-md-6">
+                    <div id="rec-info" class="row">
 
                         <!-- Recipe Description -->
                         <div class="col-12">
@@ -87,17 +87,17 @@
                                                     </div>
                                                 </div>
                                             {% elif favourited %}
-                                                <div class="recipe-btn">
-                                                    <a href="{{url_for('remove_from_favourites', recipe_id=recipe._id)}}"><i class="far fa-heart"></i> Remove from Favourites</a>
+                                                <div class="recipe-btn faves-btn">
+                                                    <a href="{{url_for('remove_from_favourites', recipe_id=recipe._id)}}"><i class="far fa-heart"></i> Remove Favourite</a>
                                                 </div>
                                             {% else %}
-                                                <div class="recipe-btn">
+                                                <div class="recipe-btn faves-btn">
                                                     <a href="{{url_for('add_to_favourites', recipe_id=recipe._id)}}"><i class="fas fa-heart"></i> Favourite</a>
                                                 </div>
                                             {% endif %}
                                         {% else %}
-                                                <div class="recipe-btn">
-                                                    <a href="{{url_for('login')}}"><span class="iconify" data-icon="clarity:heart-solid" data-inline="true"></span> Login to Favourite</a>
+                                                <div class="recipe-btn faves-btn">
+                                                    <a href="{{url_for('login')}}"><i class="far fa-heart"></i> Login to Favourite</a>
                                                 </div>
                                         {% endif %}
                                     </div>
@@ -113,7 +113,7 @@
             <div class="row">
 
                 <!-- Recipe Ingredients -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-md-6">
                     <div id="ingredients" class="row">
                         <div class="col-12">
                             <div class="row">
@@ -143,7 +143,7 @@
                 </div>
 
                 <!-- Recipe Description -->
-                <div id="directions" class="col-12 col-lg-6">
+                <div id="directions" class="col-12 col-md-6">
                    
                     <ol id="directions-list">
                         <li>

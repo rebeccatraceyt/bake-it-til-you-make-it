@@ -537,6 +537,7 @@ li {
     margin: auto;
     display: flex;
     width: 95%;
+    height: 300px;
 
     /* Used to fix issue between border radius and shadow
         http://www.corelangs.com/css/box/shadow.html */
@@ -606,6 +607,7 @@ li {
     margin: 5% auto;
     display: flex;
     max-width: 90%;
+    height: 300px;
     padding: 10px;
 
     -webkit-border-radius: 20px;
@@ -630,8 +632,13 @@ li {
     -moz-box-shadow: var(--dark-box) 0 0 10px;
     box-shadow: var(--dark-box) 0 0 10px;
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
+}
+#recipe-info-box {
+    max-width: 95%;
+    margin: 2% auto;
+    display: flex;
 }
 #rec-info {
     background-image: url("../images/card-paper.png");
@@ -641,7 +648,7 @@ li {
     -o-background-size: cover;
     background-size: cover;
 
-    margin: 5% auto;
+    margin: 2% auto;
     padding: 20px 10px 10px 10px;
     max-width: 100%;
 
@@ -750,6 +757,8 @@ li {
     justify-content: center;
 }
 #directions ol li:first-child {
+    /* sourced and edited from :
+        https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5--net-13934  */
     background-image: url(../images/yellow-lined.png);
     min-width: 100%;
     padding: 10px;
@@ -1070,7 +1079,7 @@ footer li {
         font-size: 1em;
     }
 
-    /* -- My Recipes/Favourites Profile */
+    /* -- My Recipes/Favourites Page */
     .profile-img-box {
         width: 80%;
         height: 300px;
@@ -1086,6 +1095,21 @@ footer li {
         margin: 15px auto;
         padding-top: 30px;
     }
+
+    /* -- Individual Recipe Page */
+    #recipe-info-box {
+        margin: auto;
+    }
+    #rec-info p {
+        font-size: 1.1em;
+    }
+    .faves-btn {
+        max-width: 80%;
+    }
+    #recipe-img-box {
+        margin: 1% auto;
+    }
+
 }
 
 /* Breakpoint to maintain structural integrity on a Laptop Screen */
@@ -1295,7 +1319,7 @@ footer li {
         font-size: 1em;
     }
 
-    /* -- My Recipes/Favourites Profile */
+    /* -- My Recipes/Favourites Page */
     .profile-info {
         overflow: hidden;
     }
