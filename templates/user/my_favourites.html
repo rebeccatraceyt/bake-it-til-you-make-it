@@ -55,7 +55,7 @@
                                         <div class="card">
     
                                             <!-- Recipe Img -->
-                                            <img class="recipe-img search-img card-img-top" src="{{ rec.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ rec.recipe_name }}">
+                                            <img class="recipe-card-img search-img card-img-top" src="{{ rec.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ rec.recipe_name }}">
     
                                             <!-- Recipe Card Body -->
                                             <div class="card-body">
@@ -107,7 +107,7 @@
                                         <div class="card">
     
                                             <!-- Recipe Img -->
-                                            <a class="" href="{{ url_for('recipe', recipe_id=favourite._id) }}"><img class="recipe-img search-img card-img-top" src="{{ favourite.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ favourite.recipe_name }}"></a>
+                                            <a class="" href="{{ url_for('recipe', recipe_id=favourite._id) }}"><img class="recipe-card-img card-img-top" src="{{ favourite.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ favourite.recipe_name }}"></a>
     
                                             <!-- Recipe Card Body -->
                                             <div class="card-body">
