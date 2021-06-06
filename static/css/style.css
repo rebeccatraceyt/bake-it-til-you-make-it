@@ -14,7 +14,7 @@
     --blue: #bbf2ed;
     --purple: #8985b0;
     --pink: #e7c8e0;
-    --green: #c4dac9;
+    --green: #bce0cc;
     --yellow: #f1ecc9;
     --white: #ffffff;
     --red: #b65353;
@@ -694,7 +694,7 @@ li {
     color: var(--text);
 }
 #ingredients {
-    background-image: url("../images/yellow-texture.png");
+    background-image: url("../images/card-paper.png");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -705,7 +705,7 @@ li {
     -moz-border-radius: 20px;
     border-radius: 20px;
 
-    margin: 5% auto;
+    margin: 10% auto;
     display: flex;
     max-width: 95%;
     padding: 10px;
@@ -716,8 +716,14 @@ li {
 
     justify-content: center;
 }
-#ingredients h3 {
+#ingredient-title {
+    font-size: 1.5em;
+    border-left: 1px solid var(--red);
     font-family: var(--accent-font);
+}
+#ingredient-title-line {
+    border-right: 1px solid var(--red);
+    max-width: 2%;
 }
 #ingredient-line {
     /* Dynamic lines for each ingredient
@@ -735,6 +741,46 @@ li {
     border-bottom: 1px dotted var(--border-line);
     text-transform: capitalize;
 }
+#directions {
+    margin: 5% auto;
+}
+#directions ol{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#directions ol li:first-child {
+    background-image: url(../images/yellow-lined.png);
+    min-width: 100%;
+    padding: 10px;
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    border-radius: 20px;
+}
+#directions ol li:not(:first-child) {
+    background-image: url(../images/yellow-lined.png);
+    min-width: 100%;
+    padding:1em;
+    border-radius: 10px;
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    transform: rotate(-1deg);
+    margin:1em;
+}
+#directions ol li:nth-child(even) {
+    transform:rotate(1deg);
+    position:relative;
+    top:5px;
+}
+#directions-list {
+    padding-left: 0;
+}
+#directions-list h3 {
+    font-size: 1.8em;
+    text-align: center;
+    font-family: var(--accent-font);
+    text-decoration: underline;
+}
+
+
 
 /*------------------------------------------------------- Footer */
 footer {

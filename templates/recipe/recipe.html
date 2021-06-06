@@ -116,8 +116,16 @@
                 <div class="col-12 col-lg-6">
                     <div id="ingredients" class="row">
                         <div class="col-12">
-                            <h3>Ingredients </h3>
+                            <div class="row">
+                                <div id="ingredient-title-line" class="col-2">
+                                    <!-- Empty div to accommodate style for UI purposes -->
+                                </div>
+                                <div id="ingredient-title" class="col-10">
+                                    <h3>Ingredients </h3>
+                                </div>
+                            </div>
                         </div>
+                        
                         <div class="col-12">
                             <div class="row">
                                 <div id="ingredient-line" class="col-2">
@@ -135,9 +143,12 @@
                 </div>
 
                 <!-- Recipe Description -->
-                <div class="col-12 col-lg-6">
-                    <h3>Directions</h3>
-                    <ol id="directions-list" type="1">
+                <div id="directions" class="col-12 col-lg-6">
+                   
+                    <ol id="directions-list">
+                        <li>
+                             <h3>Directions</h3>
+                        </li>
                         {% for direction in recipe.directions %}
                         <li>
                             <!-- Reference: https://stackoverflow.com/questions/7537439/how-to-increment-a-variable-on-a-for-loop-in-jinja-template -->
