@@ -202,6 +202,8 @@ li {
 }
 .recipe-img {
     padding: 2%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
     margin: auto;
     display: flex;
@@ -256,7 +258,11 @@ li {
     min-width: 100%;
     background: var(--text);
     padding: 10px;
+
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
     border-radius: 8px;
+
     color: var(--white);
     line-height: 30px;
     font-family: var(--accent-font);
@@ -513,7 +519,7 @@ li {
 .profile-info {
     margin: 20px auto;
 }
-.profile-img {
+.profile-img-box {
     background-image: url("../images/card-paper.png");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -521,12 +527,26 @@ li {
     -o-background-size: cover;
     background-size: cover;
 
-    padding: 5px;
-    margin: auto;
+    padding: 10px;
+    margin: 15px 2px;
     display: flex;
-    width: 95%;
-    height: 200px;
 
+    /* Used to fix issue between border radius and shadow
+        http://www.corelangs.com/css/box/shadow.html */
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+
+    -webkit-box-shadow: var(--dark-box) 0px 2px 10px 2px;
+    -moz-box-shadow: var(--dark-box) 0 2px 10px 2px;
+    box-shadow: var(--dark-box) 0 2px 10px 2px;
+}
+.profile-img {
+    min-width: 100%;
+    min-height: 100%;
+    padding: 5px;
+}
+.profile-img img {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -534,13 +554,8 @@ li {
     -webkit-box-shadow: var(--dark-box) 0px 0 10px;
     -moz-box-shadow: var(--dark-box) 0 0 10px;
     box-shadow: var(--dark-box) 0 0 10px;
-}
-.profile-img img {
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 .profile-btns {
@@ -552,7 +567,11 @@ li {
     min-width: 90%;
     background: var(--text);
     padding: 10px 5px;
+
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
     border-radius: 8px;
+
     color: var(--white);
     line-height: 20px;
     font-family: var(--accent-font);
@@ -651,6 +670,9 @@ footer li {
 .form-content {
     background-image: url("../images/paper-texture.png");
     color: var(--text);
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
 }
 .form-header {
@@ -674,7 +696,11 @@ footer li {
     width: 100%;
     padding: 7px;
     border: 2px solid var(--light-box);
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
     border-radius: 4px;
+
     margin-top: 6px;
     margin-bottom: 1px;
     resize: none;
@@ -713,6 +739,9 @@ footer li {
 .delete-content {
     background-image: url("../images/paper-texture.png");
     color: var(--text);
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
 }
 .delete-header {
@@ -739,6 +768,9 @@ footer li {
     background-color: var(--white);
     color: var(--text);
     font-size: 1.1em;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
 }
 .delete-btn:hover, .delete-btn a:hover{
@@ -880,7 +912,7 @@ footer li {
     }
 
     /* -- My Recipes/Favourites Profile */
-    .profile-img {
+    .profile-img-box {
         width: 80%;
         height: 300px;
     }
@@ -1114,9 +1146,11 @@ footer li {
     .profile-info {
         overflow: hidden;
     }
-    .profile-img {
-        width: 80%;
+    .profile-img-box {
         height: 400px;
+    }
+    .profile-img {
+        padding: 10px;
     }
     .profile-btns {
         margin: 20px auto;
