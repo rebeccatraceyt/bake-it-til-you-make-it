@@ -1356,12 +1356,8 @@ footer li {
         font-size: 1.5em;
     }
     #rec-specs {
-        font-size: 1.2em;
         margin: auto;
-        max-width: 70%;
-    }
-    .faves-btn {
-        max-width: 50%;
+        max-width: 95%;
     }
     #recipe-img-box {
         margin: 0 auto auto auto;
