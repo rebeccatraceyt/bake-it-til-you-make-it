@@ -444,6 +444,9 @@ li {
     box-shadow: 3px 3px 3px 3px var(--light-box); 
     padding: 10px 15px;
 }
+.edit-btn button {
+    padding: 8px 15px;
+}
 .edit-btn button:hover, .edit-btn a:hover {
     background: var(--white);
     color: var(--text);
