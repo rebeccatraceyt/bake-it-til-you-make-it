@@ -157,9 +157,9 @@ li {
     font-family: var(--accent-font);
     font-size: 2em;
 }
-.page-banner span {
+.db-name {
     font-family: var(--body-font);
-    font-size: smaller;
+    font-size: 1.2em;
 }
 .page-padding {
     padding: 3% 4%;
@@ -532,8 +532,9 @@ li {
     background-size: cover;
 
     padding: 10px;
-    margin: 15px 2px;
+    margin: auto;
     display: flex;
+    width: 95%;
 
     /* Used to fix issue between border radius and shadow
         http://www.corelangs.com/css/box/shadow.html */
@@ -814,6 +815,10 @@ footer li {
     }
     .page-intro {
         font-size: 1.3em;
+    }
+    .db-name {
+        font-family: var(--body-font);
+        font-size: 1.2em;
     }
 
     /* -- Homepage -- */
@@ -1148,6 +1153,7 @@ footer li {
         overflow: hidden;
     }
     .profile-img-box {
+        max-width: 90%;
         height: 400px;
     }
     .profile-img {
