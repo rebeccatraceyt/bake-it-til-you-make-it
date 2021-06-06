@@ -9,20 +9,20 @@
         </div>
 
         <!-- Page Content -->
-        <div class="container-fluid">
+        <div class="container-fluid page-padding">
             <div class="row">
 
                 <!-- Recipe Information -->
                 <div class="col-12 col-lg-6">
-                    <div class="row">
+                    <div id="rec-info" class="row">
 
                         <!-- Recipe Description -->
                         <div class="col-12">
-                            <h4>{{ recipe.description }}</h4>
+                            <p>{{ recipe.description }}</p>
                         </div>
 
                         <!-- Recipe Stats -->
-                        <div class="col-12">
+                        <div id="rec-stats" class="col-12">
                             <div class="row">
 
                                 <!-- Recipe Specifications -->
@@ -63,32 +63,32 @@
                                 </div>
 
                                 <!-- Recipe Actions -->
-                                <div class="col-12">
+                                <div id="rec-btns" class="col-12 no-gutters">
                                     {% if session.user %}
                                         {% if session.user|lower == recipe.baker|lower %}
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <div id="recipe-btn">
-                                                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"><span class="iconify" data-icon="fa-solid:edit" data-inline="true"></span> Edit</a>
+                                                    <div class="recipe-btn">
+                                                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"><i class="fas fa-edit"></i> Edit</a>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
-                                                    <div id="recipe-btn">
-                                                        <a href="#" data-toggle="modal" data-target="#deleteRecipeModal"><span class="iconify" data-icon="ic:baseline-delete-forever" data-inline="true"></span> Delete</a>
+                                                    <div class="recipe-btn">
+                                                        <a href="#" data-toggle="modal" data-target="#deleteRecipeModal"><i class="fas fa-trash-alt"></i> Delete</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         {% elif favourited %}
                                             <div class="recipe-btn">
-                                                <a href="{{url_for('remove_from_favourites', recipe_id=recipe._id)}}"><span class="iconify" data-icon="ant-design:delete-filled" data-inline="false"></span> Remove from Favourites</a>
+                                                <a href="{{url_for('remove_from_favourites', recipe_id=recipe._id)}}"><i class="far fa-heart"></i> Remove from Favourites</a>
                                             </div>
                                         {% else %}
-                                            <div id="recipe-btn">
-                                                <a href="{{url_for('add_to_favourites', recipe_id=recipe._id)}}"><span class="iconify" data-icon="clarity:heart-solid" data-inline="true"></span> Favourite</a>
+                                            <div class="recipe-btn">
+                                                <a href="{{url_for('add_to_favourites', recipe_id=recipe._id)}}"><i class="fas fa-heart"></i> Favourite</a>
                                             </div>
                                         {% endif %}
                                     {% else %}
-                                            <div id="recipe-btn">
+                                            <div class="recipe-btn">
                                                 <a href="{{url_for('login')}}"><span class="iconify" data-icon="clarity:heart-solid" data-inline="true"></span> Login to Favourite</a>
                                             </div>
                                     {% endif %}

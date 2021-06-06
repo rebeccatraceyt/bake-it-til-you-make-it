@@ -460,6 +460,7 @@ li {
 }
 
 /*------------------------------------------------------- Create/Edit Recipe Page */
+/* Create and Edit a Recipe pages are style the same for consistency */
 .create-bg {
     background-image: url("../images/ruled-texture.png");
     background-repeat: no-repeat;
@@ -520,6 +521,7 @@ li {
 }
 
 /*------------------------------------------------------- My Recipes/Favourites Page */
+/* My Recipes and My Favourites pages are style the same for consistency */
 .profile-info {
     margin: 20px auto;
 }
@@ -593,6 +595,69 @@ li {
 }
 
 /*------------------------------------------------------- Individual Recipe Page */
+#rec-info {
+    background-image: url("../images/card-paper.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    margin: 3% 3% 10% 3%;
+    padding: 20px 10px 10px 10px;
+    max-width: 100%;
+
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+
+    -webkit-box-shadow: var(--dark-box) 0px 2px 10px 2px;
+    -moz-box-shadow: var(--dark-box) 0 2px 10px 2px;
+    box-shadow: var(--dark-box) 0 2px 10px 2px;
+}
+#rec-info p {
+    font-size: 1.3em;
+    font-family: var(--accent-font);
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--border-line);
+}
+#rec-stats {
+    font-size: 1.1em;
+    margin: 5px auto;
+    padding: 2px 5px;
+}
+#rec-btns {
+    padding: 20px 10px 5px 10px;
+    text-align: center;
+}
+.recipe-btn {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.recipe-btn a {
+    background-color: var(--text);
+    color: var(--white);
+    min-width: 100%;
+    padding: 10px;
+    border: 2px solid var(--light-box);
+
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+
+    -webkit-box-shadow: 3px 3px 3px 3px var(--light-box); 
+    -moz-box-shadow: 3px 3px 3px 3px var(--light-box); 
+    box-shadow: 3px 3px 3px 3px var(--light-box); 
+}
+.recipe-btn a:hover {
+    background-color: var(--white);
+    color: var(--text);
+}
+
+
+
 
 /* Reference: https://jsfiddle.net/chriscoyier/KVjFQ/1/ */
 #ingredients {
