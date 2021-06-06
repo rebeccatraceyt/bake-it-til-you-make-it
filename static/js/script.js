@@ -83,19 +83,3 @@ function sendMail(){
     emailjs.send('service_kqnk8br', 'template_tif41mk', tempParams);
 }
 
-// No scroll setting on profile info
-//  ref: http://jsfiddle.net/5n5MA/2/
-var noScroll = $('.profile-no-scroll').offset().top;
-$(window).scroll(function() {
-    var currentScroll = $(window).scrollTop();
-    if (currentScroll >= noScroll) {
-        $('.profile-no-scroll').css({
-            position: 'fixed',
-            top: '90',
-        });
-    } else {
-        $('.profile-no-scroll').css({
-            position: 'static'
-        });
-    }
-});
