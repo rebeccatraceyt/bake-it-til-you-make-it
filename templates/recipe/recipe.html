@@ -18,7 +18,7 @@
                         <img src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}">
                     </div>
                 </div>
-                
+
                 <!-- Recipe Information -->
                 <div class="col-12 col-lg-6">
                     <div id="rec-info" class="row ">
@@ -114,14 +114,23 @@
 
                 <!-- Recipe Ingredients -->
                 <div class="col-12 col-lg-6">
-                    <h3>Ingredients</h3>
                     <div id="ingredients" class="row">
-                        <div id="ingredient-line" class="col-2"></div>
-                        <div id="ingredient-list" class="col-10">
-                            {% for ingredient in recipe.ingredients %}
-                                <p>{{ ingredient }}</p>
-                            {% endfor %}
+                        <div class="col-12">
+                            <h3>Ingredients </h3>
                         </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div id="ingredient-line" class="col-2">
+                                    <!-- Empty div to accommodate style for UI purposes -->
+                                </div>
+                                <div id="ingredient-list" class="col-10">
+                                    {% for ingredient in recipe.ingredients %}
+                                        <p>{{ ingredient }}</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
 
