@@ -763,7 +763,7 @@ li {
     min-width: 100%;
     padding: 10px;
     box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-    border-radius: 20px;
+    border-radius: 15px;
 }
 #directions ol li:not(:first-child) {
     background-image: url(../images/yellow-lined.png);
@@ -1098,7 +1098,7 @@ footer li {
 
     /* -- Individual Recipe Page */
     #recipe-info-box {
-        margin: auto;
+        margin: 0 auto auto auto;
     }
     #rec-info p {
         font-size: 1.1em;
@@ -1345,6 +1345,36 @@ footer li {
     .profile-scroll.row {
         overflow: auto;
         height: 700px;
+    }
+
+    /* -- Individual Recipe Page */
+    #recipe-info-box {
+        margin: 0 auto auto auto;
+        max-width: 40%;
+    }
+    #rec-info p {
+        font-size: 1.5em;
+    }
+    #rec-specs {
+        font-size: 1.2em;
+        margin: auto;
+        max-width: 70%;
+    }
+    .faves-btn {
+        max-width: 50%;
+    }
+    #recipe-img-box {
+        margin: 0 auto auto auto;
+        max-width: 60%;
+        height: 500px;
+    }
+    #ingredients {
+        max-width: 70%;
+        margin: 10% auto auto 10%;
+        padding: 0 0 0 20px;
+    }
+    #directions {
+        padding: 0 20px 0 0;
     }
 
     /* -- Footer -- */
