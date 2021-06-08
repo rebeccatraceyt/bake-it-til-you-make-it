@@ -963,7 +963,7 @@ footer li {
     .page-intro {
         font-size: 1.3em;
     }
-    .db-name {
+    .db-name h4 {
         font-size: 1.7em;
     }
 
@@ -1182,7 +1182,7 @@ footer li {
     .page-banner br {
         display: none;
     }
-    .db-name {
+    .db-name h4 {
         font-size: 2em;
     }
 
