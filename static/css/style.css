@@ -1336,8 +1336,11 @@ footer li {
     }
 
     /* -- Individual Recipe Page */
+    #recipe-intro {
+        margin: 4% 5% 2% 5%;
+    }
     #recipe-info-box {
-        margin: 0 auto auto auto;
+        margin: auto;
         max-width: 40%;
     }
     #rec-info p {
@@ -1348,17 +1351,16 @@ footer li {
         max-width: 95%;
     }
     #recipe-img-box {
-        margin: 0 auto auto auto;
+        margin: auto;
         max-width: 60%;
         height: 500px;
     }
     #ingredients {
-        max-width: 70%;
-        margin: 10% auto auto 10%;
+        margin: 10% 5% 5% 10%;
         padding: 0 0 0 20px;
     }
     #directions {
-        padding: 0 20px 0 0;
+        padding: 0 40px 0 0;
     }
 
     /* -- Footer -- */
