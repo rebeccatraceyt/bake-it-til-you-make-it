@@ -596,19 +596,13 @@ li {
 }
 
 /*------------------------------------------------------- Individual Recipe Page */
-#recipe-img-box {
-    background-image: url("../images/white-lined.png");
+#recipe-intro {
+    background-image: url("../images/white-texture.png");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
-    margin: 5% auto;
-    display: flex;
-    max-width: 90%;
-    height: 300px;
-    padding: 10px;
 
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -617,6 +611,13 @@ li {
     -webkit-box-shadow: var(--dark-box) 0px 2px 10px 2px;
     -moz-box-shadow: var(--dark-box) 0 2px 10px 2px;
     box-shadow: var(--dark-box) 0 2px 10px 2px;
+}
+#recipe-img-box {
+    margin: 5% auto;
+    display: flex;
+    max-width: 90%;
+    height: 300px;
+    padding: 10px;   
 }
 #recipe-img {
     min-width: 100%;
@@ -641,24 +642,9 @@ li {
     display: flex;
 }
 #rec-info {
-    background-image: url("../images/white-lined.png");
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
     margin: 2% auto;
     padding: 20px 10px 10px 10px;
     max-width: 100%;
-
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-
-    -webkit-box-shadow: var(--dark-box) 0px 2px 10px 2px;
-    -moz-box-shadow: var(--dark-box) 0 2px 10px 2px;
-    box-shadow: var(--dark-box) 0 2px 10px 2px;
 }
 #rec-info p {
     font-size: 1.3em;
@@ -724,6 +710,7 @@ li {
     justify-content: center;
 }
 #ingredient-title {
+    padding-top: 15px;
     font-size: 1.5em;
     border-left: 1px solid var(--red);
     font-family: var(--accent-font);
@@ -742,7 +729,7 @@ li {
 #ingredient-list {
     padding-top: 5px;
     border-left: 1px solid var(--red);
-    border-top: 1px solid var(--border-line);
+    border-top: 1px solid var(--red);
 }
 #ingredient-list p {
     border-bottom: 1px dotted var(--border-line);
@@ -788,8 +775,6 @@ li {
     font-family: var(--accent-font);
     text-decoration: underline;
 }
-
-
 
 /*------------------------------------------------------- Footer */
 footer {
