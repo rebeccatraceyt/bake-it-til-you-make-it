@@ -603,6 +603,8 @@ li {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    
+    margin: auto;
 
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -613,8 +615,9 @@ li {
     box-shadow: var(--dark-box) 0 2px 10px 2px;
 }
 #recipe-img-box {
-    margin: 5% auto;
+    margin: 5% auto 1% auto;
     display: flex;
+    justify-content: center;
     max-width: 90%;
     height: 300px;
     padding: 10px;   
@@ -1083,7 +1086,7 @@ footer li {
 
     /* -- Individual Recipe Page */
     #recipe-info-box {
-        margin: 0 auto auto auto;
+        margin: auto;
     }
     #rec-info p {
         font-size: 1.1em;
@@ -1092,7 +1095,7 @@ footer li {
         max-width: 80%;
     }
     #recipe-img-box {
-        margin: 1% auto;
+        margin: auto;
     }
 
 }
