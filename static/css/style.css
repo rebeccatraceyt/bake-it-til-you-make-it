@@ -159,7 +159,6 @@ li {
 }
 .db-name {
     font-family: var(--body-font);
-    font-size: 1.2em;
 }
 .page-padding {
     padding: 3% 4%;
@@ -965,8 +964,7 @@ footer li {
         font-size: 1.3em;
     }
     .db-name {
-        font-family: var(--body-font);
-        font-size: 1.2em;
+        font-size: 1.7em;
     }
 
     /* -- Homepage -- */
@@ -1183,6 +1181,9 @@ footer li {
     }
     .page-banner br {
         display: none;
+    }
+    .db-name {
+        font-size: 2em;
     }
 
     /* -- Recipe Cards -- */
