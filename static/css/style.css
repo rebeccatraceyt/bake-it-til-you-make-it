@@ -130,7 +130,7 @@ li {
     max-width: 95vw;
     margin: auto; 
     padding-bottom: 5%;
-    background-image: url("../images/paper-texture.png");
+    background-image: url("../images/paper-bg.png");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -171,7 +171,7 @@ li {
 /*------------------------------------------------------- Recipe Cards */
 /* General styling for Recipe Cards throughout */
 .card {
-    background-image: url("../images/card-paper.png");
+    background-image: url("../images/white-lined.png");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -366,7 +366,7 @@ li {
 /*------------------------------------------------------- Accounts Page */
 /* Sign Up and Log In are style the same for consistency */
 .accounts-bg {
-    background-image: url("../images/ruled-texture.png");
+    background-image: url("../images/yellow-lined.png");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -462,7 +462,7 @@ li {
 /*------------------------------------------------------- Create/Edit Recipe Page */
 /* Create and Edit a Recipe pages are style the same for consistency */
 .create-bg {
-    background-image: url("../images/ruled-texture.png");
+    background-image: url("../images/yellow-lined.png");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -526,7 +526,7 @@ li {
     margin: 20px auto;
 }
 .profile-img-box {
-    background-image: url("../images/card-paper.png");
+    background-image: url("../images/white-lined.png");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -597,7 +597,7 @@ li {
 
 /*------------------------------------------------------- Individual Recipe Page */
 #recipe-img-box {
-    background-image: url("../images/card-paper.png");
+    background-image: url("../images/white-lined.png");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -641,7 +641,7 @@ li {
     display: flex;
 }
 #rec-info {
-    background-image: url("../images/card-paper.png");
+    background-image: url("../images/white-lined.png");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -701,7 +701,7 @@ li {
     color: var(--text);
 }
 #ingredients {
-    background-image: url("../images/card-paper.png");
+    background-image: url("../images/white-lined.png");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -759,14 +759,14 @@ li {
 #directions ol li:first-child {
     /* sourced and edited from :
         https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5--net-13934  */
-    background-image: url(../images/yellow-lined.png);
+    background-image: url(../images/stickynote-bg.png);
     min-width: 100%;
     padding: 10px;
     box-shadow: 5px 5px 7px rgba(33,33,33,.7);
     border-radius: 15px;
 }
 #directions ol li:not(:first-child) {
-    background-image: url(../images/yellow-lined.png);
+    background-image: url(../images/stickynote-bg.png);
     min-width: 100%;
     padding:1em;
     border-radius: 10px;
@@ -793,7 +793,7 @@ li {
 
 /*------------------------------------------------------- Footer */
 footer {
-    background-image: url("../images/paper-texture.png");
+    background-image: url("../images/paper-bg.png");
     background-color: var(--white);
     background-repeat: repeat-x;
     -webkit-background-size: cover;
@@ -833,7 +833,7 @@ footer li {
 
 /*------------------------------------------------------- Form Modal */
 .form-content {
-    background-image: url("../images/paper-texture.png");
+    background-image: url("../images/paper-bg.png");
     color: var(--text);
 
     -webkit-border-radius: 10px;
@@ -902,7 +902,7 @@ footer li {
 
 /*------------------------------------------------------- Delete Modals */
 .delete-content {
-    background-image: url("../images/paper-texture.png");
+    background-image: url("../images/paper-bg.png");
     color: var(--text);
 
     -webkit-border-radius: 10px;
@@ -1132,7 +1132,7 @@ footer li {
         height: 98vh;
     }
     #lg-right {
-        background-image: url("../images/paper-texture.png");
+        background-image: url("../images/paper-bg.png");
         background-repeat: no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -1150,7 +1150,7 @@ footer li {
 
     /* -- Navbar -- */
     .navbar {
-        background-image: url("../images/paper-texture.png");
+        background-image: url("../images/paper-bg.png");
         background-repeat: no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
