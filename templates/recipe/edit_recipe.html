@@ -45,7 +45,7 @@
                                 <div class="col-6">
                                     <label for="category"><span class="iconify" data-icon="ion:file-tray" data-inline="true"></span> Category</label>
                                     <select id="category" name="category" class="form-control" required>
-                                        <option value="" disabled selected>{{ recipe.category }}</option>
+                                        <option value="{{ recipe.category }}" selected>{{ recipe.category }}</option>
                                         {% for category in categories %}
                                             <option value="{{ category.category }}">{{ category.category }}</option>
                                         {% endfor %}
@@ -54,7 +54,7 @@
                                 <div class="col-6">
                                     <label for="difficulty"><span class="recipe-icon iconify" data-icon="mdi:chef-hat" data-inline="true"></span> Level</label>
                                     <select id="difficulty" name="difficulty" class="form-control" required>
-                                        <option value="" disabled selected>{{ recipe.difficulty }}</option>
+                                        <option value="{{ recipe.difficulty }}" selected>{{ recipe.difficulty }}</option>
                                         {% for level in difficulty %}
                                             <option value="{{ level.difficulty }}">{{ level.difficulty }}</option>
                                         {% endfor %}
@@ -71,7 +71,7 @@
                                 <div class="col-6">
                                     <label for="total_time"><span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span> Total Time</label>
                                     <select name="total_time" id="total_time" name="total_time" class="form-control" aria-describedby="total_time" required>
-                                        <option value="" disabled selected>{{ recipe.total_time }}</option>
+                                        <option value="{{ recipe.total_time }}" selected>{{ recipe.total_time }}</option>
                                         <option value="Less than 20">Less than 20 min</option>
                                         {% for time in range(20, 120, 10) %}
                                             <option value="{{ time }}">{{ time }} min</option>
@@ -82,7 +82,7 @@
                                 <div class="col-6">
                                     <label for="serving"><span class="recipe-icon iconify" data-icon="majesticons:users" data-inline="true"></span> Serves:</label>
                                     <select name="serving" id="serving" name="serving" class="form-control" aria-describedby="serving" required>
-                                        <option value="" disabled selected>{{ recipe.serving }}</option>
+                                        <option value="{{ recipe.serving }}" selected>{{ recipe.serving }}</option>
                                         <option value="1 person">1 person</option>
                                         {% for num in range(2, 21) %}
                                             <option value="{{ num }}">{{ num }} people</option>
