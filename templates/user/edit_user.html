@@ -20,7 +20,7 @@
                             <div class="row">
                                 <div class="col-12 form-group">
                                     <label for="username"><i class="fas fa-user"></i> Username</label>
-                                    <input id="username" name="username" type="text" value="{{ user.username }}" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" required>
+                                    <input id="username" name="username" type="text" value="{{ user.username }}" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="username" required>
                                 </div>
                             </div>
 
@@ -29,7 +29,7 @@
                                 <div class="col-12 form-group">
                                     <label for="user_img"><i class="fas fa-image"></i> Profile Picture</label><br>
                                     <p class="mt-0 mb-0"><small>Copy and paste image url or use original</small></p>
-                                    <input id="user_img" name="user_img" type="url" value="{{ user.user_img }}" class="form-control" pattern="https?://.+" onchange="userImg();">
+                                    <input id="user_img" name="user_img" type="url" value="{{ user.user_img }}" class="form-control" pattern="https?://.+" aria-describedby="user_img" onchange="userImg();">
                                 </div>
                                 <div class="col-12 img-container">
                                     <!-- Image preview container -->
@@ -41,7 +41,7 @@
                             <div class="row">
                                 <div class="col-12 form-group">
                                     <label for="password"><i class="iconify" data-icon="mdi:lock" data-inline="true"></i> New Password</label>
-                                    <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" required>
+                                    <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="password" required>
                                 </div>
                             </div>
 
@@ -49,7 +49,7 @@
                             <div class="row">
                                 <div class="col-12 form-group">
                                     <label for="confirm_password"><i class="iconify" data-icon="mdi:lock-check" data-inline="true"></i> Confirm New Password</label>
-                                    <input id="confirm_password" name="confirm_password" type="password"  minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" required> <br>
+                                    <input id="confirm_password" name="confirm_password" type="password"  minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="confirm_password" required> <br>
                                     <span id='message'></span>
                                 </div>
                             </div>
