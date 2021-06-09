@@ -28,8 +28,12 @@
                             <div class="row">
                                 <div class="col-12 form-group">
                                     <label for="user_img"><i class="fas fa-image"></i> Profile Picture</label><br>
-                                    <small>Copy & Paste image URL </small><br>
-                                    <input id="user_img" name="user_img" type="url" value="{{ user.user_img }}" class="form-control" required>
+                                    <p class="mt-0 mb-0"><small>Copy and paste image url or use original</small></p>
+                                    <input id="user_img" name="user_img" type="url" value="{{ user.user_img }}" class="form-control" pattern="https?://.+" onchange="userImg();">
+                                </div>
+                                <div class="col-12 img-container">
+                                    <!-- Image preview container -->
+                                    <img src="" alt="Preview of recipe image input" class="img-preview">
                                 </div>
                             </div>
 

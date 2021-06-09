@@ -33,8 +33,15 @@ $('#password, #confirm_password').on('keyup', function () {
 /* Show Image Preview
     Sourced from http://jsfiddle.net/2d7axmdr */
 function recipeImg() {
+    // For recipes
     $(".img-container").css("display", "flex")
     var url = $("#recipe_img").val()
+    $('.img-preview').attr('src',url)
+}
+function userImg() {
+    // For users
+    $(".img-container").css("display", "flex")
+    var url = $("#user_img").val()
     $('.img-preview').attr('src',url)
 }
 
