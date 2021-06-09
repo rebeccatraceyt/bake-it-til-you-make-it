@@ -173,14 +173,14 @@
 
                     <div class="row">
                         <div id="delete-recipe-btn" class="col-12 create-btn">
-                            <button type="button" class="btn" data-toggle="modal" data-target="#deleteRecipeModal">
+                            <button type="button" class="btn" data-toggle="modal" data-target="#modal-{{ recipe._id }}">
                                 Delete
                             </button>
                         </div>
                     </div>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="deleteRecipeModal" tabindex="-1" role="dialog" aria-labelledby="deleteRecipeModal" aria-hidden="true">
+                    <div class="modal fade" id="modal-{{ recipe._id }}" tabindex="-1" role="dialog" aria-labelledby="deleteRecipeModal" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered " role="document">
                             <div class="modal-content delete-content">
                                 <div class="modal-header delete-header">

@@ -70,13 +70,13 @@
                             <div class="row">
                                 <div id="delete-user-btn" class="col-12 edit-btn">
                                     <!-- Button trigger -->
-                                    <button type="button" class="btn" data-toggle="modal" data-target="#deleteUserModal">
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-{{ user._id }}">
                                         Delete Account
                                     </button>
                                 </div>
                                 
                                 <!-- Modal -->
-                                <div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-labelledby="deleteUserModal" aria-hidden="true">
+                                <div class="modal fade" id="modal-{{ user._id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModal" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered " role="document">
                                         <div class="modal-content delete-content">
                                             <div class="modal-header delete-header">
