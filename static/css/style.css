@@ -689,7 +689,7 @@ li {
     color: var(--text);
 }
 #rec-ingredients {
-    background-image: url("../images/white-lined.png");
+    background-image: url("../images/white-texture.png");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -725,7 +725,7 @@ li {
     /* Dynamic lines for each ingredient
         Reference: https://jsfiddle.net/chriscoyier/KVjFQ/1/ */
     border-right: 1px solid var(--red);
-    border-top: 1px solid var(--border-line);
+    border-top: 1px solid var(--red);
     max-width: 2%;
 }
 #ingredient-list {
