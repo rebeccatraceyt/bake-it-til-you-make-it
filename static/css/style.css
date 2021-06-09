@@ -1081,8 +1081,12 @@ footer li {
     }
 
     /* -- Individual Recipe Page */
+    #recipe-intro {
+        padding: 10px;
+    }
     #recipe-info-box {
         margin: auto;
+        padding: 10px;
     }
     #rec-info p {
         font-size: 1.1em;
@@ -1092,6 +1096,7 @@ footer li {
     }
     #recipe-img-box {
         margin: auto;
+        padding: 5px 20px;
     }
 
 }
@@ -1337,10 +1342,12 @@ footer li {
     /* -- Individual Recipe Page */
     #recipe-intro {
         margin: 4% 5% 2% 5%;
+        padding: 20px 10px;
     }
     #recipe-info-box {
         margin: auto;
         max-width: 40%;
+        padding: 20px;
     }
     #rec-info p {
         font-size: 1.5em;
@@ -1351,6 +1358,7 @@ footer li {
     }
     #recipe-img-box {
         margin: auto;
+        padding: 20px;
         max-width: 60%;
         height: 500px;
     }
