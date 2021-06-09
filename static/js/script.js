@@ -12,8 +12,8 @@ function hideDisclaimer() {
 // Get Current Year
 document.getElementById("date-text").textContent = new Date().getFullYear();
 
-// Change Navbar on scroll - UX purposes
-//      Sourced from https://jsfiddle.net/we9L9h2r/ 
+/* Change Navbar on scroll - UX purposes
+    Sourced from https://jsfiddle.net/we9L9h2r/ */
 $(function () {
     $(document).scroll(function () {
         var $nav = $("#scroll-nav");
@@ -21,8 +21,8 @@ $(function () {
     });
 });
 
-// Confirm Passwords Match
-//      Sourced from https://stackoverflow.com/questions/21727317/how-to-check-confirm-password-field-in-form-without-reloading-page/21727518
+/* Confirm Passwords Match
+    Sourced from https://stackoverflow.com/questions/21727317/how-to-check-confirm-password-field-in-form-without-reloading-page/21727518 */
 $('#password, #confirm_password').on('keyup', function () {
   if ($('#password').val() == $('#confirm_password').val()) {
     $('#message').html('Passwords match!').css('color', 'green');
@@ -30,7 +30,16 @@ $('#password, #confirm_password').on('keyup', function () {
     $('#message').html('Passwords do not match').css('color', 'red');
 });
 
-// Checking if form is valid - reference: https://codepen.io/tetnuc/pen/gRqOEO
+/* Show Image Preview
+    Sourced from http://jsfiddle.net/2d7axmdr */
+function recipeImg() {
+    $(".img-container").css("display", "flex")
+    var url = $("#recipe_img").val()
+    $('.img-preview').attr('src',url)
+}
+
+/* Checking if form is valid 
+    Sourced from https://codepen.io/tetnuc/pen/gRqOEO */
 $('#suggestionForm').validate({
     rules: {
         uname: {
