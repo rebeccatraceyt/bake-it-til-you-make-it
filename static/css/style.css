@@ -619,7 +619,7 @@ li {
     justify-content: center;
     max-width: 90%;
     height: 300px;
-    padding: 10px;   
+    padding: 0px;   
 }
 #recipe-img {
     min-width: 100%;
@@ -645,7 +645,6 @@ li {
 }
 #rec-info {
     margin: 2% auto;
-    padding: 20px 10px 10px 10px;
     max-width: 100%;
 }
 #rec-info p {
@@ -656,9 +655,8 @@ li {
     border-bottom: 3px solid var(--border-line);
 }
 #rec-stats {
-    font-size: 1.1em;
     margin: 5px auto;
-    padding: 2px 5px;
+    padding: 2px;
 }
 #rec-btns {
     padding: 20px 10px 5px 10px;
