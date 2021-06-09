@@ -26,8 +26,11 @@
                     <div id="rec-info" class="row">
 
                         <!-- Recipe Description -->
-                        <div class="col-12">
+                        <div id="rec-description" class="col-12">
                             <p>{{ recipe.description }}</p>
+                            {% if recipe.recipe_url %}
+                                <p>Original recipe available <a href="{{ recipe.recipe_url }}" target="_blank" rel="noopener">here</a></p>
+                            {% endif %}
                         </div>
 
                         <!-- Recipe Stats -->

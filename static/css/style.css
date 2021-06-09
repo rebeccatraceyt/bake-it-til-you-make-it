@@ -647,12 +647,17 @@ li {
     margin: 2% auto;
     max-width: 100%;
 }
-#rec-info p {
+#rec-description p {
     font-size: 1.3em;
     font-family: var(--accent-font);
     text-align: center;
     padding-bottom: 10px;
     border-bottom: 3px solid var(--border-line);
+}
+#rec-description a {
+    color: var(--text);
+    font-family: var(--body-font);
+    font-size: .8em;
 }
 #rec-stats {
     margin: 5px auto;
