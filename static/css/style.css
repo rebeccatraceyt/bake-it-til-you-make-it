@@ -61,12 +61,6 @@ li {
 /* Sourced and edited from:
     https://codingyaar.com/responsive-bootstrap-navbar-center-logo/ */
 .navbar {
-    max-width: 95vw;
-    min-height: 10vh;
-    border: 0;
-    margin: auto;
-    padding-top: 45px;
-    
     font-family: var(--accent-font);
     background: url("../images/bg-sm.png");
     background-position: top;
@@ -76,35 +70,37 @@ li {
     -o-background-size: cover;
     background-size: cover;
 
+    max-width: 95vw;
+    min-height: 10vh;
+    border: 0;
+    margin: auto;
+    padding-top: 45px;
     border-bottom: 3px inset var(--border-line);
 }
 .navbar .navbar-nav .nav-link {
     color: var(--text);
     font-family: var(--accent-font);
-    font-size: 1.1em;
+    font-size: 1em;
 }
 .navbar .navbar-nav .nav-link:hover{
-    color: var(--text);
+    color: var(--white);
 }
 .navbar-brand img {
-    width: 20vw;
+    width: 100px;
     height: auto;
 }
 .navbar-collapse {
-    padding: 5%;
-    z-index: 102;
-
-    font-size: 1.5rem; 
+    padding: 10px;
+    font-size: 1.3rem; 
     text-align: right;
     color: var(--text); 
     line-height: 130%;
 }
-
 /* Styling for navbar toggler */
 .navbar-toggler {
     margin: 12px 12px 30px 0px;
 } 
-.custom-toggler .navbar-toggler-icon {
+#custom-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(51, 41, 37)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
     /* Sourced from Stack Overflow to re-colour the toggle button on mobile devices (RGB value had to be entered instead of root variable).
     https://stackoverflow.com/questions/42586729/bootstrap-4-change-hamburger-toggler-color */
@@ -969,7 +965,21 @@ footer li {
     
     /* -- Navbar -- */
     .navbar {
-        padding-top: 80px;
+        padding-top: 90px;
+    }
+    .navbar-brand img {
+        width: 15vw;
+    }
+    .navbar-collapse ul {
+        justify-content: center;
+        flex-direction: row;   
+    }
+    .navbar-nav li { 
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .navbar-nav li:not(:first-child) {
+        border-left: 1px inset var(--border-line);
     }
 
     /* -- Recipe Cards -- */
@@ -1186,23 +1196,33 @@ footer li {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+        padding-top: 0;
+    }
+    .navbar .navbar-nav .nav-link {
+        font-size: 1.3em;
+        padding: .3em 1em;
+    }
+    .navbar-brand img {
+        padding: 20px 10px;
+        width: 120px;
+        margin: auto;
+    }
+    #user-logo img {
+        background-image: url("../images/white-texture.png");
+        padding: 4px;
+        margin: auto 0;
+        display: flex;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
 
-        min-width: 90vw;
-        max-height: 10vh;
-        padding-top: 10vh;
-    }
-    .navbar-collapse {
-        /* removes unwanted hanging padding to avoid conflict */
-        padding: 2vh 0 0 0;
-    }
-    .navbar-nav > li {
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 2vh;
-    }
-    #lg-logo img {
-        width: 10vw;
-        height: auto;
+        -webkit-border-radius: 10%;
+        -moz-border-radius: 10%;
+        border-radius: 10%;
+
+        -webkit-box-shadow: var(--dark-box) 0px 0 10px;
+        -moz-box-shadow: var(--dark-box) 0 0 10px;
+        box-shadow: var(--dark-box) 0 0 10px;
     }
 
     /* -- Main Page Section -- */

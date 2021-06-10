@@ -50,13 +50,12 @@
                         <!-- Navbar -->
                         <nav id="scroll-nav" class="navbar navbar-expand-lg sticky-top">
 
-                            <a class="navbar-brand d-lg-none" href="{{ url_for('home') }}"><img src="../static/images/logo.png"></a>
-                            
-                            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#hamburger-nav"
+                            <a class="navbar-brand" href="{{ url_for('home') }}"><img src="../static/images/logo.png"></a>
+
+                            <button id="custom-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hamburger-nav"
                                 aria-controls="hamburger-nav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-
                             <div class="collapse navbar-collapse" id="hamburger-nav">
                                 <ul class="navbar-nav mx-auto">
                                     <li class="nav-item">
@@ -65,13 +64,15 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ url_for('find_recipes') }}">Find A Recipe</a>
                                     </li>
-                                    <a id="lg-logo" class="d-none d-lg-block" href="{{ url_for('home') }}"><img src="../static/images/logo.png"></a>
                                     {% if session.user %}
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ url_for('my_recipes', username=session['user']) }}">Recipes</a>
+                                            <a class="nav-link" href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ url_for('my_favourites', username=session['user']) }}">Favourites</a>
+                                            <a class="nav-link" href="{{ url_for('my_favourites', username=session['user']) }}">My Favourites</a>
+                                        </li>
+                                        <li class="mr-0">
+                                            <a  class="nav-link d-lg-none" href="#">My Profile</a>
                                         </li>
                                     {% else %}
                                         <li class="nav-item">
@@ -82,6 +83,13 @@
                                         </li>
                                     {% endif %}
                                 </ul>
+                                {% if session.user %}
+                                    <ul class="navbar-nav mr-0">
+                                        <li class="mr-0">
+                                            <a id="user-logo" class="nav-link" href="#"><img class="d-none d-lg-block" src="{{ user.user_img }}" alt="User Image"></a>
+                                        </li>
+                                    </ul>
+                                {% endif %}
                             </div>
                         </nav>
 

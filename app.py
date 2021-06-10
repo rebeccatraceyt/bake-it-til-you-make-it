@@ -40,12 +40,14 @@ def home():
     """
     Home page displays the 4 latest recipes
     """
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
     
     latest_recipes = mongo.db.recipes.find().sort("_id", 1).limit(4)
     
     return render_template(
         "index.html", 
-        recipes=latest_recipes, title="Home")
+        recipes=latest_recipes, user=user, title="Home")
 
 
 # ------- Find Recipes Page -------
