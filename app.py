@@ -54,7 +54,9 @@ def home():
 @app.route("/find_recipes")
 def find_recipes():
     recipes = list(mongo.db.recipes.find())
-    return render_template("recipe/find_recipes.html", recipes=recipes)
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+    return render_template("recipe/find_recipes.html", recipes=recipes, user=user)
 
 
 # ------- Search for Recipes -------
@@ -67,26 +69,33 @@ def search():
     recommended = mongo.db.recipes.find().sort(
                 "favourite_count", -1).limit(6)
     
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+    
     if len(recipes) == 0:
         flash(f"No recipe results for {query}")
         
     else:
         flash(f"Your search for {query} returned {len(recipes)} result(s)!")
     
-    return render_template("find_recipes.html", recipes=recipes, recommended=recommended)
+    return render_template("recipe/find_recipes.html", recipes=recipes, recommended=recommended, user=user)
 
 
 # ------- Filtered Search for Recipes -------
 @app.route("/category_filter/<id>")
 def category_filter(id):
     recipes = list(mongo.db.recipes.find({"category": id}))
-    return render_template("recipe/find_recipes.html", recipes=recipes)
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+    return render_template("recipe/find_recipes.html", recipes=recipes, user=user)
 
 
 @app.route("/difficulty_filter/<id>")
 def difficulty_filter(id):
     recipes = list(mongo.db.recipes.find({"difficulty": id}))
-    return render_template("recipe/find_recipes.html", recipes=recipes)
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+    return render_template("recipe/find_recipes.html", recipes=recipes, user=user)
 
 
 # ------- Register Page -------
@@ -387,6 +396,9 @@ def recipe(recipe_id):
     recipe = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})
     
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+    
     # checking that the user is in session
     if "user" in session:
         user = mongo.db.users.find_one({"username": session['user']})
@@ -403,7 +415,7 @@ def recipe(recipe_id):
         
     return render_template(
         "recipe/recipe.html", recipe=recipe, 
-        favourited=favourited, title="Recipe")
+        favourited=favourited, user=user, title="Recipe")
 
 
 # ------- Create Recipe Page -------
@@ -413,6 +425,8 @@ def create_recipe():
     """
     Registered users can upload their favourite recipes.
     """
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
     
     if request.method == "POST":
         recipe = {
@@ -436,14 +450,14 @@ def create_recipe():
     
     # checking that the user is in session
     if "user" in session:
-        user = session["user"].lower()
+        username = session["user"].lower()
         
-        if user == session["user"].lower():
+        if username == session["user"].lower():
             categories = mongo.db.categories.find().sort("category", 1)
             difficulty = mongo.db.level.find().sort("difficulty", 1)
             return render_template(
                 "recipe/create_recipe.html", 
-                categories=categories, difficulty=difficulty)
+                categories=categories, difficulty=difficulty, user=user)
         
         else:
             return redirect(url_for("home"))
@@ -462,6 +476,9 @@ def edit_recipe(recipe_id):
     
     recipe_author = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})
+    
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
     
     if not user_logged_in(recipe_author["baker"]):
         return redirect(url_for("login"))
@@ -490,14 +507,14 @@ def edit_recipe(recipe_id):
         {"_id": ObjectId(recipe_id)})
     
     if "user" in session.keys():
-        user = session["user"].lower()
+        username = session["user"].lower()
         
-        if user == session["user"].lower():
+        if username == session["user"].lower():
             categories = mongo.db.categories.find().sort("category", 1)
             difficulty = mongo.db.level.find().sort("difficulty", 1)
             return render_template(
                 "recipe/edit_recipe.html", 
-                recipe=recipe, categories=categories, difficulty=difficulty)
+                recipe=recipe, categories=categories, difficulty=difficulty, user=user)
         
         else:
             return redirect(url_for("home"))
