@@ -633,6 +633,23 @@ li {
     color: var(--text);
     background: var(--white);        
 }
+.profile-intro {
+    border-top: 3px inset var(--border-line);
+    text-align: center;
+    margin: auto;
+    padding-top: 5vh;
+    padding-bottom: 3vh;
+}
+.profile-text {
+    padding: 40px 20px 10px 20px;
+}
+.profile-text h4 {
+    font-family: var(--accent-font);
+    font-size: 1.7em;
+}
+.profile-text p {
+    font-size: .9em;
+}
 .profile-recipes {
     border-top: 3px inset var(--border-line);
     margin: 10px auto;
@@ -1181,6 +1198,17 @@ footer li {
         line-height: 40px;
         font-size: 1.5em;
     }
+    .profile-intro {
+        padding: 40px;
+    }
+    .profile-text h4{
+        font-size: 3em;
+    }
+    .profile-text p {
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 1.3em;
+    }
     .profile-recipes {
         margin: 15px auto;
         padding-top: 30px;
@@ -1458,6 +1486,26 @@ footer li {
         min-width: 50%;
         max-width: 50%;
         font-size: 1.5em;
+    }
+    .profile-intro {
+        padding: 0;
+        margin: auto;
+        border: none;
+    }
+    .profile-text h4{
+        font-size: 4em;
+    }
+    .profile-text p {
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 1.5em;
+    }
+    .profile-intro .profile-btns a {
+        min-width: 30%;
+        max-width: 30%;
+        font-size: 1.6em;
+        padding: 15px;
+        margin: 5px auto;
     }
     .profile-recipes {
         border: none;

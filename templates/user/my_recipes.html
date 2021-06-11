@@ -45,23 +45,25 @@
                 </div>
 
                 {% if recipes|length == 0 %}
-                    <div id="home-bio" class="col-12 col-lg-6">
+
+                    <div class="profile-intro col-12 col-lg-8">
 
                         <!-- Introduction to website -->
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-12 profile-text">
                                 <h4>Welcome <span class="db-name">{{ user.username }}</span></h4>
                                 <p>
                                     Lets start baking! <br> 
-                                    Get inspiration from one of our many recipes or create your own:
+                                    Get inspiration from one of our many recipes <br class="d-none d-md-block">
+                                    or create your own:
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Conditional Homepage links -->
+                        <!-- User Quick Links -->
                         <div class="row">
                             <div class="col-12">
-                                <div id="home-btn" class="row">
+                                <div class="row no-gutters profile-btns">
                                     <div class="col-6 col-lg-12">
                                         <a href="{{ url_for('find_recipes') }}">Get Inspired</a>
                                     </div>
