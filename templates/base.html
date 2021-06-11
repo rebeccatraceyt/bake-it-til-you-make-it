@@ -86,7 +86,7 @@
                                 {% if session.user|lower %}
                                     <div class="dropdown mr-0 d-none d-lg-block">
                                         <button class="btn user-logo dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <img src="{{ user.user_img }}" alt="User Image">
+                                            <img src="{{ user.user_img }}" onerror="this.src='../../static/images/default-user.png';" alt="User Image">
                                         </button>
                                         <div id="user-quicklinks" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                             <a class="dropdown-item" href="{{ url_for('edit_user', username=session['user']) }}">Edit Profile</a>
