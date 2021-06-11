@@ -89,9 +89,10 @@ li {
     /* sets active link in Jinja Templates
         ref: https://stackoverflow.com/questions/29902575/highlight-menu-item-based-on-current-view */
     color: var(--white);
-    text-decoration: underline;
 }
-
+.navbar-brand {
+    margin-right: 0;
+}
 .navbar-brand img {
     width: 100px;
     height: auto;
