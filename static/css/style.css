@@ -647,9 +647,6 @@ li {
     font-family: var(--accent-font);
     font-size: 1.7em;
 }
-.profile-text p {
-    font-size: .9em;
-}
 .profile-recipes {
     border-top: 3px inset var(--border-line);
     margin: 10px auto;
@@ -1197,9 +1194,6 @@ footer li {
     .profile-btns a {
         line-height: 40px;
         font-size: 1.5em;
-    }
-    .profile-intro {
-        padding: 40px;
     }
     .profile-text h4{
         font-size: 3em;

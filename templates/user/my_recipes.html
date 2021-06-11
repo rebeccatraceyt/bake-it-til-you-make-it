@@ -17,7 +17,7 @@
                 <!-- Profile Information -->
                 <div class="col-12 col-lg-4">
                     <div class="profile-info container-fluid">
-                        <div class="profile-no-scroll row">
+                        <div class="row">
                             <div class=" profile-img-box col-sm-12 col-md-6 col-lg-12">
                                 <div class="profile-img">
                                     <img src="{{ user.user_img }}" onerror="this.src='../../static/images/default-user.png';" alt="User's Profile Image">
@@ -44,8 +44,8 @@
                     </div>
                 </div>
 
+                <!-- When User has 0 Recipes -->
                 {% if recipes|length == 0 %}
-
                     <div class="profile-intro col-12 col-lg-8">
 
                         <!-- Introduction to website -->

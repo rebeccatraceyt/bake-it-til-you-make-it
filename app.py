@@ -410,7 +410,7 @@ def my_favourites(username):
                 {"_id": {"$in": favourite_recipes}})
             
             recommended = mongo.db.recipes.find().sort(
-                "favourite_count", -1).limit(3)
+                "favourite_count", -1).limit(4)
     else:
         flash("You must be logged in")
         return redirect(url_for("login"))

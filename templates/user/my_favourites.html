@@ -17,14 +17,13 @@
                 <!-- Profile Information -->
                 <div class="col-12 col-lg-4">
                     <div class="profile-info container-fluid">
-                        <div class="profile-no-scroll row">
+                        <div class="row">
                             <div class=" profile-img-box col-sm-12 col-md-6 col-lg-12">
                                 <div class="profile-img">
                                     <img src="{{ user.user_img }}" onerror="this.src='../../static/images/default-user.png';" alt="User's Profile Image">
                                 </div>
                             </div>
 
-                    
                             <div class="profile-btns col-sm-12 col-md-6 col-lg-12">
                                 <div class="row no-gutters">
                                     <div class="col-6 col-md-12">
@@ -36,7 +35,7 @@
                                     <div class="col-6 col-md-12">
                                         <a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a>  
                                     </div>
-                                    <div class="col-6 col-md-12 red-btn">
+                                    <div class="col-6 col-md-12 white-btn">
                                         <a href="{{ url_for('logout') }}">Log Out</a>
                                     </div>
                                 </div>
@@ -45,19 +44,30 @@
                     </div>
                 </div>
 
-
-                <!-- Favourited Recipes -->
-                <div class="col-12 col-lg-8">
-                    <div class="profile-recipes container-fluid">
-                        <div class="row">
-                            {% if favourite_recipes|length == 0 %}
+                <!-- When User has 0 Favourites -->
+                {% if favourite_recipes|length == 0 %}
+                    <div class="col-12 col-lg-8">
+                            <!-- Introduction to favourites -->
+                            <div class="row profile-intro">
+                                <div class="col-12 profile-text">
+                                    <h4>Welcome <span class="db-name">{{ user.username }}</span></h4>
+                                    <p>
+                                        You have no favourites yet! <br> 
+                                        So here are some of our: 
+                                    </p>
+                                </div>
+                            </div>
+    
+                            <!-- User Quick Links -->
+                            <div id="rec-links" class="row profile-recipes">
+                                <!-- Recommended Recipes -->
                                 {% for rec in recommended %}
                                     <div class="recipe-cards col-sm-12 col-md-6">
                                         <div class="card">
     
                                             <!-- Recipe Img -->
-                                            <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}"><img class="recipe-card-img card-img-top" src="{{ rec.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ rec.recipe_name }}"></a>
-
+                                            <a class="" href="{{ url_for('recipe', recipe_id=rec._id) }}"><img class="recipe-card-img card-img-top" src="{{ rec.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ rec.recipe_name }}"></a>
+                                            
                                             <!-- Recipe Card Body -->
                                             <div class="card-body">
     
@@ -102,67 +112,66 @@
                                         </div>
                                     </div>
                                 {% endfor %}
-                            {% else %}
-                                {% for favourite in favourites %}
-                                    <div class="recipe-cards col-sm-12 col-md-6">
-                                        <div class="card">
-    
-                                            <!-- Recipe Img -->
-                                            <a class="" href="{{ url_for('recipe', recipe_id=favourite._id) }}"><img class="recipe-card-img card-img-top" src="{{ favourite.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ favourite.recipe_name }}"></a>
-    
-                                            <!-- Recipe Card Body -->
-                                            <div class="card-body">
-    
-                                                <h3 class="recipe-name"><a href="{{ url_for('recipe', recipe_id=favourite._id) }}">{{ favourite.recipe_name }}</a></h3>
-                                                
-                                                <div class="row recipe-text">
-    
-                                                    <div class="col-6">
-                                                        <div>
-                                                            <span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
-                                                            <span class="value">{{ favourite.total_time }}</span>
-                                                            <span class="title">Mins</span>
-                                                        </div>
-                                                        <div>
-                                                            <span class="recipe-icon iconify" data-icon="majesticons:users" data-inline="true"></span>
-                                                            <span class="title">Serves</span>
-                                                            <span class="value">{{ favourite.serving }}</span>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class="col-6">
-                                                        <div>
-                                                            <span class="recipe-icon iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
-                                                            <span class="value">{{ favourite.difficulty }}</span>
-                                                        </div>
-                                                        <div>
-                                                            {% if favourite.category == 'Bread' %}
-                                                                <span class="recipe-icon iconify" data-icon="emojione-monotone:bread" data-inline="true"></span>
-                                                            {% elif favourite.category == 'Cake' %}
-                                                                <span class="recipe-icon iconify" data-icon="mdi:cupcake" data-inline="true"></span>
-                                                            {% elif favourite.category == 'Biscuit' %}
-                                                                <span class="recipe-icon iconify" data-icon="fa-solid:cookie-bite" data-inline="true"></span>
-                                                            {% else %}
-                                                                <span class="recipe-icon iconify" data-icon="mdi:food-croissant" data-inline="true"></span>
-                                                            {% endif %}
-                                                            <span class="value">{{ favourite.category }}</span>
-                                                        </div>
-                                                    </div>
-                                                    
+                            </div>
+                    </div>
+                {% else %}
+                    <!-- Favourited Recipes -->
+                    <div class="profile-recipes col-12 col-lg-8">
+                        {% for favourite in favourites %}
+                            <div class="recipe-cards col-sm-12 col-md-6">
+                                <div class="card">
+
+                                    <!-- Recipe Img -->
+                                    <a class="" href="{{ url_for('recipe', recipe_id=favourite._id) }}"><img class="recipe-card-img card-img-top" src="{{ favourite.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ favourite.recipe_name }}"></a>
+
+                                    <!-- Recipe Card Body -->
+                                    <div class="card-body">
+
+                                        <h3 class="recipe-name"><a href="{{ url_for('recipe', recipe_id=favourite._id) }}">{{ favourite.recipe_name }}</a></h3>
+                                        
+                                        <div class="row recipe-text">
+
+                                            <div class="col-6">
+                                                <div>
+                                                    <span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
+                                                    <span class="value">{{ favourite.total_time }}</span>
+                                                    <span class="title">Mins</span>
+                                                </div>
+                                                <div>
+                                                    <span class="recipe-icon iconify" data-icon="majesticons:users" data-inline="true"></span>
+                                                    <span class="title">Serves</span>
+                                                    <span class="value">{{ favourite.serving }}</span>
                                                 </div>
                                             </div>
+                                            
+                                            <div class="col-6">
+                                                <div>
+                                                    <span class="recipe-icon iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
+                                                    <span class="value">{{ favourite.difficulty }}</span>
+                                                </div>
+                                                <div>
+                                                    {% if favourite.category == 'Bread' %}
+                                                        <span class="recipe-icon iconify" data-icon="emojione-monotone:bread" data-inline="true"></span>
+                                                    {% elif favourite.category == 'Cake' %}
+                                                        <span class="recipe-icon iconify" data-icon="mdi:cupcake" data-inline="true"></span>
+                                                    {% elif favourite.category == 'Biscuit' %}
+                                                        <span class="recipe-icon iconify" data-icon="fa-solid:cookie-bite" data-inline="true"></span>
+                                                    {% else %}
+                                                        <span class="recipe-icon iconify" data-icon="mdi:food-croissant" data-inline="true"></span>
+                                                    {% endif %}
+                                                    <span class="value">{{ favourite.category }}</span>
+                                                </div>
+                                            </div>
+                                            
                                         </div>
                                     </div>
-                                {% endfor %}
-                            {% endif %}
-                        </div>
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
-                </div>
+                {% endif %}
             </div>
-
-        </div>
-
-            
+        </div>    
             
     </section>
     
