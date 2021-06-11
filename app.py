@@ -144,6 +144,11 @@ def register():
     Prevention of username duplicates included.
     """
     
+    if "user" in session:
+    
+        return redirect(url_for(
+            "my_recipes", username=session["user"]))
+    
     if request.method == "POST":
         # Checks if username already exists
         existing_user = mongo.db.users.find_one(
@@ -182,6 +187,11 @@ def login():
     """
     Allows users to login to account
     """
+    
+    if "user" in session:
+    
+        return redirect(url_for(
+            "my_recipes", username=session["user"]))
     
     if request.method == "POST":
         # checking if user exists
