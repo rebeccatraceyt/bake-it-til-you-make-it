@@ -56,12 +56,12 @@
                                         <div class="card">
     
                                             <!-- Recipe Img -->
-                                            <img class="recipe-card-img search-img card-img-top" src="{{ rec.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ rec.recipe_name }}">
-    
+                                            <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}"><img class="recipe-card-img card-img-top" src="{{ rec.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ rec.recipe_name }}"></a>
+
                                             <!-- Recipe Card Body -->
                                             <div class="card-body">
     
-                                                <h3><a class="" href="{{ url_for('recipe', recipe_id=rec._id) }}">{{ rec.recipe_name }}</a></h3>
+                                                <h3  class="recipe-name"><a class="" href="{{ url_for('recipe', recipe_id=rec._id) }}">{{ rec.recipe_name }}</a></h3>
                                                 
                                                 <div class="row recipe-text">
     
