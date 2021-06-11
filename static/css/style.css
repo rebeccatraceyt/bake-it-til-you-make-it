@@ -1207,7 +1207,7 @@ footer li {
         width: 140px;
         margin: auto;
     }
-    #user-logo img {
+    .user-logo img {
         background-image: url("../images/white-texture.png");
         padding: 4px;
         margin: auto 0;
@@ -1223,6 +1223,15 @@ footer li {
         -webkit-box-shadow: var(--dark-box) 0px 0 10px;
         -moz-box-shadow: var(--dark-box) 0 0 10px;
         box-shadow: var(--dark-box) 0 0 10px;
+    }
+    .user-logo.dropdown-toggle::after {
+        content: none;
+    }
+    #user-quicklinks.dropdown-menu a {
+        text-align: center;
+        min-width: 100%;
+        font-size: 1.3em;
+        padding: 15px;
     }
 
     /* -- Main Page Section -- */

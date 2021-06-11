@@ -72,7 +72,7 @@
                                             <a class="nav-link" href="{{ url_for('my_favourites', username=session['user']) }}">My Favourites</a>
                                         </li>
                                         <li class="mr-0">
-                                            <a  class="nav-link d-lg-none" href="#">My Profile</a>
+                                            <a  class="nav-link d-lg-none" href="{{ url_for('logout') }}">Log Out</a>
                                         </li>
                                     {% else %}
                                         <li class="nav-item">
@@ -84,11 +84,16 @@
                                     {% endif %}
                                 </ul>
                                 {% if session.user %}
-                                    <ul class="navbar-nav mr-0">
-                                        <li class="mr-0">
-                                            <a id="user-logo" class="nav-link" href="#"><img class="d-none d-lg-block" src="{{ user.user_img }}" alt="User Image"></a>
-                                        </li>
-                                    </ul>
+                                    <div class="dropdown mr-0 d-none d-lg-block">
+                                        <button class="btn user-logo dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="{{ user.user_img }}" alt="User Image">
+                                        </button>
+                                        <div id="user-quicklinks" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="{{ url_for('edit_user', username=session['user']) }}">Edit Profile</a>
+                                            <a class="dropdown-item" href="{{ url_for('create_recipe') }}">Create Recipe</a>
+                                            <a class="dropdown-item" href="{{ url_for('logout') }}">Log Out</a>
+                                        </div>
+                                    </div>
                                 {% endif %}
                             </div>
                         </nav>
