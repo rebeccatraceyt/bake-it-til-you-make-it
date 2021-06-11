@@ -85,6 +85,12 @@ li {
 .navbar .navbar-nav .nav-link:hover{
     color: var(--white);
 }
+.navbar .navbar-nav .nav-link.active{
+    /* sets active link in Jinja Templates
+        ref: https://stackoverflow.com/questions/29902575/highlight-menu-item-based-on-current-view */
+    color: yellow;
+}
+
 .navbar-brand img {
     width: 100px;
     height: auto;
