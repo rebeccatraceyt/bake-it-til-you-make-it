@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <section aria-label="Edit User Page">
+         <!-- Page Title -->
+        <div class="page-banner">
+            <h2>Edit <span class="db-name">{{ user.username }}</span>'s Profile</h2>
+        </div>
+
+        <!-- Page Content -->
+        <div class="container-fluid page-padding">
+
+            <!-- Edit User Form -->
+            <div class="row accounts-bg">
+                <div class="container-fluid">
+                    <div class="row accounts-label">
+                        <form class="col-12" method="POST" action="{{ url_for('edit_account', username=session['user']) }}">
+
+                            <!-- New Password -->
+                            <div class="row">
+                                <div class="col-12 form-group">
+                                    <label for="password"><i class="iconify" data-icon="mdi:lock" data-inline="true"></i> New Password</label>
+                                    <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="password" required>
+                                </div>
+                            </div>
+
+                            <!-- Confirm Password-->
+                            <div class="row end-input">
+                                <div class="col-12 form-group">
+                                    <label for="confirm_password"><i class="iconify" data-icon="mdi:lock-check" data-inline="true"></i> Confirm New Password</label>
+                                    <input id="confirm_password" name="confirm_password" type="password"  minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="confirm_password" required> <br>
+                                    <span id='message'></span>
+                                </div>
+                            </div>
+
+                            <!-- Submit button -->
+                            <div class="row no-gutters">
+                                <div class="col-6 edit-btn">
+                                    <a href="{{ url_for('edit_user', username=session['user']) }}">Back</a>
+                                </div>
+                                <div class="col-6 edit-btn">
+                                    <button type="submit">
+                                        Save
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Delete Modal -->
+                            <div class="row">
+                                <div id="delete-user-btn" class="col-12 edit-btn">
+                                    <!-- Button trigger -->
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-{{ user._id }}">
+                                        Delete Account
+                                    </button>
+                                </div>
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-{{ user._id }}" tabindex="-1" role="dialog" aria-labelledby="deleteUserModal" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered " role="document">
+                                        <div class="modal-content delete-content">
+                                            <div class="modal-header delete-header">
+                                                <h2 class="modal-title delete-title" id="deleteUserModal">Confirm Your Choice</h2>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span class="iconify" data-icon="akar-icons:circle-x" data-inline="false"></span>                                                
+                                                </button>
+                                            </div>
+                                            <div class="modal-body delete-body">
+                                                <hr class="delete-hr">
+                                                <h5>Are you <strong>sure</strong> you want to delete your profile <br> <strong>{{ user.username }}</strong>?</h5>
+                                                <p>Your account information will be lost!</p>
+                                                <hr class="delete-hr">
+                                            </div>
+                                            <div class="modal-footer delete-footer">
+                                                <button type="button" class="btn delete-btn">
+                                                    <a href="{{ url_for('delete_user', username=user.username) }}">Yes, Delete!</a>
+                                                </button>
+                                                <button type="button" class="btn delete-btn" data-dismiss="modal">No, Go Back!</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div> 
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

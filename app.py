@@ -238,6 +238,55 @@ def edit_user(username):
     if not user_logged_in(username.lower()):
         return redirect(url_for("login"))
     
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+    
+    if "user" in session.keys():
+        
+        # Update profile function
+        if request.method == "POST":
+            current_user = {
+                "username": user["username"],
+                "email": user["email"],
+                "password": user["password"],
+                "user_img": user["user_img"],
+                "favourite_recipes": user[
+                    "favourite_recipes"]
+            }
+            update_user = {
+                "username": request.form.get("username"),
+                "email": user["email"],
+                "password": user["password"],
+                "user_img": request.form.get("user_img"),
+                "favourite_recipes": user[
+                    "favourite_recipes"]
+            }
+            
+            mongo.db.users.replace_one(
+                current_user, update_user, True)
+            
+            flash("Profile Updated!")
+            return redirect(url_for("my_recipes", username=session["user"]))
+    else:
+        return redirect(url_for("login"))
+
+    return render_template(
+        "user/edit_user.html", user=user, title="Edit User")
+
+
+# ------- Edit Account Page -------
+
+@app.route("/edit_account/<username>", methods=["GET", "POST"])
+def edit_account(username):
+    """
+    Allows user to edit their account settings
+        - Change Password
+        - Delete Account
+    """
+    
+    if not user_logged_in(username.lower()):
+        return redirect(url_for("login"))
+    
     if "user" in session.keys():
         
         user = mongo.db.users.find_one(
@@ -254,11 +303,11 @@ def edit_user(username):
                     "favourite_recipes"]
             }
             update_user = {
-                "username": request.form.get("username"),
+                "username": user["username"],
                 "email": user["email"],
                 "password": generate_password_hash(
                     request.form.get("password")),
-                "user_img": request.form.get("user_img"),
+                "user_img": user["user_img"],
                 "favourite_recipes": user[
                     "favourite_recipes"]
             }
@@ -266,7 +315,7 @@ def edit_user(username):
             mongo.db.users.replace_one(
                 current_user, update_user, True)
             
-            flash("Profile Updated!")
+            flash("Password Updated!")
             session.pop("user")
             return render_template(
                 "user/login.html", title="Login")
@@ -274,7 +323,7 @@ def edit_user(username):
         return redirect(url_for("login"))
 
     return render_template(
-        "user/edit_user.html", user=user, title="Edit User")
+        "user/edit_account.html", user=user, title="Edit Account")
 
 
 # ------- Delete Profile -------

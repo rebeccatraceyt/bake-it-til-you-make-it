@@ -368,6 +368,9 @@ li {
 
 /*------------------------------------------------------- Accounts Page */
 /* Sign Up and Log In are style the same for consistency */
+.page-padding .accounts-bg {
+    margin-top: 20px;
+}
 .accounts-bg {
     background-image: url("../images/yellow-lined.png");
     background-repeat: no-repeat;
@@ -424,6 +427,10 @@ li {
     background-color: var(--white);
     color: var(--text);
 }
+.end-input {
+    /* styling for end input field to provide extra breathing room */
+    padding-bottom: 15px;
+}
 
 /* Specific to Login */
 #login-page.page-padding {
@@ -436,8 +443,7 @@ li {
     display: flex;
     justify-content: center;
     margin: auto;
-    padding: 20px;
-    font-size: 1.3em;
+    padding: 10px;
 }
 .edit-btn button, .edit-btn a {
     min-width: 80%;
