@@ -1369,13 +1369,17 @@ footer li {
     #login-page.page-padding {
         min-height: 30vh;
     }
-    #edit-btns {
-        max-width: 70%;
-        font-size: 1.5em;
+    .edit-btns {
+        padding: 0 30px;
     }
-    #delete-user-btn {
-        max-width: 70%;
-        font-size: 1em;
+    .edit-btn {
+        max-width: 50%;
+    }
+    .end-edit-btn {
+        max-width: 60%;
+    }
+    .end-input {
+        padding-bottom: 30px;
     }
 
     /* Create/Edit Recipe Page */
