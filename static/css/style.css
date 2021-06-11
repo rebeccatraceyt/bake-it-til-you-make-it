@@ -400,12 +400,12 @@ li {
 .accounts-btn button {
     margin: auto;
     max-width: 70%;
-    font-size: 1.6em;
+    font-size: 1.3em;
     background: var(--text);
     color: var(--white);
     border: none;
-    padding: 5px 10px;
-    border-radius: 20px;
+    padding: 5px 15px;
+    border-radius: 10px;
     box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
 .accounts-btn button:hover {
@@ -417,15 +417,15 @@ li {
     padding: 25px 15px 0px 15px;
 }
 .accounts-link a {
-    background: var(--text);
+    background: var(--white);
     padding: 5px 10px;
-    border-radius: 20px;
-    color: var(--white);
+    border-radius: 10px;
+    color: var(--text);
     box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
 .accounts-link a:hover{
-    background-color: var(--white);
-    color: var(--text);
+    background-color: var(--text);
+    color: var(--white);
 }
 .end-input {
     /* styling for end input field to provide extra breathing room */
@@ -992,15 +992,26 @@ footer li {
 /*------------------------------------------------------- Danger Button Stylings */
 /* Styling for certain buttons where the structure needs to remain consistent with others, 
     but need a slight design change. Placed below other :hover pseudo classes to avoid conflict */
-.red-btn button, .red-btn a, #user-quicklinks .red-btn {
+.red-btn button, .red-btn a {
     background-color: var(--red);
     color: var(--white);
 }
-.red-btn button:hover, .red-btn a:hover, #user-quicklinks .red-btn:hover {
+.red-btn button:hover, .red-btn a:hover {
     background-color: var(--white);
     color: var(--red);
     border: 1px solid var(--red);
 }
+.white-btn button, .white-btn a, #user-quicklinks .white-btn {
+    background-color: var(--white);
+    color: var(--text);
+    border: 1px solid var(--text);
+}
+.white-btn button:hover, .white-btn a:hover, #user-quicklinks .white-btn:hover {
+    background-color: var(--text);
+    color: var(--white);
+    border: 1px solid var(--text);
+}
+
 /*------------------------------------------------------- Media Queries */
 
 /* Breakpoint to maintain structural integrity on a Tablet device */
