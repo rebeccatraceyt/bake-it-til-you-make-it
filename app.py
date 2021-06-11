@@ -568,6 +568,9 @@ def edit_recipe(recipe_id):
     recipe_author = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})
     
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+    
     if not user_logged_in(recipe_author["baker"]):
         return redirect(url_for("login"))
     
@@ -595,10 +598,9 @@ def edit_recipe(recipe_id):
         {"_id": ObjectId(recipe_id)})
     
     if "user" in session.keys():
-        user = mongo.db.users.find_one(
-        {"username": session["user"]})
+        username = session["user"].lower()
         
-        if user == session["user"].lower():
+        if username == session["user"].lower():
             categories = mongo.db.categories.find().sort("category", 1)
             difficulty = mongo.db.level.find().sort("difficulty", 1)
             return render_template(
