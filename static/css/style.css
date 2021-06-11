@@ -1552,6 +1552,9 @@ footer li {
         max-width: 93vw;
         margin: auto;
     }
+    footer ul {
+        font-size: 1.3em;
+    }
     
 }
 
