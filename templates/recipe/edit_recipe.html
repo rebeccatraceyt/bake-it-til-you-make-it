@@ -116,10 +116,7 @@
                                     <label for="ingredients"><i class="fas fa-list-ul"></i> Ingredients</label>
                                 {% endif %}
                                 <input id="ingredients" class="form-control" name="ingredients" type="text" aria-describedby="ingredients" minlength="3" value="{{ ingredient }}" required />
-                                <!-- Prevents deletion of first ingredient row -->
-                                {% if loop.index != 1 %}
-                                    <a href="#" class="remove_field"><i class="fas fa-trash-alt"></i> Delete</a>
-                                {% endif %}
+                            <a href="#" class="remove_field"><i class="fas fa-trash-alt"></i> Delete</a>
                             </div>
                         {% endfor %}
                     </div>
@@ -162,7 +159,7 @@
                     <div class="row no-gutters create-btns">
                         
                         <div class="col-6 create-btn">
-                            <a href="{{ url_for('recipe', recipe_id=recipe_id) }}" class="back  btn btn-cancel" >Cancel</a>
+                            <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="back  btn btn-cancel" >Cancel</a>
                         </div>
 
                         <div class="col-6 create-btn">

@@ -517,6 +517,9 @@ def create_recipe():
     Registered users can upload their favourite recipes.
     """
     
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+    
     if request.method == "POST":
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
@@ -540,10 +543,9 @@ def create_recipe():
     # checking that the user is in session
     if "user" in session:
         
-        user = mongo.db.users.find_one(
-        {"username": session["user"]})
-                
-        if user == session["user"].lower():
+        username = session["user"].lower()
+        
+        if username == session["user"].lower():
             categories = mongo.db.categories.find().sort("category", 1)
             difficulty = mongo.db.level.find().sort("difficulty", 1)
             return render_template(
