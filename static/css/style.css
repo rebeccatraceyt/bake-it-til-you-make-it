@@ -1010,6 +1010,9 @@ footer li {
     }
 
     /* -- Main Page Section -- */
+    #main-section {
+        min-height: 68vh;
+    }
     .page-padding {
         padding: 3% 4%;
     }
@@ -1077,7 +1080,7 @@ footer li {
 
     /* -- Accounts Pages -- */
     .accounts-bg {
-        margin: 2% 10%;
+        margin: 2% 20%;
     }
     .accounts-label input {
         margin: auto;
@@ -1098,12 +1101,10 @@ footer li {
         min-height: 30vh;
     }
     .edit-btn {
-        max-width: 40%;
-        font-size: 1.5em;
+        max-width: 50%;
     }
-    #delete-user-btn {
+    .end-edit-btn {
         max-width: 70%;
-        font-size: 1em;
     }
 
     /* -- Create/Edit Recipe Profile */
