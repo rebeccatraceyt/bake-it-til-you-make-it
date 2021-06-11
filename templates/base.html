@@ -83,7 +83,7 @@
                                         </li>
                                     {% endif %}
                                 </ul>
-                                {% if session.user %}
+                                {% if session.user|lower %}
                                     <div class="dropdown mr-0 d-none d-lg-block">
                                         <button class="btn user-logo dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <img src="{{ user.user_img }}" alt="User Image">
