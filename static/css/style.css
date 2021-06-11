@@ -88,7 +88,8 @@ li {
 .navbar .navbar-nav .nav-link.active{
     /* sets active link in Jinja Templates
         ref: https://stackoverflow.com/questions/29902575/highlight-menu-item-based-on-current-view */
-    color: yellow;
+    color: var(--white);
+    text-decoration: underline;
 }
 
 .navbar-brand img {

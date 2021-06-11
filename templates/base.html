@@ -62,24 +62,24 @@
                                         <a class="nav-link {% block nav_home %}{% endblock %}" href="{{ url_for('home') }}">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ url_for('find_recipes') }}">Find A Recipe</a>
+                                        <a class="nav-link {% block nav_find_recipes %}{% endblock %}" href="{{ url_for('find_recipes') }}">Find A Recipe</a>
                                     </li>
                                     {% if session.user %}
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a>
+                                            <a class="nav-link {% block nav_recipes %}{% endblock %}" href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ url_for('my_favourites', username=session['user']) }}">My Favourites</a>
+                                            <a class="nav-link {% block nav_favourites %}{% endblock %}" href="{{ url_for('my_favourites', username=session['user']) }}">My Favourites</a>
                                         </li>
                                         <li class="mr-0">
                                             <a  class="nav-link d-lg-none" href="{{ url_for('logout') }}">Log Out</a>
                                         </li>
                                     {% else %}
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ url_for('register') }}">Sign Up</a>
+                                            <a class="nav-link {% block nav_register %}{% endblock %}" href="{{ url_for('register') }}">Sign Up</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ url_for('login') }}">Log In</a>
+                                            <a class="nav-link {% block nav_login %}{% endblock %}" href="{{ url_for('login') }}">Log In</a>
                                         </li>
                                     {% endif %}
                                 </ul>
