@@ -356,8 +356,12 @@ li {
 }
 #search-rec {
     text-align: center;
+    border-top: 3px inset var(--border-line);
+    border-bottom: 3px inset var(--border-line);
+    margin: 20px auto;
+    padding: 20px 5px;
 }
-#search-rec h3 {
+#search-rec h4 {
     font-family: var(--accent-font);
     font-size: 1.8em;
 }
@@ -1127,6 +1131,9 @@ footer li {
     #search-filter {
         max-width: 50%;
     }
+    #search-rec {
+        padding: 40px;
+    }
     #search-recipes {
         margin-top: 30px;
         padding-top: 20px;
@@ -1404,6 +1411,9 @@ footer li {
     }
     #search-filter button {
         padding: 5px 20px;
+    }
+    #search-rec {
+        padding: 40px;
     }
     #search-recipes {
         padding-top: 40px;

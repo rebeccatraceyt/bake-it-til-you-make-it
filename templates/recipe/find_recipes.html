@@ -135,7 +135,7 @@
                  <!-- Recommended recipes -->
                 <div class="row">
                     <div id="search-rec" class="col-12">
-                        <h3>No Results Found</h3>
+                        <h4>No Results Found</h4>
                         <p>Change your search terms, or try one of our favourites:</p>
                     </div>
                     {% for rec in recommended %}
@@ -148,7 +148,7 @@
                                 <!-- Recipe Card Body -->
                                 <div class="card-body">
 
-                                    <h3><a class="" href="{{ url_for('recipe', recipe_id=rec._id) }}">{{ rec.recipe_name }}</a></h3>
+                                    <h3 class="recipe-name"><a href="{{ url_for('recipe', recipe_id=rec._id) }}">{{ rec.recipe_name }}</a></h3>
                                     
                                     <div class="row recipe-text">
 
