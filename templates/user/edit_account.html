@@ -47,7 +47,7 @@
 
                             <!-- Delete Modal -->
                             <div class="row">
-                                <div class="col-12 edit-btn end-edit-btn">
+                                <div class="col-12 edit-btn end-edit-btn red-btn">
                                     <!-- Button trigger -->
                                     <button type="button" class="btn" data-toggle="modal" data-target="#modal-{{ user._id }}">
                                         Delete Account
@@ -71,10 +71,12 @@
                                                 <hr class="delete-hr">
                                             </div>
                                             <div class="modal-footer delete-footer">
-                                                <button type="button" class="btn delete-btn">
+                                                <button type="button" class="btn delete-btn red-btn">
                                                     <a href="{{ url_for('delete_user', username=user.username) }}">Yes, Delete!</a>
                                                 </button>
-                                                <button type="button" class="btn delete-btn" data-dismiss="modal">No, Go Back!</button>
+                                                <button type="button" class="btn delete-btn">
+                                                    <a href="#" data-dismiss="modal">No, Go Back!</a>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>

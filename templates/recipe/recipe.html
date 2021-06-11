@@ -86,8 +86,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
-                                                        <div class="recipe-btn">
-                                                            <a href="#" data-toggle="modal" data-target="#deleteRecipeModal"><i class="fas fa-trash-alt"></i> Delete</a>
+                                                        <div class="recipe-btn red-btn">
+                                                            <a href="#" data-toggle="modal" data-target="#modal-{{ recipe._id }}"><i class="fas fa-trash-alt"></i> Delete</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -168,29 +168,31 @@
     </section>
 
     <!-- Modal -->
-    <div class="modal fade" id="deleteRecipeModal" tabindex="-1" role="dialog" aria-labelledby="deleteRecipeModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal fade" id="modal-{{ recipe._id }}" tabindex="-1" role="dialog" aria-labelledby="deleteRecipeModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered " role="document">
             <div class="modal-content delete-content">
                 <div class="modal-header delete-header">
-                    <h5 class="modal-title delete-title" id="deleteRecipeModal">Confirm Your Choice</h5>
+                    <h2 class="modal-title delete-title" id="deleteRecipeModal">Confirm Your Choice</h2>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span class="iconify" data-icon="akar-icons:circle-x" data-inline="false"></span>
                     </button>
                 </div>
                 <div class="modal-body delete-body">
-                    <h5>Are you <strong>sure</strong> you want to delete this recipe <br> <strong>{{ recipe.recipe_name }}</strong>?</h5>
                     <hr class="delete-hr">
-                    <p>All recipe information will be lost!</p>
+                    <h5>Are you <strong>sure</strong> you want to delete the recipe for <br> <strong>{{ recipe.recipe_name }}</strong>?</h5>
+                    <p>Your creation will be lost!</p>
                     <hr class="delete-hr">
                 </div>
                 <div class="modal-footer delete-footer">
-                    <button type="button" class="btn delete-btn">
+                    <button type="button" class="btn delete-btn red-btn">
                         <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Yes, Delete!</a>
                     </button>
-                    <button type="button" class="btn delete-btn" data-dismiss="modal">No, Go Back!</button>
+                    <button type="button" class="btn delete-btn">
+                        <a href="#" data-dismiss="modal">No, Go Back!</a>
+                    </button>
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
 
 {% endblock %}

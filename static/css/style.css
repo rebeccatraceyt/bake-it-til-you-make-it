@@ -8,7 +8,7 @@
     /* Font variables */ 
     --body-font: 'Work Sans', sans-serif;
     --accent-font: 'Indie Flower', cursive;
-    --text: #332925;    
+    --text: #332925;
     
     /* Colour Variables */
     --blue: #bbf2ed;
@@ -17,7 +17,7 @@
     --green: #bce0cc;
     --yellow: #f1ecc9;
     --white: #ffffff;
-    --red: #b65353;
+    --red: #A31300;
 
     /* Misc Colour Variables */
     --nav-purple: #9894b9;
@@ -461,12 +461,6 @@ li {
     color: var(--text);
     border: none;
 }
-#delete-user-btn {
-    text-align: center;
-    padding: 15px;
-    margin: auto;
-    font-size: .7em;
-}
 
 /*------------------------------------------------------- Create/Edit Recipe Page */
 /* Create and Edit a Recipe pages are style the same for consistency */
@@ -518,7 +512,7 @@ li {
     max-height: 15rem;
     max-width: 100%;    
 }
-.add-ing-btn, .add-dir-btn, .remove_field {
+.add-ing-btn, .add-dir-btn {
     background-color: var(--text);
     padding: 5px 10px;
     border-radius: 10px;
@@ -527,12 +521,24 @@ li {
     color: var(--white);
     box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
-.remove_field {
-    margin-top: 5px;
-}
-.add-ing-btn:hover, .add-dir-btn:hover, .remove_field:hover {
+.add-ing-btn:hover, .add-dir-btn:hover {
     color: var(--text);
     background-color: var(--white);
+}
+.remove_field {
+    background-color: var(--red);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: .9em;
+    float: right;
+    color: var(--white);
+    box-shadow: 3px 3px 3px 3px var(--light-box); 
+    margin-top: 5px;
+}
+.remove_field:hover {
+    background-color: var(--white);
+    color: var(--red);
+    border: 1px solid var(--red);
 }
 .create-btn {
     display: flex;
@@ -958,20 +964,43 @@ footer li {
     margin: auto;
     border: none;
 }
-.delete-btn, .delete-btn a {
-    background-color: var(--white);
-    color: var(--text);
+.delete-btn {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 10px;
+}
+.delete-btn button, .delete-btn a {
+    min-width: 80%;
+    background-color: var(--text);
+    color: var(--white);
     font-size: 1.1em;
 
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+
+    box-shadow: 3px 3px 3px 3px var(--light-box); 
+    padding: 10px 15px;
 }
-.delete-btn:hover, .delete-btn a:hover{
-    background-color: var(--text);
-    color: var(--white);
+.delete-btn button:hover, .delete-btn a:hover{
+    background-color: var(--white);
+    color: var(--text);
 }
 
+/*------------------------------------------------------- Danger Button Stylings */
+/* Styling for certain buttons where the structure needs to remain consistent with others, 
+    but need a slight design change. Placed below other :hover pseudo classes to avoid conflict */
+.red-btn button, .red-btn a, #user-quicklinks .red-btn {
+    background-color: var(--red);
+    color: var(--white);
+}
+.red-btn button:hover, .red-btn a:hover, #user-quicklinks .red-btn:hover {
+    background-color: var(--white);
+    color: var(--red);
+    border: 1px solid var(--red);
+}
 /*------------------------------------------------------- Media Queries */
 
 /* Breakpoint to maintain structural integrity on a Tablet device */
@@ -1464,3 +1493,4 @@ footer li {
 }
 
 /*------------------------------------------------------- 404 Page Styling */
+
