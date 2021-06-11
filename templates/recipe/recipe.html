@@ -92,7 +92,7 @@
                                                     </div>
                                                 </div>
                                             {% elif favourited %}
-                                                <div class="recipe-btn faves-btn">
+                                                <div class="recipe-btn faves-btn white-btn">
                                                     <a href="{{url_for('remove_from_favourites', recipe_id=recipe._id)}}"><i class="far fa-heart"></i> Remove Favourite</a>
                                                 </div>
                                             {% else %}
@@ -101,7 +101,7 @@
                                                 </div>
                                             {% endif %}
                                         {% else %}
-                                                <div class="recipe-btn faves-btn">
+                                                <div class="recipe-btn faves-btn white-btn">
                                                     <a href="{{url_for('login')}}"><i class="far fa-heart"></i> Login to Favourite</a>
                                                 </div>
                                         {% endif %}
