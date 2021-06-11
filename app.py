@@ -48,12 +48,12 @@ def home():
     
         return render_template(
             "index.html", 
-            recipes=latest_recipes, user=user, title="Home")
+            recipes=latest_recipes, user=user, title="Bake It Til You Make It")
     
     else:
         return render_template(
             "index.html", 
-            recipes=latest_recipes, title="Home")
+            recipes=latest_recipes, title="Bake It Til You Make It")
         
 
 # ------- Find Recipes Page -------
@@ -172,7 +172,7 @@ def register():
             request.form.get("username")))
         return redirect(url_for(
             "my_recipes", username=session["user"]))
-    return render_template("user/register.html")
+    return render_template("user/register.html", title="Sign Up")
 
 
 # ------- Login Page -------
@@ -209,7 +209,7 @@ def login():
                 "Incorrect Username and/or Password, please try again")
             return redirect(url_for("login"))
     
-    return render_template("user/login.html")
+    return render_template("user/login.html", title="Login")
 
 
 # ------- Logout Page -------
@@ -269,12 +269,12 @@ def edit_user(username):
             flash("Profile Updated!")
             session.pop("user")
             return render_template(
-                "user/login.html")
+                "user/login.html", title="Login")
     else:
         return redirect(url_for("login"))
 
     return render_template(
-        "user/edit_user.html", user=user)
+        "user/edit_user.html", user=user, title="Edit User")
 
 
 # ------- Delete Profile -------
@@ -325,7 +325,7 @@ def my_recipes(username):
     
     return render_template(
         "user/my_recipes.html", 
-        user=user, recipes=recipes)
+        user=user, recipes=recipes, title="My Recipes")
 
 
 # ------- My Favourites Page -------
@@ -358,7 +358,7 @@ def my_favourites(username):
     
     return render_template("user/my_favourites.html", user=user, 
                            recommended=recommended, favourites=favourites,
-                           favourite_recipes=favourite_recipes)
+                           favourite_recipes=favourite_recipes, title="My Favourites")
           
 
 # ------- Add to Favourites -------
@@ -499,7 +499,7 @@ def create_recipe():
             difficulty = mongo.db.level.find().sort("difficulty", 1)
             return render_template(
                 "recipe/create_recipe.html", 
-                categories=categories, difficulty=difficulty, user=user)
+                categories=categories, difficulty=difficulty, user=user, title="Create Recipe")
         
         else:
             return redirect(url_for("home"))
@@ -554,7 +554,7 @@ def edit_recipe(recipe_id):
             difficulty = mongo.db.level.find().sort("difficulty", 1)
             return render_template(
                 "recipe/edit_recipe.html", 
-                recipe=recipe, categories=categories, difficulty=difficulty, user=user)
+                recipe=recipe, categories=categories, difficulty=difficulty, user=user, title="Edit Recipe")
         
         else:
             return redirect(url_for("home"))
