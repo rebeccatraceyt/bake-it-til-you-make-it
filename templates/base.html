@@ -155,7 +155,7 @@
                                     <div class="modal-body form-body">
                                         <form id="suggestionForm" aria-label="Suggestions Form">                                
                                             <input type="text" name="uname" id="uname" placeholder="Name" aria-label="Enter Name" required>
-                                            <input type="email" name="uemail" id="uemail" placeholder="Email" aria-label="Enter Email" required>
+                                            <input type="email" name="uemail" id="uemail" placeholder="Email" {% if session.user|lower %} value="{{ user.email }}" {% endif %} aria-label="Enter Email" required>
                                             <textarea name="umessage" id="umessage" placeholder="Leave a message" aria-label="Enter Message" rows="4" required></textarea>
                                             <input id="form-submit" type="submit" class="btn btn-click form-btn" aria-label="Submit Button" value="Send">
                                         </form>
