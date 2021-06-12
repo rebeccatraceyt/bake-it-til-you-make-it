@@ -409,6 +409,7 @@ li {
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px;
+
     -webkit-box-shadow: var(--dark-box) 0px 0 10px;
     -moz-box-shadow: var(--dark-box) 0 0 10px;
     box-shadow: var(--dark-box) 0 0 10px;
@@ -475,6 +476,9 @@ li {
     
     margin: auto;
     padding: 30px 10px 10px 10px;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
     justify-content: center;
 }
@@ -498,6 +502,9 @@ li {
     color: var(--white);
     border: none;
     padding: 5px 15px;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
 
     -webkit-box-shadow: 3px 3px 3px 3px var(--light-box); 
@@ -515,6 +522,9 @@ li {
 .accounts-link a {
     background: var(--white);
     padding: 5px 10px;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
     color: var(--text);
 
@@ -548,6 +558,9 @@ li {
     min-width: 80%;
     background-color: var(--text);
     color: var(--white);
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
 
     -webkit-box-shadow: 3px 3px 3px 3px var(--light-box); 
@@ -580,6 +593,9 @@ li {
 
     margin: auto;
     padding: 30px 5px 10px 5px;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
     justify-content: center;
 }
@@ -620,7 +636,11 @@ li {
 .add-ing-btn, .add-dir-btn {
     background-color: var(--text);
     padding: 5px 10px;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
+
     font-size: .9em;
     float: right;
     color: var(--white);
@@ -636,7 +656,11 @@ li {
 .remove_field {
     background-color: var(--red);
     padding: 5px 10px;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
+
     font-size: .9em;
     float: right;
     color: var(--white);
@@ -931,12 +955,18 @@ li {
     -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7); 
     -moz-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
     box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
     border-radius: 15px;
 }
 #rec-directions ol li:not(:first-child) {
     background-image: url(../images/stickynote-bg.png);
     min-width: 100%;
     padding:1em;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
     
     -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7); 
