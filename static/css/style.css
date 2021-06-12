@@ -135,7 +135,7 @@ li {
 /*------------------------------------------------------- Page Section */
 /* For consistent design on all pages */
 
-/* Section Styling */
+/* -- Section Styling -- */
 #main-section {
     max-width: 95vw;
     margin: auto; 
@@ -150,7 +150,7 @@ li {
     border-bottom: 3px inset var(--border-line);
 }
 
-/* Page Banner and Title */
+/* -- Page Banner and Title -- */
 .page-banner {
     background-image: url("../images/banner.png");
     background-repeat: no-repeat;
@@ -175,7 +175,7 @@ li {
     text-align: center;
 }
 
-/* Flash Messages */
+/* -- Flash Messages -- */
 #flash-box {
     background-image: url("../images/white-lined.png");
     background-repeat: no-repeat;
@@ -1114,7 +1114,7 @@ footer li {
         padding: 0 7px;
     }
 
-    /* -- Main Page Section -- */
+    /* Page Section */
     #main-section {
         min-height: 68vh;
     }
@@ -1129,6 +1129,13 @@ footer li {
     }
     .db-name h4 {
         font-size: 1.7em;
+    }
+    #flash-box {
+        max-width: 50%;
+        margin: 20px auto 0 auto;
+    }
+    #flash-text {
+        font-size: 1.3em;
     }
 
     /* -- Homepage -- */
@@ -1367,7 +1374,7 @@ footer li {
         padding: 15px;
     }
 
-    /* -- Main Page Section -- */
+    /* -- Page Section -- */
     #main-section {
         background: transparent;
         box-shadow: 0px 0px grey;
@@ -1390,6 +1397,13 @@ footer li {
     }
     .db-name h4 {
         font-size: 2em;
+    }
+    #flash-box {
+        max-width: 50%;
+        margin: 20px auto 0 auto;
+    }
+    #flash-text {
+        font-size: 1.5em;
     }
 
     /* -- Recipe Cards -- */
