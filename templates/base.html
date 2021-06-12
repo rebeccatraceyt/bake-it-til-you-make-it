@@ -101,8 +101,10 @@
                         <!-- Block content section for each page-->
                         <section id="main-section" aria-label="Main Section unique to each page">
                             
-                            {% block header %}
-                            {% endblock %}
+                            <div class="page-banner">
+                                {% block header %}
+                                {% endblock %}
+                            </div>
                             
                             {% block flash %}
                                 {% with messages = get_flashed_messages() %}
