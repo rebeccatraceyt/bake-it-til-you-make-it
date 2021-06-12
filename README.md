@@ -302,6 +302,22 @@ The `base.html` page uses Jinja templates in order to extend its components (e.g
 - In creating the edit functionality on the `edit_user.html`, the initial code used was `update_one` in order to change the user information. A problem arose because the developer wanted only select user information to change but, in using `update_one`, the entire collection changed and the fields that the developer did not allow to change would be wiped from the system and cause value errors. In looking for solutions, the developer found a similar issue on [Stack Overflow](https://stackoverflow.com/questions/30605638/why-does-upsert-a-record-using-update-one-raise-valueerror "Solution to problem on Stack Overflow") that suggested using `replace_one` as an alternative, with the `upsert` equal to `True` in order to update the specified fields only.
 - In order to make the `edit_user.html` functionality more user-friendly, the developer tried to create a possibility that the user would not have to change their password if they did not wish to (e.g. if they only wanted to change their user image). The problem with this was that should the user leave the password field blank (choosing not to change it), it would automatically change the users password to 'blank' on the database. This was insufficient and in no ways user-friendly, so the developer researched other methods. Their first thought was to use the user's password value as the default value for the field but, as the password is hashed and salted using `werkzeug.security`import, this would not work. The alternative, and the conclusive solution, was to create a separate accounts settings page, where the user has the freedom to change their password or delete their account.
 
+**Pagination** <br>
+In implementing the pagination functionality, a linting error was raised in the terminal due to the developer using the `Pylint` extension in their IDE. The message was:
+
+```
+"owner": "python",
+"code": "unbalanced-tuple-unpacking",
+"severity": 4,
+"message": "Possible unbalanced tuple unpacking with sequence defined at line 237 of flask_paginate: left side has 3 label(s), right side has 2 value(s)",
+"source": "pylint",
+"startLineNumber": 32,
+"startColumn": 5,
+"endLineNumber": 32,
+"endColumn": 5
+```
+In order to avoid this error, the developer installed and selected `Flake8` to lint through `app.py`.
+
 [Back to top ⇧](#table-of-contents)
 
 ## Information Architecture
