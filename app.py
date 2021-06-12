@@ -447,13 +447,17 @@ def my_recipes(username):
             recipes = list(
                 mongo.db.recipes.find(
                     {"baker": username.lower()}))
+            
+            recipes_paginated = paginated(recipes)
+            pagination = pagination_args(recipes)
         
     else:
         return redirect(url_for("login"))
     
     return render_template("user/my_recipes.html", 
                            user=user, 
-                           recipes=recipes, 
+                           recipes=recipes_paginated,
+                           pagination=pagination, 
                            title="My Recipes")
 
 
@@ -474,13 +478,16 @@ def my_favourites(username):
                 {"username": session["user"]})
         
         if session["user"] == username:
-            favourite_recipes = user["favourite_recipes"]
+            recipes = user["favourite_recipes"]
             
             favourites = mongo.db.recipes.find(
-                {"_id": {"$in": favourite_recipes}})
+                {"_id": {"$in": recipes}})
             
             recommended = mongo.db.recipes.find().sort(
                 "favourite_count", -1).limit(4)
+            
+            recipes_paginated = paginated(favourites)
+            pagination = pagination_args(recipes)
     else:
         flash("You must be logged in")
         return redirect(url_for("login"))
@@ -488,8 +495,9 @@ def my_favourites(username):
     return render_template("user/my_favourites.html", 
                            user=user, 
                            recommended=recommended, 
-                           favourites=favourites,
-                           favourite_recipes=favourite_recipes, 
+                           favourites=recipes_paginated,
+                           recipes=recipes,
+                           pagination=pagination, 
                            title="My Favourites")
           
 
