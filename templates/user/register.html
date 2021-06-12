@@ -1,96 +1,97 @@
 {% extends "base.html" %}
 {% block nav_register %}active{% endblock %}
+
+{% block header %}
+    <!-- Page Title -->
+    <div class="page-banner">
+        <h2>Sign Up</h2>
+    </div>
+{% endblock %}
+
 {% block content %}
 
-    <section aria-label="User Registration Page">
-         <!-- Page Title -->
-        <div class="page-banner">
-            <h2>Sign Up</h2>
-        </div>
+    <!-- Page Content -->
+    <div class="container-fluid page-padding">
+        
+        <!-- Sign In Form -->
+        <div class="row accounts-bg">
+            <div class="container-fluid">
+                <div class="row accounts-label">
+                    <form class="col-12" method="POST" action="{{ url_for('register') }}">
 
-        <!-- Page Content -->
-        <div class="container-fluid page-padding">
-            
-            <!-- Sign In Form -->
-            <div class="row accounts-bg">
-                <div class="container-fluid">
-                    <div class="row accounts-label">
-                        <form class="col-12" method="POST" action="{{ url_for('register') }}">
-
-                            <div class="row">
-                                <div class="col-12 page-intro">
-                                    <p>Create an account to save and share your favourite recipes!</p>
-                                </div>
+                        <div class="row">
+                            <div class="col-12 page-intro">
+                                <p>Create an account to save and share your favourite recipes!</p>
                             </div>
-                            
-                            <!-- Username -->
-                            <div class="row">
-                                <div class="col-12 form-group">
-                                    <label for="username"><i class="fas fa-user"></i> Username</label>
-                                    <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="username" required>
-                                </div>
-                            </div>
-
-                            <!-- Email -->
-                            <div class="row">
-                                <div class="col-12 form-group">
-                                    <label for="email"><i class="fas fa-envelope-open"></i> Email</label>
-                                    <input id="email" name="email" type="email" minlength="3" class="form-control" aria-describedby="email" required>
-                                </div>
-                            </div>
-
-                            <!-- User Image -->
-                            <div class="row">
-                                <div class="col-12 form-group">
-                                    <label for="user_img"><i class="fas fa-image"></i> Profile Picture</label><br>
-                                    <p class="mt-0 mb-0"><small>Copy and paste image url or use default</small></p>
-                                    <input id="user_img" name="user_img" type="url" class="form-control" aria-describedby="user_img" pattern="https?://.+" onchange="userImg();">
-                                </div>
-                                <div class="col-12 img-container">
-                                    <!-- Image preview container -->
-                                    <img src="" alt="Preview of recipe image input" class="img-preview">
-                                </div>
-                            </div>
-
-                            <!-- Password -->
-                            <div class="row">
-                                <div class="col-12 form-group">
-                                    <label for="password"><i class="iconify" data-icon="mdi:lock" data-inline="true"></i> Password</label>
-                                    <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="password" required>
-                                </div>
-                            </div>
-
-                            <!-- Confirm Password-->
-                            <div class="row">
-                                <div class="col-12 form-group">
-                                    <label for="confirm_password"><i class="iconify" data-icon="mdi:lock-check" data-inline="true"></i> Confirm Password</label>
-                                    <input id="confirm_password" name="confirm_password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="confirm_password" required> <br>
-                                    <span id='message'></span>
-                                </div>
-                            </div>
-
-                            <!-- Submit Button -->
-                            <div class="row">
-                                <div class="col-12 accounts-btn">
-                                    <button type="submit">
-                                        Register <i class="fas fa-sign-in-alt"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 accounts-link">
-                            <p>
-                                Already Registered? <a href="{{ url_for('login') }}" >Log In</a>
-                            </p>
                         </div>
+                        
+                        <!-- Username -->
+                        <div class="row">
+                            <div class="col-12 form-group">
+                                <label for="username"><i class="fas fa-user"></i> Username</label>
+                                <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="username" required>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="row">
+                            <div class="col-12 form-group">
+                                <label for="email"><i class="fas fa-envelope-open"></i> Email</label>
+                                <input id="email" name="email" type="email" minlength="3" class="form-control" aria-describedby="email" required>
+                            </div>
+                        </div>
+
+                        <!-- User Image -->
+                        <div class="row">
+                            <div class="col-12 form-group">
+                                <label for="user_img"><i class="fas fa-image"></i> Profile Picture</label><br>
+                                <p class="mt-0 mb-0"><small>Copy and paste image url or use default</small></p>
+                                <input id="user_img" name="user_img" type="url" class="form-control" aria-describedby="user_img" pattern="https?://.+" onchange="userImg();">
+                            </div>
+                            <div class="col-12 img-container">
+                                <!-- Image preview container -->
+                                <img src="" alt="Preview of recipe image input" class="img-preview">
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="row">
+                            <div class="col-12 form-group">
+                                <label for="password"><i class="iconify" data-icon="mdi:lock" data-inline="true"></i> Password</label>
+                                <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="password" required>
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password-->
+                        <div class="row">
+                            <div class="col-12 form-group">
+                                <label for="confirm_password"><i class="iconify" data-icon="mdi:lock-check" data-inline="true"></i> Confirm Password</label>
+                                <input id="confirm_password" name="confirm_password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="confirm_password" required> <br>
+                                <span id='message'></span>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="row">
+                            <div class="col-12 accounts-btn">
+                                <button type="submit">
+                                    Register <i class="fas fa-sign-in-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 accounts-link">
+                        <p>
+                            Already Registered? <a href="{{ url_for('login') }}" >Log In</a>
+                        </p>
                     </div>
                 </div>
             </div>
-            
         </div>
-    </section>
+        
+    </div>
 
 {% endblock %}

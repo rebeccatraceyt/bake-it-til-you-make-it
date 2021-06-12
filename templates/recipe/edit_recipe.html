@@ -1,211 +1,212 @@
 {% extends "base.html" %}
+
+{% block header %}
+    <!-- Page Title -->
+    <div class="page-banner">
+        <h2>Edit A Recipe</h2>
+        <h4 class="db-name">{{ recipe.recipe_name }}</h4>
+    </div>
+{% endblock %}
+
 {% block content %}
 
-    <section aria-label="Edit recipe Page">
-       <!-- Page Title -->
-        <div class="page-banner">
-            <h2>Edit A Recipe</h2>
-            <h4 class="db-name">{{ recipe.recipe_name }}</h4>
+    <!-- Page Content -->
+    <div class="container-fluid page-padding">
+
+        <div class="row create-bg">
+            <form class="col-12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+
+                <!-- Recipe Name -->
+                <div class="row">
+                    <div class="col-12 form-group create-label">
+                        <label for="recipe_name"><span class="iconify" data-icon="ic:round-drive-file-rename-outline" data-inline="true"></span> Recipe Name</label>
+                        <input id="recipe_name" class="form-control" name="recipe_name" type="text" minlength="3" maxlength="20" aria-describedby="recipe_name" value="{{ recipe.recipe_name }}" required />
+                    </div>
+                </div>
+
+                <!-- Image URL -->
+                <div class="row">
+                    <div class="col-12 form-group create-label">
+                        <label for="recipe_img"><i class="far fa-images"></i> Recipe Image <small>(URL)</small></label>
+                        <p class="mt-0 mb-0"><small>Copy and paste image url or use original</small></p>
+                        <input id="recipe_img" class="form-control" name="recipe_img" type="url" aria-describedby="recipe_img" pattern="https?://.+" value="{{ recipe.recipe_img }}" onchange="recipeImg();" />
+                    </div>
+                    <div class="col-12 img-container">
+                        <!-- Image preview container -->
+                        <img src="" alt="Preview of recipe image input" class="img-preview">
+                    </div>
+                </div>
+
+                <!-- Recipe Source -->
+                <div class="row">
+                    <div class="col-12 form-group create-label">
+                        <label for="recipe_url"><span class="iconify" data-icon="akar-icons:book" data-inline="true"></span> Recipe Source <small>(URL)</small></label>
+                        <input id="recipe_url" class="form-control" name="recipe_url" type="url" aria-describedby="recipe_url" pattern="https?://.+" value="{{ recipe.recipe_url }}" />
+                    </div>
+                </div>
+
+                <!-- Category and Level -->
+                <div class="row">
+                    <div class="col-12 form-group create-label">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="category"><span class="iconify" data-icon="ion:file-tray" data-inline="true"></span> Category</label>
+                                <select id="category" name="category" class="form-control" required>
+                                    <option value="{{ recipe.category }}" selected>{{ recipe.category }}</option>
+                                    {% for category in categories %}
+                                        <option value="{{ category.category }}">{{ category.category }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label for="difficulty"><span class="recipe-icon iconify" data-icon="mdi:chef-hat" data-inline="true"></span> Level</label>
+                                <select id="difficulty" name="difficulty" class="form-control" required>
+                                    <option value="{{ recipe.difficulty }}" selected>{{ recipe.difficulty }}</option>
+                                    {% for level in difficulty %}
+                                        <option value="{{ level.difficulty }}">{{ level.difficulty }}</option>
+                                    {% endfor %}
+                                </select> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prep time and Servings -->
+                <div class="row">
+                    <div class="col-12 form-group create-label">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="total_time"><span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span> Total Time</label>
+                                <select name="total_time" id="total_time" name="total_time" class="form-control" aria-describedby="total_time" required>
+                                    <option value="{{ recipe.total_time }}" selected>{{ recipe.total_time }}</option>
+                                    <option value="Less than 20">Less than 20 min</option>
+                                    {% for time in range(20, 120, 10) %}
+                                        <option value="{{ time }}">{{ time }} min</option>
+                                    {% endfor %}
+                                    <option value="120+">120+ min</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label for="serving"><span class="recipe-icon iconify" data-icon="majesticons:users" data-inline="true"></span> Serves:</label>
+                                <select name="serving" id="serving" name="serving" class="form-control" aria-describedby="serving" required>
+                                    <option value="{{ recipe.serving }}" selected>{{ recipe.serving }}</option>
+                                    <option value="1 person">1 person</option>
+                                    {% for num in range(2, 21) %}
+                                        <option value="{{ num }}">{{ num }} people</option>
+                                    {% endfor %}
+                                    <option value="20+">20+ people</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="row">
+                    <div class="col-12 form-group create-label">
+                        <label for="description"><i class="far fa-file-alt"></i> Recipe Description</label>
+                        <textarea id="description" class="form-control" name="description" aria-describedby="description" minlength="3" maxlength="150" rows="3" required>{{ recipe.description }}</textarea>
+                    </div>
+                </div>
+
+                <!-- Ingredients -->
+                <div class="row ingredient-row create-label">
+                    {% for ingredient in recipe.ingredients %}
+                        <div class="col-12 form-group ing-input">
+                            {% if loop.index == 1 %}
+                                <!-- Avoids repetition of label -->
+                                <label for="ingredients"><i class="fas fa-list-ul"></i> Ingredients</label>
+                            {% endif %}
+                            <input id="ingredients" class="form-control" name="ingredients" type="text" aria-describedby="ingredients" minlength="3" value="{{ ingredient }}" required />
+                        <a href="#" class="remove_field"><i class="fas fa-trash-alt"></i> Delete</a>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <!--Add Ingredient button-->
+                <div class="row">
+                    <div class="col-12 form-group create-label">
+                        <a href="#">
+                            <p class="add-ing-btn"><i class="far fa-plus-square"></i> Add Ingredient</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Directions -->
+                <div class="row direction-row create-label">
+                    {% for direction in recipe.directions %}
+                        <div class="col-12 form-group dir-input">
+                            {% if loop.index == 1 %}
+                                <!-- Avoids repetition of label -->
+                                <label for="directions"><i class="fas fa-list-ol"></i> Directions</label>
+                            {% endif %}
+                            <textarea id="directions" class="form-control" name="directions" type="text" aria-describedby="directions" minlength="3" maxlength="300" rows="2" required >{{ direction }}</textarea>
+                            <!-- Prevents deletion of first ingredient row -->
+                            {% if loop.index != 1 %}
+                                <a href="#" class="remove_field"><i class="fas fa-trash-alt"></i> Delete</a>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="row">
+                    <div class="col-12 form-group create-label">
+                        <a href="#">
+                            <p class="add-dir-btn"><i class="far fa-plus-square"></i> Add Direction</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="row no-gutters create-btns">
+                    
+                    <div class="col-6 create-btn white-btn">
+                        <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="btn" >Cancel</a>
+                    </div>
+
+                    <div class="col-6 create-btn">
+                        <button class="btn" type="submit" name="action">Save</button>
+                    </div>
+                    
+                </div>
+
+                <div class="row">
+                    <div id="delete-recipe-btn" class="col-12 create-btn red-btn">
+                        <button type="button" class="btn" data-toggle="modal" data-target="#modal-{{ recipe._id }}">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modal-{{ recipe._id }}" tabindex="-1" role="dialog" aria-labelledby="deleteRecipeModal" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered " role="document">
+                        <div class="modal-content delete-content">
+                            <div class="modal-header delete-header">
+                                <h2 class="modal-title delete-title" id="deleteRecipeModal">Confirm Your Choice</h2>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span class="iconify" data-icon="akar-icons:circle-x" data-inline="false"></span>
+                                </button>
+                            </div>
+                            <div class="modal-body delete-body">
+                                <hr class="delete-hr">
+                                <h5>Are you <strong>sure</strong> you want to delete the recipe for <br> <strong>{{ recipe.recipe_name }}</strong>?</h5>
+                                <p>Your creation will be lost!</p>
+                                <hr class="delete-hr">
+                            </div>
+                            <div class="modal-footer delete-footer">
+                                <button type="button" class="btn delete-btn red-btn">
+                                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Yes, Delete!</a>
+                                </button>
+                                <button type="button" class="btn delete-btn">
+                                    <a href="#" data-dismiss="modal">No, Go Back!</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </form>
         </div>
-
-        <!-- Page Content -->
-        <div class="container-fluid page-padding">
-
-            <div class="row create-bg">
-                <form class="col-12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-
-                    <!-- Recipe Name -->
-                    <div class="row">
-                        <div class="col-12 form-group create-label">
-                            <label for="recipe_name"><span class="iconify" data-icon="ic:round-drive-file-rename-outline" data-inline="true"></span> Recipe Name</label>
-                            <input id="recipe_name" class="form-control" name="recipe_name" type="text" minlength="3" maxlength="20" aria-describedby="recipe_name" value="{{ recipe.recipe_name }}" required />
-                        </div>
-                    </div>
-
-                    <!-- Image URL -->
-                    <div class="row">
-                        <div class="col-12 form-group create-label">
-                            <label for="recipe_img"><i class="far fa-images"></i> Recipe Image <small>(URL)</small></label>
-                            <p class="mt-0 mb-0"><small>Copy and paste image url or use original</small></p>
-                            <input id="recipe_img" class="form-control" name="recipe_img" type="url" aria-describedby="recipe_img" pattern="https?://.+" value="{{ recipe.recipe_img }}" onchange="recipeImg();" />
-                        </div>
-                        <div class="col-12 img-container">
-                            <!-- Image preview container -->
-                            <img src="" alt="Preview of recipe image input" class="img-preview">
-                        </div>
-                    </div>
-
-                    <!-- Recipe Source -->
-                    <div class="row">
-                        <div class="col-12 form-group create-label">
-                           <label for="recipe_url"><span class="iconify" data-icon="akar-icons:book" data-inline="true"></span> Recipe Source <small>(URL)</small></label>
-                            <input id="recipe_url" class="form-control" name="recipe_url" type="url" aria-describedby="recipe_url" pattern="https?://.+" value="{{ recipe.recipe_url }}" />
-                        </div>
-                    </div>
-
-                    <!-- Category and Level -->
-                    <div class="row">
-                        <div class="col-12 form-group create-label">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label for="category"><span class="iconify" data-icon="ion:file-tray" data-inline="true"></span> Category</label>
-                                    <select id="category" name="category" class="form-control" required>
-                                        <option value="{{ recipe.category }}" selected>{{ recipe.category }}</option>
-                                        {% for category in categories %}
-                                            <option value="{{ category.category }}">{{ category.category }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                                <div class="col-6">
-                                    <label for="difficulty"><span class="recipe-icon iconify" data-icon="mdi:chef-hat" data-inline="true"></span> Level</label>
-                                    <select id="difficulty" name="difficulty" class="form-control" required>
-                                        <option value="{{ recipe.difficulty }}" selected>{{ recipe.difficulty }}</option>
-                                        {% for level in difficulty %}
-                                            <option value="{{ level.difficulty }}">{{ level.difficulty }}</option>
-                                        {% endfor %}
-                                    </select> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Prep time and Servings -->
-                    <div class="row">
-                        <div class="col-12 form-group create-label">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label for="total_time"><span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span> Total Time</label>
-                                    <select name="total_time" id="total_time" name="total_time" class="form-control" aria-describedby="total_time" required>
-                                        <option value="{{ recipe.total_time }}" selected>{{ recipe.total_time }}</option>
-                                        <option value="Less than 20">Less than 20 min</option>
-                                        {% for time in range(20, 120, 10) %}
-                                            <option value="{{ time }}">{{ time }} min</option>
-                                        {% endfor %}
-                                        <option value="120+">120+ min</option>
-                                    </select>
-                                </div>
-                                <div class="col-6">
-                                    <label for="serving"><span class="recipe-icon iconify" data-icon="majesticons:users" data-inline="true"></span> Serves:</label>
-                                    <select name="serving" id="serving" name="serving" class="form-control" aria-describedby="serving" required>
-                                        <option value="{{ recipe.serving }}" selected>{{ recipe.serving }}</option>
-                                        <option value="1 person">1 person</option>
-                                        {% for num in range(2, 21) %}
-                                            <option value="{{ num }}">{{ num }} people</option>
-                                        {% endfor %}
-                                        <option value="20+">20+ people</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Description -->
-                    <div class="row">
-                        <div class="col-12 form-group create-label">
-                           <label for="description"><i class="far fa-file-alt"></i> Recipe Description</label>
-                           <textarea id="description" class="form-control" name="description" aria-describedby="description" minlength="3" maxlength="150" rows="3" required>{{ recipe.description }}</textarea>
-                        </div>
-                    </div>
-
-                    <!-- Ingredients -->
-                    <div class="row ingredient-row create-label">
-                        {% for ingredient in recipe.ingredients %}
-                            <div class="col-12 form-group ing-input">
-                                {% if loop.index == 1 %}
-                                    <!-- Avoids repetition of label -->
-                                    <label for="ingredients"><i class="fas fa-list-ul"></i> Ingredients</label>
-                                {% endif %}
-                                <input id="ingredients" class="form-control" name="ingredients" type="text" aria-describedby="ingredients" minlength="3" value="{{ ingredient }}" required />
-                            <a href="#" class="remove_field"><i class="fas fa-trash-alt"></i> Delete</a>
-                            </div>
-                        {% endfor %}
-                    </div>
-
-                    <!--Add Ingredient button-->
-                    <div class="row">
-                        <div class="col-12 form-group create-label">
-                            <a href="#">
-                                <p class="add-ing-btn"><i class="far fa-plus-square"></i> Add Ingredient</p>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Directions -->
-                    <div class="row direction-row create-label">
-                        {% for direction in recipe.directions %}
-                            <div class="col-12 form-group dir-input">
-                                {% if loop.index == 1 %}
-                                    <!-- Avoids repetition of label -->
-                                    <label for="directions"><i class="fas fa-list-ol"></i> Directions</label>
-                                {% endif %}
-                                <textarea id="directions" class="form-control" name="directions" type="text" aria-describedby="directions" minlength="3" maxlength="300" rows="2" required >{{ direction }}</textarea>
-                                <!-- Prevents deletion of first ingredient row -->
-                                {% if loop.index != 1 %}
-                                    <a href="#" class="remove_field"><i class="fas fa-trash-alt"></i> Delete</a>
-                                {% endif %}
-                            </div>
-                        {% endfor %}
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 form-group create-label">
-                            <a href="#">
-                                <p class="add-dir-btn"><i class="far fa-plus-square"></i> Add Direction</p>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Buttons -->
-                    <div class="row no-gutters create-btns">
-                        
-                        <div class="col-6 create-btn white-btn">
-                            <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="btn" >Cancel</a>
-                        </div>
-
-                        <div class="col-6 create-btn">
-                            <button class="btn" type="submit" name="action">Save</button>
-                        </div>
-                        
-                    </div>
-
-                    <div class="row">
-                        <div id="delete-recipe-btn" class="col-12 create-btn red-btn">
-                            <button type="button" class="btn" data-toggle="modal" data-target="#modal-{{ recipe._id }}">
-                                Delete
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="modal-{{ recipe._id }}" tabindex="-1" role="dialog" aria-labelledby="deleteRecipeModal" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered " role="document">
-                            <div class="modal-content delete-content">
-                                <div class="modal-header delete-header">
-                                    <h2 class="modal-title delete-title" id="deleteRecipeModal">Confirm Your Choice</h2>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span class="iconify" data-icon="akar-icons:circle-x" data-inline="false"></span>
-                                    </button>
-                                </div>
-                                <div class="modal-body delete-body">
-                                    <hr class="delete-hr">
-                                    <h5>Are you <strong>sure</strong> you want to delete the recipe for <br> <strong>{{ recipe.recipe_name }}</strong>?</h5>
-                                    <p>Your creation will be lost!</p>
-                                    <hr class="delete-hr">
-                                </div>
-                                <div class="modal-footer delete-footer">
-                                    <button type="button" class="btn delete-btn red-btn">
-                                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Yes, Delete!</a>
-                                    </button>
-                                    <button type="button" class="btn delete-btn">
-                                        <a href="#" data-dismiss="modal">No, Go Back!</a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>   
-                </form>
-            </div>
-        </div>
-    </section>
+    </div>
 
 {% endblock %}

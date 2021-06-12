@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% block nav_recipes %}active{% endblock %}
+
+{% block header %}
+    <!-- Page Title -->
+    <div class="page-banner">
+        <h2><span class="db-name">{{ user.username }}</span>'s <br> Recipes</h2>
+    </div>
+{% endblock %}
+
 {% block content %}
-
-    <section aria-label="User's 'My Recipes' Page">
-
-        <!-- Page Title -->
-        <div class="page-banner">
-            <h2><span class="db-name">{{ user.username }}</span>'s <br> Recipes</h2>
-        </div>
 
         <!-- Page Content -->
         <div class="container-fluid page-padding">
@@ -138,7 +139,5 @@
 
 
         </div>
-       
-    </section>
     
 {% endblock %}

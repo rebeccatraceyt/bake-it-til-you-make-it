@@ -2,123 +2,121 @@
 {% block nav_home %}active{% endblock %}
 
 {% block header %}
+
+    <!-- Home Page Hero Image -->
+    <div id="home-title"> 
+        <img src="../static/images/home-hero.png" alt="Bake It 'Til You Make It Header">
+    </div>
+
 {% endblock %}
 
 {% block content %}
 
-    <section aria-label="Home Page">
+    <!-- Home Page content -->
+    <div id="home-sec" class="container-fluid">
+        <div class="d-flex row flex-row-reverse">
+            <div id="home-bio" class="col-12 col-lg-6">
 
-        <!-- Home Page Hero Image -->
-        <div id="home-title"> 
-            <img src="../static/images/home-hero.png" alt="Bake It 'Til You Make It Header">
-        </div>
-
-        <!-- Home Page content -->
-        <div id="home-sec" class="container-fluid">
-            <div class="d-flex row flex-row-reverse">
-                <div id="home-bio" class="col-12 col-lg-6">
-
-                    <!-- Introduction to website -->
-                    <div class="row">
-                        <div class="col-12">
-                            <h4>Welcome Bakers!</h4>
-                            <p>
-                                Our little community is designed to inspire all,
-                                so share your favourite recipes and find your next creation.
-                                Get your baking hat on and don't forget to:
-                            </p>
-                            <h5>Get Inspired & Get Creative</h5>
-                        </div>
+                <!-- Introduction to website -->
+                <div class="row">
+                    <div class="col-12">
+                        <h4>Welcome Bakers!</h4>
+                        <p>
+                            Our little community is designed to inspire all,
+                            so share your favourite recipes and find your next creation.
+                            Get your baking hat on and don't forget to:
+                        </p>
+                        <h5>Get Inspired & Get Creative</h5>
                     </div>
+                </div>
 
-                    <!-- Conditional Homepage links -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div id="home-btn" class="row">
-                                <div class="col-6 col-lg-12">
-                                    {% if session.user %}
-                                        <a class="nav-link" href="{{ url_for('my_recipes', username=session['user']) }}">Recipes</a>
-                                    {% else %}
-                                        <a href="{{ url_for('register') }}">Sign Up</a>
-                                    {% endif %}
-                                </div>
-                                <div class="col-6 col-lg-12">
-                                    {% if session.user %}
-                                        <a class="nav-link" href="{{ url_for('my_favourites', username=session['user']) }}">Favourites</a>
-                                    {% else %}
-                                        <a href="{{ url_for('login') }}">Login</a>
-                                    {% endif %}
-                                </div>
+                <!-- Conditional Homepage links -->
+                <div class="row">
+                    <div class="col-12">
+                        <div id="home-btn" class="row">
+                            <div class="col-6 col-lg-12">
+                                {% if session.user %}
+                                    <a class="nav-link" href="{{ url_for('my_recipes', username=session['user']) }}">Recipes</a>
+                                {% else %}
+                                    <a href="{{ url_for('register') }}">Sign Up</a>
+                                {% endif %}
+                            </div>
+                            <div class="col-6 col-lg-12">
+                                {% if session.user %}
+                                    <a class="nav-link" href="{{ url_for('my_favourites', username=session['user']) }}">Favourites</a>
+                                {% else %}
+                                    <a href="{{ url_for('login') }}">Login</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Carousel showcasing latest recipes -->
-                <div id="home-carousel" class="col-12 col-lg-6">
-                    <div id="latestRecipes" class="carousel slide carousel-fade" data-ride="carousel">
-                        <div class="carousel-inner">
+            <!-- Carousel showcasing latest recipes -->
+            <div id="home-carousel" class="col-12 col-lg-6">
+                <div id="latestRecipes" class="carousel slide carousel-fade" data-ride="carousel">
+                    <div class="carousel-inner">
 
-                            <!-- Recipe Cards used to display last 4 recipes -->
-                            {% for recipe in recipes %}
-                                <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
-                                    <div class="card">
+                        <!-- Recipe Cards used to display last 4 recipes -->
+                        {% for recipe in recipes %}
+                            <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
+                                <div class="card">
 
-                                        <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}"><img id="carousel-img" class="recipe-card-img card-img-top" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}"></a>
+                                    <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}"><img id="carousel-img" class="recipe-card-img card-img-top" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}"></a>
 
-                                        <div class="card-body">
-                                            <h3 class="recipe-name"><a href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
-                                            <div class="row recipe-text">
-                                                <div class="col-6 no-gutters">
-                                                    <div>
-                                                        <span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
-                                                        <span class="value">{{ recipe.total_time }}</span>
-                                                        <span class="title">Mins</span>
-                                                    </div>
-                                                    <div>
-                                                        <span class="recipe-icon iconify" data-icon="majesticons:users" data-inline="true"></span>
-                                                        <span class="title">Serves</span>
-                                                        <span class="value">{{ recipe.serving }}</span>
-                                                    </div>
+                                    <div class="card-body">
+                                        <h3 class="recipe-name"><a href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
+                                        <div class="row recipe-text">
+                                            <div class="col-6 no-gutters">
+                                                <div>
+                                                    <span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
+                                                    <span class="value">{{ recipe.total_time }}</span>
+                                                    <span class="title">Mins</span>
                                                 </div>
-                                                <div class="col-6 no-gutters">
-                                                    <div>
-                                                        <span class="recipe-icon iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
-                                                        <span class="value">{{ recipe.difficulty }}</span>
-                                                    </div>
-                                                    <div>
-                                                        {% if recipe.category == 'Bread' %}
-                                                            <span class="recipe-icon iconify" data-icon="emojione-monotone:bread" data-inline="true"></span>
-                                                        {% elif recipe.category == 'Cake' %}
-                                                            <span class="recipe-icon iconify" data-icon="mdi:cupcake" data-inline="true"></span>
-                                                        {% elif recipe.category == 'Biscuit' %}
-                                                            <span class="recipe-icon iconify" data-icon="fa-solid:cookie-bite" data-inline="true"></span>
-                                                        {% else %}
-                                                            <span class="recipe-icon iconify" data-icon="mdi:food-croissant" data-inline="true"></span>
-                                                        {% endif %}
-                                                        <span class="value">{{ recipe.category }}</span>
-                                                    </div>
+                                                <div>
+                                                    <span class="recipe-icon iconify" data-icon="majesticons:users" data-inline="true"></span>
+                                                    <span class="title">Serves</span>
+                                                    <span class="value">{{ recipe.serving }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 no-gutters">
+                                                <div>
+                                                    <span class="recipe-icon iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
+                                                    <span class="value">{{ recipe.difficulty }}</span>
+                                                </div>
+                                                <div>
+                                                    {% if recipe.category == 'Bread' %}
+                                                        <span class="recipe-icon iconify" data-icon="emojione-monotone:bread" data-inline="true"></span>
+                                                    {% elif recipe.category == 'Cake' %}
+                                                        <span class="recipe-icon iconify" data-icon="mdi:cupcake" data-inline="true"></span>
+                                                    {% elif recipe.category == 'Biscuit' %}
+                                                        <span class="recipe-icon iconify" data-icon="fa-solid:cookie-bite" data-inline="true"></span>
+                                                    {% else %}
+                                                        <span class="recipe-icon iconify" data-icon="mdi:food-croissant" data-inline="true"></span>
+                                                    {% endif %}
+                                                    <span class="value">{{ recipe.category }}</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            {% endfor %}
-                        </div>
-                        
-                        <!-- Carousel Controls -->  
-                        <a class="carousel-control-prev" href="#latestRecipes" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#latestRecipes" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                            </div>
+                        {% endfor %}
                     </div>
+                    
+                    <!-- Carousel Controls -->  
+                    <a class="carousel-control-prev" href="#latestRecipes" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#latestRecipes" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
    
 {% endblock %}
