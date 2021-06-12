@@ -118,7 +118,10 @@
                                 <label for="ingredients"><i class="fas fa-list-ul"></i> Ingredients</label>
                             {% endif %}
                             <input id="ingredients" class="form-control" name="ingredients" type="text" aria-describedby="ingredients" minlength="3" value="{{ ingredient }}" required />
-                        <a href="#" class="remove_field"><i class="fas fa-trash-alt"></i> Delete</a>
+                            <!-- Prevents deletion of first ingredient row -->
+                            {% if loop.index != 1 %} 
+                                <a href="#" class="remove_field"><i class="fas fa-trash-alt"></i> Delete</a>
+                            {% endif %}
                         </div>
                     {% endfor %}
                 </div>
@@ -141,7 +144,7 @@
                                 <label for="directions"><i class="fas fa-list-ol"></i> Directions</label>
                             {% endif %}
                             <textarea id="directions" class="form-control" name="directions" type="text" aria-describedby="directions" minlength="3" maxlength="300" rows="2" required >{{ direction }}</textarea>
-                            <!-- Prevents deletion of first ingredient row -->
+                            <!-- Prevents deletion of first direction row -->
                             {% if loop.index != 1 %}
                                 <a href="#" class="remove_field"><i class="fas fa-trash-alt"></i> Delete</a>
                             {% endif %}
