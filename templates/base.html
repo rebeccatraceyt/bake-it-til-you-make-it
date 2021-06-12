@@ -101,6 +101,24 @@
                         <!-- Block content section for each page-->
                         <section id="main-section" aria-label="Main Section unique to each page">
                             
+                            {% block header %}
+                            {% endblock %}
+                            
+                            {% block flash %}
+                                {% with messages = get_flashed_messages() %}
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            <div class="alert alert-dismissible fade show" role="alert">
+                                                <span>{{ message }}</span>
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                                </button>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endwith %}
+                            {% endblock %}
+
                             {% block content %}
                             {% endblock %}
 
