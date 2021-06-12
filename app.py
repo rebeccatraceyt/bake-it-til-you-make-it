@@ -76,13 +76,15 @@ def find_recipes():
 # ------- Search for Recipes -------
 @app.route("/search", methods=['GET', 'POST'])
 def search():
+    
     query = request.form.get("query")
+    
     recipes = list(mongo.db.recipes.find({
-        "$text": {"$search": query}}
+        "$text": {"$search": str('query')}}
     ))
+    
     recommended = mongo.db.recipes.find().sort(
                 "favourite_count", -1).limit(6)
-    
     
     if "user" in session:
         user = mongo.db.users.find_one(
@@ -90,16 +92,10 @@ def search():
     
         return render_template(
             "recipe/find_recipes.html", recipes=recipes, user=user, 
-            recommended=recommended, title="Search Results")
-            
-    if len(recipes) == 0:
-        flash(f"No recipe results for {query}")
-        
-    else:
-        flash(f"Your search for {query} returned {len(recipes)} result(s)!")
+            recommended=recommended, query=query, title="Search Results")
     
     return render_template("recipe/find_recipes.html", recipes=recipes, 
-                           recommended=recommended, title="Search Results")
+                           recommended=recommended, query=query, title="Search Results")
 
 
 # ------- Filtered Search for Recipes -------
