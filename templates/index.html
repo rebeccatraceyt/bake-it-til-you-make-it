@@ -1,16 +1,15 @@
 {% extends "base.html" %}
 {% block nav_home %}active{% endblock %}
 
-{% block header %}
+<!-- Replaces general header with unique header for Home Page -->
+{% block noheader %}no-header{% endblock %}
+
+{% block content %}
 
     <!-- Home Page Hero Image -->
     <div id="home-title"> 
         <img src="../static/images/home-hero.png" alt="Bake It 'Til You Make It Header">
     </div>
-
-{% endblock %}
-
-{% block content %}
 
     <!-- Home Page content -->
     <div id="home-sec" class="container-fluid">

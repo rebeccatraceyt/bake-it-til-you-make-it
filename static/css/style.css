@@ -224,6 +224,10 @@ li {
 }
 
 /*------------------------------------------------------- Homepage */
+#no-header {
+    /* Avoids duplicate of header image on Homepage */
+    display: none;
+}
 #home-title {
     max-width: 100vw;
     height: auto;

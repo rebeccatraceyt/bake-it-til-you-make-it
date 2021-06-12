@@ -101,7 +101,7 @@
                         <!-- Block content section for each page-->
                         <section id="main-section" aria-label="Main Section unique to each page">
                             
-                            <div class="page-banner">
+                            <div id="{% block noheader %}{% endblock %}" class="page-banner">
                                 {% block header %}
                                 {% endblock %}
                             </div>
