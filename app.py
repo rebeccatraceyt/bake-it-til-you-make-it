@@ -3,6 +3,7 @@ from flask import (
         Flask, flash, render_template, 
         redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -16,6 +17,36 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
+
+# ------- Pagination -------
+
+"""
+Pagination adapted from:
+    https://github.com/Sharon-B/Recipe-Box/blob/master/app.py
+"""
+
+PER_PAGE = 6
+
+def paginated(recipes):
+    page, per_page, offset = get_page_args(page_parameter="page",
+                                           per_page_parameter="per_page")
+    
+    offset = page * PER_PAGE - PER_PAGE
+    
+    return recipes[offset: offset + PER_PAGE]
+
+
+def pagination_args(recipes):
+    page, per_page, offset = get_page_args(page_parameter="page",
+                                           per_page_parameter="per_page")
+    
+    total = len(recipes)
+    
+    return Pagination(page=page,
+                      per_page=PER_PAGE,
+                      total=total,
+                      css_framework="bootstrap4")
 
 
 # ------- Check User Login Function -------
@@ -46,14 +77,15 @@ def home():
         user = mongo.db.users.find_one(
             {"username": session["user"]})
     
-        return render_template(
-            "index.html", 
-            recipes=latest_recipes, user=user, title="Bake It Til You Make It")
+        return render_template("index.html", 
+                               recipes=latest_recipes, 
+                               user=user, 
+                               title="Bake It Til You Make It")
     
     else:
-        return render_template(
-            "index.html", 
-            recipes=latest_recipes, title="Bake It Til You Make It")
+        return render_template("index.html", 
+                               recipes=latest_recipes, 
+                               title="Bake It Til You Make It")
         
 
 # ------- Find Recipes Page -------
@@ -62,15 +94,23 @@ def find_recipes():
     
     recipes = list(mongo.db.recipes.find())
     
+    recipes_paginated = paginated(recipes)
+    pagination = pagination_args(recipes)
+    
     if "user" in session:
         user = mongo.db.users.find_one(
             {"username": session["user"]})
     
-        return render_template(
-            "recipe/find_recipes.html", 
-            recipes=recipes, user=user, title="Find Recipes")
+        return render_template("recipe/find_recipes.html", 
+                               user=user,
+                               recipes=recipes_paginated,
+                               pagination=pagination, 
+                               title="Find Recipes")
         
-    return render_template("recipe/find_recipes.html", recipes=recipes, title="Find Recipes")
+    return render_template("recipe/find_recipes.html", 
+                           recipes=recipes_paginated,
+                           pagination=pagination, 
+                           title="Find Recipes")
 
 
 # ------- Search for Recipes -------
@@ -86,16 +126,27 @@ def search():
     recommended = mongo.db.recipes.find().sort(
                 "favourite_count", -1).limit(6)
     
+    recipes_paginated = paginated(recipes)
+    pagination = pagination_args(recipes)
+    
     if "user" in session:
         user = mongo.db.users.find_one(
             {"username": session["user"]})
     
-        return render_template(
-            "recipe/find_recipes.html", recipes=recipes, user=user, 
-            recommended=recommended, query=query, title="Search Results")
+        return render_template("recipe/find_recipes.html", 
+                               recipes=recipes_paginated, 
+                               user=user, 
+                               recommended=recommended, 
+                               query=query, 
+                               pagination=pagination,
+                               title="Search Results")
     
-    return render_template("recipe/find_recipes.html", recipes=recipes, 
-                           recommended=recommended, query=query, title="Search Results")
+    return render_template("recipe/find_recipes.html", 
+                           recipes=recipes_paginated, 
+                           recommended=recommended, 
+                           query=query, 
+                           pagination=pagination,
+                           title="Search Results")
 
 
 # ------- Filtered Search for Recipes -------
@@ -103,30 +154,46 @@ def search():
 def category_filter(id):
     recipes = list(mongo.db.recipes.find({"category": id}))
     
+    recipes_paginated = paginated(recipes)
+    pagination = pagination_args(recipes)
+    
     if "user" in session:
         user = mongo.db.users.find_one(
             {"username": session["user"]})
     
-        return render_template(
-            "recipe/find_recipes.html", 
-            recipes=recipes, user=user, title="Search Results")
+        return render_template("recipe/find_recipes.html", 
+                               recipes=recipes_paginated, 
+                               user=user, 
+                               pagination=pagination,
+                               title="Search Results")
         
-    return render_template("recipe/find_recipes.html", recipes=recipes, title="Search Results")
+    return render_template("recipe/find_recipes.html", 
+                           recipes=recipes_paginated,
+                           pagination=pagination, 
+                           title="Search Results")
 
 
 @app.route("/difficulty_filter/<id>")
 def difficulty_filter(id):
     recipes = list(mongo.db.recipes.find({"difficulty": id}))
     
+    recipes_paginated = paginated(recipes)
+    pagination = pagination_args(recipes)
+    
     if "user" in session:
         user = mongo.db.users.find_one(
             {"username": session["user"]})
     
-        return render_template(
-            "recipe/find_recipes.html", 
-            recipes=recipes, user=user, title="Search Results")
+        return render_template("recipe/find_recipes.html", 
+                               recipes=recipes_paginated, 
+                               user=user,
+                               pagination=pagination, 
+                               title="Search Results")
         
-    return render_template("recipe/find_recipes.html", recipes=recipes, title="Search Results")
+    return render_template("recipe/find_recipes.html", 
+                           recipes=recipes_paginated,
+                           pagination=pagination, 
+                           title="Search Results")
 
 
 # ------- Register Page -------
@@ -142,8 +209,8 @@ def register():
     
     if "user" in session:
     
-        return redirect(url_for(
-            "my_recipes", username=session["user"]))
+        return redirect(url_for("my_recipes", 
+                                username=session["user"]))
     
     if request.method == "POST":
         # Checks if username already exists
@@ -171,9 +238,11 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Welcome, Baker {}!".format(
             request.form.get("username")))
-        return redirect(url_for(
-            "my_recipes", username=session["user"]))
-    return render_template("user/register.html", title="Sign Up")
+        return redirect(url_for("my_recipes", 
+                                username=session["user"]))
+        
+    return render_template("user/register.html", 
+                           title="Sign Up")
 
 
 # ------- Login Page -------
@@ -186,8 +255,8 @@ def login():
     
     if "user" in session:
     
-        return redirect(url_for(
-            "my_recipes", username=session["user"]))
+        return redirect(url_for("my_recipes", 
+                                username=session["user"]))
     
     if request.method == "POST":
         # checking if user exists
@@ -215,7 +284,8 @@ def login():
                 "Incorrect Username and/or Password, please try again")
             return redirect(url_for("login"))
     
-    return render_template("user/login.html", title="Login")
+    return render_template("user/login.html", 
+                           title="Login")
 
 
 # ------- Logout Page -------
@@ -272,12 +342,14 @@ def edit_user(username):
                 current_user, update_user, True)
             
             flash("Profile Updated!")
-            return redirect(url_for("my_recipes", username=session["user"]))
+            return redirect(url_for("my_recipes", 
+                                    username=session["user"]))
     else:
         return redirect(url_for("login"))
 
-    return render_template(
-        "user/edit_user.html", user=user, title="Edit User")
+    return render_template("user/edit_user.html", 
+                           user=user, 
+                           title="Edit User")
 
 
 # ------- Edit Account Page -------
@@ -323,13 +395,14 @@ def edit_account(username):
             
             flash("Password Updated!")
             session.pop("user")
-            return render_template(
-                "user/login.html", title="Login")
+            return render_template("user/login.html", 
+                                   title="Login")
     else:
         return redirect(url_for("login"))
 
-    return render_template(
-        "user/edit_account.html", user=user, title="Edit Account")
+    return render_template("user/edit_account.html", 
+                           user=user, 
+                           title="Edit Account")
 
 
 # ------- Delete Profile -------
@@ -378,9 +451,10 @@ def my_recipes(username):
     else:
         return redirect(url_for("login"))
     
-    return render_template(
-        "user/my_recipes.html", 
-        user=user, recipes=recipes, title="My Recipes")
+    return render_template("user/my_recipes.html", 
+                           user=user, 
+                           recipes=recipes, 
+                           title="My Recipes")
 
 
 # ------- My Favourites Page -------
@@ -411,9 +485,12 @@ def my_favourites(username):
         flash("You must be logged in")
         return redirect(url_for("login"))
     
-    return render_template("user/my_favourites.html", user=user, 
-                           recommended=recommended, favourites=favourites,
-                           favourite_recipes=favourite_recipes, title="My Favourites")
+    return render_template("user/my_favourites.html", 
+                           user=user, 
+                           recommended=recommended, 
+                           favourites=favourites,
+                           favourite_recipes=favourite_recipes, 
+                           title="My Favourites")
           
 
 # ------- Add to Favourites -------
@@ -432,21 +509,23 @@ def add_to_favourites(recipe_id):
         
         if ObjectId(recipe_id) not in favourite_recipes:
             mongo.db.users.update_one({"username": session["user"]},
-                            {"$push": {
-                                "favourite_recipes" : ObjectId(recipe_id)}})
+                                      {"$push": {
+                                          "favourite_recipes" : ObjectId(recipe_id)}})
 
             mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)},
                                         {"$inc": {"favourite_count": 1}})
         else: 
             flash("Already Added to favourites")
-            return redirect(url_for("recipe", recipe_id=recipe_id))
+            return redirect(url_for("recipe", 
+                                    recipe_id=recipe_id))
         
     else:
         flash("You must be logged in to add to favourites!")
         return redirect(url_for('login'))
     
     flash("Added to my favourites")
-    return redirect(url_for("recipe", recipe_id=recipe_id))
+    return redirect(url_for("recipe", 
+                            recipe_id=recipe_id))
 
 
 # ------- Remove From Favourites -------
@@ -472,7 +551,8 @@ def remove_from_favourites(recipe_id):
                                 }})
         
         flash("Recipe removed from My Favourites")
-        return redirect(url_for('recipe', recipe_id=recipe_id))
+        return redirect(url_for('recipe', 
+                                recipe_id=recipe_id))
     
     else:
         flash("You must be logged in!")
@@ -503,16 +583,19 @@ def recipe(recipe_id):
         else:
             favourited = False
 
-        return render_template(
-            "recipe/recipe.html", recipe=recipe,
-            favourited=favourited, user=user, title="Recipe")
+        return render_template("recipe/recipe.html", 
+                               recipe=recipe,
+                               favourited=favourited, 
+                               user=user, 
+                               title="Recipe")
         
     else:
         favourited = False
         
-    return render_template(
-        "recipe/recipe.html", recipe=recipe, 
-        favourited=favourited, title="Recipe")
+    return render_template("recipe/recipe.html", 
+                           recipe=recipe, 
+                           favourited=favourited, 
+                           title="Recipe")
 
 
 # ------- Create Recipe Page -------
@@ -554,9 +637,11 @@ def create_recipe():
         if username == session["user"].lower():
             categories = mongo.db.categories.find().sort("category", 1)
             difficulty = mongo.db.level.find().sort("difficulty", 1)
-            return render_template(
-                "recipe/create_recipe.html", 
-                categories=categories, difficulty=difficulty, user=user, title="Create Recipe")
+            return render_template("recipe/create_recipe.html", 
+                                   categories=categories, 
+                                   difficulty=difficulty, 
+                                   user=user, 
+                                   title="Create Recipe")
         
         else:
             return redirect(url_for("home"))
@@ -611,9 +696,12 @@ def edit_recipe(recipe_id):
         if username == session["user"].lower():
             categories = mongo.db.categories.find().sort("category", 1)
             difficulty = mongo.db.level.find().sort("difficulty", 1)
-            return render_template(
-                "recipe/edit_recipe.html", 
-                recipe=recipe, categories=categories, difficulty=difficulty, user=user, title="Edit Recipe")
+            return render_template("recipe/edit_recipe.html", 
+                                   recipe=recipe, 
+                                   categories=categories, 
+                                   difficulty=difficulty, 
+                                   user=user, 
+                                   title="Edit Recipe")
         
         else:
             return redirect(url_for("home"))
@@ -643,7 +731,8 @@ def delete_recipe(recipe_id):
         return redirect(url_for('login'))
     
     flash("Recipe Deleted")
-    return redirect(url_for("my_recipes", username=session["user"]))
+    return redirect(url_for("my_recipes", 
+                            username=session["user"]))
 
 
 # ------- Declaration of special variables -------
