@@ -904,6 +904,7 @@ footer {
     margin: auto;
     padding: 2%;
     text-align: center;
+    box-shadow: 5px 14px 20px 4px grey;  
 }
 footer ul {
     font-family: var(--body-font);
