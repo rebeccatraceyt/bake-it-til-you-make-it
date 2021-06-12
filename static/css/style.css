@@ -143,6 +143,8 @@ li {
     background-image: url("../images/paper-bg.png");
     background-repeat: repeat;
 
+    -webkit-box-shadow: 5px 14px 20px 4px grey;  
+    -moz-box-shadow: 5px 14px 20px 4px grey;  
     box-shadow: 5px 14px 20px 4px grey;  
     border-bottom: 3px inset var(--border-line);
 }
@@ -466,6 +468,9 @@ li {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    -webkit-box-shadow: 5px 14px 20px 4px grey; 
+    -moz-box-shadow: 5px 14px 20px 4px grey; 
     box-shadow: 5px 14px 20px 4px grey; 
     
     margin: auto;
@@ -494,6 +499,9 @@ li {
     border: none;
     padding: 5px 15px;
     border-radius: 10px;
+
+    -webkit-box-shadow: 3px 3px 3px 3px var(--light-box); 
+    -moz-box-shadow: 3px 3px 3px 3px var(--light-box); 
     box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
 .accounts-btn button:hover {
@@ -509,6 +517,9 @@ li {
     padding: 5px 10px;
     border-radius: 10px;
     color: var(--text);
+
+    -webkit-box-shadow: 3px 3px 3px 3px var(--light-box); 
+    -moz-box-shadow: 3px 3px 3px 3px var(--light-box); 
     box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
 .accounts-link a:hover{
@@ -538,6 +549,9 @@ li {
     background-color: var(--text);
     color: var(--white);
     border-radius: 10px;
+
+    -webkit-box-shadow: 3px 3px 3px 3px var(--light-box); 
+    -moz-box-shadow: 3px 3px 3px 3px var(--light-box); 
     box-shadow: 3px 3px 3px 3px var(--light-box); 
     padding: 10px 15px;
 }
@@ -559,6 +573,9 @@ li {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    -webkit-box-shadow: 5px 14px 20px 4px grey; 
+    -moz-box-shadow: 5px 14px 20px 4px grey; 
     box-shadow: 5px 14px 20px 4px grey; 
 
     margin: auto;
@@ -607,6 +624,9 @@ li {
     font-size: .9em;
     float: right;
     color: var(--white);
+
+    -webkit-box-shadow: 3px 3px 3px 3px var(--light-box); 
+    -moz-box-shadow: 3px 3px 3px 3px var(--light-box); 
     box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
 .add-ing-btn:hover, .add-dir-btn:hover {
@@ -620,6 +640,9 @@ li {
     font-size: .9em;
     float: right;
     color: var(--white);
+
+    -webkit-box-shadow: 3px 3px 3px 3px var(--light-box); 
+    -moz-box-shadow: 3px 3px 3px 3px var(--light-box); 
     box-shadow: 3px 3px 3px 3px var(--light-box); 
     margin-top: 5px;
 }
@@ -638,6 +661,9 @@ li {
     min-width: 90%;
     background-color: var(--text);
     color: var(--white);
+
+    -webkit-box-shadow: 3px 3px 3px 3px var(--light-box); 
+    -moz-box-shadow: 3px 3px 3px 3px var(--light-box); 
     box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
 .create-btn button:hover, .create-btn a:hover {
@@ -901,6 +927,9 @@ li {
     background-image: url(../images/stickynote-bg.png);
     min-width: 100%;
     padding: 10px;
+
+    -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7); 
+    -moz-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
     box-shadow: 5px 5px 7px rgba(33,33,33,.7);
     border-radius: 15px;
 }
@@ -909,7 +938,11 @@ li {
     min-width: 100%;
     padding:1em;
     border-radius: 10px;
+    
+    -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7); 
+    -moz-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
     box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+
     transform: rotate(-1deg);
     margin:1em;
 }
@@ -943,6 +976,9 @@ footer {
     margin: auto;
     padding: 2%;
     text-align: center;
+
+    -webkit-box-shadow: 5px 14px 20px 4px grey;  
+    -moz-box-shadow: 5px 14px 20px 4px grey;  
     box-shadow: 5px 14px 20px 4px grey;  
 }
 footer ul {
@@ -1084,6 +1120,8 @@ footer li {
     -moz-border-radius: 10px;
     border-radius: 10px;
 
+    -webkit-box-shadow: 3px 3px 3px 3px var(--light-box); 
+    -moz-box-shadow: 3px 3px 3px 3px var(--light-box); 
     box-shadow: 3px 3px 3px 3px var(--light-box); 
     padding: 10px 15px;
 }
@@ -1363,6 +1401,9 @@ footer li {
         margin-top: 10px;
 
         overflow: auto;
+
+        -webkit-box-shadow: 13px 19px 8px 2px grey;
+        -moz-box-shadow: 13px 19px 8px 2px grey;
         box-shadow: 13px 19px 8px 2px grey;
         padding-left: 0;
     }
@@ -1418,7 +1459,6 @@ footer li {
     /* -- Page Section -- */
     #main-section {
         background: transparent;
-        box-shadow: 0px 0px grey;
         padding-bottom: 1%;
     }
     .page-banner {
