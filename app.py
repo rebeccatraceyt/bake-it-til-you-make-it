@@ -236,7 +236,7 @@ def register():
         
         # Welcomes user to session
         session["user"] = request.form.get("username").lower()
-        flash("Welcome, Baker {}!".format(
+        flash("Welcome, Baker {}! Let's get started!".format(
             request.form.get("username")))
         return redirect(url_for("my_recipes", 
                                 username=session["user"]))
@@ -269,7 +269,7 @@ def login():
                 existing_user["password"], request.form.get(
                     "password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome back, {}".format(
+                flash("Welcome back, {}! Let's get started!".format(
                     request.form.get("username")))
                 return redirect(url_for(
                     "my_recipes", username=session["user"]))
@@ -296,8 +296,7 @@ def logout():
     Allows current session user to log out.
     """
     
-    flash("See you soon Baker {}".format(
-        request.form.get("username")))
+    flash("Logged out. See you soon!")
     # User session cookies removal
     session.pop("user")
     return redirect(url_for("login"))
@@ -341,7 +340,8 @@ def edit_user(username):
             mongo.db.users.replace_one(
                 current_user, update_user, True)
             
-            flash("Profile Updated!")
+            flash("{}'s Profile Updated!".format(
+                    request.form.get("username")))
             return redirect(url_for("my_recipes", 
                                     username=session["user"]))
     else:
@@ -393,7 +393,8 @@ def edit_account(username):
             mongo.db.users.replace_one(
                 current_user, update_user, True)
             
-            flash("Password Updated!")
+            flash("{}'s Password Updated!".format(
+                    request.form.get("username")))
             session.pop("user")
             return render_template("user/login.html", 
                                    title="Login")
@@ -489,7 +490,7 @@ def my_favourites(username):
             recipes_paginated = paginated(favourites)
             pagination = pagination_args(recipes)
     else:
-        flash("You must be logged in")
+        flash("You must be logged in to see favourites")
         return redirect(url_for("login"))
     
     return render_template("user/my_favourites.html", 
@@ -531,7 +532,9 @@ def add_to_favourites(recipe_id):
         flash("You must be logged in to add to favourites!")
         return redirect(url_for('login'))
     
-    flash("Added to my favourites")
+    flash("Added to {}'s favourites".format(
+        request.form.get("username")))
+    
     return redirect(url_for("recipe", 
                             recipe_id=recipe_id))
 
@@ -633,7 +636,7 @@ def create_recipe():
             "favourite_count": int(0)
         }
         mongo.db.recipes.insert_one(recipe)
-        flash("Recipe Shared")
+        flash("Recipe Shared! Let's get baking!")
         return redirect(url_for(
             "my_recipes", username=session["user"]))
     
@@ -691,7 +694,8 @@ def edit_recipe(recipe_id):
                     "directions": request.form.getlist("directions"), 
                 }
             })
-        flash("Recipe Updated!")
+        flash("{} Recipe Updated!".format(
+                    request.form.get("recipe_name")))
         
         return redirect(url_for("recipe", recipe_id=recipe_id))
     
@@ -735,7 +739,7 @@ def delete_recipe(recipe_id):
                                   "favourite_recipes": ObjectId(recipe_id)}},
                               multi=True)
     else: 
-        flash("You must be logged in")
+        flash("You must be logged in!")
         return redirect(url_for('login'))
     
     flash("Recipe Deleted")
