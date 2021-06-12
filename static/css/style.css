@@ -56,6 +56,10 @@ li {
 .iconify {
     color: var(--text);
 }
+.db-name {
+    /* Ensuring user information is displayed consistently */
+    font-family: var(--body-font);
+}
 
 /*------------------------------------------------------- Navbar */
 /* Sourced and edited from:
@@ -128,8 +132,10 @@ li {
     border-bottom: 3px inset var(--border-line);
 }
 
-/*------------------------------------------------------- Main Section */
-/* For the block content unique to each page */
+/*------------------------------------------------------- Page Section */
+/* For consistent design on all pages */
+
+/* Section Styling */
 #main-section {
     max-width: 95vw;
     margin: auto; 
@@ -143,7 +149,8 @@ li {
     box-shadow: 5px 14px 20px 4px grey;  
     border-bottom: 3px inset var(--border-line);
 }
-/* For consistent design on all pages */
+
+/* Page Banner and Title */
 .page-banner {
     background-image: url("../images/banner.png");
     background-repeat: no-repeat;
@@ -161,14 +168,51 @@ li {
     font-family: var(--accent-font);
     font-size: 2em;
 }
-.db-name {
-    font-family: var(--body-font);
-}
 .page-padding {
     padding: 3% 4%;
 }
 .page-intro {
     text-align: center;
+}
+
+/* Flash Messages */
+#flash-box {
+    background-image: url("../images/white-lined.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+
+    -webkit-box-shadow: var(--dark-box) 0px 0 10px;
+    -moz-box-shadow: var(--dark-box) 0 0 10px;
+    box-shadow: var(--dark-box) 0 0 10px;
+
+    border: 2px inset var(--text);
+    max-width: 90%;
+    height: 20%;
+    padding-top: 15px;
+    margin: 20px auto;
+    text-align: center;
+}
+.alert-dismissible {
+    /* Remove default padding */
+    padding: 10px;
+}
+.alert-dismissible .close {
+    padding: 10px;
+}
+#flash-btn i {
+    color: var(--red);
+}
+#flash-text {
+    font-family: var(--accent-font);
+    font-size: 1.1em;
+    padding: 23px 0 0 0;
 }
 
 /*------------------------------------------------------- Recipe Cards */
