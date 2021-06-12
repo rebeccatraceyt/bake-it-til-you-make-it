@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-12 form-group create-label">
                             <label for="recipe_name"><span class="iconify" data-icon="ic:round-drive-file-rename-outline" data-inline="true"></span> Recipe Name</label>
-                            <input id="recipe_name" class="form-control" name="recipe_name" type="text" minlength="3" maxlength="25" aria-describedby="recipe_name" value="{{ recipe.recipe_name }}" required />
+                            <input id="recipe_name" class="form-control" name="recipe_name" type="text" minlength="3" maxlength="20" aria-describedby="recipe_name" value="{{ recipe.recipe_name }}" required />
                         </div>
                     </div>
 
@@ -103,7 +103,7 @@
                     <div class="row">
                         <div class="col-12 form-group create-label">
                            <label for="description"><i class="far fa-file-alt"></i> Recipe Description</label>
-                           <textarea id="description" class="form-control" name="description" aria-describedby="description" minlength="3" maxlength="300" rows="3" required>{{ recipe.description }}</textarea>
+                           <textarea id="description" class="form-control" name="description" aria-describedby="description" minlength="3" maxlength="150" rows="3" required>{{ recipe.description }}</textarea>
                         </div>
                     </div>
 
