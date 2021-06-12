@@ -364,7 +364,9 @@ In order to avoid this error, the developer installed and selected `Flake8` to l
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/ "Link to Flask Homepage")
      - Flask was used as the web framework for the application.
 - [PyMongo](https://pypi.org/project/pymongo/ "Link to PyMongo information")
-     - PyMongo was used a communication line between the MongoDB database and Python.
+     - `flask_pymongo` was used a communication line between the MongoDB database and Python.
+- [Pagination](https://flask-paginate.readthedocs.io/en/master/ "Link to flask-paginate documentation")
+     - `flask_paginate` extension was used to implement pagination functionality on select pages. 
 - [Jinja](http://jinja.pocoo.org/docs/2.10/ "Link to Jinja information")
      - Jinja templating language was used to simplify and display backend data in html.
 - [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information")
