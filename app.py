@@ -747,6 +747,19 @@ def delete_recipe(recipe_id):
                             username=session["user"]))
 
 
+# ------- Error Handlers -------
+# adapted from: https://flask.palletsprojects.com/en/1.1.x/errorhandling/
+
+@app.errorhandler(400)
+def page_not_found (e):
+    return render_template("error_handlers/404.html"), 404
+
+
+@app.errorhandler(500)
+def server_error(e):
+    return render_template("error_handlers/500.html"), 500
+
+
 # ------- Declaration of special variables -------
 
 if __name__ == "__main__":
