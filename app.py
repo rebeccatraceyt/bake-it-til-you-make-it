@@ -316,7 +316,7 @@ def edit_user(username):
     user = mongo.db.users.find_one(
         {"username": session["user"]})
     
-    if "user" in session.keys():
+    if "user" in session:
         
         # Update profile function
         if request.method == "POST":
@@ -365,7 +365,7 @@ def edit_account(username):
     if not user_logged_in(username.lower()):
         return redirect(url_for("login"))
     
-    if "user" in session.keys():
+    if "user" in session:
         
         user = mongo.db.users.find_one(
         {"username": session["user"]})
@@ -417,7 +417,7 @@ def delete_user(username):
     if not user_logged_in(username.lower()):
         return redirect(url_for("login"))
     
-    if "user" in session.keys():
+    if "user" in session:
         mongo.db.users.remove(
             {"username": username.lower()})
         flash("Profile Deleted")
@@ -440,7 +440,7 @@ def my_recipes(username):
     if not user_logged_in(username.lower()):
         return redirect(url_for("login"))
     
-    if "user" in session.keys():
+    if "user" in session:
         user = mongo.db.users.find_one(
         {"username": session["user"]})
         
@@ -473,7 +473,7 @@ def my_favourites(username):
     if not user_logged_in(username.lower()):
         return redirect(url_for("login"))
     
-    if "user" in session.keys():
+    if "user" in session:
         
         user = mongo.db.users.find_one(
                 {"username": session["user"]})
@@ -510,7 +510,7 @@ def add_to_favourites(recipe_id):
     Added recipe to the current users 'favourites'
     """
     
-    if "user" in session.keys():
+    if "user" in session:
         user = mongo.db.users.find_one(
             {"username": session["user"]})
         
@@ -532,8 +532,7 @@ def add_to_favourites(recipe_id):
         flash("You must be logged in to add to favourites!")
         return redirect(url_for('login'))
     
-    flash("Added to {}'s favourites".format(
-        request.form.get("username")))
+    flash("Recipe added to My Favourites")
     
     return redirect(url_for("recipe", 
                             recipe_id=recipe_id))
@@ -702,7 +701,7 @@ def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})
     
-    if "user" in session.keys():
+    if "user" in session:
         username = session["user"].lower()
         
         if username == session["user"].lower():
@@ -730,7 +729,7 @@ def delete_recipe(recipe_id):
     Allows user to delete their uploaded
     """
     
-    if "user" in session.keys():
+    if "user" in session:
         
         mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
         
@@ -750,14 +749,26 @@ def delete_recipe(recipe_id):
 # ------- Error Handlers -------
 # adapted from: https://flask.palletsprojects.com/en/1.1.x/errorhandling/
 
-@app.errorhandler(400)
+@app.errorhandler(404)
 def page_not_found (e):
-    return render_template("error_handlers/404.html"), 404
+    
+    if "user" in session:
+        user = mongo.db.users.find_one(
+            {"username": session["user"]})
+        return render_template("error_handlers/404.html", user=user), 404
+    else:
+        return render_template("error_handlers/404.html"), 404
 
 
 @app.errorhandler(500)
 def server_error(e):
-    return render_template("error_handlers/500.html"), 500
+    
+    if "user" in session:
+        user = mongo.db.users.find_one(
+            {"username": session["user"]})
+        return render_template("error_handlers/500.html", user=user), 500
+    else:
+        return render_template("error_handlers/500.html"), 500
 
 
 # ------- Declaration of special variables -------
