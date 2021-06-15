@@ -60,13 +60,13 @@ def pagination_args(recipes):
 
 # ------- Check User Login Function -------
 
-"""
-Using login_required decorator
-https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator
-https://github.com/TravelTimN/flask-task-manager-project/blob/demo/app.py
-"""
 
 def login_required(f):
+    """
+    Using login_required decorator adapted from:
+    https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator
+    https://github.com/TravelTimN/flask-task-manager-project/blob/demo/app.py
+    """
     @wraps(f)
     def decorated_function(*args, **kwargs):
         
@@ -109,11 +109,17 @@ def home():
         
 
 # ------- Find Recipes Page -------
+
 @app.route("/find_recipes")
 def find_recipes():
-    
+    """
+    Find recipes page displays all recipes (with pagination).
+    Providing search function for users.
+    """
     recipes = list(mongo.db.recipes.find())
     
+    #pagination code adapted from: 
+    # https://github.com/alandoherty95/reciprocate-app/blob/master/app.py
     recipes_paginated = paginated(recipes)
     pagination = pagination_args(recipes)
     
@@ -136,14 +142,21 @@ def find_recipes():
 
 
 # ------- Search for Recipes -------
+
 @app.route("/search", methods=['GET', 'POST'])
 def search():
+    """
+    Search function allows users to search within text indices for:
+    recipe_name and description
+    """
     
     # query search index set out in MongoDB
     query = request.form.get("query")
     
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     
+    # recommended functionality adapted from:
+    # https://github.com/johnnycistudent/recipe-app/blob/master/app.py
     recommended = mongo.db.recipes.find().sort(
                 "favourite_count", -1).limit(6)
     
@@ -173,8 +186,13 @@ def search():
 
 
 # ------- Filtered Search for Recipes -------
+
 @app.route("/category_filter/<id>")
 def category_filter(id):
+    """
+    Allows for filtered search.
+    In this case: by CATEGORY
+    """
     recipes = list(mongo.db.recipes.find({"category": id}))
     
     recipes_paginated = paginated(recipes)
@@ -200,6 +218,10 @@ def category_filter(id):
 
 @app.route("/difficulty_filter/<id>")
 def difficulty_filter(id):
+    """
+    Allows for filtered search.
+    In this case: by DIFFICULTY
+    """
     recipes = list(mongo.db.recipes.find({"difficulty": id}))
     
     recipes_paginated = paginated(recipes)
@@ -478,10 +500,13 @@ def delete_user(username):
 @login_required
 def my_recipes(username):
     """
-    Displays User's recipes page
+    Displays User's recipes page with their own created recipes.
+    Home page for logged in users.
     """
     
     if session["user"] == username:
+        
+        # user variable for user image
         user = mongo.db.users.find_one(
         {"username": session["user"]})
         
@@ -514,7 +539,9 @@ def my_favourites(username):
     Displays recipes the user has 'favourited'
     """
     
-    if session["user"] == username:        
+    if session["user"] == username:
+        
+        # user variable for user image        
         user = mongo.db.users.find_one(
                 {"username": session["user"]})
         
@@ -550,7 +577,7 @@ def my_favourites(username):
 @login_required
 def add_to_favourites(recipe_id):
     """
-    Added recipe to the current users 'favourites'
+    Adds recipe to the current users 'favourites'
     """
     recipe = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})
@@ -561,14 +588,18 @@ def add_to_favourites(recipe_id):
         
         favourite_recipes = user["favourite_recipes"]
         
+        # Checks if recipe is already in favourites
         if ObjectId(recipe_id) not in favourite_recipes:
+            # Adds recipe_id to users favourite_recipes
             mongo.db.users.update_one({"username": session["user"]},
                                       {"$push": {
                                           "favourite_recipes" : ObjectId(recipe_id)}})
 
+            # Increments recipes favourite_count by 1
             mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)},
                                         {"$inc": {"favourite_count": 1}})
         else: 
+            # If recipe is already favourited
             flash("Already Added to favourites")
             return redirect(url_for("recipe", 
                                     recipe_id=recipe_id))
@@ -600,12 +631,15 @@ def remove_from_favourites(recipe_id):
     
         favourites = user["favourite_recipes"]
         
+        # Checks if the recipe is in favourites
         if ObjectId(recipe_id) in favourites:
+            # Removes recipe_id from users favourite_recipes
             mongo.db.users.update({"username": session['user']},
                                 {"$pull": {
                                     "favourite_recipes": ObjectId(recipe_id)
                                 }})
             
+            # Decrement recipes favourite_count by 1
             mongo.db.recipes.update({"_id": ObjectId(recipe_id)},
                                     {'$inc': {
                                         'favourite_count': -1
@@ -716,6 +750,8 @@ def edit_recipe(recipe_id):
     """
     User can edit the recipe they uploaded
     """    
+    
+    # user variable for user image/admin functionality
     user = mongo.db.users.find_one(
         {"username": session["user"]})
     
@@ -771,6 +807,7 @@ def delete_recipe(recipe_id):
     Allows user to delete their uploaded
     """
     
+    # user variable for user image/admin functionality
     user = mongo.db.users.find_one(
         {"username": session["user"]})
     
@@ -804,6 +841,8 @@ def delete_recipe(recipe_id):
 def page_not_found (e):
     
     if "user" in session:
+        
+        # user variable for user image
         user = mongo.db.users.find_one(
             {"username": session["user"]})
         return render_template("error_handlers/404.html", user=user), 404
@@ -815,6 +854,8 @@ def page_not_found (e):
 def server_error(e):
     
     if "user" in session:
+        
+        # user variable for user image
         user = mongo.db.users.find_one(
             {"username": session["user"]})
         return render_template("error_handlers/500.html", user=user), 500
