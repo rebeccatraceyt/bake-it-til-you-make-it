@@ -69,12 +69,15 @@ https://github.com/TravelTimN/flask-task-manager-project/blob/demo/app.py
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
+        
         # User not logged in
         if "user" not in session:
             flash("Please log in to view this page!")
             return redirect(url_for("login"))
+        
         # User is logged in
         return f(*args, **kwargs)
+    
     return decorated_function
 
 
@@ -432,8 +435,6 @@ def delete_user(username):
     """
     Allows user to delete profile
     """
-    user = mongo.db.users.find_one(
-        {"username": session["user"]})
     
     if session["user"] == username:
         mongo.db.users.remove(
@@ -444,7 +445,7 @@ def delete_user(username):
         return redirect(url_for("register"))
     
     else:
-        flash("You do not have permission to view this page")
+        flash("You do not have permission to do that!")
         return redirect(url_for("my_recipes", 
                                 username=session["user"]))
 
@@ -554,9 +555,7 @@ def add_to_favourites(recipe_id):
     else:
         flash("This creation is yours!")
         return redirect(url_for("recipe", 
-                                recipe_id=recipe_id))
-        
-        
+                                recipe_id=recipe_id))        
 
 
 # ------- Remove From Favourites -------
@@ -763,6 +762,31 @@ def delete_recipe(recipe_id):
         flash("You do not have permission to view this page")
         return redirect(url_for('recipe', 
                                 recipe_id=recipe_id))
+
+
+# ------- Admin Functionality -------
+
+@app.route("/user_stats/<username>")
+@login_required
+def user_stats(username):
+    """
+    Allows admin to view and edit accounts
+    """
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+    
+    if user["is_admin"]:
+        users = list(mongo.db.users.find())
+        
+        return render_template("admin/user_stats.html",
+                               user=user,
+                               users=users,
+                               username=session["user"],
+                               title="User Stats")
+    else:
+        flash("You do not have permission to view this page")
+        return redirect(url_for("my_recipes", 
+                                username=session["user"]))    
 
 
 # ------- Error Handlers -------
