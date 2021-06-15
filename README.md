@@ -408,7 +408,25 @@ The buttons on the recipe page are conditional to the user's role on the website
 | Logged in user is **Admin** | The administrative user has access to **Edit** and **Delete** buttons as well as the **Add To Favourites** or **Remove from Favourites** (should they want to save it)|
 
 ### Features to Implement in the future
-- **EXAMPLE** - 
+- **Recipe PDF Download** 
+     - A feature that would allow the user to download a **PDF** copy of the recipe for their own personal records.
+     - The developer researched the possibilities of this feature, and know it is possible using the `pdfkit` library import but they held off from implementing it in this release in order to further develop their skills to be able to implement the feature properly. A simplified version could have been implemented but it would not be to the standard the developer would like.
+
+- **Image Upload**
+     - A feature that would allow the user to upload a file image rather than using an image url.
+     - It was on the suggestion of the Code Institute Student Care team that the developer did not implement this feature in this release.
+
+- **Image Processing**
+     - A feature that would allow for validation of properties on images used.
+     - The developer did try to implement this feature using [Pillow](https://pillow.readthedocs.io/en/stable/ "Link to Pillow doc") but they were unsuccessful in getting it to work, so it was suggested to them to use the `pattern` attribute on the image input field in this release.
+
+- **More Community Capabilities**
+     - A feature that would allow users to share ideas and help other users on the site, creating a more dynamically involved community focus.
+     - This idea was in the original plans but the developer chose to scale the scope down, excluding this feature, as they knew their present capabilities would give it the justice the feature deserved.
+
+- **Email Verification**
+     - A feature that would allow for the developer to send an automated email to users on registration, verifying their email and account.
+     - This, too, was in the original plans and the developer tried their best to be able to implement it in this release, but it was not meant to be. 
 
 [Back to top ⇧](#table-of-contents)
 
