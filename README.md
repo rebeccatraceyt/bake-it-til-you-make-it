@@ -114,13 +114,13 @@ In order to design and create a web-based interactive application, the developer
 Broken into three categories, the website will focus on the following target audiences:
 - **Roles:**
      - Bakers of all levels
-     - New Users (Non-Registered)
-     - Return Users (Registered)
+     - New Users **(Non-Registered)**
+     - Return Users **(Registered)**
 
 - **Demographic:**
      - Passion for baking
      - Food lovers
-     - All ages (encouraging family fun)
+     - All ages (encouraging family fun-time)
 
 - **Psychographics:**
      - Personality & Attitudes:
@@ -159,6 +159,7 @@ The website needs to enable the **client** to:
     - Share their favourite recipes
     - Find new recipes
     - Connect with a community that shares their interests
+    - Have control of the recipes shared
 - Allow for user feedback and suggestions
 
 With these goals in mind, a strategy table was created to determine the trade-off between importance and viability with the following results:
