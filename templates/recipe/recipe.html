@@ -78,7 +78,7 @@
 
                                 <!-- Recipe Actions -->
                                 <div id="rec-btns" class="col-12 no-gutters">
-                                    {% if session.user %}
+                                    {% if session.user and not user.is_admin %}
                                         {% if session.user|lower == recipe.baker|lower %}
                                             <div class="row">
                                                 <div class="col-6">
@@ -93,6 +93,29 @@
                                                 </div>
                                             </div>
                                         {% elif favourited %}
+                                            <div class="recipe-btn faves-btn white-btn">
+                                                <a href="{{url_for('remove_from_favourites', recipe_id=recipe._id)}}"><i class="far fa-heart"></i> Remove Favourite</a>
+                                            </div>
+                                        {% else %}
+                                            <div class="recipe-btn faves-btn">
+                                                <a href="{{url_for('add_to_favourites', recipe_id=recipe._id)}}"><i class="fas fa-heart"></i> Favourite</a>
+                                            </div>
+                                        {% endif %}
+                                    
+                                    {% elif user.is_admin%}
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="recipe-btn">
+                                                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"><i class="fas fa-edit"></i> Edit</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="recipe-btn red-btn">
+                                                    <a href="#" data-toggle="modal" data-target="#modal-{{ recipe._id }}"><i class="fas fa-trash-alt"></i> Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% if favourited %}
                                             <div class="recipe-btn faves-btn white-btn">
                                                 <a href="{{url_for('remove_from_favourites', recipe_id=recipe._id)}}"><i class="far fa-heart"></i> Remove Favourite</a>
                                             </div>

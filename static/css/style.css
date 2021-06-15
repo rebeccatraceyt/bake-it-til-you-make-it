@@ -871,6 +871,7 @@ li {
     display: flex;
     justify-content: center;
     margin: auto;
+    margin-top: 10px;
 }
 .recipe-btn a {
     background-color: var(--text);
