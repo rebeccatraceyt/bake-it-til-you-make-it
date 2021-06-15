@@ -5,11 +5,9 @@
 
 <strong><em>Bake It 'Til You Make It</em></strong> is a community-based web application for those who love the art of baking to search and share their favourite creations.
 
-Inspired by the old-school baking book, the application features hand-drawn graphics and fonts designed to bring the users back to a time of scribbled recipes, in a more organised fashion, through a simplistic and intuitive user interface. 
+Inspired by the old-school baking book (filled with scrap paper and notes), the application features hand-drawn graphics and fonts designed to bring the users back to a time of scribbled recipes, in a more organised fashion, through a simplistic and intuitive user interface. 
 
 The recipe database encourages users to create an account that will allow them to upload and store their favourite baking recipes as well as find new inspiration from other users, saving their favourites for later.
-
-
 
 [View the live project here](https://bake-it-til-you-make-it.herokuapp.com/)
 
@@ -51,8 +49,8 @@ This is the third of four Milestone Projects that the developer must complete du
 
 The main requirements were to build a full-stack website allowing users to manage a common dataset (in this instance, baking recipes) using **HTML5**, **CSS3**, **JavaScript**, **Python**, **Flask** and **MongoDB**.
 
-#### Player Goals
-The player is looking for:
+#### User Goals
+The user is looking for:
 - A searchable database to locate recipes of their choice.
 - A easy-to-use user management system with **CRUD** conventions to:
 
@@ -60,25 +58,28 @@ The player is looking for:
     - See their user information, as applicable.
     - Edit their user account.
     - Delete their user account.
+
 - A easy-to-use dataset management system with **CRUD** conventions to:
 
     - Create recipes.
     - Read recipe dashboards.
     - Edit their own recipe creations.
     - Delete their own recipe creations.
+
 - A intuitive and aesthetically pleasing interface.
 
 #### Developer / Site Owner Goals
 The Developer is looking to:
+
 - Create an inviting, community-drive application that they themselves would use to share their passion for baking.
 - Demonstrate their proficiency in a variety of software development skills, using newly learned languages and libraries as well as a document database system.
 - Deploy a project they are proud and excited to have on their portfolio.
 
 
 ### User Stories
-**As a User, I want to:**
+**As a General User, I want to:**
 
-1. Intuitively navigate to the search function to find recipes on the database. 
+1. Intuitively find recipes on the database. 
 2. View the selected recipe's dashboard to get necessary information.
 3. Seek contact information to send useful feedback to Developer / Site Owner.
 
@@ -90,7 +91,7 @@ The Developer is looking to:
 
 1. Log into my account to gain access to the full functionality of the site.
 2. Navigate to my user profile to edit my account information.
-3. Navigate to my user profile to delete my account information.
+3. Navigate to my account settings to delete my account information.
 4. Navigate to my recipes page to view my uploaded recipes.
 5. Navigate to upload page to add my recipe to the database.
 6. View my own recipe's dashboard to edit recipe as needed.
@@ -98,9 +99,15 @@ The Developer is looking to:
 8. Use a save function to save my favourite recipes from other users.
 9. Navigate to my favourites page to view the recipes I have saved from other users.
 
+**As an Administrative Account holder, I want to:**
+
+1. View **any** recipe dashboard to edit recipe as needed.
+2. View **any** recipe dashboard to delete recipe as needed.
+3. Still maintain a save function to save my favourite recipes from other users.
+
 ### Development Planes
 
-In order to design and create a web-based interactive game, the developer distinguished the required functionality of the site and how it would answer the user stories, as described above, using the **Five Development Planes**:
+In order to design and create a web-based interactive application, the developer distinguished the required functionality of the site and how it would answer the user stories, as described above, using the **Five Development Planes**:
 
 <strong>1. <u>Strategy</u></strong>
 
