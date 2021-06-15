@@ -175,8 +175,9 @@ With these goals in mind, a strategy table was created to determine the trade-of
 A scope was defined in order to clearly identify what needed to be done in order to align features with the strategy previously defined. This was broken into two categories:
 - **Content Requirements**
      - The user will be looking for:
-        - Customisable account
+        - Customisable and Editable account:
             - Custom Username/Password
+            - Custom User Image
             - Upload their own recipes
             - Save favourite recipes
         - Easy Navigation
@@ -193,20 +194,27 @@ A scope was defined in order to clearly identify what needed to be done in order
             - Directions
         - Searchable database system
         - Developer contact information
+
 - **Functionality Requirements**
      - The user will be able to:
         - Register/Login to account
-        - Customise their profile
+        - Customise and edit their profile:
             - Custom Username/Password
+            - Custom User Image
             - Upload their own recipes
             - Save favourite recipes
         - Navigate to recipes:
             - Search by name, category or level
             - My Recipes Page
             - My Favourites Page
-        Create recipes:
-            - Tags
-            - Image Url
+        - Create recipes:
+            - Name
+            - Image URL
+            - Description
+            - Category
+            - Serving Size
+            - Time
+            - Level
             - Ingredients
             - Directions
         - Get in contact with the Developer
