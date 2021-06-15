@@ -668,9 +668,18 @@ def recipe(recipe_id):
         {"_id": ObjectId(recipe_id)})
 
     # checking that the user is in session
-    if "user" in session:
-        user = mongo.db.users.find_one({"username": session["user"]})
+    if "user" not in session:
 
+        # If user is not logged in
+        favourited = False
+
+        return render_template("recipe/recipe.html",
+                            recipe=recipe,
+                            favourited=favourited,
+                            title="Recipe")
+    else:
+        # If user is logged in
+        user = mongo.db.users.find_one({"username": session["user"]})
         favourites = user['favourite_recipes']
 
         # Checking if recipe is in favourites
@@ -685,15 +694,6 @@ def recipe(recipe_id):
                                favourited=favourited,
                                user=user,
                                title="Recipe")
-
-    else:
-        # If user is not logged in
-        favourited = False
-
-    return render_template("recipe/recipe.html",
-                           recipe=recipe,
-                           favourited=favourited,
-                           title="Recipe")
 
 
 # ------- Create Recipe Page -------

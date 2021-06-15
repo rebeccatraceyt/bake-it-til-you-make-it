@@ -101,8 +101,12 @@
                                                 <a href="{{url_for('add_to_favourites', recipe_id=recipe._id)}}"><i class="fas fa-heart"></i> Favourite</a>
                                             </div>
                                         {% endif %}
-                                    
-                                    {% elif user.is_admin%}
+                                    {% else %}
+                                            <div class="recipe-btn faves-btn white-btn">
+                                                <a href="{{url_for('login')}}"><i class="far fa-heart"></i> Login to Favourite</a>
+                                            </div>
+                                    {% endif %}
+                                    {% if session.user and user.is_admin %}
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="recipe-btn">
@@ -124,10 +128,6 @@
                                                 <a href="{{url_for('add_to_favourites', recipe_id=recipe._id)}}"><i class="fas fa-heart"></i> Favourite</a>
                                             </div>
                                         {% endif %}
-                                    {% else %}
-                                            <div class="recipe-btn faves-btn white-btn">
-                                                <a href="{{url_for('login')}}"><i class="far fa-heart"></i> Login to Favourite</a>
-                                            </div>
                                     {% endif %}
                                 </div>
                             </div>
