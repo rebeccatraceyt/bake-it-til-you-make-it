@@ -262,18 +262,23 @@ Wireframe mockups were created in a [Figma Workspace]( "Link to Bake It Figma Wo
 
         ![Indie Flower Typeface Example](static/images/readme-files/indieflower-ex.png "Indie Flower Typeface Example")
 
-     - The charismatic combination of the two typefaces compliments the soft and familiar theme set by the colour palette and overall appearance of the site.
+     - The charismatic combination of both handwritten and typed typefaces compliments the soft and familiar theme set by the colour palette and overall appearance of the site while also maintaining readability.
 
 - <strong>Imagery</strong>
 
-     - The imagery used was created by the developer using the application [Procreate](https://procreate.art/) in order to create a consistency of the elements while maintaining the look and feel of the application.
+     - The imagery used was created by the developer using the application [Procreate](https://procreate.art/ "Link to Procreate") in order to create a consistency of the elements while maintaining the look and feel of the application.
+
+     - The background texture effects used were created on [Transparent Textures](https://www.transparenttextures.com/ "Link to Transparent Textures"). Each one was customised with the colours set out in the colour palette in order to remain consistent. The following textures were used: 
+          - The [Purty Wood](https://www.transparenttextures.com/purty-wood.html "Link to Purty Wood Texture") texture was used as the screen background.
+          - The [Paper 2](https://www.transparenttextures.com/paper-2.html "Link to Paper 2 Texture") texture was used as the background for the 'notebook' effect.
+          - The [Lined Paper](https://www.transparenttextures.com/lined-paper.html "Link to Lined Paper Texture") texture was used as the background for the card and image panels.
 
 [Back to top ⇧](#table-of-contents)
 
 ## Features
 
 ### Design Features
-Each page of the game features a consistently responsive and intuitive navigational system:
+- Each page of the game features a consistently responsive and intuitive navigational system:
 - There is a conventionally placed **Logo** on the top-left of each page. Clicking on the logo will redirect players back to the home page.
 - To ensure the player has full control of the game, there are two **Toggle** functions conventionally located at the top-right corner of each page. These allow the users to control the sound and page theme to their preference.
 - On larger screens, the **Footer** is conventionally placed at the bottom of the screen, allowing users to navigate to the social icon of their choosing.
