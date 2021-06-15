@@ -136,6 +136,9 @@ li {
 /* For consistent design on all pages */
 
 /* -- Section Styling -- */
+#lg-right {
+    padding-bottom: 15px;
+}
 #main-section {
     max-width: 95vw;
     margin: auto; 
@@ -1823,6 +1826,7 @@ footer li {
         -moz-box-shadow: 13px 19px 8px 2px grey;
         box-shadow: 13px 19px 8px 2px grey;
         padding-left: 0;
+        padding-bottom: 0;
     }
 
     /* -- Navbar -- */
