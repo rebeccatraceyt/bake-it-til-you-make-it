@@ -612,9 +612,12 @@ def remove_from_favourites(recipe_id):
                                     }})
             
             flash("Recipe removed from My Favourites")
-            return redirect(url_for('recipe', 
+            
+        else: 
+            flash("Recipe is not in My Favourites!")
+            
+        return redirect(url_for('recipe', 
                                     recipe_id=recipe_id))
-    
     else:
         # if user created recipe they cannot favourite
         flash("This creation is yours!")
