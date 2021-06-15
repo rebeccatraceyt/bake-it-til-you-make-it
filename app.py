@@ -1,3 +1,5 @@
+# ------- Library Imports -------
+
 import os
 from flask import (
         Flask, flash, render_template, 
@@ -9,6 +11,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
+
+# ------- Flask App Configuration -------
 
 app = Flask(__name__)
 
@@ -29,6 +33,8 @@ Pagination adapted from:
 PER_PAGE = 6
 
 def paginated(recipes):
+    
+    # Set pagination configuration
     page, per_page, offset = get_page_args(page_parameter="page",
                                            per_page_parameter="per_page")
     
@@ -38,6 +44,8 @@ def paginated(recipes):
 
 
 def pagination_args(recipes):
+    
+    # Set pagination configuration
     page, per_page, offset = get_page_args(page_parameter="page",
                                            per_page_parameter="per_page")
     
@@ -54,9 +62,10 @@ def pagination_args(recipes):
 def user_logged_in(username):
     """
     Function checks login status of current user.
+        credit: https://github.com/Nicola2309/MS3/blob/master/app.py
     """
     
-    if "user" in session.keys():
+    if "user" in session:
         if session["user"] == username:
             return True
     
@@ -230,7 +239,8 @@ def register():
             "password": generate_password_hash(
                 request.form.get("password")),
             "user_img": request.form.get("user_img"),
-            "favourite_recipes": []
+            "favourite_recipes": [],
+            "is_admin": False
         }
         mongo.db.users.insert_one(register)
         
@@ -326,7 +336,8 @@ def edit_user(username):
                 "password": user["password"],
                 "user_img": user["user_img"],
                 "favourite_recipes": user[
-                    "favourite_recipes"]
+                    "favourite_recipes"],
+                "is_admin": user["is_admin"]
             }
             update_user = {
                 "username": request.form.get("username"),
@@ -334,7 +345,8 @@ def edit_user(username):
                 "password": user["password"],
                 "user_img": request.form.get("user_img"),
                 "favourite_recipes": user[
-                    "favourite_recipes"]
+                    "favourite_recipes"],
+                "is_admin": user["is_admin"]
             }
             
             mongo.db.users.replace_one(
