@@ -460,6 +460,9 @@ In implementing the pagination functionality, a linting error was raised in the 
 ```
 In order to avoid this error, the developer installed and selected `Flake8` to lint through `app.py`.
 
+**Reverted Commits Note** <br>
+The developer was forced to revert two commits ([1](https://github.com/rebeccatraceyt/bake-it-til-you-make-it/commit/4a410cb11de6f90f3fb4a698e61818b1724e7cd6) and [2](https://github.com/rebeccatraceyt/bake-it-til-you-make-it/commit/7a1f64dd73470a54868ffbea1eeb8c6a54770d47)) on the 8th of June in order to backtrack to a previous commit, preserving the functionality that was lost. After trying to implement a `partials` directory, that would store extendable blocks to be used on all pages, the developer noticed that, in doing so, vital functions, including **user authentication** were throwing an error. Having already pushed these commits to Github, developer reverted the commit that implemented the creation of the `login decorator`, as they believed this to be the cause. Once this was reverted, it was clear that it was not the cause and the commit previous to that (the implementation of the `partials` directory) was reverted as well. In doing this, the functionality was restored. The developer chose not to re-implement the `partials` directory but was successful in re-implementing the `login decorator` functionality at a later date. 
+
 [Back to top ⇧](#table-of-contents)
 
 ## Information Architecture
