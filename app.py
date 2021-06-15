@@ -797,32 +797,6 @@ def delete_recipe(recipe_id):
                                 recipe_id=recipe_id))
 
 
-# ------- Admin Functionality -------
-
-@app.route("/user_stats/<username>")
-@login_required
-def user_stats(username):
-    """
-    Allows admin to view and edit accounts
-    """
-    user = mongo.db.users.find_one(
-        {"username": session["user"]})
-    
-    if user["is_admin"]:
-        users = list(mongo.db.users.find())
-        
-        return render_template("admin/user_stats.html",
-                               user=user,
-                               users=users,
-                               username=session["user"],
-                               title="User Stats")
-    else:
-        # if not admin
-        flash("You do not have permission to view this page")
-        return redirect(url_for("my_recipes", 
-                                username=session["user"]))    
-
-
 # ------- Error Handlers -------
 # adapted from: https://flask.palletsprojects.com/en/1.1.x/errorhandling/
 
