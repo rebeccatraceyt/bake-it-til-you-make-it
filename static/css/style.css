@@ -1877,6 +1877,10 @@ footer li {
         font-size: 1.3em;
         padding: 15px;
     }
+    .dropdown-item {
+    color: var(--white);
+    width: 100%;
+}
 
     /* -- Page Section -- */
     #main-section {
