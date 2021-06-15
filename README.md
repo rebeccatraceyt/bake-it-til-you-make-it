@@ -1,5 +1,5 @@
 <h1 align="center">
-     <a href="https://github.com/rebeccatraceyt/bake-it-til-you-make-it" target="_blank"><img src="https://i.ibb.co/jfFtJNB/logo-readme.png" alt="Bake It 'Til You Make It tagline"></a>
+     <a href="https://bake-it-til-you-make-it.herokuapp.com/" target="_blank"><img src="https://i.ibb.co/jfFtJNB/logo-readme.png" alt="Bake It 'Til You Make It"></a>
 </h1>
 <div align="center">
 
@@ -278,28 +278,48 @@ Wireframe mockups were created in a [Figma Workspace]( "Link to Bake It Figma Wo
 ## Features
 
 ### Design Features
-- Each page of the game features a consistently responsive and intuitive navigational system:
-- There is a conventionally placed **Logo** on the top-left of each page. Clicking on the logo will redirect players back to the home page.
-- To ensure the player has full control of the game, there are two **Toggle** functions conventionally located at the top-right corner of each page. These allow the users to control the sound and page theme to their preference.
-- On larger screens, the **Footer** is conventionally placed at the bottom of the screen, allowing users to navigate to the social icon of their choosing.
-- On smaller screens, the **Footer** is placed within a sliding function, where users can click the appropriate icon in order to reveal the footer. This was to ensure that the footer would not interfere with the game-play.
+- Each page of the website features a consistently responsive and intuitive navigational system:
+- There is a conventionally placed **navbar** on the top of each page with easily accessible and identifiable navigation links with a clickable logo, redirecting users back to the home page.
+     - On mobile and tablet screens, the navbar is located in a conventionally placed 'hamburger' menu.
+- There is a **banner image with title** on each page providing users with the necessary feedback of their current position on the site.
+     - On larger screens, an `active` class is used to provide this feedback as well.
+- The **Footer** contains a disclaimer that is hidden, using a **toggler** function to display the information regarding the use of copyrighted material on the website.
+- The **Footer** contains the appropriate **icons** to allow users to:
+     - Link to the developers GitHub Page.
+     - Link to the developers LinkedIn Page.
+     - Open a **Contact Modal** to send a message to the Developer. 
+- [Jinja](http://jinja.pocoo.org/docs/2.10/ "Link to Jinja information") was used to extend the `base.html` page, allowing for the utmost consistency and preservation of functionality across all pages. The extended block elements created the same basic layout for each page:
 
-<dl>
-     <dt>
-          <a href="https://rebeccatraceyt.github.io/WhatTheBlank/" target="_blank" alt="Blank! Home Page">Home Page</a>
-     </dt>
-     <dd>
-          There is a conditional class in place that determines what content the user will see when they enter the website. Based on whether the user has already provided a <strong>Player Name</strong>, the user will see one of the following:
-               <ul>
-                    <li>
-                         <strong>Welcome Menu</strong> - A full-screen welcome menu, introducing the user to the game, providing the basics in how the game works and prompting them to enter a player name of their choice. 
-                    </li>
-                    <li>
-                         <strong>Home Page</strong> - When the user has entered their chosen name, or if they have previously already entered this information, the user will see the home page. Again, a full-screen page, the home page provides a point of navigation for the players to start the game in the category of their choosing.
-                    </li>
-               </ul>
-     </dd>
-</dl>
+```
+<nav>
+     <!-- Navigational content -->
+</nav>
+
+<section>
+
+     {% block header %}
+          <!-- Page Banner Image and Title -->
+     {% endblock %}
+
+     {% block flash %}
+          <!-- Appropriate flash messages -->
+     {% endblock %}
+
+     {% block content %}
+          <!-- Content unique to each page -->
+     {% endblock %}
+
+</section>
+
+<footer>
+     <!-- Footer content -->
+</footer>
+```
+- If the user is in session, there will be additional links added. These links allow users to get straight to where they might want to be. The additions are broken down as follows:
+     - On mobile and tablet screens, an extra `logout` button will appear on the navigation menu in order to provide quick access to logging out.
+     - On larger devices a conventionally placed `user_img` will appear on the right side of the navigation menu, with a dropdown list complete with quick-access links for `Edit Profile`, `Create Recipe` and `Log out`.
+- Recipe **Cards** are used throughout the website, providing users with a snapshot of the recipe and it's information before they view the entire recipe page. Each card is designed the same for consistency purposes and allows the user to either click on the recipe **image** or **name** in order to be directed to the recipe page.
+ 
 
 ### Existing Features
 - **EXAMPLE** - 
