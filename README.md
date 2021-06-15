@@ -322,7 +322,90 @@ Wireframe mockups were created in a [Figma Workspace]( "Link to Bake It Figma Wo
  
 
 ### Existing Features
-- **EXAMPLE** - 
+
+**[Home Page](http://bake-it-til-you-make-it.herokuapp.com/home "Link to Home page")**
+| Feature      | Description  |
+|--------------|--------------|
+| Carousel     | Bootstrap Carousel Component that displays the last four uploaded recipes |
+| Call to Action | Buttons connecting users to **Sign Up** or **Login** pages (**if not signed in**) or **My Recipes** or **My Favourites** pages (**if signed in**)|
+
+
+**[Find A Recipe Page](http://bake-it-til-you-make-it.herokuapp.com/find_recipes "Link to Find A Recipe page")**
+| Feature       | Description  |
+|---------------|--------------|
+| Search Bar    | Search bar function allowing users to **search** for their preferred recipes |
+| Dropdown Menu | Nested dropdown menu to **refine** the users search by either **Category** or **Level**|
+| Pagination    | The **Pagination** functionality will be activated once the amount of recipes to be displayed is over `6`. This was to avoid overwhelming the user.|
+
+**[Sign Up Page](http://bake-it-til-you-make-it.herokuapp.com/register "Link to Sign Up page")**
+| Feature       | Description  |
+|---------------|--------------|
+| Input Fields    | The **input** fields allow users to enter their information. The user can enter a profile image if they wish, or a default image will be used instead.|
+| Image Preview | On adding an image url to the `Profile Picture` field, the user can preview their image to ensure that the link is correct and it is the image they would like to use. |
+| Password Authentication | The **password** field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information") to hash the password on entry and **confirm password** is validated using **Javascript**. |
+| Call to Action | Once the input fields are completed as required, the user can click to **Register** or, if they already have an account, they can **Login**. |
+
+**[Login Page](http://bake-it-til-you-make-it.herokuapp.com/login "Link to Login page")**
+| Feature       | Description  |
+|---------------|--------------|
+| Input Fields    | The **input** fields allow users to enter their information. The user can enter a profile image if they wish, or a default image will be used instead.|
+| Password Authentication | The **password** field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information") to un-hash the salted password on entry and **confirm password** is validated using **Javascript**, with user feedback. |
+| Call to Action | Once the input fields are completed as required, the user can click to **Login** or, if they do not already have an account, they can **Register**. |
+
+**My Recipes Page** (This page requires login authentication)
+| Feature       | Description  |
+|---------------|--------------|
+| Call to Action    | The User's **My Recipes** provides multiple actions the user can take: **Edit Profile**, **Create Profile**, link to **My Favourites** and the **logout** function. |
+
+**My Favourites Page** (This page requires login authentication)
+| Feature       | Description  |
+|---------------|--------------|
+| Call to Action    | The User's **My Favourites** provides multiple actions the user can take: **Edit Profile**, **Create Profile**, link to **My Recipes** and the **logout** function. |
+
+**Edit User Page** (This page requires login authentication)
+| Feature       | Description  |
+|---------------|--------------|
+| Input Fields | The user is able to edit their username and profile image as they see fit. Their current information is used as the **default** value for the fields |
+| Image Preview | On adding a **new** image url to the `Profile Picture` field, the user can preview their image to ensure that the link is correct and it is the image they would like to use.|
+| Call to Action | The user can choose to **Cancel** their actions or **Save** their new information. Another button directs the user to the **Account Settings** page for user to take further action |
+
+**Edit Account Page** (This page requires login authentication)
+| Feature       | Description  |
+|---------------|--------------|
+| Input Fields | On this page the user is able to change their password if they wish, their current password is *not* set as the default value.|
+| Password Authentication | The **password** field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information") to hash the password on entry and **confirm password** is validated using **Javascript**, with user feedback. |
+| Call to Action | The user can choose to go **Back** to the previous page (**Edit User**) or **Save** their new information. Another button (**Delete Account**) opens the `delete_user` **modal** |
+| Modal | The `delete_user` **modal** is defensively designed allowing the user to confirm their actions before proceeding with the deletion. |
+
+**Create Recipe Page** (This page requires login authentication)
+| Feature       | Description  |
+|---------------|--------------|
+| Input Fields | The **input fields** allow the user to input the recipe information as necessary. All fields are appropriately **validated**, with the exception of `Recipe Image` and `Recipe URL` to allow for the upload of recipes not available online.|
+| Image Preview | On adding an image url to the `Recipe Image` field, the user can preview their image to ensure that the link is correct and it is the image they would like to use.|
+| Dynamic Input Fields| The fields for `Ingredients` and `Directions` allow for dynamic input. The user can use the **Add Ingredient**, **Add Direction** or **Delete** buttons to add fields as necessary. This was used in order to create a dynamic array of both lists for a much cleaner and readable display.|
+| Call to Action | As well as the **Add Ingredient** and **Add Direction** buttons, there is a **Cancel** and **Add Recipe** button, directing the user to the appropriate page.|
+
+**Edit Recipe Page** (This page requires login authentication)
+| Feature       | Description  |
+|---------------|--------------|
+| Input Fields | The **input fields** allow the user to edit the recipe information as necessary. All fields use the current values as their default, allowing the user to only change the information they need to.|
+| Image Preview | On adding a **new** image url to the `Recipe Image` field, the user can preview their image to ensure that the link is correct and it is the image they would like to use.|
+| Dynamic Input Fields| The fields for `Ingredients` and `Directions` allow for dynamic input. The user can use the **Add Ingredient**, **Add Direction** or **Delete** buttons to add and remove fields as necessary, with the exception of the first in each list, in order to preserve the array.|
+| Call to Action | As well as the **Add Ingredient** and **Add Direction** buttons, there is a **Cancel** and **Add Recipe** button, directing the user to the appropriate page. A **Delete** button, opens the delete_recipe modal |
+| Modal | The `delete_recipe` **modal** is defensively designed allowing the user to confirm their actions before proceeding with the deletion. |
+
+**[Recipe Page (Apple Tart Recipe)](http://bake-it-til-you-make-it.herokuapp.com/recipe/60b8d90f21c54a83d5c121e1 "Link to Apple Tart Recipe Page")**
+
+**Call to Action** 
+
+The buttons on the recipe page are conditional to the user's role on the website, with the following break down:
+
+| Role       | Conditional Buttons  |
+|---------------|--------------|
+| Not Logged in| **Login To Add Favourites** Button directing the user to login in, in order to save the recipe to their favourites|
+| Logged in user is **not** author | **Add To Favourites** Button direction the user to add the recipe to their favourites. They are then redirected back to the recipe page with a new **Remove from Favourites** button.|
+| Logged in user **is** author | **Edit** and **Delete** buttons direct the user to **Edit Recipe Page** and `delete_recipe` **modal** respectively.|
+| Logged in user is **Admin** | The administrative user has access to **Edit** and **Delete** buttons as well as the **Add To Favourites** or **Remove from Favourites** (should they want to save it)|
 
 ### Features to Implement in the future
 - **EXAMPLE** - 
