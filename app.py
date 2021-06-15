@@ -70,12 +70,12 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         
-        # User not logged in
+        # User NOT logged in
         if "user" not in session:
             flash("Please log in to view this page!")
             return redirect(url_for("login"))
         
-        # User is logged in
+        # User IS logged in
         return f(*args, **kwargs)
     
     return decorated_function
@@ -92,6 +92,8 @@ def home():
     latest_recipes = mongo.db.recipes.find().sort("_id", -1).limit(4)
     
     if "user" in session:
+        
+        # user variable for user image
         user = mongo.db.users.find_one(
             {"username": session["user"]})
     
@@ -116,6 +118,8 @@ def find_recipes():
     pagination = pagination_args(recipes)
     
     if "user" in session:
+        
+        # user variable for user image
         user = mongo.db.users.find_one(
             {"username": session["user"]})
     
@@ -135,6 +139,7 @@ def find_recipes():
 @app.route("/search", methods=['GET', 'POST'])
 def search():
     
+    # query search index set out in MongoDB
     query = request.form.get("query")
     
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
@@ -146,6 +151,8 @@ def search():
     pagination = pagination_args(recipes)
     
     if "user" in session:
+        
+        # user variable for user image
         user = mongo.db.users.find_one(
             {"username": session["user"]})
     
@@ -174,6 +181,8 @@ def category_filter(id):
     pagination = pagination_args(recipes)
     
     if "user" in session:
+        
+        # user variable for user image
         user = mongo.db.users.find_one(
             {"username": session["user"]})
     
@@ -197,6 +206,8 @@ def difficulty_filter(id):
     pagination = pagination_args(recipes)
     
     if "user" in session:
+        
+        # user variable for user image
         user = mongo.db.users.find_one(
             {"username": session["user"]})
     
@@ -258,6 +269,7 @@ def register():
                            title="Sign Up")
         
     else:
+        # If user is logged in
         flash("You already have an account!")
         return redirect(url_for("my_recipes", 
                                 username=session["user"]))
@@ -303,6 +315,7 @@ def login():
                             title="Login")
     
     else:
+        # If user is logged in
         flash("You are already logged in!")
         return redirect(url_for("my_recipes", 
                                 username=session["user"]))
@@ -317,9 +330,9 @@ def logout():
     Allows current session user to log out.
     """
     
-    flash("Logged out. See you soon!")
     # User session cookies removal
     session.pop("user")
+    flash("Logged out. See you soon!")
     return redirect(url_for("login"))
 
 
@@ -332,6 +345,7 @@ def edit_user(username):
     Allows user to edit profile
     """
     
+    # user variable for user image
     user = mongo.db.users.find_one(
         {"username": session["user"]})
     
@@ -339,6 +353,7 @@ def edit_user(username):
            
         # Update profile function
         if request.method == "POST":
+            # current fields
             current_user = {
                 "username": user["username"],
                 "email": user["email"],
@@ -347,6 +362,7 @@ def edit_user(username):
                 "favourite_recipes": user["favourite_recipes"],
                 "is_admin": user["is_admin"]
             }
+            # updated fields
             update_user = {
                 "username": request.form.get("username"),
                 "email": user["email"],
@@ -369,6 +385,7 @@ def edit_user(username):
                             title="Edit User")
     
     else:
+        # if wrong user
         flash("You do not have permission to view this page")
         return redirect(url_for("my_recipes", 
                                 username=session["user"]))
@@ -385,6 +402,7 @@ def edit_account(username):
         - Delete Account
     """
     
+    # user variable for user image
     user = mongo.db.users.find_one(
         {"username": session["user"]})
     
@@ -392,6 +410,7 @@ def edit_account(username):
            
         # Update profile function
         if request.method == "POST":
+            # current fields
             current_user = {
                 "username": user["username"],
                 "email": user["email"],
@@ -399,6 +418,7 @@ def edit_account(username):
                 "user_img": user["user_img"],
                 "favourite_recipes": user["favourite_recipes"]
             }
+            #updated fields
             update_user = {
                 "username": user["username"],
                 "email": user["email"],
@@ -422,6 +442,7 @@ def edit_account(username):
                                title="Edit Account")
     
     else:
+        # if wrong user
         flash("You do not have permission to view this page")
         return redirect(url_for("my_recipes", 
                                 username=session["user"]))
@@ -445,6 +466,7 @@ def delete_user(username):
         return redirect(url_for("register"))
     
     else:
+        # if wrong user
         flash("You do not have permission to do that!")
         return redirect(url_for("my_recipes", 
                                 username=session["user"]))
@@ -471,6 +493,7 @@ def my_recipes(username):
         pagination = pagination_args(recipes)
         
     else:
+        # if wrong user
         flash("You do not have permission to view this page")
         return redirect(url_for("my_recipes", 
                                 username=session["user"]))
@@ -507,8 +530,9 @@ def my_favourites(username):
         pagination = pagination_args(recipes)
     
     else:
+        # if wrong user
         flash("You do not have permission to view this page")
-        return redirect(url_for("my_recipes", 
+        return redirect(url_for("my_favourites", 
                                 username=session["user"]))
     
     return render_template("user/my_favourites.html", 
@@ -528,10 +552,10 @@ def add_to_favourites(recipe_id):
     """
     Added recipe to the current users 'favourites'
     """
-    recipe_author = mongo.db.recipes.find_one(
+    recipe = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})
        
-    if session["user"] != recipe_author["baker"]:
+    if session["user"] != recipe["baker"]:
         user = mongo.db.users.find_one(
             {"username": session["user"]})
         
@@ -553,6 +577,7 @@ def add_to_favourites(recipe_id):
         return redirect(url_for("recipe", 
                                 recipe_id=recipe_id))
     else:
+        # if user created recipe, they cannot favourite
         flash("This creation is yours!")
         return redirect(url_for("recipe", 
                                 recipe_id=recipe_id))        
@@ -566,10 +591,10 @@ def remove_from_favourites(recipe_id):
     Allows user to remove favourited recipe from favourites
     """
     
-    recipe_author = mongo.db.recipes.find_one(
+    recipe = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})
        
-    if session["user"] != recipe_author["baker"]:
+    if session["user"] != recipe["baker"]:
         
         user = mongo.db.users.find_one({"username": session["user"]})
     
@@ -591,6 +616,7 @@ def remove_from_favourites(recipe_id):
                                     recipe_id=recipe_id))
     
     else:
+        # if user created recipe they cannot favourite
         flash("This creation is yours!")
         return redirect(url_for("recipe", 
                                 recipe_id=recipe_id))
@@ -607,13 +633,13 @@ def recipe(recipe_id):
     recipe = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})
 
-    
     # checking that the user is in session
     if "user" in session:
         user = mongo.db.users.find_one({"username": session["user"]})
         
         favourites = user['favourite_recipes']
         
+        # Checking if recipe is in favourites
         if ObjectId(recipe_id) in favourites:
             favourited = True
 
@@ -627,6 +653,7 @@ def recipe(recipe_id):
                                title="Recipe")
         
     else:
+        # If user is not logged in
         favourited = False
         
     return render_template("recipe/recipe.html", 
@@ -644,6 +671,7 @@ def create_recipe():
     Registered users can upload their favourite recipes.
     """
     
+    # user variable for user image
     user = mongo.db.users.find_one(
         {"username": session["user"]})
     
@@ -725,6 +753,7 @@ def edit_recipe(recipe_id):
                                 title="Edit Recipe")
                 
     else:
+        # if wrong user
         flash("You do not have permission to view this page")
         return redirect(url_for('recipe', 
                                 recipe_id=recipe_id))
@@ -759,6 +788,7 @@ def delete_recipe(recipe_id):
                                 username=session["user"]))
     
     else:
+        # if wrong user
         flash("You do not have permission to view this page")
         return redirect(url_for('recipe', 
                                 recipe_id=recipe_id))
@@ -784,6 +814,7 @@ def user_stats(username):
                                username=session["user"],
                                title="User Stats")
     else:
+        # if not admin
         flash("You do not have permission to view this page")
         return redirect(url_for("my_recipes", 
                                 username=session["user"]))    
