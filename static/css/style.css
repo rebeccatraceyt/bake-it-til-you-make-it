@@ -1445,8 +1445,349 @@ footer li {
 
 }
 
+/* Breakpoint to maintain structural integrity on a Larger Tablet device */
+@media (min-width: 992px) and (max-width: 1024px) {
+
+    /* -- Background -- */
+    #content-div {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 15px;
+    }
+    #lg-left {
+        padding-top: 10px;
+        max-width: 3vw;
+        height: 98vh;
+        margin: 0;
+        padding-right: 0;
+    }
+    #lg-left img {
+        height: 98vh;
+    }
+    #lg-right {
+        background-image: url("../images/paper-bg.png");
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+        min-width: 93vw;
+        height: 98vh;
+        margin-top: 10px;
+
+        overflow: auto;
+
+        -webkit-box-shadow: 13px 19px 8px 2px grey;
+        -moz-box-shadow: 13px 19px 8px 2px grey;
+        box-shadow: 13px 19px 8px 2px grey;
+        padding-left: 0;
+    }
+    /* -- Navbar -- */
+    .navbar {
+        background-image: url("../images/paper-bg.png");
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        padding-top: 0;
+    }
+    .navbar .navbar-nav .nav-link {
+        vertical-align: middle;
+        text-align: center;
+        font-size: 1.1em;
+        padding: .3em .7em;
+    }
+    .navbar-brand img {
+        padding: 10px;
+        width: 140px;
+        margin: auto;
+    }
+    .user-logo img {
+        background-image: url("../images/white-texture.png");
+        padding: 4px;
+        margin: auto 0;
+        display: flex;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+
+        -webkit-border-radius: 10%;
+        -moz-border-radius: 10%;
+        border-radius: 10%;
+
+        -webkit-box-shadow: var(--dark-box) 0px 0 10px;
+        -moz-box-shadow: var(--dark-box) 0 0 10px;
+        box-shadow: var(--dark-box) 0 0 10px;
+    }
+    .user-logo.dropdown-toggle::after {
+        content: none;
+    }
+    #user-quicklinks.dropdown-menu a {
+        text-align: center;
+        min-width: 100%;
+        font-size: 1.3em;
+        padding: 15px;
+    }
+
+    /* -- Page Section -- */
+    #main-section {
+        background: transparent;
+        padding-bottom: 1%;
+    }
+    .page-banner {
+        padding: 100px 20px 40px 20px ;
+    }
+    .page-padding {
+        padding: 20px 30px;
+    }
+    .page-banner h2 {
+        font-size: 4em;
+    }
+    .page-intro {
+        font-size: 1.3em;
+    }
+    .page-banner br {
+        display: none;
+    }
+    .db-name h4 {
+        font-size: 2em;
+    }
+    #flash-box {
+        max-width: 50%;
+        margin: 20px auto 0 auto;
+    }
+    #flash-text {
+        font-size: 1.5em;
+    }
+
+    /* -- Recipe Cards -- */
+    .recipe-card-img {
+        width: 95%;
+        height: 18em;
+    }
+    .recipe-name {
+        text-align: left;
+    }
+    .recipe-text span {
+        font-size: 1em;
+    }
+    .recipe-icon.iconify {
+        font-size: 1em;
+    }
+    .recipe-cards {
+        margin: 15px auto;
+        padding: 0 5px;
+    }
+
+    /* -- Homepage -- */
+    #home-sec {
+        padding: 2%;
+    }
+    #home-bio {
+        padding: 0 50px;
+        margin: auto;
+        border: none;
+    }
+    #home-bio h4 {
+        font-size: 3em;
+    }
+    #home-bio p {
+        font-size: 1.1em;
+    }
+    #home-bio h5 {
+        font-size: 1.3em;
+    }
+    #home-btn a {
+        min-width: 40%;
+        max-width: 70%;
+        font-size: 1.4em;
+        padding: 15px;
+        margin: 5px auto;
+    }
+    #latestRecipes {
+        max-width: 80%;
+        margin: auto;
+    }
+    .carousel-item .recipe-name a {
+        font-size: 1.2em;
+    }
+    
+    /* -- Find Recipes -- */
+    #search-function {
+        max-width: 50%;
+    }
+    #search-bar input, #search-bar button { 
+        font-size: 1.3em;
+    }
+    #search-filter {
+        padding: 10px;
+        max-width: 30%;
+    }
+    #filter-text h2 {
+        font-size: 1.2em;
+    }
+    #search-rec {
+        padding: 40px;
+    }
+    #search-rec h4 {
+        font-size: 2.5em;
+    }
+    #search-recipes {
+        padding-top: 40px;
+    }
+
+    /* -- Accounts Page -- */
+    .accounts-bg {
+        margin: 2% 30%;
+    }
+    .accounts-label input {
+        margin: auto;
+        max-width: 90%;
+    }
+    .accounts-label label {
+        margin: auto;
+        font-size: 1.1em;
+        padding-left: 35px;
+    }
+    .accounts-label small {
+        padding-left: 35px;
+    }
+    .accounts-link {
+        font-size: 1.1em;
+    }
+    #login-page.page-padding {
+        min-height: 30vh;
+    }
+    .edit-btns {
+        padding: 0 30px;
+    }
+    .edit-btn {
+        max-width: 50%;
+    }
+    .end-edit-btn {
+        max-width: 60%;
+    }
+    .end-input {
+        padding-bottom: 30px;
+    }
+
+    /* Create/Edit Recipe Page */
+    .create-bg {
+        margin: 2% 20%;
+    }
+    .create-label {
+        font-size: 1.2em;
+    }
+    .img-container {
+        max-width: 50%;
+    }
+    .create-btns {
+        margin: 1% 20%;
+    }
+    .create-btn button, .create-btn a {
+        font-size: 1.3em;
+    }
+    #delete-recipe-btn {
+        max-width: 60%;
+        font-size: 1em;
+    }
+
+    /* -- My Recipes/Favourites Page */
+    .profile-img-box {
+        max-width: 100%;
+        height: 18em;
+    }
+    .profile-img {
+        padding: 10px;
+    }
+    .profile-btns {
+        margin: 20px auto;
+    }
+    .profile-btns a {
+        min-width: 60%;
+        max-width: 90%;
+        font-size: 1.4em;
+    }
+    .profile-intro {
+        padding: 0;
+        margin: auto;
+        border: none;
+    }
+    .profile-text h4{
+        font-size: 4em;
+    }
+    .profile-text p {
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 1.5em;
+    }
+    .profile-intro .profile-btns a {
+        min-width: 30%;
+        max-width: 30%;
+        font-size: 1.6em;
+        padding: 15px;
+        margin: 5px auto;
+    }
+    .profile-recipes {
+        border: none;
+        padding-top: 0;
+    }
+
+    /* -- Individual Recipe Page */
+    #recipe-intro {
+        margin: 4% 5% 2% 5%;
+        padding: 20px 10px;
+    }
+    #recipe-info-box {
+        margin: auto;
+        max-width: 40%;
+        padding: 20px;
+    }
+    #rec-info p {
+        font-size: 1em;
+    }
+    #rec-specs {
+        margin: auto;
+        max-width: 95%;
+    }
+    #recipe-img-box {
+        margin: auto;
+        padding: 20px;
+        max-width: 60%;
+        height: 400px;
+    }
+    #rec-ingredients {
+        margin: 10% 5% 5% 10%;
+        padding: 0 0 0 20px;
+    }
+    #rec-directions {
+        padding: 0 40px 0 0;
+    }
+
+    /* -- Footer -- */
+    footer {
+        max-width: 93vw;
+        margin: auto;
+    }
+    footer ul {
+        font-size: 1.3em;
+    }
+
+    /* -- Error Pages */
+    .error-img {
+        width: 40%;
+    }
+    .error-page h1 {
+        font-size: 5em;
+    }
+    .error-page p {
+        font-size: 1.5em;
+    }
+}
 /* Breakpoint to maintain structural integrity on a Laptop Screen */
-@media (min-width: 992px){ 
+@media (min-width: 1025px){ 
 
     /* -- Background -- */
     #content-div {
@@ -1701,7 +2042,7 @@ footer li {
     /* -- My Recipes/Favourites Page */
     .profile-img-box {
         max-width: 100%;
-        height: 25em;
+        height: 30em;
     }
     .profile-img {
         padding: 10px;
