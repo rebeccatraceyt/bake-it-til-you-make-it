@@ -543,6 +543,9 @@ The `base.html` page uses Jinja templates in order to extend its components (e.g
 **Edit User Page** <br>
 In order to make the `edit_user.html` functionality more user-friendly, the developer tried to create a possibility that the user would not have to change their password if they did not wish to (e.g. if they only wanted to change their user image). The problem with this was that should the user leave the password field blank (choosing not to change it), it would automatically change the users password to 'blank' on the database. This was insufficient and in no ways user-friendly, so the developer researched other methods. Their first thought was to use the user's password value as the default value for the field but, as the password is hashed and salted using `werkzeug.security`import, this would not work. The alternative, and the conclusive solution, was to create a separate accounts settings page, where the user has the freedom to change their password or delete their account.
 
+**Password Authentication** <br>
+The developer encountered a bug in authenticating passwords on both **Edit User** and **Register** page. The `password` and `confirm password` fields are validated using a `JavaScript` function to confirm that the values match. The problem with this was that it did not matter to either the **Save** button or the **Register** whether the passwords match and so a user could accidentally create a faulty password, losing access to their account. In order to fix this bug, the developer, on the advice of their mentor, created a conditional `disabled` class for the buttons alongside the `JavaScript` function, preventing the user submitting a password error.
+
 **Pagination** <br>
 In implementing the pagination functionality, a linting error was raised in the terminal due to the developer using the `Pylint` extension in their IDE. The message was:
 
