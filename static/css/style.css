@@ -921,7 +921,7 @@ li {
     -moz-box-shadow: 3px 3px 3px 3px var(--light-box); 
     box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
-.recipe-btn a:hover {
+.recipe-btn a:hover, .recipe-btn button:hover {
     background-color: var(--white);
     color: var(--text);
 }
@@ -1461,7 +1461,7 @@ footer li {
     #rec-info p {
         font-size: 1.1em;
     }
-    .faves-btn {
+    .faves-btn, #go-back.recipe-btn {
         max-width: 80%;
     }
     #recipe-img-box {
