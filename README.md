@@ -472,7 +472,7 @@ For this project, the NoSQL database MongoDB was used to store the dataset. With
 | Feature       | Description  |
 |---------------|--------------|
 | Input Fields | On this page the user is able to change their password if they wish, their current password is *not* set as the default value.|
-| Password Authentication | The **password** field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information") to hash the password on entry and **confirm password** is validated using **Javascript**, with user feedback. |
+| Password Authentication | The **password** field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information") to hash the password on entry and **confirm password** is validated using **Javascript**, with user feedback. If the passwords do not match, a `disabled` class is added to the **Save** button, preventing a password error|
 | Call to Action | The user can choose to go **Back** to the previous page (**Edit User**) or **Save** their new information. Another button (**Delete Account**) opens the `delete_user` **modal** |
 | Modal | The `delete_user` **modal** is defensively designed allowing the user to confirm their actions before proceeding with the deletion. |
 

@@ -24,10 +24,14 @@ $(function () {
 /* Confirm Passwords Match
     Sourced from https://stackoverflow.com/questions/21727317/how-to-check-confirm-password-field-in-form-without-reloading-page/21727518 */
 $('#password, #confirm_password').on('keyup', function () {
-  if ($('#password').val() == $('#confirm_password').val()) {
-    $('#message').html('Passwords match!').css('color', 'green');
-  } else 
+  if ($('#password').val() != $('#confirm_password').val()) {
     $('#message').html('Passwords do not match').css('color', 'red');
+    $('.submit-btn').prop('disabled', true).addClass('disabled');
+  } 
+  else if ($('#password').val() == $('#confirm_password').val()) {
+    $('#message').html('Passwords match!').css('color', 'green');
+    $('.submit-btn').prop('disabled', false).removeClass('disabled');
+  }
 });
 
 /* Show Image Preview

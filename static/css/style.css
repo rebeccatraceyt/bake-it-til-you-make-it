@@ -577,7 +577,14 @@ li {
 .edit-btn button:hover, .edit-btn a:hover {
     background: var(--white);
     color: var(--text);
-    border: none;
+}
+.edit-btn button.submit-btn.disabled {
+    opacity: 0.7; 
+    border: 2px inset var(--text);  
+}
+.edit-btn button.submit-btn.disabled:hover {
+    background-color: var(--text);
+    color: var(--white);  
 }
 
 /*------------------------------------------------------- Create/Edit Recipe Page */
