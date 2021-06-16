@@ -465,7 +465,7 @@ For this project, the NoSQL database MongoDB was used to store the dataset. With
 | Feature       | Description  |
 |---------------|--------------|
 | Input Fields | The user is able to edit their username and profile image as they see fit. Their current information is used as the **default** value for the fields |
-| Image Preview | On adding a **new** image url to the `Profile Picture` field, the user can preview their image to ensure that the link is correct and it is the image they would like to use.|
+| Image Preview | The `Profile Image` field allows the user to preview their current profile image. Changing the image url calls a `JavaScript` function, allowing the user to get real-time feedback as they change the image.|
 | Call to Action | The user can choose to **Cancel** their actions or **Save** their new information. Another button directs the user to the **Account Settings** page for user to take further action |
 
 **Edit Account Page** (This page requires login authentication)
@@ -480,7 +480,7 @@ For this project, the NoSQL database MongoDB was used to store the dataset. With
 | Feature       | Description  |
 |---------------|--------------|
 | Input Fields | The **input fields** allow the user to input the recipe information as necessary. All fields are appropriately **validated**, with the exception of `Recipe Image` and `Recipe URL` to allow for the upload of recipes not available online.|
-| Image Preview | On adding an image url to the `Recipe Image` field, the user can preview their image to ensure that the link is correct and it is the image they would like to use.|
+| Image Preview | The `Recipe Image` field allows the user to preview their current recipe image. Changing the image url calls a `JavaScript` function, allowing the user to get real-time feedback as they change the image.|
 | Dropdown Menu| User can refine their recipe using the dropdown menu|
 | Dynamic Input Fields| The fields for `Ingredients` and `Directions` allow for dynamic input. The user can use the **Add Ingredient**, **Add Direction** or **Delete** buttons to add fields as necessary. This was used in order to create a dynamic array of both lists for a much cleaner and readable display.|
 | Call to Action | As well as the **Add Ingredient** and **Add Direction** buttons, there is a **Cancel** and **Add Recipe** button, directing the user to the appropriate page.|
