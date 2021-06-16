@@ -35,6 +35,7 @@ The recipe database encourages users to create an account that will allow them t
      3. [1. Heroku App Creation](#3-Heroku-App-Creation)
 8. [Credits](#Credits)
 9. [Acknowledgements](#Acknowledgements)
+10. [Technical Support](#Technical-Support)
 ***
 
 ![Bake It 'til You Make It Responsiveness](assets/readme-files/responsive.png)
@@ -685,6 +686,14 @@ The developer would like to thank the following:
 - Tim Nelson for the walkthrough videos on the Code Institute platform.
 - Their mentor Seun for her consistent guidance and support.
 - Their family and friends for providing a limitless amount of encouragement and suggestions during the entire process of development.
+
+[Back to top ⇧](#table-of-contents)
+
+***
+
+## Technical Support
+
+If you encounter any issues with this website, or require any further clarification or support, please email the [developer](mailto:rebecca.traceytimoney@gmail.com?subject=[Bake%It%Support]). Thank you!
 
 [Back to top ⇧](#table-of-contents)
 
