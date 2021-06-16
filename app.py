@@ -452,7 +452,7 @@ def edit_account(username):
             mongo.db.users.replace_one(
                 current_user, update_user, True)
 
-            flash("{}'s Password Updated!".format(
+            flash("Account Updated! Log back in to confirm changes.".format(
                     request.form.get("username")))
             session.pop("user")
             return render_template("user/login.html",
