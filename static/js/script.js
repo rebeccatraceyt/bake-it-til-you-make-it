@@ -26,6 +26,9 @@ $(function () {
 $('#password, #confirm_password').on('keyup', function () {
   if ($('#password').val() != $('#confirm_password').val()) {
     $('#message').html('Passwords do not match').css('color', 'red');
+
+    /* Disable class prevents the user from submitting before the passwords match
+        https://stackoverflow.com/questions/15122526/disable-button-in-jquery/47148907 */
     $('.submit-btn').prop('disabled', true).addClass('disabled');
   } 
   else if ($('#password').val() == $('#confirm_password').val()) {
