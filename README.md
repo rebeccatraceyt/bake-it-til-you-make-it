@@ -680,8 +680,11 @@ For code that was copied and edited, the developer made sure to reference this w
 [Back to top ⇧](#table-of-contents)
 
 ## Acknowledgements
-- I would like to thank my mentor Seun for her unwavering encouragement and guidance throughout.
-- I would like to thank my family and friends for their never-ending encouragement and valued opinions during the entire process of development.
+The developer would like to thank the following:
+- Fellow CI students, for the inspiration and guidance.
+- Tim Nelson for the walkthrough videos on the Code Institute platform.
+- Their mentor Seun for her consistent guidance and support.
+- Their family and friends for providing a limitless amount of encouragement and suggestions during the entire process of development.
 
 [Back to top ⇧](#table-of-contents)
 
