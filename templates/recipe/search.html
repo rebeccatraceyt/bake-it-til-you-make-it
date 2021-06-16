@@ -4,23 +4,15 @@
 {% block header %}
 
     <!-- Page Title -->
-    <h2> <span>{{ results_count }}</span> Results Found For "<span class="text-uppercase">{{ query }}</span>"</h2>
+    <h2> <span>{{ results_count }}</span> Results Found For <br class="d-block d-md-none"> "<span class="text-uppercase">{{ query }}</span>"</h2>
     
 {% endblock %}
 
 {% block content %}
 
-            <!-- Search Again Function -->
-            <div id="search-filter" class="row">
-                <div class="col-12">
-                    <a class="filter-text btn" href="{{ url_for('find_recipes') }}">
-                        <h2><i class="fas fa-sync-alt" aria-hidden="true"></i> Search Again</h2>
-                    </a>
-                </div>
-            </div>
-
+        <div class="container-fluid">
             <!-- Search Results-->
-            <div id="search_results" class="row search-area">
+            <div class="row search-area search-results">
 
                 {% if recipes|length > 0 %}
                     {% for recipe in recipes %}
@@ -139,6 +131,15 @@
                         </div>
                     {% endfor %}
                 {% endif %}
+            </div>
+
+            <!-- Search Again Function -->
+            <div class="row search-filter search-results">
+                <div class="col-12">
+                    <a class="btn" href="{{ url_for('find_recipes') }}">
+                        <h2><i class="fas fa-sync-alt" aria-hidden="true"></i> Search Again</h2>
+                    </a>
+                </div>
             </div>
         </div>
 
