@@ -282,6 +282,14 @@ Wireframe mockups were created in a [Figma Workspace](https://www.figma.com/file
 
      (All modals were styled the same, using their unique content, in order to remain consistent)
 
+**Updates to design:** </br>
+While the developer relied heavily on these Wireframes in order to maintain the desired design, there are differences between the Mockups and the final product:
+- Most notably, the graphics were changed on the header images for readability purposes to create a better User Experience.
+- The colouring for the buttons were altered to distinguish their purpose:
+     - *Brown* for normal functionality.
+     - *White* for 'cancel' actions (return or logout).
+     - *Red* for 'danger' actions (delete or alter account and recipes).
+
 <strong>5. <u>Surface</u></strong>
 
 
