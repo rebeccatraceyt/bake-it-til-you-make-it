@@ -544,6 +544,16 @@ li {
     padding-bottom: 15px;
 }
 
+/* Specific to Register */
+.accounts-btn button.submit-btn.disabled {
+    opacity: 0.7; 
+    border: 2px inset var(--text);  
+}
+.accounts-btn button.submit-btn.disabled:hover {
+    background-color: var(--text);
+    color: var(--white);  
+}
+
 /* Specific to Login */
 #login-page.page-padding {
     min-height: 65vh;

@@ -441,7 +441,7 @@ For this project, the NoSQL database MongoDB was used to store the dataset. With
 |---------------|--------------|
 | Input Fields    | The **input** fields allow users to enter their information. The user can enter a profile image if they wish, or a default image will be used instead.|
 | Image Preview | On adding an image url to the `Profile Picture` field, the user can preview their image to ensure that the link is correct and it is the image they would like to use. |
-| Password Authentication | The **password** field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information") to hash the password on entry and **confirm password** is validated using **Javascript**. |
+| Password Authentication | The **password** field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information") to hash the password on entry and **confirm password** is validated using **Javascript**. If the passwords do not match, a `disabled` class is added to the **Register** button, preventing a password error|
 | Call to Action | Once the input fields are completed as required, the user can click to **Register** or, if they already have an account, they can **Login**. |
 
 **[Login Page](http://bake-it-til-you-make-it.herokuapp.com/login "Link to Login page")**
@@ -464,7 +464,7 @@ For this project, the NoSQL database MongoDB was used to store the dataset. With
 **Edit User Page** (This page requires login authentication)
 | Feature       | Description  |
 |---------------|--------------|
-| Input Fields | The user is able to edit their username and profile image as they see fit. Their current information is used as the **default** value for the fields |
+| Input Fields | The user is able to edit their profile image as they see fit. Their current information is used as the **default** value for the fields |
 | Image Preview | The `Profile Image` field allows the user to preview their current profile image. Changing the image url calls a `JavaScript` function, allowing the user to get real-time feedback as they change the image.|
 | Call to Action | The user can choose to **Cancel** their actions or **Save** their new information. Another button directs the user to the **Account Settings** page for user to take further action |
 
