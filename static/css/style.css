@@ -1557,6 +1557,7 @@ footer li {
     }
     .page-padding {
         padding: 20px 30px;
+        min-height: 60vh;
     }
     .page-banner h2 {
         font-size: 4em;
@@ -1665,10 +1666,10 @@ footer li {
     .accounts-label label {
         margin: auto;
         font-size: 1.1em;
-        padding-left: 35px;
+        padding-left: 20px;
     }
     .accounts-label small {
-        padding-left: 35px;
+        padding-left: 20px;
     }
     .accounts-link {
         font-size: 1.1em;
@@ -2015,10 +2016,10 @@ footer li {
     .accounts-label label {
         margin: auto;
         font-size: 1.3em;
-        padding-left: 35px;
+        padding-left: 20px;
     }
     .accounts-label small {
-        padding-left: 35px;
+        padding-left: 20px;
     }
     .accounts-link {
         font-size: 1.2em;
