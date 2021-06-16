@@ -156,6 +156,7 @@ def search():
     query = request.form.get("query")
 
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    results_count = len(recipes)
 
     # recommended functionality adapted from:
     # https://github.com/johnnycistudent/recipe-app/blob/master/app.py
@@ -176,6 +177,7 @@ def search():
                                user=user,
                                recommended=recommended,
                                query=query,
+                               results_count=results_count,
                                pagination=pagination,
                                title="Search Results")
 
@@ -183,6 +185,7 @@ def search():
                            recipes=recipes_paginated,
                            recommended=recommended,
                            query=query,
+                           results_count=results_count,
                            pagination=pagination,
                            title="Search Results")
 

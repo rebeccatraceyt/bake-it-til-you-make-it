@@ -411,16 +411,12 @@ li {
 #search-filter .dropdown {
     padding: 4px;
 }
-.filter-text {    
-    max-width: 90%;
-    margin: 6px 12px 0px 12px;
-}
-.filter-text h2 {
+#search-filter h2 {
     width: 100%;
     font-size: 1.1em;
     color: var(--white);
 }
-#search-filter button {
+#search-filter button, #search-filter a {
     width: 100%;
     background-color: var(--text);
     color: var(--white);
@@ -1660,9 +1656,6 @@ footer li {
     #search-filter {
         max-width: 50%;
     }
-    .filter-text h2 {
-        font-size: 1.2em;
-    }
     .search-text {
         padding: 40px;
     }
@@ -2003,9 +1996,6 @@ footer li {
     #search-filter {
         padding: 10px;
         max-width: 30%;
-    }
-    .filter-text h2 {
-        font-size: 1.3em;
     }
     #search-filter button {
         padding: 5px 20px;
