@@ -34,9 +34,10 @@ $('#password, #confirm_password').on('keyup', function () {
     Sourced from http://jsfiddle.net/2d7axmdr */
 function recipeImg() {
     // For recipes
-    $(".img-container").css("display", "flex");
+    $(".new-img").css("display", "flex");
+    $(".current-img").css("display", "none");
     var url = $("#recipe_img").val();
-    $('.img-preview').attr('src',url);
+    $('.img-window').attr('src',url);
 }
 function userImg() {
     // For users

@@ -31,9 +31,18 @@
                         <p class="mt-0 mb-0"><small>Copy and paste image url or use original</small></p>
                         <input id="recipe_img" class="form-control" name="recipe_img" type="url" aria-describedby="recipe_img" pattern="https?://.+" value="{{ recipe.recipe_img }}" onchange="recipeImg();" />
                     </div>
-                    <div class="col-12 img-container">
-                        <!-- Image preview container -->
-                        <img src="" alt="Preview of recipe image input" class="img-preview">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12 current-img img-container">
+                                <p>Current Image:</p>
+                                <img class="img-window" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}">
+                            </div>
+                            <div class="col-12 new-img img-container">
+                                <p>New Image:</p>
+                                <!-- Image preview container -->
+                                <img class="img-window" src="" alt="Preview of recipe image input">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
