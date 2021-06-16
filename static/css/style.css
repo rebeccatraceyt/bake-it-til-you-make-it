@@ -902,7 +902,11 @@ li {
     margin: auto;
     margin-top: 10px;
 }
-.recipe-btn a {
+#go-back {
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+}
+.recipe-btn a, .recipe-btn button {
     background-color: var(--text);
     color: var(--white);
     min-width: 100%;

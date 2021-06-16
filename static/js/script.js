@@ -54,6 +54,12 @@ function userImg() {
     $('.img-window').attr('src',url);
 }
 
+/* Button to return to previous page
+    Sourced from https://www.w3schools.com/jsref/met_his_back.asp */
+function goBack() {
+    window.history.back();
+}
+
 /* Checking if form is valid 
     Sourced from https://codepen.io/tetnuc/pen/gRqOEO */
 $('#suggestionForm').validate({
