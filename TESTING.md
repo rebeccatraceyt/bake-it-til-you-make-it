@@ -28,11 +28,22 @@
 
 ## Testing User Stories
 
-**As a General User, I want to:**
+**General User**
 
-1. Intuitively find recipes on the database. 
-2. View the selected recipe's dashboard to get necessary information.
-3. Seek contact information to send useful feedback to Developer / Site Owner.
+1. As a General User, I want to intuitively find recipes on the database. 
+    - On all pages, the **Find a Recipe** page is visible.
+    - Clicking the **Find a Recipe** page, users will be able to view all recipes.
+    - Using the search bar allows users to pinpoint their search.
+    - Using the dropdown menu allows the user to refine their search.
+2. As a General User, I want to view the selected recipe's dashboard to get necessary information.
+    - Clicking either the **Recipe Image** or **Recipe Name** will direct the user to the recipe page.
+    - There, all information pertaining to the recipe can be found.
+3. As a General User, I want to seek contact information to send useful feedback to Developer / Site Owner.
+    - On all pages the **Footer** is visible.
+    - Selecting one of the **social** icons directs the user to:
+        - The Developers LinkedIn page.
+        - The Developers GitHub page.
+        - The Contact Modal.
 
 **As a Non-Registered User, I want to:**
 
