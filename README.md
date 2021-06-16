@@ -506,6 +506,7 @@ The buttons on the recipe page are conditional to the user's role on the website
 | Logged in user is **not** author | **Add To Favourites** Button direction the user to add the recipe to their favourites. They are then redirected back to the recipe page with a new **Remove from Favourites** button.|
 | Logged in user **is** author | **Edit** and **Delete** buttons direct the user to **Edit Recipe Page** and `delete_recipe` **modal** respectively.|
 | Logged in user is **Admin** | The administrative user has access to **Edit** and **Delete** buttons as well as the **Add To Favourites** or **Remove from Favourites** (should they want to save it)|
+| **All Users**| A ***breadcrumb*** button allows the user to return to their previous page, giving them more control.|
 
 ### Features to Implement in the future
 - **Recipe PDF Download** 
