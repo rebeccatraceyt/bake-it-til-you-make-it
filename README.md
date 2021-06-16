@@ -350,7 +350,7 @@ Wireframe mockups were created in a [Figma Workspace]( "Link to Bake It Figma Wo
 | Feature       | Description  |
 |---------------|--------------|
 | Input Fields    | The **input** fields allow users to enter their information. The user can enter a profile image if they wish, or a default image will be used instead.|
-| Password Authentication | The **password** field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information") to un-hash the salted password on entry and **confirm password** is validated using **Javascript**, with user feedback. |
+| Password Authentication | The **password** field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information") to un-hash the salted password for login authentication|
 | Call to Action | Once the input fields are completed as required, the user can click to **Login** or, if they do not already have an account, they can **Register**. |
 
 **My Recipes Page** (This page requires login authentication)
@@ -383,6 +383,7 @@ Wireframe mockups were created in a [Figma Workspace]( "Link to Bake It Figma Wo
 |---------------|--------------|
 | Input Fields | The **input fields** allow the user to input the recipe information as necessary. All fields are appropriately **validated**, with the exception of `Recipe Image` and `Recipe URL` to allow for the upload of recipes not available online.|
 | Image Preview | On adding an image url to the `Recipe Image` field, the user can preview their image to ensure that the link is correct and it is the image they would like to use.|
+| Dropdown Menu| User can refine their recipe using the dropdown menu|
 | Dynamic Input Fields| The fields for `Ingredients` and `Directions` allow for dynamic input. The user can use the **Add Ingredient**, **Add Direction** or **Delete** buttons to add fields as necessary. This was used in order to create a dynamic array of both lists for a much cleaner and readable display.|
 | Call to Action | As well as the **Add Ingredient** and **Add Direction** buttons, there is a **Cancel** and **Add Recipe** button, directing the user to the appropriate page.|
 
