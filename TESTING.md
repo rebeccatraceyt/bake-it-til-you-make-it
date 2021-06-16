@@ -462,17 +462,39 @@ Manual testing was conducted on the following elements on the **Recipe** Page:
 
 #### [JSHint](https://jshint.com/ "Link to JSHint") was used to validate the `JavaScript` and `JQuery` code used:
 
+- The following errors for `script.js` pertain to [SweetAlert2](https://sweetalert2.github.io/ "Link to Sweet Alert 2 page") and [jQuery Validation](https://jqueryvalidation.org/ "Link to jQuery Validation page") as well as the `onclick` functions:
+
+    ![Script Validation Results](static/images/testing-files/automated/js-val.png) 
+
+
+- There were no errors for `recipe.js` file
+
 ### Browser Validation
-- Chrome: ![test image](static/images/testing-files/automated/chrome.png)
-- Safari: ![test image](static/images/testing-files/automated/safari.png)
-- Edge: ![test image](static/images/testing-files/automated/edge.png)
-- Opera: ![test image](static/images/testing-files/automated/opera.png)
-- Firefox: ![test image](static/images/testing-files/automated/firefox.png)
+**Chrome:**
+
+![test image](static/images/testing-files/automated/chrome.png)
+
+**Safari:**
+
+![test image](static/images/testing-files/automated/safari.png)
+
+**Edge:**
+
+![test image](static/images/testing-files/automated/edge.png)
+
+
+**Opera:**
+
+![test image](static/images/testing-files/automated/opera.png)
+
+**Firefox:**
+
+![test image](static/images/testing-files/automated/firefox.png)
 
 ### Lighthouse Auditing
 - Welcome Menu: 
 
-![DevTools - Welcome Menu](static/images/testing-files/automated/player-info.png)
+![DevTools - Welcome Menu](static/images/testing-files/automated/.png)
 
 
 Issues were related to render-blocking resources. No recommendations in this report have been implemented in this release but will be taken into consideration for future releases.
