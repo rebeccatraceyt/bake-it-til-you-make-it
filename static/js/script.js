@@ -40,9 +40,10 @@ function recipeImg() {
 }
 function userImg() {
     // For users
-    $(".img-container").css("display", "flex");
+    $(".new-img").css("display", "flex");
+    $(".current-img").css("display", "none");
     var url = $("#user_img").val();
-    $('.img-preview').attr('src',url);
+    $('.img-window').attr('src',url);
 }
 
 /* Checking if form is valid 

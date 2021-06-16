@@ -616,9 +616,15 @@ li {
     background-size: cover;
     margin: 0 auto 1rem auto;
     padding: 15px;
-    display: none;
-    justify-content: center;
     max-width: 80%;
+
+    font-family: var(--accent-font);
+    font-size: 1.3em;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -628,13 +634,19 @@ li {
     -moz-box-shadow: var(--dark-box) 0 0 10px;
     box-shadow: var(--dark-box) 0 0 10px;
 }
-.img-preview {
+.img-container p {
+    margin: 1px;
+}
+.img-window {
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
-    
     max-height: 15rem;
     max-width: 100%;    
+}
+.new-img {
+    /* Set to none by default, changed using onclick function */
+    display: none;
 }
 .add-ing-btn, .add-dir-btn {
     background-color: var(--text);
@@ -1378,10 +1390,10 @@ footer li {
         font-size: 1.2em;
     }
     .img-container {
-        max-width: 40%;
+        max-width: 70%;
         padding: 10px;
     }
-    .img-preview {
+    .img-window {
         max-height: 10rem;
     }
     .create-btns {
@@ -2035,7 +2047,7 @@ footer li {
         font-size: 1.2em;
     }
     .img-container {
-        max-width: 50%;
+        max-width: 60%;
     }
     .create-btns {
         margin: 1% 20%;

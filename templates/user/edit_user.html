@@ -21,13 +21,22 @@
                         <!-- User Image -->
                         <div class="row end-input">
                             <div class="col-12 form-group">
-                                <label for="user_img"><i class="fas fa-image"></i> Profile Picture</label><br>
-                                <p class="mt-0 mb-0"><small>Copy and paste image url or use original</small></p>
+                                <label for="user_img"><i class="fas fa-image"></i> Change Profile Image</label><br>
+                                <p class="mt-0 mb-0"><small>Copy and paste new image url</small></p>
                                 <input id="user_img" name="user_img" type="url" value="{{ user.user_img }}" class="form-control" pattern="https?://.+" aria-describedby="user_img" onchange="userImg();">
                             </div>
-                            <div class="col-12 img-container">
-                                <!-- Image preview container -->
-                                <img src="" alt="Preview of recipe image input" class="img-preview">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12 col-md-6 current-img img-container">
+                                        <p>Current Image: </p>
+                                        <img class="img-window" src="{{ user.user_img }}" onerror="this.src='../../static/images/default-user.png';" alt="User's Profile Image">
+                                    </div>
+                                    <div class="col-12 col-md-6 new-img img-container">
+                                        <p>New Image: </p>
+                                        <!-- Image preview container -->
+                                        <img class="img-window" src="" alt="Preview of recipe image input">
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
