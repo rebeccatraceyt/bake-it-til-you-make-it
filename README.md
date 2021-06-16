@@ -483,6 +483,8 @@ The developer was forced to revert two commits ([1](https://github.com/rebeccatr
      - Git was used for version control to commit to Git and push to Heroku.
 - [GitHub](https://github.com/ "Link to GitHub")
      - GitHub was used to store the project repository, after pushing.
+- [Heroku](https://id.heroku.com/login "Link to Heroku login page")
+     -  Heroku was used in order to deploy the website.
 - [Figma](https://www.figma.com/ "Link to Figma homepage")
      - Figma was used to create the wireframes during the design phase of the project.
 - [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage")
@@ -505,13 +507,15 @@ The developer was forced to revert two commits ([1](https://github.com/rebeccatr
 - [jQuery Validation](https://jqueryvalidation.org/ "Link to jQuery Validation page")
      - jQuery Validation was used to simplify form validation for the **Suggestions Form**.
 - [SweetAlert2](https://sweetalert2.github.io/ "Link to Sweet Alert 2 page")
-     - SweetAlert2 was used to customise the **Suggestions Form** success message for UX purposes.
+     - SweetAlert2 was used to customise the **Contact Form** success message for UX purposes.
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/ "Link to Flask Homepage")
      - Flask was used as the web framework for the application.
 - [PyMongo](https://pypi.org/project/pymongo/ "Link to PyMongo information")
      - `flask_pymongo` was used a communication line between the MongoDB database and Python.
 - [Pagination](https://flask-paginate.readthedocs.io/en/master/ "Link to flask-paginate documentation")
-     - `flask_paginate` extension was used to implement pagination functionality on select pages. 
+     - `flask_paginate` extension was used to implement pagination functionality on select pages.
+- [BSON](https://bsonspec.org/ "Link to BSon documentation")
+     - `bson.objectid` is a required dependency for MongoDB management system.
 - [Jinja](http://jinja.pocoo.org/docs/2.10/ "Link to Jinja information")
      - Jinja templating language was used to simplify and display backend data in html.
 - [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information")
