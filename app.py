@@ -375,30 +375,14 @@ def edit_user(username):
 
         # Update profile function
         if request.method == "POST":
-            # current fields
-            current_user = {
-                "username": user["username"],
-                "email": user["email"],
-                "password": user["password"],
-                "user_img": user["user_img"],
-                "favourite_recipes": user["favourite_recipes"],
-                "is_admin": user["is_admin"]
-            }
-            # updated fields
-            update_user = {
-                "username": request.form.get("username"),
-                "email": user["email"],
-                "password": user["password"],
-                "user_img": request.form.get("user_img"),
-                "favourite_recipes": user["favourite_recipes"],
-                "is_admin": user["is_admin"]
-            }
-
-            mongo.db.users.replace_one(
-                current_user, update_user, True)
-
+            
+            mongo.db.users.update_one({'username': session['user']},
+                                      {'$set': {
+                                          'user_img': request.form.get('user_img')
+                                      }})
+            
             flash("{}'s Profile Updated!".format(
-                    request.form.get("username")))
+                    session["user"]))
             return redirect(url_for("my_recipes",
                                     username=session["user"]))
 
@@ -431,26 +415,12 @@ def edit_account(username):
 
         # Update profile function
         if request.method == "POST":
-            # current fields
-            current_user = {
-                "username": user["username"],
-                "email": user["email"],
-                "password": user["password"],
-                "user_img": user["user_img"],
-                "favourite_recipes": user["favourite_recipes"]
-            }
-            # updated fields
-            update_user = {
-                "username": user["username"],
-                "email": user["email"],
-                "password": generate_password_hash(
-                            request.form.get("password")),
-                "user_img": user["user_img"],
-                "favourite_recipes": user["favourite_recipes"]
-            }
-
-            mongo.db.users.replace_one(
-                current_user, update_user, True)
+            
+            mongo.db.users.update_one({'username': session['user']},
+                                      {'$set': {
+                                          'password': generate_password_hash(
+                            request.form.get("password"))
+                                      }})
 
             flash("Account Updated! Log back in to confirm changes.".format(
                     request.form.get("username")))
