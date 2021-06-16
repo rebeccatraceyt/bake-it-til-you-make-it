@@ -18,14 +18,6 @@
                 <div class="row accounts-label">
                     <form class="col-12" method="POST" action="{{ url_for('edit_user', username=session['user']) }}">
 
-                        <!-- Username -->
-                        <div class="row">
-                            <div class="col-12 form-group">
-                                <label for="username"><i class="fas fa-user"></i> Username</label>
-                                <input id="username" name="username" type="text" value="{{ user.username }}" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" aria-describedby="username" required>
-                            </div>
-                        </div>
-
                         <!-- User Image -->
                         <div class="row end-input">
                             <div class="col-12 form-group">
