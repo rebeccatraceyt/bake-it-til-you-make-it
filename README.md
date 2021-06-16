@@ -232,12 +232,55 @@ The information architecture was organized in order to ensure that users could n
 
 <strong>4. <u>Skeleton</u></strong>
 
-Wireframe mockups were created in a [Figma Workspace]( "Link to Bake It Figma Workspace") with providing a positive user experience in mind:
+Wireframe mockups were created in a [Figma Workspace](https://www.figma.com/file/dNAkS4orUIJwt5yptbgRqP/Bake-It-Til-You-Make-It "Link to Bake It Figma Workspace") with providing a positive user experience in mind:
 
-- Home Page:
+- Home Page (Non-User links Example):
 
-     ![Strategy Table for Baking Respository Management](static/images/readme-files/.png "Baking Repository Strategy Table")
+     ![Home Page Wireframe](static/images/readme-files/wireframes/home-non.png "Home Page Wireframe")
 
+- Home Page (User links Example):
+
+     ![Home Page Wireframe](static/images/readme-files/wireframes/home-user.png "Home Page Wireframe")
+
+- Sign Up Page:
+
+     ![Sign Up Page Wireframe](static/images/readme-files/wireframes/register.png "Sign Up Page Wireframe")
+
+- Log In Page:
+
+     ![Log In Page Wireframe](static/images/readme-files/wireframes/login.png "Log In Page Wireframe")
+
+     (Edit Profile and Edit Accounts pages are styled like this in order to remain consistent)
+
+- Find Recipes Page:
+
+     ![Find Recipes Page Wireframe](static/images/readme-files/wireframes/find-recipe.png "Find Recipes Page Wireframe")
+
+- My Recipes Page:
+
+     ![My Recipes Page Wireframe](static/images/readme-files/wireframes/recipes.png "My Recipes Page Wireframe")
+
+- My Favourites Page:
+
+     ![My Favourites Page Wireframe](static/images/readme-files/wireframes/faves.png "My Favourites Page Wireframe")
+
+- Individual Recipes Page:
+
+     ![Recipe Page Wireframe](static/images/readme-files/wireframes/recipe.png "Recipe Page Wireframe")
+
+- Create Recipe Page:
+
+     ![Create Recipe Page Wireframe](static/images/readme-files/wireframes/create-recipe.png "Create Recipe Page Wireframe")
+
+- Edit Recipe Page:
+
+     ![Edit Recipe Page Wireframe](static/images/readme-files/wireframes/edit-recipe.png "Edit Recipe Page Wireframe")
+
+- Contact Modal:
+
+     ![Modal Wireframe](static/images/readme-files/wireframes/contact.png "Modal Wireframe")
+
+     (All modals were styled the same, using their unique content, in order to remain consistent)
 
 <strong>5. <u>Surface</u></strong>
 
