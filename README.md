@@ -38,7 +38,7 @@ The recipe database encourages users to create an account that will allow them t
 10. [Technical Support](#Technical-Support)
 ***
 
-![Bake It 'til You Make It Responsiveness](assets/readme-files/responsive.png)
+![Bake It 'til You Make It Responsiveness](static/images/readme-files/responsive.png)
 
 ***
 
