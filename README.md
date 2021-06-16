@@ -15,15 +15,15 @@ The recipe database encourages users to create an account that will allow them t
 
 ## Table of contents
 1. [UX](#UX)
-    1. [Project Goals](#Project-Goals)
-    2. [User Stories](#User-Stories)
-    3. [Development Planes](#Development-Planes)
-2. [Features](#Features)
-    1. [Design Features](#Design-Features) 
-    2. [Existing Features](#Existing-Features)
-    3. [Features to Implement in the future](#Features-to-Implement-in-the-future)
-3. [Issues and Bugs](#Issues-and-Bugs)
-4. [Information Architecture](#Information-Architecture)
+     1. [Project Goals](#Project-Goals)
+     2. [User Stories](#User-Stories)
+     3. [Development Planes](#Development-Planes)
+2. [Data Schema](#Data-Schema)
+3. [Features](#Features)
+     1. [Design Features](#Design-Features) 
+     2. [Existing Features](#Existing-Features)
+     3. [Features to Implement in the future](#Features-to-Implement-in-the-future)
+4. [Issues and Bugs](#Issues-and-Bugs)
 5. [Technologies Used](#Technologies-Used)
      1. [Languages](#Languages)
      2. [Tools](#Tools)
@@ -276,6 +276,53 @@ Wireframe mockups were created in a [Figma Workspace]( "Link to Bake It Figma Wo
 
 [Back to top ⇧](#table-of-contents)
 
+## Data Schema
+
+For this project, the NoSQL database MongoDB was used to store the dataset. Within the created database, four collections were created, as illustrated below:
+
+![Data Schema](static/images/readme-files/db-schema.png "Data Schema")
+
+### Users Collection
+- On registering an account, the user provides:
+     - Username (unique to them)
+     - Email Address
+     - Password (hashed)
+     - User Image (not required, default used in its place)
+
+- The remaining fields (**favourite_recipes** and **is_admin**) are provided default values, ensuring that, on registration:
+     - **favourite_recipes** array is empty. 
+     - **is_admin** value is **False**.
+- If a user favourites a recipe, that Recipe's **_id** will be included in the **favourite_recipes** array.
+
+### Recipes Collection
+- On creation the recipe, the user provides:
+     - Recipe Name
+     - Recipe Image (not required, default used in its place)
+     - Recipe URL Source (not required in the event it is not an online recipe)
+     - Description
+     - Category
+     - Difficulty Level
+     - Serving
+     - Time
+     - Ingredients
+     - Directions
+- The Ingredients and Directions are entered dynamically to create an array.
+- The Recipe author (**baker**) is automatically the current user (session.user), storing their ObjectId.
+- The favourite_count array is empty by default.
+- If a user favourites the recipe, the number is incremented.
+
+### Categories Collection
+- There are four specified categories that the developer chose from researching multiple baking sources.
+- They were selected to refer to a broad spectrum of baking recipes.
+- Each category has a corresponding icon used throughout to provide visual distinction for each.
+
+### Levels Collection
+- The Recipe's difficulty level is distinguished by:
+     - Easy
+     - Medium
+     - Hard
+- This was reflective of the user stories, appealing to bakers of all levels.
+
 ## Features
 
 ### Design Features
@@ -464,10 +511,6 @@ In order to avoid this error, the developer installed and selected `Flake8` to l
 
 **Reverted Commits Note** <br>
 The developer was forced to revert two commits ([1](https://github.com/rebeccatraceyt/bake-it-til-you-make-it/commit/4a410cb11de6f90f3fb4a698e61818b1724e7cd6) and [2](https://github.com/rebeccatraceyt/bake-it-til-you-make-it/commit/7a1f64dd73470a54868ffbea1eeb8c6a54770d47)) on the 8th of June in order to backtrack to a previous commit, preserving the functionality that was lost. After trying to implement a `partials` directory, that would store extendable blocks to be used on all pages, the developer noticed that, in doing so, vital functions, including **user authentication** were throwing an error. Having already pushed these commits to Github, developer reverted the commit that implemented the creation of the `login decorator`, as they believed this to be the cause. Once this was reverted, it was clear that it was not the cause and the commit previous to that (the implementation of the `partials` directory) was reverted as well. In doing this, the functionality was restored. The developer chose not to re-implement the `partials` directory but was successful in re-implementing the `login decorator` functionality at a later date. 
-
-[Back to top ⇧](#table-of-contents)
-
-## Information Architecture
 
 [Back to top ⇧](#table-of-contents)
 
