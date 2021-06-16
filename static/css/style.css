@@ -438,24 +438,23 @@ li {
     color: var(--white);
     width: 50%;
 }
-#search-recipes {
+#search-area {
     width: 100%;
     border-top: 3px inset var(--border-line);
     margin: 20px 0 0 0;
 }
-#search-rec {
+.search-text {
     text-align: center;
-    border-top: 3px inset var(--border-line);
     border-bottom: 3px inset var(--border-line);
     margin: 20px auto;
     padding: 20px;
 }
-#search-rec h4 {
+.search-text h4 {
     line-height: 45px;
     font-family: var(--accent-font);
     font-size: 1.8em;
 }
-#search-rec p {
+.search-text p {
     font-size: 1.2em;
 }
 
@@ -1363,16 +1362,13 @@ footer li {
     #search-filter {
         max-width: 50%;
     }
-    #search-rec {
+    .search-text {
         padding: 40px;
     }
-    #search-rec h4 {
+    .search-text h4 {
         font-size: 2em;
     }
-    #search-recipes {
-        margin-top: 30px;
-        padding-top: 20px;
-    }
+
 
     /* -- Accounts Pages -- */
     .accounts-bg {
@@ -1666,14 +1662,11 @@ footer li {
     #filter-text h2 {
         font-size: 1.2em;
     }
-    #search-rec {
+    .search-text {
         padding: 40px;
     }
-    #search-rec h4 {
+    .search-text h4 {
         font-size: 2.5em;
-    }
-    #search-recipes {
-        padding-top: 40px;
     }
 
     /* -- Accounts Page -- */
@@ -2016,14 +2009,11 @@ footer li {
     #search-filter button {
         padding: 5px 20px;
     }
-    #search-rec {
+    .search-text {
         padding: 40px;
     }
-    #search-rec h4 {
+    .search-text h4 {
         font-size: 2.5em;
-    }
-    #search-recipes {
-        padding-top: 40px;
     }
 
     /* -- Accounts Page -- */

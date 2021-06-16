@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+{% block nav_find_recipes %}active{% endblock %}
+
+{% block header %}
+
+    <!-- Page Title -->
+    <h2>Find Your Inspiration!</h2>
+    
+{% endblock %}
+
+{% block content %}
+
+        <!-- Search Functionality -->
+        <div class="container-fluid page-padding">
+
+            <div class="row">
+                <div class="col-12 page-intro">
+                    <p>Browse through our collection to find your next creation!</p>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="row">
+                <div class="col-12">
+                    <form action="{{ url_for('search')}}" method="POST">
+                        <div class="container-fluid">
+                            <div id="search-function" class="row no-gutters">
+
+                                <div id="search-bar" class="col-12 input-group border rounded-pill p-1">
+                                    <!-- ref: https://bootstrapious.com/p/bootstrap-search-bar -->
+                                    <input type="search" name="query" id="query" minlength="3" placeholder=" What are you looking for?" aria-describedby="search_query" class="form-control">
+                                    <div class="input-group-append border-0">
+                                        <button id="button-addon3" type="submit" class="btn"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <!-- Dropdown Filters -->
+            <div id="search-filter" class="row">
+                <a id="filter-text" class="btn" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <h2>Refine your search: </h2>
+                </a>               
+                <div class="collapse" id="collapseExample">
+                <div class="row">
+                        <div class="col-6 dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="CategoryFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Category
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="CategoryFilter">
+                                <a class="dropdown-item" href="{{ url_for('category_filter', id='Bread') }}">Bread</a>
+                                <a class="dropdown-item" href="{{ url_for('category_filter', id='Cake') }}">Cake</a>
+                                <a class="dropdown-item" href="{{ url_for('category_filter', id='Biscuit') }}">Biscuit</a>
+                                <a class="dropdown-item" href="{{ url_for('category_filter', id='Pastry') }}">Pastry</a>
+                            </div>
+                        </div>
+                        <div class="col-6 dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="DifficultyFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Difficulty
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="DifficultyFilter">
+                                <a class="dropdown-item" href="{{ url_for('difficulty_filter', id='Easy') }}">Easy</a>
+                                <a class="dropdown-item" href="{{ url_for('difficulty_filter', id='Medium') }}">Medium</a>
+                                <a class="dropdown-item" href="{{ url_for('difficulty_filter', id='Hard') }}">Hard</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Results-->
+            <div id="search-area" class="row">
+
+                {% if recipes|length > 0 %}
+
+                    <div class="col-12 search-text">
+                        <h4>Results for: <br class="d-block d-md-none">  "<span class="text-uppercase">{{ query }}</span>"</h4>
+                        <p>Change your search terms, or try one of our favourites:</p>
+                    </div>
+
+                    {% for recipe in recipes %}
+                        <!-- Recipe Cards  -->
+                        <div class="recipe-cards col-sm-12 col-md-6 col-lg-4">
+                            <div class="card">
+
+                                <!-- Recipe Img -->
+                                <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}"><img class="recipe-card-img card-img-top" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}"></a>
+                                
+                                <!-- Recipe Card Body -->
+                                <div class="card-body">
+
+                                    <h3 class="recipe-name"><a href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
+                                    
+                                    <div class="row recipe-text">
+
+                                        <div class="col-6">
+                                            <div>
+                                                <span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
+                                                <span class="value">{{ recipe.total_time }}</span>
+                                                <span class="title">Mins</span>
+                                            </div>
+                                            <div>
+                                                <span class="recipe-icon iconify" data-icon="majesticons:users" data-inline="true"></span>
+                                                <span class="title">Serves</span>
+                                                <span class="value">{{ recipe.serving }}</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-6">
+                                            <div>
+                                                <span class="recipe-icon iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
+                                                <span class="value">{{ recipe.difficulty }}</span>
+                                            </div>
+                                            <div>
+                                                {% if recipe.category == 'Bread' %}
+                                                    <span class="recipe-icon iconify" data-icon="emojione-monotone:bread" data-inline="true"></span>
+                                                {% elif recipe.category == 'Cake' %}
+                                                    <span class="recipe-icon iconify" data-icon="mdi:cupcake" data-inline="true"></span>
+                                                {% elif recipe.category == 'Biscuit' %}
+                                                    <span class="recipe-icon iconify" data-icon="fa-solid:cookie-bite" data-inline="true"></span>
+                                                {% else %}
+                                                    <span class="recipe-icon iconify" data-icon="mdi:food-croissant" data-inline="true"></span>
+                                                {% endif %}
+                                                <span class="value">{{ recipe.category }}</span>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <div class="col-12 pagination-box">
+                        {{ pagination.links }}
+                    </div>
+
+                {% else %}
+                
+                    <!-- Recommended recipes (No Results) -->
+                    <div class="col-12 search-text">
+                        <h4>No results found for: <br class="d-block d-md-none">  "<span class="text-uppercase">{{ query }}</span>"</h4>
+                        <p>Change your search terms, or try one of our favourites:</p>
+                    </div>
+
+                    {% for rec in recommended %}
+                        <!-- Recipe Cards  -->
+                        <div class="recipe-cards col-sm-12 col-md-6 col-lg-4">
+                            <div class="card">
+
+                                <!-- Recipe Img -->
+                                <a class="" href="{{ url_for('recipe', recipe_id=rec._id) }}"><img class="recipe-card-img card-img-top" src="{{ rec.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ rec.recipe_name }}"></a>
+                            
+                                <!-- Recipe Card Body -->
+                                <div class="card-body">
+
+                                    <h3 class="recipe-name"><a href="{{ url_for('recipe', recipe_id=rec._id) }}">{{ rec.recipe_name }}</a></h3>
+                                    
+                                    <div class="row recipe-text">
+
+                                        <div class="col-6">
+                                            <div>
+                                                <span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
+                                                <span class="value">{{ rec.total_time }}</span>
+                                                <span class="title">Mins</span>
+                                            </div>
+                                            <div>
+                                                <span class="recipe-icon iconify" data-icon="majesticons:users" data-inline="true"></span>
+                                                <span class="title">Serves</span>
+                                                <span class="value">{{ rec.serving }}</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-6">
+                                            <div>
+                                                <span class="recipe-icon iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
+                                                <span class="value">{{ rec.difficulty }}</span>
+                                            </div>
+                                            <div>
+                                                {% if rec.category == 'Bread' %}
+                                                    <span class="recipe-icon iconify" data-icon="emojione-monotone:bread" data-inline="true"></span>
+                                                {% elif rec.category == 'Cake' %}
+                                                    <span class="recipe-icon iconify" data-icon="mdi:cupcake" data-inline="true"></span>
+                                                {% elif rec.category == 'Biscuit' %}
+                                                    <span class="recipe-icon iconify" data-icon="fa-solid:cookie-bite" data-inline="true"></span>
+                                                {% else %}
+                                                    <span class="recipe-icon iconify" data-icon="mdi:food-croissant" data-inline="true"></span>
+                                                {% endif %}
+                                                <span class="value">{{ rec.category }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+{% endblock %}

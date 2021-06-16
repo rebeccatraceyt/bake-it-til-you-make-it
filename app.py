@@ -171,7 +171,7 @@ def search():
         user = mongo.db.users.find_one(
             {"username": session["user"]})
 
-        return render_template("recipe/find_recipes.html",
+        return render_template("recipe/search.html",
                                recipes=recipes_paginated,
                                user=user,
                                recommended=recommended,
@@ -179,7 +179,7 @@ def search():
                                pagination=pagination,
                                title="Search Results")
 
-    return render_template("recipe/find_recipes.html",
+    return render_template("recipe/search.html",
                            recipes=recipes_paginated,
                            recommended=recommended,
                            query=query,

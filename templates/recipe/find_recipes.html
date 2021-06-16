@@ -73,128 +73,66 @@
                 </div>
             </div>
 
-            <!-- Recipe Cards  -->
-            {% if recipes|length > 0 %}
+            <!-- Search Results-->
+            <div id="search-area" class="row">
 
-                <!-- Browse all recipes -->
-                <div id="search-recipes" class="row">
-                    {% for recipe in recipes %}
-                        <div class="recipe-cards col-sm-12 col-md-6 col-lg-4">
-                            <div class="card">
+                {% for recipe in recipes %}
+                    <!-- Recipe Cards  -->
+                    <div class="recipe-cards col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
 
-                                <!-- Recipe Img -->
-                                <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}"><img class="recipe-card-img card-img-top" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}"></a>
-                                
-                                <!-- Recipe Card Body -->
-                                <div class="card-body">
-
-                                    <h3 class="recipe-name"><a href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
-                                    
-                                    <div class="row recipe-text">
-
-                                        <div class="col-6">
-                                            <div>
-                                                <span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
-                                                <span class="value">{{ recipe.total_time }}</span>
-                                                <span class="title">Mins</span>
-                                            </div>
-                                            <div>
-                                                <span class="recipe-icon iconify" data-icon="majesticons:users" data-inline="true"></span>
-                                                <span class="title">Serves</span>
-                                                <span class="value">{{ recipe.serving }}</span>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-6">
-                                            <div>
-                                                <span class="recipe-icon iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
-                                                <span class="value">{{ recipe.difficulty }}</span>
-                                            </div>
-                                            <div>
-                                                {% if recipe.category == 'Bread' %}
-                                                    <span class="recipe-icon iconify" data-icon="emojione-monotone:bread" data-inline="true"></span>
-                                                {% elif recipe.category == 'Cake' %}
-                                                    <span class="recipe-icon iconify" data-icon="mdi:cupcake" data-inline="true"></span>
-                                                {% elif recipe.category == 'Biscuit' %}
-                                                    <span class="recipe-icon iconify" data-icon="fa-solid:cookie-bite" data-inline="true"></span>
-                                                {% else %}
-                                                    <span class="recipe-icon iconify" data-icon="mdi:food-croissant" data-inline="true"></span>
-                                                {% endif %}
-                                                <span class="value">{{ recipe.category }}</span>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                    <div class="col-12 pagination-box">
-                        {{ pagination.links }}
-                    </div>
-                </div>
-
-            {% else %}
-                
-                 <!-- Recommended recipes -->
-                <div class="row">
-                    <div id="search-rec" class="col-12">
-                        <h4>No results found for: <br class="d-block d-md-none">  "<span class="text-uppercase">{{ query }}</span>"</h4>
-                        <p>Change your search terms, or try one of our favourites:</p>
-                    </div>
-                    {% for rec in recommended %}
-                        <div class="recipe-cards col-sm-12 col-md-6 col-lg-4">
-                            <div class="card">
-
-                                <!-- Recipe Img -->
-                                <a class="" href="{{ url_for('recipe', recipe_id=rec._id) }}"><img class="recipe-card-img card-img-top" src="{{ rec.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ rec.recipe_name }}"></a>
+                            <!-- Recipe Img -->
+                            <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}"><img class="recipe-card-img card-img-top" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}"></a>
                             
-                                <!-- Recipe Card Body -->
-                                <div class="card-body">
+                            <!-- Recipe Card Body -->
+                            <div class="card-body">
 
-                                    <h3 class="recipe-name"><a href="{{ url_for('recipe', recipe_id=rec._id) }}">{{ rec.recipe_name }}</a></h3>
-                                    
-                                    <div class="row recipe-text">
+                                <h3 class="recipe-name"><a href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>
+                                
+                                <div class="row recipe-text">
 
-                                        <div class="col-6">
-                                            <div>
-                                                <span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
-                                                <span class="value">{{ rec.total_time }}</span>
-                                                <span class="title">Mins</span>
-                                            </div>
-                                            <div>
-                                                <span class="recipe-icon iconify" data-icon="majesticons:users" data-inline="true"></span>
-                                                <span class="title">Serves</span>
-                                                <span class="value">{{ rec.serving }}</span>
-                                            </div>
+                                    <div class="col-6">
+                                        <div>
+                                            <span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span>
+                                            <span class="value">{{ recipe.total_time }}</span>
+                                            <span class="title">Mins</span>
                                         </div>
-                                        
-                                        <div class="col-6">
-                                            <div>
-                                                <span class="recipe-icon iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
-                                                <span class="value">{{ rec.difficulty }}</span>
-                                            </div>
-                                            <div>
-                                                {% if rec.category == 'Bread' %}
-                                                    <span class="recipe-icon iconify" data-icon="emojione-monotone:bread" data-inline="true"></span>
-                                                {% elif rec.category == 'Cake' %}
-                                                    <span class="recipe-icon iconify" data-icon="mdi:cupcake" data-inline="true"></span>
-                                                {% elif rec.category == 'Biscuit' %}
-                                                    <span class="recipe-icon iconify" data-icon="fa-solid:cookie-bite" data-inline="true"></span>
-                                                {% else %}
-                                                    <span class="recipe-icon iconify" data-icon="mdi:food-croissant" data-inline="true"></span>
-                                                {% endif %}
-                                                <span class="value">{{ rec.category }}</span>
-                                            </div>
+                                        <div>
+                                            <span class="recipe-icon iconify" data-icon="majesticons:users" data-inline="true"></span>
+                                            <span class="title">Serves</span>
+                                            <span class="value">{{ recipe.serving }}</span>
                                         </div>
-                                        
                                     </div>
+                                    
+                                    <div class="col-6">
+                                        <div>
+                                            <span class="recipe-icon iconify" data-icon="mdi:chef-hat" data-inline="true"></span>
+                                            <span class="value">{{ recipe.difficulty }}</span>
+                                        </div>
+                                        <div>
+                                            {% if recipe.category == 'Bread' %}
+                                                <span class="recipe-icon iconify" data-icon="emojione-monotone:bread" data-inline="true"></span>
+                                            {% elif recipe.category == 'Cake' %}
+                                                <span class="recipe-icon iconify" data-icon="mdi:cupcake" data-inline="true"></span>
+                                            {% elif recipe.category == 'Biscuit' %}
+                                                <span class="recipe-icon iconify" data-icon="fa-solid:cookie-bite" data-inline="true"></span>
+                                            {% else %}
+                                                <span class="recipe-icon iconify" data-icon="mdi:food-croissant" data-inline="true"></span>
+                                            {% endif %}
+                                            <span class="value">{{ recipe.category }}</span>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
-                    {% endfor %}
+                    </div>
+                {% endfor %}
+
+                <div class="col-12 pagination-box">
+                    {{ pagination.links }}
                 </div>
-            {% endif %}
+            </div>
         </div>
 
 {% endblock %}
