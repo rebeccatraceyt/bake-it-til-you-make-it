@@ -45,24 +45,48 @@
         - The Developers GitHub page.
         - The Contact Modal.
 
-**Non-Registered User:**
+**Non-Registered User**
 
 1. As a Non-Registered User, I want to navigate to Sign-Up page to Register an account.
     - A Non-Register User can click the **Sign Up** button on the **Home Page** or in the **Navigation Links** to be directed to the **Sign Up Page**.
     - There, they can enter their details and submit their registration.
     - On registering, they will be directed to the **My Recipes Page**.
 
-**As a Registered User, I want to:**
+**Registered User**
 
-1. Log into my account to gain access to the full functionality of the site.
-2. Navigate to my user profile to edit my account information.
-3. Navigate to my account settings to delete my account information.
-4. Navigate to my recipes page to view my uploaded recipes.
-5. Navigate to upload page to add my recipe to the database.
-6. View my own recipe's dashboard to edit recipe as needed.
-7. View my own recipe's dashboard to delete recipe.
-8. Use a save function to save my favourite recipes from other users.
-9. Navigate to my favourites page to view the recipes I have saved from other users.
+1. As a Registered User, I want to log into my account to gain access to the full functionality of the site.
+    - Users can click the **Login** button on the **Home Page** or in the **Navigation Links** to be directed to the **Login Page**.
+    - There, they can enter their login details.
+    - On Login, they will be directed to the **My Recipes** page.
+    - The conditional links will allow the user the full functionality of the site (Create, Read, Update, Delete).
+2. As a Registered User, I want to navigate to my user profile to edit my account information.
+    - On **My Recipes Page**, **My Favourites Page** and the user **quicklinks dropdown menu** (on larger screens only), the user can navigate to the **Edit Profile** page.
+    - There, they can edit their account details (**username** and **image**).
+    - Their current details will be the default values.
+    - On clicking **Save**, they will be directed to **My Recipes**.
+    - On clicking **Cancel**, they will be directed to **My Recipes**.
+    - On clicking **Account Settings**, they will be directed to the **Edit Account** page.
+3. As a Registered User, I want to navigate to my account settings to delete my account information.
+    - On the **Edit Profile** page, the user can navigate to **Account Settings** in order to edit their password or delete their account.
+    - On clicking **Save**, they will be directed to **Login**.
+    - On clicking **Back**, they will be directed to **Edit Profile Page**.
+    - On clicking **Delete Account**, the **Delete Modal** will open.
+4. As a Registered User, I want to navigate to my recipes page to view my uploaded recipes.
+    - If is user is logging in, they will be directed to **My Recipes**.
+    - **My Recipes** can also be accessed through the **Navigation Links** or **My Favourites** page.
+5. As a Registered User, I want to navigate to upload page to add my recipe to the database.
+    - On **My Recipes Page**, **My Favourites Page** and the user **quicklinks dropdown menu** (on larger screens only), the user can navigate to the **Create Recipe** page.
+6. As a Registered User, I want to view my own recipe's dashboard to edit recipe as needed.
+    - If the user is viewing a **Recipe Page** where they are the recipe's author, the conditional buttons displayed will allow them to **edit** or **delete** the recipe.
+    - Clicking **Edit** will bring them to the **Edit Recipe** page.
+7. As a Registered User, I want to view my own recipe's dashboard to delete recipe.
+    - If the user is viewing a **Recipe Page** where they are the recipe's author, the conditional buttons displayed will allow them to **edit** or **delete** the recipe.
+    - Clicking **Delete** will open the **Delete Modal**.
+8. As a Registered User, I want to use a save function to save my favourite recipes from other users.
+    - If the user is viewing a **Recipe Page** where they are **NOT** the recipe's author, the conditional buttons displayed will allow them to **Add to favourites** or **Remove from Favourites**.
+    - Clicking either will redirect the user back to the **Recipe Page**.
+9. As a Registered User, I want to navigate to my favourites page to view the recipes I have saved from other users.
+    - - **My Favourites** can be accessed through the **Navigation Links** or **My Recipes** page.
 
 **As an Administrative Account holder, I want to:**
 
