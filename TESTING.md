@@ -45,9 +45,12 @@
         - The Developers GitHub page.
         - The Contact Modal.
 
-**As a Non-Registered User, I want to:**
+**Non-Registered User:**
 
-1. Navigate to Sign-Up page to Register an account.
+1. As a Non-Registered User, I want to navigate to Sign-Up page to Register an account.
+    - A Non-Register User can click the **Sign Up** button on the **Home Page** or in the **Navigation Links** to be directed to the **Sign Up Page**.
+    - There, they can enter their details and submit their registration.
+    - On registering, they will be directed to the **My Recipes Page**.
 
 **As a Registered User, I want to:**
 
