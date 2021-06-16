@@ -88,12 +88,18 @@
 9. As a Registered User, I want to navigate to my favourites page to view the recipes I have saved from other users.
     - - **My Favourites** can be accessed through the **Navigation Links** or **My Recipes** page.
 
-**As an Administrative Account holder, I want to:**
+**Administrative Account Holder:**
 
-1. View **any** recipe dashboard to edit recipe as needed.
-2. View **any** recipe dashboard to delete recipe as needed.
-3. Still maintain a save function to save my favourite recipes from other users.
-
+1. As an Administrative Account holder, I want to view **any** recipe dashboard to edit recipe as needed.
+    - The Administrative Accounts have 'admin privileges' that allow them to monitor all recipes entered.
+    - If the  Administrative Account holder is viewing a **Recipe Page**, the conditional buttons displayed will allow them to **edit** the recipe.
+    - Clicking **Edit** will bring them to the **Edit Recipe** page.
+2. As an Administrative Account holder, I want to view **any** recipe dashboard to delete recipe as needed.
+    - If the  Administrative Account holder is viewing a **Recipe Page**, the conditional buttons displayed will allow them to **delete** the recipe.
+    - Clicking **Delete** will open the **Delete Modal**.
+3. As an Administrative Account holder, I want to still maintain a save function to save my favourite recipes from other users.
+    - - If the  Administrative Account holder is viewing a **Recipe Page**, the conditional buttons displayed will allow them to **Add to favourites** or **Remove from Favourites**.
+    - Clicking either will redirect the user back to the **Recipe Page**.
 
 [Back to top ⇧](#table-of-contents)
 
