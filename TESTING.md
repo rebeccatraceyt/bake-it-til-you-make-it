@@ -497,20 +497,17 @@ Manual testing was conducted on the following elements on the **Recipe** Page:
 ![DevTools - Welcome Menu](static/images/testing-files/automated/.png)
 
 
-Issues were related to render-blocking resources. No recommendations in this report have been implemented in this release but will be taken into consideration for future releases.
-
 [Back to top ⇧](#table-of-contents)
 
 ## User testing 
 Family members and friends were asked to review the site and documentation to point out any bugs and/or user experience issues. Their helpful advice throughout the process led to many UX changes in order to create a better experience. 
 
 It was through this testing that the following changes were made:
-- Update to the Heads-up display to be more gamer-friendly.
-- Change to Questions and Answers `font-size` in order to maintain readability on all devices
-- Complete overhaul of Home Page to avoid dead space and to make the experience more intuitive.
-- The addition of minutes to the **time counter** function for better readability.
-- The addition of a **home button** along side the **play again** button at game end, allowing users to select where they want to go next.
-- Using a star icon to represent the score counter on first entrance of the game play area in order to signify the type of content to be displayed.
+- Update to Logo to be more conventionally positioned. The original designs were for a floating logo but that was quickly replaced due to the issues it cause.
+- Change to Recipe Card `font-size` and `max-length` in order to create consistency across all recipes. It was noted that some of the recipe names were longer than others, creating a spacing issue.
+- Creating conditional buttons for each category in order to better distinguish the differences.
+- Creating a 'quick-links' function for users to create a more streamline experience.
+- Creating a separate **Accounts Settings** page just for changing password or deleting account, in order to avoid the "danger" zone as much as possible.
 
 [Back to top ⇧](#table-of-contents)
 
