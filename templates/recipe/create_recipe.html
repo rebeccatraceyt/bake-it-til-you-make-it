@@ -16,7 +16,7 @@
     <div class="container-fluid page-padding">
 
         <div class="row create-bg">
-            <form class="col-12" method="POST" action="{{ url_for('create_recipe') }}">
+            <form class="col-12" method="POST" action="{{ url_for('create_recipe') }}" aria-label="Create Recipe">
 
                 <!-- Recipe Name -->
                 <div class="row">
@@ -35,7 +35,7 @@
                     </div>
                     <div class="col-12 new-img img-container">
                         <!-- Image preview container -->
-                        <img class="img-window" src="" alt="Preview of recipe image input">
+                        <img class="img-window" src="#" alt="Preview of recipe image input">
                     </div>
                 </div>
 
@@ -79,7 +79,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="total_time"><span class="recipe-icon iconify" data-icon="ant-design:clock-circle-filled" data-inline="true"></span> Total Time</label>
-                                <select name="total_time" id="total_time" name="total_time" class="form-control" aria-describedby="total_time" required>
+                                <select name="total_time" id="total_time" class="form-control" aria-describedby="total_time" required>
                                     <option value="" disabled selected>Select</option>
                                     <option value="Less than 20">Less than 20 min</option>
                                     {% for time in range(20, 120, 10) %}
@@ -90,7 +90,7 @@
                             </div>
                             <div class="col-6">
                                 <label for="serving"><span class="recipe-icon iconify" data-icon="majesticons:users" data-inline="true"></span> Serves:</label>
-                                <select name="serving" id="serving" name="serving" class="form-control" aria-describedby="serving" required>
+                                <select name="serving" id="serving" class="form-control" aria-describedby="serving" required>
                                     <option value="" disabled selected>Select</option>
                                     <option value="1 person">1 person</option>
                                     {% for num in range(2, 21) %}
@@ -132,7 +132,7 @@
                 <div class="row direction-row create-label">
                     <div class="col-12 form-group dir-input">
                         <label for="directions"><i class="fas fa-list-ol"></i> Directions</label>
-                        <textarea id="directions" class="form-control" name="directions" type="text" aria-describedby="directions" minlength="3" maxlength="300" rows="2"  required ></textarea>
+                        <textarea id="directions" class="form-control" name="directions" aria-describedby="directions" minlength="3" maxlength="300" rows="2"  required ></textarea>
                     </div>
                 </div>
 
@@ -147,11 +147,11 @@
                 <!-- Buttons -->
                 <div class="row no-gutters create-btns">
                     <div class="col-6 create-btn white-btn">
-                        <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn" >Cancel</a>
+                        <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn" aria-label="Cancel">Cancel</a>
                     </div>
 
                     <div class="col-6 create-btn">
-                        <button class="btn" type="submit" name="action">Add Recipe</button>
+                        <button class="btn" type="submit" name="action" aria-label="Add Recipe">Add Recipe</button>
                     </div>
                 </div>
             </form>
