@@ -1555,6 +1555,7 @@ footer li {
         padding-right: 0;
     }
     #lg-left img {
+        width: 50%;
         height: 98vh;
     }
     #lg-right {
