@@ -380,8 +380,13 @@ a.carousel-control-next {
     width: 50px;
 }
 .carousel-btn i {
-    color: black;
     font-size: 3em;
+    color: var(--text);
+    background-color: var(--white);
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 /* --- Find Recipes Page -- */
@@ -1401,6 +1406,9 @@ footer li {
         padding-right: 10%;
         max-width: 100%;
         text-align: left;
+    }
+    .carousel-btn i {
+        font-size: 4em;
     }
     #carousel-img.recipe-card-img {
         /* Accommodated the col size change on home page */
