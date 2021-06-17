@@ -408,16 +408,7 @@ li {
     align-items: center;
     padding: 2px;
 }
-.search-filter .dropdown {
-    padding: 4px;
-}
-.search-filter h2 {
-    width: 100%;
-    font-size: 1.1em;
-    color: var(--white);
-    margin-bottom: 0;
-}
-.search-filter button, .search-filter a {
+.search-filter button {
     width: 100%;
     background-color: var(--text);
     color: var(--white);
@@ -430,11 +421,8 @@ li {
     -moz-box-shadow: var(--dark-box) 0 0 10px;
     box-shadow: var(--dark-box) 0 0 10px;
 }
-.search-results.search-filter {
-    max-width: 60%;
-}
-.search-results.search-filter a {
-    padding: 10px;
+.search-filter .dropdown {
+    padding: 4px;
 }
 .dropdown-menu {
     background-color: var(--text);
@@ -448,24 +436,71 @@ li {
     border-top: 3px inset var(--border-line);
     margin: 20px 0 0 0;
 }
-.search-results.search-area{
+
+/*------------------------------------------------------- Search Page */
+.search-area.search-results {
     border: none;
+}
+.search-btn {
+    padding: 0;
+}
+.search-again {
+    width: 80%;
+    margin: 0 auto 2px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+}
+.search-again a {
+    width: 100%;
+    background-color: var(--text);
+    color: var(--white);
+    padding: 10px 30px;
+
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+
+    -webkit-box-shadow: var(--dark-box) 0px 0 10px;
+    -moz-box-shadow: var(--dark-box) 0 0 10px;
+    box-shadow: var(--dark-box) 0 0 10px;
+}
+.search-again a:hover {
+    background-color: var(--white);
+    color: var(--text);
+}
+.search-again h2 {
+    font-size: 1.1em;
+    margin: 0;
 }
 .search-text {
     text-align: center;
-    border-bottom: 3px inset var(--border-line);
-    margin: 20px auto;
-    padding: 20px;
+    margin: 10px auto 0 auto;
+    font-family: var(--accent-font);
+    font-size: 1em;
+
+    background-image: url("../images/white-lined.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 5px;
+    
+    /* Sourced from http://jsfiddle.net/Zw4QA/1/ */
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+
+    -webkit-box-shadow: var(--dark-box) 0px 0 10px;
+    -moz-box-shadow: var(--dark-box) 0 0 10px;
+    box-shadow: var(--dark-box) 0 0 10px;
 }
 .search-text h4 {
-    line-height: 45px;
-    font-family: var(--accent-font);
-    font-size: 1.8em;
+    line-height: 40px;
+    margin-bottom: 0;
 }
-.search-text p {
-    font-size: 1.2em;
-}
-
 
 /*------------------------------------------------------- Accounts Page */
 /* Sign Up and Log In are style the same for consistency */
@@ -1370,14 +1405,10 @@ footer li {
     .search-filter {
         max-width: 50%;
     }
-    .search-text {
-        padding: 40px;
-    }
-    .search-text h4 {
-        font-size: 2em;
-    }
-    .search-results.search-filter {
-        max-width: 40%;
+
+    /* -- Search Page -- */
+    .search-again {
+        width: 50%;
     }
 
     /* -- Accounts Pages -- */
@@ -1669,14 +1700,9 @@ footer li {
     .search-filter {
         max-width: 50%;
     }
-    .search-text {
-        padding: 40px;
-    }
-    .search-text h4 {
-        font-size: 2.5em;
-    }
-    .search-results.search-filter {
-        max-width: 30%;
+    /* -- Search Page -- */
+    .search-again {
+        width: 40%;
     }
 
     /* -- Accounts Page -- */
@@ -2016,14 +2042,10 @@ footer li {
     .search-filter button {
         padding: 5px 20px;
     }
-    .search-text {
-        padding: 40px;
-    }
-    .search-text h4 {
-        font-size: 2.5em;
-    }
-    .search-results.search-filter {
-        max-width: 20%;
+
+    /* -- Search Page -- */
+    .search-again {
+        width: 30%;
     }
 
     /* -- Accounts Page -- */
