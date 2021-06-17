@@ -681,7 +681,7 @@ The application is connected to a [MongoDB Atlas](https://mongodb.com/ "Link to 
      - Enter chosen `Database Name`
      - Enter chosen `Collection Name`
      - Select `Create`
-8. Click `Create Collection` and create the necessary collections. See [Information Architecture](#Information-Architecture) for reference of the collections created for this project.
+8. Click `Create Collection` and create the necessary collections. See [Data Schema](#Data-Schema) for reference of the collections created for this project.
 
 ### 2. Local Copy Creation
 A Local Clone of the repository can be made in two ways:
