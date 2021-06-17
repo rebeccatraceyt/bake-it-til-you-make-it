@@ -83,55 +83,55 @@
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="recipe-btn">
-                                                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"><i class="fas fa-edit"></i> Edit</a>
+                                                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" aria-label="Edit"><i class="fas fa-edit"></i> Edit</a>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="recipe-btn red-btn">
-                                                        <a href="#" data-toggle="modal" data-target="#modal-{{ recipe._id }}"><i class="fas fa-trash-alt"></i> Delete</a>
+                                                        <a href="#" data-toggle="modal" data-target="#modal-{{ recipe._id }}" aria-label="Delete"><i class="fas fa-trash-alt"></i> Delete</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         {% elif favourited %}
                                             <div class="recipe-btn faves-btn white-btn">
-                                                <a href="{{url_for('remove_from_favourites', recipe_id=recipe._id)}}"><i class="far fa-heart"></i> Remove Favourite</a>
+                                                <a href="{{url_for('remove_from_favourites', recipe_id=recipe._id)}}" aria-label="Remove Favourite"><i class="far fa-heart"></i> Remove Favourite</a>
                                             </div>
                                         {% else %}
                                             <div class="recipe-btn faves-btn">
-                                                <a href="{{url_for('add_to_favourites', recipe_id=recipe._id)}}"><i class="fas fa-heart"></i> Favourite</a>
+                                                <a href="{{url_for('add_to_favourites', recipe_id=recipe._id)}}" aria-label="Favourite"><i class="fas fa-heart"></i> Favourite</a>
                                             </div>
                                         {% endif %}
                                     {% elif session.user and user.is_admin %}
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="recipe-btn">
-                                                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"><i class="fas fa-edit"></i> Edit</a>
+                                                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" aria-label="Edit"><i class="fas fa-edit"></i> Edit</a>
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="recipe-btn red-btn">
-                                                    <a href="#" data-toggle="modal" data-target="#modal-{{ recipe._id }}"><i class="fas fa-trash-alt"></i> Delete</a>
+                                                    <a href="#" data-toggle="modal" data-target="#modal-{{ recipe._id }}" aria-label="Delete"><i class="fas fa-trash-alt"></i> Delete</a>
                                                 </div>
                                             </div>
                                         </div>
                                         {% if favourited %}
                                             <div class="recipe-btn faves-btn white-btn">
-                                                <a href="{{url_for('remove_from_favourites', recipe_id=recipe._id)}}"><i class="far fa-heart"></i> Remove Favourite</a>
+                                                <a href="{{url_for('remove_from_favourites', recipe_id=recipe._id)}}" aria-label="Remove Favourite"><i class="far fa-heart"></i> Remove Favourite</a>
                                             </div>
                                         {% else %}
                                             <div class="recipe-btn faves-btn">
-                                                <a href="{{url_for('add_to_favourites', recipe_id=recipe._id)}}"><i class="fas fa-heart"></i> Favourite</a>
+                                                <a href="{{url_for('add_to_favourites', recipe_id=recipe._id)}}" aria-label="Favourite"><i class="fas fa-heart"></i> Favourite</a>
                                             </div>
                                         {% endif %}
                                     {% else %}
                                             <div class="recipe-btn faves-btn white-btn">
-                                                <a href="{{url_for('login')}}"><i class="far fa-heart"></i> Login to Favourite</a>
+                                                <a href="{{url_for('login')}}" aria-label="Login to Favourite"><i class="far fa-heart"></i> Login to Favourite</a>
                                             </div>
                                     {% endif %}
                                     
                                     <!-- Breadcrumb button -->
                                     <div id="go-back" class="recipe-btn">
-                                        <button onclick="goBack()">
+                                        <button onclick="goBack()" aria-label="Back">
                                             <i class="fas fa-arrow-left"></i> Back
                                         </button>
                                     </div>
@@ -182,12 +182,12 @@
                 
                 <ol id="directions-list">
                     <li>
-                            <h3>Directions</h3>
+                        <h3>Directions</h3>
                     </li>
                     {% for direction in recipe.directions %}
                     <li>
                         <!-- Reference: https://stackoverflow.com/questions/7537439/how-to-increment-a-variable-on-a-for-loop-in-jinja-template -->
-                            <span><strong>Step {{ loop.index }}: </strong></span> <br>{{ direction }}
+                        <span><strong>Step {{ loop.index }}: </strong></span> <br>{{ direction }}
                     </li> 
                     {% endfor %}
                 </ol>
@@ -213,12 +213,12 @@
                     <hr class="delete-hr">
                 </div>
                 <div class="modal-footer delete-footer">
-                    <button type="button" class="btn delete-btn red-btn">
-                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}">Yes, Delete!</a>
-                    </button>
-                    <button type="button" class="btn delete-btn">
-                        <a href="#" data-dismiss="modal">No, Go Back!</a>
-                    </button>
+                    <div class="col-6 delete-btn red-btn">
+                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" aria-label="Yes, Delete!">Yes, Delete!</a>
+                    </div>
+                    <div class="col-6 delete-btn">
+                        <a href="#" data-dismiss="modal" aria-label="No, Go Back!">No, Go Back!</a>
+                    </div>
                 </div>
             </div>
         </div>
