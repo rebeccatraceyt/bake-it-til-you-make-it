@@ -562,9 +562,12 @@ Family members and friends were asked to review the site and documentation to po
 It was through this testing that the following changes were made:
 - Update to Logo to be more conventionally positioned. The original designs were for a floating logo but that was quickly replaced due to the issues it cause.
 - Change to Recipe Card `font-size` and `max-length` in order to create consistency across all recipes. It was noted that some of the recipe names were longer than others, creating a spacing issue.
-- Creating conditional buttons for each category in order to better distinguish the differences.
-- Creating a 'quick-links' function for users to create a more streamline experience.
-- Creating a separate **Accounts Settings** page just for changing password or deleting account, in order to avoid the "danger" zone as much as possible.
+- Create conditional buttons for each category in order to better distinguish the differences.
+- Create a 'quick-links' function for users to create a more streamline experience.
+- Create a separate **Accounts Settings** page just for changing password or deleting account, in order to avoid the "danger" zone as much as possible.
+- Create a live image preview window, allowing the user to see the current image on the **Edit User** and **Edit Recipe** pages.
+- A **breadcrumbs** button on the Recipe page, allowing the users to return to their previous page for convenience. 
+- Create a *Search Again* button on the **Find Recipes** search results in order to provide the user with easy return access.
 
 [Back to top ⇧](#table-of-contents)
 
