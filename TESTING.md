@@ -492,9 +492,49 @@ Manual testing was conducted on the following elements on the **Recipe** Page:
 ![test image](static/images/testing-files/automated/firefox.png)
 
 ### Lighthouse Auditing
-- Welcome Menu: 
 
-![DevTools - Welcome Menu](static/images/testing-files/automated/.png)
+#### Desktop
+| Page | Performance | Accessibility | Best Practice | SEO |
+|------|:-------------:|:---------------:|:---------------:|:-----:|
+| Home Page | 86% | 100% | 80% | 100% |
+| Find Recipes | 99% | 92% | 80% | 90% |
+| Login | 97% | 100% | 80% | 100% |
+| Register | 99% | 100% | 80% | 100% |
+| Edit User | 99% | 100% | 80% | 100% |
+| Edit Account | 99% | 100% | 80% | 100% |
+| My Recipes | 97% | 100% | 80% | 100% |
+| My Favourites | 98% | 100% | 80% | 90% |
+| Create Recipe | 99% | 100% | 80% | 100% |
+| Edit Recipe | 98% | 90% | 80% | 100% |
+| Recipe Page | 96% | 100% | 80% | 90% |
+
+#### Mobile
+| Page | Performance | Accessibility | Best Practice | SEO |
+|------|:-------------:|:---------------:|:---------------:|:-----:|
+| Home Page | 86% | 100% | 93% | 100% |
+| Find Recipes | 73% | 92% | 93% | 90% |
+| Login | 93% | 100% | 87% | 100% |
+| Register | 92% | 100% | 87% | 100% |
+| Edit User | 70% | 100% | 87% | 100% |
+| Edit Account | 92% | 100% | 87% | 100% |
+| My Recipes | 79% | 100% | 93% | 100% |
+| My Favourites | 89% | 100% | 93% | 90% |
+| Create Recipe | 92% | 100% | 87% | 100% |
+| Edit Recipe | 82% | 90% | 87% | 100% |
+| Recipe Page | 74% | 100% | 87% | 92% |
+
+#### Breakdown of Results
+
+| Page | Error / Warning | Comment |
+|:-----:|:---------------:|:-------|
+| All Pages | Largest Contentful Paint | The images rendered on each page threw this error due to a number of reasons. The developer was able to pre-load images rendered using the `rel="preload"` attribute in **HTML** and using `-webkit-image-set()` in **CSS** ([Source](https://web.dev/preload-responsive-images/)). The problem still persists due to the use of third party images throughout the site.|
+| All Pages | Render-blocking resources | This warning stems from the use of `emailJS` for the contact form. The developer attempted to resolve this issue using the `defer` attribute within the script tag, but this only created an issue whereby the function sending the email was not called. |
+| Home Page | Tap targets not sized appropriately | Relating to the carousel controls. Issue was resolved by resizing the anchor tag of the controls. |
+| Home Page | Defer offscreen images | This relates to the carousel feature of the home page. The researched solution was to 'lazy-load' the images but that is not an option in this release due to the use of image urls, in lieu of uploads. |
+| My Favourites | Links are not crawlable | Relating to the `.page-link` class in the Bootstrap Pagination controls. |
+| All Pages | Avoid enormous network payload | This warning relates to the use of external images throughout the site. The payload size fluctuated significantly because of this. The solution to this would be to upload images directly to the site, but this feature is not included in this release |
+| Find Recipes | Size Images | This issue (like many others before) pertains to the use of external images, where the resource size is far greater than the displayed size. |
+| All Pages | Does not use HTTPS | In researching this error, the only conclusive reason for it is the use of mixed content throughout the site. |
 
 
 [Back to top ⇧](#table-of-contents)
