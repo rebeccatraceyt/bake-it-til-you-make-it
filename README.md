@@ -321,13 +321,13 @@ While the developer relied heavily on these Wireframes in order to maintain the 
 
 ## Data Schema
 
-For this project, the NoSQL database MongoDB was used to store the dataset. Within the created database, four collections were created, as illustrated below:
+For this project, the NoSQL database [MongoDB](https://www.mongodb.com/ "Link to MongoDB") was used to store the dataset. Within the created database, four collections were created, as illustrated below:
 
 ![Data Schema](static/images/readme-files/db-schema.png "Data Schema")
 
 ### Users Collection
-- On registering an account, the user provides:
-     - Username (unique to them)
+- When registering an account, the user provides:
+     - Username (unique identifier)
      - Email Address
      - Password (hashed)
      - User Image (not required, default used in its place)
@@ -335,10 +335,11 @@ For this project, the NoSQL database MongoDB was used to store the dataset. With
 - The remaining fields (**favourite_recipes** and **is_admin**) are provided default values, ensuring that, on registration:
      - **favourite_recipes** array is empty. 
      - **is_admin** value is **False**.
+
 - If a user favourites a recipe, that Recipe's **_id** will be included in the **favourite_recipes** array.
 
 ### Recipes Collection
-- On creation the recipe, the user provides:
+- When creating a recipe, the user provides:
      - Recipe Name
      - Recipe Image (not required, default used in its place)
      - Recipe URL Source (not required in the event it is not an online recipe)
@@ -350,20 +351,29 @@ For this project, the NoSQL database MongoDB was used to store the dataset. With
      - Ingredients
      - Directions
 - The Ingredients and Directions are entered dynamically to create an array.
-- The Recipe author (**baker**) is automatically the current user (session.user), storing their ObjectId.
-- The favourite_count array is empty by default.
-- If a user favourites the recipe, the number is incremented.
+
+- The remaining fields (**baker** and **favourite_count**) are provided default values, ensuring that:
+     - **baker** is automatically the current user (**session.user**), storing their **ObjectId** and **username**.
+     - **favourite_count** is empty.
+
+- When a user favourites the recipe, the number is incremented.
 
 ### Categories Collection
 - There are four specified categories that the developer chose from researching multiple baking sources.
+     - **Bread**
+     - **Cake**
+     - **Biscuit**
+     - **Pastry**
+
 - They were selected to refer to a broad spectrum of baking recipes.
 - Each category has a corresponding icon used throughout to provide visual distinction for each.
 
 ### Levels Collection
 - The Recipe's difficulty level is distinguished by:
-     - Easy
-     - Medium
-     - Hard
+     - **Easy**
+     - **Medium**
+     - **Hard**
+     
 - This was reflective of the user stories, appealing to bakers of all levels.
 
 ## Features
