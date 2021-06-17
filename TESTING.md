@@ -14,6 +14,8 @@
 ## Table of contents
 1. [Testing User Stories](#Testing-User-Stories)
 2. [Manual Testing](#Manual-Testing)
+    1. [Common Elements Testing](#Common-Elements-Testing)
+    2. [Page Elements Testing](#Page-Elements-Testing)
 3. [Automated Testing](#Automated-Testing) 
      - [Code Validation](#Code-Validation)
      - [Browser Validation](#Browser-Validation)
@@ -144,7 +146,10 @@ Manual testing was conducted on the following elements that appear on every page
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
-### Home Page
+### Page Elements Testing
+
+#### Home Page
+
 Manual testing was conducted on the following elements on the **Home** Page:
 
 - Using the **Carousel Controls**, the user can browse the featured recipes (the last four to be uploaded):
@@ -160,7 +165,8 @@ Manual testing was conducted on the following elements on the **Home** Page:
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
-### Find A Recipe Page
+#### Find A Recipe Page
+
 Manual testing was conducted on the following elements on the **Find A Recipe** Page:
 
 - The Search Bar allows users to enter their search query:
@@ -187,7 +193,8 @@ Manual testing was conducted on the following elements on the **Find A Recipe** 
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
-### Sign Up Page
+#### Sign Up Page
+
 Manual testing was conducted on the following elements on the **Sign Up** Page:
 
 - User can enter their details into the input fields: 
@@ -218,7 +225,8 @@ Manual testing was conducted on the following elements on the **Sign Up** Page:
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
-### Login Page
+#### Login Page
+
 Manual testing was conducted on the following elements on the **Login** Page:
 
 - User can enter their details into the input fields:
@@ -237,7 +245,8 @@ Manual testing was conducted on the following elements on the **Login** Page:
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
-### My Recipes Page
+#### My Recipes Page
+
 Manual testing was conducted on the following elements on the **My Recipes** Page:
 
 - Hovering over **Call to Action** buttons provide user feedback: 
@@ -248,7 +257,8 @@ Manual testing was conducted on the following elements on the **My Recipes** Pag
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
-### My Favourites Page
+#### My Favourites Page
+
 Manual testing was conducted on the following elements on the **My Favourites** Page:
 
 - Hovering over **Call to Action** buttons provide user feedback: 
@@ -263,7 +273,8 @@ Manual testing was conducted on the following elements on the **My Favourites** 
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
-### Edit User Page
+#### Edit User Page
+
 Manual testing was conducted on the following elements on the **Edit User** Page:
 
 - The Edit User page is only accessible from *login authenticated* pages: 
@@ -305,7 +316,8 @@ Manual testing was conducted on the following elements on the **Edit User** Page
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
-### Edit Accounts Page
+#### Edit Accounts Page
+
 Manual testing was conducted on the following elements on the **Edit Accounts** Page:
 
 - Passwords must match:
@@ -328,7 +340,8 @@ Manual testing was conducted on the following elements on the **Edit Accounts** 
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
-### Create Recipe Page
+#### Create Recipe Page
+
 Manual testing was conducted on the following elements on the **Create Recipe** Page:
 
 - User can enter Recipe details:
@@ -363,7 +376,8 @@ Manual testing was conducted on the following elements on the **Create Recipe** 
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
-### Edit Recipe Page
+#### Edit Recipe Page
+
 Manual testing was conducted on the following elements on the **Edit Recipe** Page:
 
 - User can enter Recipe details (current information will be the default value):
@@ -402,7 +416,8 @@ Manual testing was conducted on the following elements on the **Edit Recipe** Pa
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
  
-### Recipe Page
+#### Recipe Page
+
 Manual testing was conducted on the following elements on the **Recipe** Page:
 
 - Clicking the recipe card (image or name) will direct the user to the Individual Recipe Page:
