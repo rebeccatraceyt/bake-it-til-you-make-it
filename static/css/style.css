@@ -376,27 +376,13 @@ li {
     -moz-box-shadow: var(--dark-box) 0 0 10px;
     box-shadow: var(--dark-box) 0 0 10px;
 }
-/* Sourced from:
-    https://stackoverflow.com/questions/46249541/change-arrow-colors-in-bootstraps-carousel */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  height: 100px;
-  width: 100px;
-  outline: black;
-  background-size: 100%, 100%;
-  border-radius: 50%;
-  background-image: none;
+a.carousel-control-prev,
+a.carousel-control-next {
+    width: 50px;
 }
-.carousel-control-next-icon:after
-{
-  content: '>';
-  font-size: 50px;
-  color: var(--white);
-}
-.carousel-control-prev-icon:after {
-  content: '<';
-  font-size: 50px;
-  color: var(--white);
+.carousel-btn i {
+    color: black;
+    font-size: 3em;
 }
 
 /* --- Find Recipes Page -- */
@@ -1959,7 +1945,7 @@ footer li {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        
+
         padding: 4px;
         margin: auto 0;
         display: flex;
