@@ -608,12 +608,14 @@ The developer was forced to revert two commits ([1](https://github.com/rebeccatr
      - Procreate was used to create and edit images as well as using the colour picker tool to ensure consistency throughout.
 - [Imgbb](https://imgbb.com/ "Link to Imgbb site") 
      - ImgBB was used to externally host images used.
+- [Transparent Textures](https://www.transparenttextures.com/ "Link to Transparent Texures site")
+     - Transparent Textures was used to create the textured background heavily featured on the website.
 - [Font Awesome](https://fontawesome.com/ "Link to Font Awesome site")
      - Font Awesome was used in conjunction with Iconify for icons used throughout the website.
 - [Iconify](https://iconify.design/ "Link to Iconify Design site")
      - Iconify was used in conjunction with Font Awecome for icons used throughout the website.
 
-*The developer made the decision to use both websites for icons as neither had **all** the icons the developer needed to use for UI purposes. Although this may not be best practice, it provided the necessary design functionality for several items, most notably the conditional icons for each category.*
+     *The developer made the decision to use both websites for icons as neither had **all** the icons the developer needed to use for UI purposes. Although this may not be best practice, it provided the necessary design functionality for several items, most notably the conditional icons for each category.*
 
 ### Libraries
 - [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/ "Link to Bootstrap page")
@@ -640,6 +642,13 @@ The developer was forced to revert two commits ([1](https://github.com/rebeccatr
      - Jinja templating language was used to simplify and display backend data in html.
 - [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information")
      - Werkzeug was used for password hashing and authentication.
+
+### Database Management
+- [MongoDB](https://www.mongodb.com/ "Link to MongoDB site")
+     - MongoDB was the chosen NoSQL database for this website.
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas "Link to MongoDB Atlas site")
+     - MongoDB Atlas was the cloud database service used to host the database.
+
 
 [Back to top ⇧](#table-of-contents)
 
