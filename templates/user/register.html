@@ -17,7 +17,7 @@
         <div class="row accounts-bg">
             <div class="container-fluid">
                 <div class="row accounts-label">
-                    <form class="col-12" method="POST" action="{{ url_for('register') }}">
+                    <form class="col-12" method="POST" action="{{ url_for('register') }}" aria-label="Register Account">
 
                         <div class="row">
                             <div class="col-12 page-intro">
@@ -50,7 +50,7 @@
                             </div>
                             <div class="col-12 new-img img-container">
                                 <!-- Image preview container -->
-                                <img class="img-window" src="" alt="Preview of recipe image input">
+                                <img class="img-window" src="#" alt="Preview of recipe image input">
                             </div>
                         </div>
 
@@ -74,7 +74,7 @@
                         <!-- Submit Button -->
                         <div class="row">
                             <div class="col-12 accounts-btn">
-                                <button class="submit-btn" type="submit">
+                                <button class="submit-btn" type="submit" aria-label="Register">
                                     Register <i class="fas fa-sign-in-alt"></i>
                                 </button>
                             </div>
@@ -85,7 +85,7 @@
                 <div class="row">
                     <div class="col-12 accounts-link">
                         <p>
-                            Already Registered? <a href="{{ url_for('login') }}" >Log In</a>
+                            Already Registered? <a href="{{ url_for('login') }}" aria-label="Log In">Log In</a>
                         </p>
                     </div>
                 </div>
