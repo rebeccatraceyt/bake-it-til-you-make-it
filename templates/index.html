@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block nav_home %}active{% endblock %}
 
-<!-- Replaces general header with unique header for Home Page -->
+<!-- Replaces general header with Home Page header -->
 {% block noheader %}no-header{% endblock %}
 
 {% block content %}
@@ -36,16 +36,16 @@
                         <div id="home-btns" class="row">
                             <div class="col-6 col-lg-12 home-btn">
                                 {% if session.user %}
-                                    <a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a>
+                                    <a href="{{ url_for('my_recipes', username=session['user']) }}" aria-label="My Recipes">My Recipes</a>
                                 {% else %}
-                                    <a href="{{ url_for('register') }}">Sign Up</a>
+                                    <a href="{{ url_for('register') }}" aria-label="Sign Up">Sign Up</a>
                                 {% endif %}
                             </div>
                             <div class="col-6 col-lg-12 home-btn">
                                 {% if session.user %}
-                                    <a href="{{ url_for('my_favourites', username=session['user']) }}">My Favourites</a>
+                                    <a href="{{ url_for('my_favourites', username=session['user']) }}" aria-label="My Favourites">My Favourites</a>
                                 {% else %}
-                                    <a href="{{ url_for('login') }}">Login</a>
+                                    <a href="{{ url_for('login') }}" aria-label="Login">Login</a>
                                 {% endif %}
                             </div>
                         </div>
