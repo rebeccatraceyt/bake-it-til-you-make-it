@@ -19,7 +19,7 @@
         <div class="row accounts-bg">
             <div class="container-fluid">
                 <div class="row accounts-label">
-                    <form class="col-12" method="POST" action="{{ url_for('edit_user', username=session['user']) }}">
+                    <form class="col-12" method="POST" action="{{ url_for('edit_user', username=session['user']) }}" aria-label="Edit User">
 
                         <!-- User Image -->
                         <div class="row end-input">
@@ -37,7 +37,7 @@
                                     <div class="col-12 new-img img-container">
                                         <p>New Image:</p>
                                         <!-- Image preview container -->
-                                        <img class="img-window" src="" alt="Preview of recipe image input">
+                                        <img class="img-window" src="#" alt="Preview of recipe image input">
                                     </div>
                                 </div>
                             </div>
@@ -46,10 +46,10 @@
                         <!-- Submit button -->
                         <div class="row no-gutters edit-btns">
                             <div class="col-6 edit-btn white-btn">
-                                <a href="{{ url_for('my_recipes', username=session['user']) }}">Cancel</a>
+                                <a href="{{ url_for('my_recipes', username=session['user']) }}" aria-label="Cancel">Cancel</a>
                             </div>
                             <div class="col-6 edit-btn">
-                                <button type="submit">
+                                <button type="submit" aria-label="Save">
                                     Save
                                 </button>
                             </div>
@@ -58,7 +58,7 @@
                         <!-- Account Settings -->
                         <div class="row">
                             <div class="col-12 edit-btn end-edit-btn red-btn">
-                                <a href="{{ url_for('edit_account', username=session['user']) }}">Account Settings</a>
+                                <a href="{{ url_for('edit_account', username=session['user']) }}" aria-label="Account Settings">Account Settings</a>
                             </div>
                         </div>
                     </form>
