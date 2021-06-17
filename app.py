@@ -145,7 +145,7 @@ def find_recipes():
 
 # ------- Search for Recipes -------
 
-@app.route("/search_results", methods=['GET', 'POST'])
+@app.route("/search", methods=['GET', 'POST'])
 def search():
     """
     Search function allows users to search within text indices for:
