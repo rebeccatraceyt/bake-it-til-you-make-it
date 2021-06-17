@@ -409,7 +409,7 @@ li {
     padding: 2px;
 }
 .search-filter button {
-    width: 100%;
+    min-width: 100%;
     background-color: var(--text);
     color: var(--white);
 
@@ -424,12 +424,20 @@ li {
 .search-filter .dropdown {
     padding: 4px;
 }
+.search-filter .dropdown .btn:hover, 
+.search-filter .dropdown .btn:active, 
+.search-filter .dropdown .btn:focus {
+    /* Used in order to preserve consistency.
+        Adapted from https://stackoverflow.com/questions/44612813/how-to-change-bootstrap-4-drop-down-colors/44612898 */
+    background: var(--text); 
+    color:var(--white);
+}
 .dropdown-menu {
     background-color: var(--text);
 }
 .dropdown-item {
     color: var(--white);
-    width: 50%;
+    width: 90%;
 }
 .search-area {
     width: 100%;
