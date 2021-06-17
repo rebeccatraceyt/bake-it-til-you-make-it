@@ -1229,7 +1229,7 @@ footer li {
 .delete-footer {
     margin: auto;
     border: none;
-    width: 80%;
+    padding-bottom: 20px;
 }
 .delete-btn a {
     min-width: 80%;
