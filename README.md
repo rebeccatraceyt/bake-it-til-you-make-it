@@ -379,11 +379,11 @@ For this project, the NoSQL database [MongoDB](https://www.mongodb.com/ "Link to
 ## Features
 
 ### Design Features
-- Each page of the website features a consistently responsive and intuitive navigational system:
+Each page of the website features a consistently responsive and intuitive navigational system:
 - There is a conventionally placed **navbar** on the top of each page with easily accessible and identifiable navigation links with a clickable logo, redirecting users back to the home page.
      - On mobile and tablet screens, the navbar is located in a conventionally placed 'hamburger' menu.
 - There is a **banner image with title** on each page providing users with the necessary feedback of their current position on the site.
-     - On larger screens, an `active` class is used to provide this feedback as well.
+     - An `active` class is used in the `navbar` to provide this feedback as well.
 - The **Footer** contains a disclaimer that is hidden, using a **toggler** function to display the information regarding the use of copyrighted material on the website.
 - The **Footer** contains the appropriate **icons** to allow users to:
      - Link to the developers GitHub Page.
@@ -391,34 +391,43 @@ For this project, the NoSQL database [MongoDB](https://www.mongodb.com/ "Link to
      - Open a **Contact Modal** to send a message to the Developer. 
 - [Jinja](http://jinja.pocoo.org/docs/2.10/ "Link to Jinja information") was used to extend the `base.html` page, allowing for the utmost consistency and preservation of functionality across all pages. The extended block elements created the same basic layout for each page:
 
-```
-<nav>
-     <!-- Navigational content -->
-</nav>
+     ```
+     <nav>
+          <!-- Navigational content -->
+     </nav>
 
-<section>
+     <section>
 
-     {% block header %}
-          <!-- Page Banner Image and Title -->
-     {% endblock %}
+          {% block header %}
+               <!-- Page Banner Image and Title -->
+          {% endblock %}
 
-     {% block flash %}
-          <!-- Appropriate flash messages -->
-     {% endblock %}
+          {% block flash %}
+               <!-- Appropriate flash messages -->
+          {% endblock %}
 
-     {% block content %}
-          <!-- Content unique to each page -->
-     {% endblock %}
+          {% block content %}
+               <!-- Content unique to each page -->
+          {% endblock %}
 
-</section>
+     </section>
 
-<footer>
-     <!-- Footer content -->
-</footer>
-```
-- If the user is in session, there will be additional links added. These links allow users to get straight to where they might want to be. The additions are broken down as follows:
-     - On mobile and tablet screens, an extra `logout` button will appear on the navigation menu in order to provide quick access to logging out.
-     - On larger devices a conventionally placed `user_img` will appear on the right side of the navigation menu, with a dropdown list complete with quick-access links for `Edit Profile`, `Create Recipe` and `Log out`.
+     <footer>
+          <!-- Footer content -->
+     </footer>
+     ```
+
+- If the user is in session, there will be additional links added to the `navbar`:
+     - Edit Profile
+     - Create Recipe
+     - Logout
+
+- These links allow users to get straight to where they want to be. The additions are broken down as follows:
+
+     - On mobile and tablet screens, the extra buttons will appear on the navigation (hamburger) menu in order to provide quick access.
+
+     - On larger devices a conventionally placed `user_img` will appear on the right side of the navigation menu, with a dropdown list of the additional links.
+
 - Recipe **Cards** are used throughout the website, providing users with a snapshot of the recipe and it's information before they view the entire recipe page. Each card is designed the same for consistency purposes and allows the user to either click on the recipe **image** or **name** in order to be directed to the recipe page.
  
 
@@ -434,29 +443,34 @@ For this project, the NoSQL database [MongoDB](https://www.mongodb.com/ "Link to
 **[Find A Recipe Page](http://bake-it-til-you-make-it.herokuapp.com/find_recipes "Link to Find A Recipe page")**
 | Feature       | Description  |
 |---------------|--------------|
-| Search Bar    | Search bar function allowing users to **search** for their preferred recipes |
+| Search Bar    | Search bar function allowing users to **search** for their preferred recipes. Using a text search will direct users to the `search.html` page |
 | Dropdown Menu | Nested dropdown menu to **refine** the users search by either **Category** or **Level**|
 | Pagination    | The **Pagination** functionality will be activated once the amount of recipes to be displayed is over `6`. This was to avoid overwhelming the user.|
+
+**Search Results**
+| Feature       | Description  |
+|---------------|--------------|
+| Call to Action | There is a **Search Again** button allowing users to reset the search. This is conditional. If there **is** results from their search, the button is placed at the bottom of the page, allowing the users to view their results first. If there is **not** any results, the button is placed at the top of the page for their convenience (above the recommendations).
 
 **[Sign Up Page](http://bake-it-til-you-make-it.herokuapp.com/register "Link to Sign Up page")**
 | Feature       | Description  |
 |---------------|--------------|
 | Input Fields    | The **input** fields allow users to enter their information. The user can enter a profile image if they wish, or a default image will be used instead.|
 | Image Preview | On adding an image url to the `Profile Picture` field, the user can preview their image to ensure that the link is correct and it is the image they would like to use. |
-| Password Authentication | The **password** field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information") to hash the password on entry and **confirm password** is validated using **Javascript**. If the passwords do not match, a `disabled` class is added to the **Register** button, preventing a password error|
+| Password Authentication | The **password** field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information") to hash the password on entry and **confirm password** is validated using **Javascript**. If the passwords do not match, a `disabled` class is added to the **Register** button, preventing a password error. |
 | Call to Action | Once the input fields are completed as required, the user can click to **Register** or, if they already have an account, they can **Login**. |
 
 **[Login Page](http://bake-it-til-you-make-it.herokuapp.com/login "Link to Login page")**
 | Feature       | Description  |
 |---------------|--------------|
-| Input Fields    | The **input** fields allow users to enter their information. The user can enter a profile image if they wish, or a default image will be used instead.|
+| Input Fields    | The **input** fields allow users to enter their username. |
 | Password Authentication | The **password** field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information") to un-hash the salted password for login authentication|
 | Call to Action | Once the input fields are completed as required, the user can click to **Login** or, if they do not already have an account, they can **Register**. |
 
 **My Recipes Page** (This page requires login authentication)
 | Feature       | Description  |
 |---------------|--------------|
-| Call to Action    | The User's **My Recipes** provides multiple actions the user can take: **Edit Profile**, **Create Profile**, link to **My Favourites** and the **logout** function. |
+| Call to Action    | The User's **My Recipes** provides multiple actions the user can take: **Edit Profile**, **Create Profile**, link to **My Favourites** and the **logout** function. If they have no recipes in their repository, the user will be provided with addtional links to **get inspired** (search recipes) or **get creative** (create a recipe).|
 
 **My Favourites Page** (This page requires login authentication)
 | Feature       | Description  |
@@ -482,33 +496,31 @@ For this project, the NoSQL database [MongoDB](https://www.mongodb.com/ "Link to
 | Feature       | Description  |
 |---------------|--------------|
 | Input Fields | The **input fields** allow the user to input the recipe information as necessary. All fields are appropriately **validated**, with the exception of `Recipe Image` and `Recipe URL` to allow for the upload of recipes not available online.|
-| Image Preview | The `Recipe Image` field allows the user to preview their current recipe image. Changing the image url calls a `JavaScript` function, allowing the user to get real-time feedback as they change the image.|
+| Image Preview | Addint to the `Recipe Image` field calls a `JavaScript` function, allowing the user to get real-time feedback of the image.|
 | Dropdown Menu| User can refine their recipe using the dropdown menu|
-| Dynamic Input Fields| The fields for `Ingredients` and `Directions` allow for dynamic input. The user can use the **Add Ingredient**, **Add Direction** or **Delete** buttons to add fields as necessary. This was used in order to create a dynamic array of both lists for a much cleaner and readable display.|
-| Call to Action | As well as the **Add Ingredient** and **Add Direction** buttons, there is a **Cancel** and **Add Recipe** button, directing the user to the appropriate page.|
+| Dynamic Input Fields| The fields for `Ingredients` and `Directions` allow for dynamic input. The user can use the **Add Ingredient**, **Add Direction** or **Delete** buttons to add or remove fields as necessary. This was used in order to create a dynamic array of both lists for a much cleaner and readable display.|
+| Call to Action | As well as the **Add Ingredient** and **Add Direction** buttons, there is a **Cancel** and **Add Recipe** button, directing the user to their **Recipes** page.|
 
 **Edit Recipe Page** (This page requires login authentication)
 | Feature       | Description  |
 |---------------|--------------|
 | Input Fields | The **input fields** allow the user to edit the recipe information as necessary. All fields use the current values as their default, allowing the user to only change the information they need to.|
-| Image Preview | On adding a **new** image url to the `Recipe Image` field, the user can preview their image to ensure that the link is correct and it is the image they would like to use.|
+| Image Preview | The `Recipe Image` field allows the user to preview their current recipe image. Changing the image url calls a `JavaScript` function, allowing the user to get real-time feedback as they change the image.|
 | Dynamic Input Fields| The fields for `Ingredients` and `Directions` allow for dynamic input. The user can use the **Add Ingredient**, **Add Direction** or **Delete** buttons to add and remove fields as necessary, with the exception of the first in each list, in order to preserve the array.|
-| Call to Action | As well as the **Add Ingredient** and **Add Direction** buttons, there is a **Cancel** and **Add Recipe** button, directing the user to the appropriate page. A **Delete** button, opens the delete_recipe modal |
+| Call to Action | As well as the **Add Ingredient** and **Add Direction** buttons, there is a **Cancel** and **Add Recipe** button, directing the user to the appropriate page. A **Delete** button, opens the `delete_recipe` modal |
 | Modal | The `delete_recipe` **modal** is defensively designed allowing the user to confirm their actions before proceeding with the deletion. |
 
 **[Recipe Page (Apple Tart Recipe)](http://bake-it-til-you-make-it.herokuapp.com/recipe/60b8d90f21c54a83d5c121e1 "Link to Apple Tart Recipe Page")**
 
-**Call to Action** 
-
-The buttons on the recipe page are conditional to the user's role on the website, with the following break down:
+The **Call to Action** buttons on the recipe page are conditional to the user's role on the website, with the following break down:
 
 | Role       | Conditional Buttons  |
 |---------------|--------------|
-| Not Logged in| **Login To Add Favourites** Button directing the user to login in, in order to save the recipe to their favourites|
-| Logged in user is **not** author | **Add To Favourites** Button direction the user to add the recipe to their favourites. They are then redirected back to the recipe page with a new **Remove from Favourites** button.|
-| Logged in user **is** author | **Edit** and **Delete** buttons direct the user to **Edit Recipe Page** and `delete_recipe` **modal** respectively.|
+| Not Logged in| **Login To Add Favourites** - directing the user to login in, in order to save the recipe to their favourites|
+| Logged in user is **not** author | **Add To Favourites** - directing the user to add the recipe to their favourites. They are then redirected back to the recipe page with a new **Remove from Favourites** button.|
+| Logged in user is **Author** | **Edit** and **Delete** buttons direct the user to **Edit Recipe Page** and `delete_recipe` **modal** respectively.|
 | Logged in user is **Admin** | The administrative user has access to **Edit** and **Delete** buttons as well as the **Add To Favourites** or **Remove from Favourites** (should they want to save it)|
-| **All Users**| A ***breadcrumb*** button allows the user to return to their previous page, giving them more control.|
+| **All Users**| A **breadcrumb** button (powered by `JavaScript`) allows the user to return to their previous page, giving them more control.|
 
 ### Features to Implement in the future
 - **Recipe PDF Download** 
@@ -516,7 +528,7 @@ The buttons on the recipe page are conditional to the user's role on the website
      - The developer researched the possibilities of this feature, and know it is possible using the `pdfkit` library import but they held off from implementing it in this release in order to further develop their skills to be able to implement the feature properly. A simplified version could have been implemented but it would not be to the standard the developer would like.
 
 - **Image Upload**
-     - A feature that would allow the user to upload a file image rather than using an image url.
+     - A feature that would allow the user to upload a file image, rather than using an image url, avoiding the issues they encountered in the validation stages.
      - It was on the suggestion of the Code Institute Student Care team that the developer did not implement this feature in this release.
 
 - **Image Processing**
