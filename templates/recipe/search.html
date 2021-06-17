@@ -4,8 +4,8 @@
 {% block header %}
 
     <!-- Page Title -->
-    <h2> <span>{{ results_count }}</span> Results Found For <br class="d-block d-md-none"> "<span class="text-uppercase">{{ query }}</span>"</h2>
-    
+    <h2>{% if results_count == 0 %} No {% else %} {{ results_count }} {% endif %} {% if results_count == 1 %} Result {% else %} Results {% endif %} Found For <br class="d-block d-md-none"> "<span class="text-uppercase">{{ query }}</span>"</h2>
+        
 {% endblock %}
 
 {% block content %}
