@@ -450,24 +450,26 @@ Manual testing was conducted on the following elements on the **Recipe** Page:
 
 ### Code Validation
 
-#### [W3C Markup Validator](https://validator.w3.org/ "Link to W3C Markup Validator") was used to validate the `HTML` code used, using the `Validate by URI` method:
+- [W3C Markup Validator](https://validator.w3.org/ "Link to W3C Markup Validator") was used to validate the `HTML` code used, using the `Validate by URI` method.
 
-**Results:**
+    - All errors highlighted and resolved, with the exception of the errors thrown by Jinja.
 
+-  [W3C CSS Validator](https://jigsaw.w3.org/css-validator/ "Link to W3C CSS Validator") was used to validate the `CSS` code used.
 
-#### [W3C CSS Validator](https://jigsaw.w3.org/css-validator/ "Link to W3C CSS Validator") was used to validate the `CSS` code used:
+    ![Style sheet validation results](static/images/testing-files/automated/css-val.png)
 
-**Result:**
-![Style sheet validation results](static/images/testing-files/automated/css-val.png)
+- [JSHint](https://jshint.com/ "Link to JSHint") was used to validate the `JavaScript` and `JQuery` code used.
 
-#### [JSHint](https://jshint.com/ "Link to JSHint") was used to validate the `JavaScript` and `JQuery` code used:
+    - Errors highlighted in `script.js` pertain to [SweetAlert2](https://sweetalert2.github.io/ "Link to Sweet Alert 2 page") and [jQuery Validation](https://jqueryvalidation.org/ "Link to jQuery Validation page") as well as the `onclick` functions:
 
-- The following errors for `script.js` pertain to [SweetAlert2](https://sweetalert2.github.io/ "Link to Sweet Alert 2 page") and [jQuery Validation](https://jqueryvalidation.org/ "Link to jQuery Validation page") as well as the `onclick` functions:
-
-    ![Script Validation Results](static/images/testing-files/automated/js-val.png) 
+        ![Script Validation Results](static/images/testing-files/automated/js-val.png) 
 
 
-- There were no errors for `recipe.js` file
+    - There were no errors highlighted in `recipe.js` file
+
+- [PEP8 Online](http://pep8online.com/ "Link to PEP8 Online") was used to validate `Python` code.
+    
+    - All highlighted errors and warnings resolved.
 
 ### Browser Validation
 **Chrome:**
