@@ -336,10 +336,14 @@ li {
 #home-bio p {
     font-size: .9em;
 }
-#home-btn {
+#home-btns {
+    padding: 2px;
+}
+.home-btn {
+    width: 100%;
     margin: auto;
 }
-#home-btn a {
+.home-btn a {
     /* Referenced and edited from:
         https://stackoverflow.com/questions/8357058/how-to-make-an-html-anchor-tag-or-link-look-like-a-button  */
     display: table;
@@ -357,7 +361,7 @@ li {
     margin: auto;
     font-size: 1.2em;
 }
-#home-btn a:hover {
+.home-btn a:hover {
     background: var(--white);
     color: var(--text);
 }
@@ -1376,12 +1380,15 @@ footer li {
     #home-bio p {
         font-size: 1.3em;
     }
-    #home-btn {
+    #home-btns {
+        padding: 10px 15px;
+    }
+    .home-btn {
         margin: auto;
         text-align: center;
-        max-width: 70%;
+        max-width: 40%;
     }
-    #home-btn a {
+    .home-btn a {
         padding: 20px;
         line-height: 40px;
         font-size: 2.3em;
@@ -1683,7 +1690,7 @@ footer li {
     #home-bio h5 {
         font-size: 1.3em;
     }
-    #home-btn a {
+    .home-btn a {
         min-width: 60%;
         max-width: 70%;
         font-size: 1.4em;
@@ -2027,7 +2034,7 @@ footer li {
     #home-bio h5 {
         font-size: 2em;
     }
-    #home-btn a {
+    .home-btn a {
         min-width: 40%;
         max-width: 50%;
         font-size: 1.4em;
