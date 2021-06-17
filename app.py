@@ -510,6 +510,8 @@ def my_recipes(username):
 def my_favourites(username):
     """
     Displays recipes the user has 'favourited'
+    Favouriting functionality inspired by:
+    https://github.com/johnnycistudent/recipe-app/blob/master/app.py
     """
 
     if session["user"] == username:
@@ -551,6 +553,8 @@ def my_favourites(username):
 def add_to_favourites(recipe_id):
     """
     Adds recipe to the current users 'favourites'
+    Favouriting functionality inspired by:
+    https://github.com/johnnycistudent/recipe-app/blob/master/app.py
     """
     recipe = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})
@@ -594,6 +598,8 @@ def add_to_favourites(recipe_id):
 def remove_from_favourites(recipe_id):
     """
     Allows user to remove favourited recipe from favourites
+    Favouriting functionality inspired by:
+    https://github.com/johnnycistudent/recipe-app/blob/master/app.py
     """
 
     recipe = mongo.db.recipes.find_one(
