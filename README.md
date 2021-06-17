@@ -19,7 +19,7 @@
 
 ## UX 
 ### Project Goals
-The primary goal of **Bake It 'Til You Make It** is to provide a web-based application, that is simplistic and intuitive in design, that allows users to create, search, save and share their favourite baking recipes on a database.
+The primary goal of **Bake It 'Til You Make It** is to provide a web-based application, that is simplistic and intuitive in design, that allows users to **create**, **search**, **save** and share their **favourite** baking recipes in one place.
 
 This is the third of four Milestone Projects that the developer must complete during their Full Stack Web Development Program at The Code Institute. 
 
@@ -28,21 +28,21 @@ The main requirements were to build a full-stack website allowing users to manag
 #### User Goals
 The user is looking for:
 - A searchable database to locate recipes of their choice.
-- A easy-to-use user management system with **CRUD** conventions to:
+- An easy-to-use user management system with **CRUD** conventions to:
 
     - Create a user account.
     - See their user information, as applicable.
     - Edit their user account.
     - Delete their user account.
 
-- A easy-to-use dataset management system with **CRUD** conventions to:
+- An easy-to-use dataset management system with **CRUD** conventions to:
 
     - Create recipes.
     - Read recipe dashboards.
     - Edit their own recipe creations.
     - Delete their own recipe creations.
 
-- A intuitive and aesthetically pleasing interface.
+- An  intuitive and aesthetically pleasing interface.
 
 #### Developer / Site Owner Goals
 The Developer is looking to:
@@ -91,12 +91,12 @@ Broken into three categories, the website will focus on the following target aud
 - **Roles:**
      - Bakers of all levels
      - New Users **(Non-Registered)**
-     - Return Users **(Registered)**
+     - Returning Users **(Registered)**
 
 - **Demographic:**
      - Passion for baking
      - Food lovers
-     - All ages (encouraging family fun-time)
+     - All ages
 
 - **Psychographics:**
      - Personality & Attitudes:
@@ -111,13 +111,16 @@ Broken into three categories, the website will focus on the following target aud
 
 The website needs to enable the **user** to:
 - Register/Login to an account
+- Edit their account
+- Delete their account
 - Search Recipe database by:
-    - Name
+    - Name/Phrase
     - Category
     - Level
 - View Recipe Dashboard with the following information:
     - Name
-    - Image URL
+    - Image
+    - Recipe Source
     - Description
     - Category
     - Serving Size
@@ -148,19 +151,22 @@ With these goals in mind, a strategy table was created to determine the trade-of
 
 <strong>2. <u>Scope</u></strong>
 
-A scope was defined in order to clearly identify what needed to be done in order to align features with the strategy previously defined. This was broken into two categories:
+A scope was defined to identify what needed to be done in order to align features with the strategy previously defined. This was broken into two categories:
 - **Content Requirements**
      - The user will be looking for:
         - Customisable and Editable account:
             - Custom Username/Password
             - Custom User Image
+            - Manage their account
             - Upload their own recipes
+            - Manage their own recipes
             - Save favourite recipes
         - Easy Navigation
-        - Aesthetic theme (typography, imagery, colour palette)
+        - Aesthetic and identifiable theme
         - Recipe dashboard:
             - Name
             - Image URL
+            - Recipe Source
             - Description
             - Category
             - Serving Size
@@ -175,17 +181,20 @@ A scope was defined in order to clearly identify what needed to be done in order
      - The user will be able to:
         - Register/Login to account
         - Customise and edit their profile:
-            - Custom Username/Password
-            - Custom User Image
+            - Customise Username/Password
+            - Customise User Image
+            - Edit and Delete their account
             - Upload their own recipes
+            - Edit and delete their recipes
             - Save favourite recipes
         - Navigate to recipes:
             - Search by name, category or level
             - My Recipes Page
             - My Favourites Page
-        - Create recipes:
+        - Create their recipes, providing:
             - Name
             - Image URL
+            - Recipe Source
             - Description
             - Category
             - Serving Size
@@ -257,13 +266,21 @@ Wireframe mockups were created in a [Figma Workspace](https://www.figma.com/file
 
      (All modals were styled the same, using their unique content, in order to remain consistent)
 
-**Updates to design:** </br>
+**Post Mock-Up Design Changes:** </br>
 While the developer relied heavily on these Wireframes in order to maintain the desired design, there are differences between the Mockups and the final product:
 - Most notably, the graphics were changed on the header images for readability purposes to create a better User Experience.
 - The colouring for the buttons were altered to distinguish their purpose:
      - *Brown* for normal functionality.
      - *White* for 'cancel' actions (return or logout).
      - *Red* for 'danger' actions (delete or alter account and recipes).
+- A quick-links menu for logged in users, providing them with links to the most used pages:
+     - Edit Profile
+     - Create Recipe
+     - Log Out
+- A 'breadcrumbs' button was added to the Recipes page, returning the user to their previous page.
+- Dynamic Ingredients and Directions allowing users to add input fields as needed creating an array for better readability.
+- The decision was made to hide the disclaimer information by default. Providing users with a button where they can reveal it as they wish.
+
 
 <strong>5. <u>Surface</u></strong>
 
