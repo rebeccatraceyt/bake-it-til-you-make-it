@@ -2,8 +2,10 @@
      <a href="https://bake-it-til-you-make-it.herokuapp.com/" target="_blank"><img src="https://i.ibb.co/k99xn4b/bakeit-banner.png" alt="Bake It 'Til You Make It"></a>
 </h1>
 
+# Bake It Til You Make It
+
 <div align="center">
-<p><strong><em>Bake It 'Til You Make It</em></strong> is a community-based web application for those who love the art of baking. Users can search and share their favourite creations.</p>
+<p>A community-based web application for those who love the art of baking, where users can search and share their favourite creations.</p>
  
 <p>Inspired by the old-school baking book (full to the brim with loose paper and notes), the application features hand-drawn graphics and fonts designed to bring the users back to a time of scribbled recipes, in a more organised fashion, through a simplistic and intuitive user interface. </p>
  
@@ -317,7 +319,7 @@ While the developer relied heavily on these Wireframes in order to maintain the 
           - The [Paper 2](https://www.transparenttextures.com/paper-2.html "Link to Paper 2 Texture") texture was used as the background for the 'notebook' effect.
           - The [Lined Paper](https://www.transparenttextures.com/lined-paper.html "Link to Lined Paper Texture") texture was used as the background for the card and image panels.
 
-[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#bake-it-til-you-make-it)
 
 ## Data Schema
 
@@ -543,7 +545,7 @@ The **Call to Action** buttons on the recipe page are conditional to the user's 
      - A feature that would allow for the developer to send an automated email to users on registration, verifying their email and account.
      - This, too, was in the original plans and the developer tried their best to be able to implement it in this release, but it was not meant to be. 
 
-[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#bake-it-til-you-make-it)
 
 ## Issues and Bugs 
 The developer ran into a number of issues during the development of the website, with the noteworthy ones listed below, along with solutions or ideas to implement in the future.
@@ -582,7 +584,7 @@ In order to avoid this error, the developer installed and selected `Flake8` to l
 **Reverted Commits Note** <br>
 The developer was forced to revert two commits ([1](https://github.com/rebeccatraceyt/bake-it-til-you-make-it/commit/4a410cb11de6f90f3fb4a698e61818b1724e7cd6) and [2](https://github.com/rebeccatraceyt/bake-it-til-you-make-it/commit/7a1f64dd73470a54868ffbea1eeb8c6a54770d47)) on the 8th of June in order to backtrack to a previous commit, preserving the functionality that was lost. After trying to implement a `partials` directory, that would store extendable blocks to be used on all pages, the developer noticed that, in doing so, vital functions, including **user authentication** were throwing an error. Having already pushed these commits to Github, the developer reverted the commit that implemented the creation of the `@login_decorator` in `app.py`, as they believed this to be the cause. Once this was reverted, it was clear that it was not the cause, the commit previous to that (the implementation of the `partials` directory) was reverted as well. In doing this, the functionality was restored. The developer chose not to re-implement the `partials` directory but was successful in re-implementing the `@login_decorator` functionality at a later date. 
 
-[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#bake-it-til-you-make-it)
 
 ## Technologies Used
 ### Languages
@@ -650,7 +652,7 @@ The developer was forced to revert two commits ([1](https://github.com/rebeccatr
      - MongoDB Atlas was the cloud database service used to host the database.
 
 
-[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#bake-it-til-you-make-it)
 
 ## Testing
 
@@ -793,7 +795,7 @@ Heroku will receive the pushed code from the GitHub repository and host the appl
 The deployed version can now be viewed by selecting `View App` in the top-right of the page.
 
 
-[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#bake-it-til-you-make-it)
 
 ## Credits 
 The developer consulted multiple sites in order to better understand the code they were trying to implement. 
@@ -806,16 +808,16 @@ For code that was copied and edited, the developer made sure to reference this w
 - [Bootstrap](https://getbootstrap.com/ "Link to BootStrap page")
 - [JSfiddle](https://jsfiddle.net/ "Link to JSfiddle page")
 
-[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#bake-it-til-you-make-it)
 
 ## Acknowledgements
 The developer would like to thank the following:
 - Fellow CI students, for the inspiration and guidance.
-- Tim Nelson for the walkthrough videos on the Code Institute platform.
-- Their mentor Seun for her consistent guidance and support.
-- Their family and friends for providing a limitless amount of encouragement and suggestions during the entire process of development.
+- Tim Nelson, for the walkthrough videos on the Code Institute platform.
+- Their mentor Seun, for her consistent guidance and support.
+- Their family and friends, for providing a limitless amount of encouragement and suggestions during the entire process of development.
 
-[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#bake-it-til-you-make-it)
 
 ***
 
@@ -823,6 +825,6 @@ The developer would like to thank the following:
 
 If you encounter any issues with this website, or require any further clarification or support, please email the [developer](mailto:rebecca.traceytimoney@gmail.com?subject=[Bake%It%Support]). Thank you!
 
-[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#bake-it-til-you-make-it)
 
 ***
