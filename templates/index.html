@@ -60,10 +60,12 @@
 
                         <!-- Recipe Cards used to display last 4 recipes -->
                         {% for recipe in recipes %}
+
+                            <!-- ref: https://stackoverflow.com/questions/33677374/jinja2-and-bootstrap-carousel-item-active-->
                             <div class="carousel-item {% if loop.index == 1 %} active {% endif %}">
                                 <div class="card">
 
-                                    <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}"><img id="carousel-img" class="recipe-card-img card-img-top" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}"></a>
+                                    <a href="{{ url_for('recipe', recipe_id=recipe._id) }}"><img id="carousel-img" class="recipe-card-img card-img-top" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}"></a>
 
                                     <div class="card-body">
                                         <h3 class="recipe-name"><a href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name }}</a></h3>

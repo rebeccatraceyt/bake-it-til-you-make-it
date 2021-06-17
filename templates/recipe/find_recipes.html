@@ -30,7 +30,7 @@
                                     <!-- ref: https://bootstrapious.com/p/bootstrap-search-bar -->
                                     <input type="search" name="query" id="query" minlength="3" placeholder=" Find your next creation" aria-describedby="search_query" class="form-control">
                                     <div class="input-group-append border-0">
-                                        <button id="button-addon3" type="submit" class="btn"><i class="fa fa-search"></i></button>
+                                        <button id="search_query" type="submit" class="btn"><i class="fa fa-search"></i></button>
                                     </div>
                                 </div>
 
@@ -75,7 +75,7 @@
                         <div class="card">
 
                             <!-- Recipe Img -->
-                            <a class="" href="{{ url_for('recipe', recipe_id=recipe._id) }}"><img class="recipe-card-img card-img-top" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}"></a>
+                            <a href="{{ url_for('recipe', recipe_id=recipe._id) }}"><img class="recipe-card-img card-img-top" src="{{ recipe.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ recipe.recipe_name }}"></a>
                             
                             <!-- Recipe Card Body -->
                             <div class="card-body">
@@ -121,7 +121,8 @@
                         </div>
                     </div>
                 {% endfor %}
-
+                
+                <!-- Pagination -->
                 <div class="col-12 pagination-box">
                     {{ pagination.links }}
                 </div>
