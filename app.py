@@ -378,12 +378,13 @@ def edit_user(username):
 
         # Update profile function
         if request.method == "POST":
-            
+
             mongo.db.users.update_one({'username': session['user']},
                                       {'$set': {
-                                          'user_img': request.form.get('user_img')
+                                          'user_img': request.form.get(
+                                              'user_img')
                                       }})
-            
+
             flash("{}'s Profile Updated!".format(
                     session["user"]))
             return redirect(url_for("my_recipes",
@@ -418,11 +419,11 @@ def edit_account(username):
 
         # Update profile function
         if request.method == "POST":
-            
+
             mongo.db.users.update_one({'username': session['user']},
                                       {'$set': {
                                           'password': generate_password_hash(
-                            request.form.get("password"))
+                                              request.form.get("password"))
                                       }})
 
             flash("Account Updated! Log back in to confirm changes.".format(
@@ -646,10 +647,10 @@ def recipe(recipe_id):
         # If user is not logged in
         favourited = False
 
-        return render_template("recipe/recipe.html",
-                            recipe=recipe,
-                            favourited=favourited,
-                            title="Recipe")
+        return render_template(
+            "recipe/recipe.html", recipe=recipe,
+            favourited=favourited, title="Recipe")
+
     else:
         # If user is logged in
         user = mongo.db.users.find_one({"username": session["user"]})
