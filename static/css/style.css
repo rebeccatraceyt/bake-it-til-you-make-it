@@ -55,7 +55,6 @@ li {
     color: var(--text);
 }
 .db-name {
-    font-family: var(--body-font);
     text-transform: capitalize;
 }
 
@@ -1989,6 +1988,7 @@ footer li {
     }
     .page-banner {
         padding: 100px 20px 40px 20px ;
+        background-image: -webkit-image-set(url("../images/banner-sm.png") 1x, url("../images/banner.png") 2x);
     }
     .page-padding {
         padding: 20px 30px;
