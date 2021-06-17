@@ -59,6 +59,7 @@ li {
 .db-name {
     /* Ensuring user information is displayed consistently */
     font-family: var(--body-font);
+    text-transform: capitalize;
 }
 
 /*------------------------------------------------------- Navbar */
