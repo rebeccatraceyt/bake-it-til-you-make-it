@@ -1,42 +1,17 @@
 <h1 align="center">
-     <a href="https://bake-it-til-you-make-it.herokuapp.com/" target="_blank"><img src="https://i.ibb.co/jfFtJNB/logo-readme.png" alt="Bake It 'Til You Make It"></a>
+     <a href="https://bake-it-til-you-make-it.herokuapp.com/" target="_blank"><img src="https://i.ibb.co/k99xn4b/bakeit-banner.png" alt="Bake It 'Til You Make It"></a>
 </h1>
+
 <div align="center">
-
-<strong><em>Bake It 'Til You Make It</em></strong> is a community-based web application for those who love the art of baking to search and share their favourite creations.
-
-Inspired by the old-school baking book (filled with scrap paper and notes), the application features hand-drawn graphics and fonts designed to bring the users back to a time of scribbled recipes, in a more organised fashion, through a simplistic and intuitive user interface. 
-
-The recipe database encourages users to create an account that will allow them to upload and store their favourite baking recipes as well as find new inspiration from other users, saving their favourites for later.
+<p><strong><em>Bake It 'Til You Make It</em></strong> is a community-based web application for those who love the art of baking. Users can search and share their favourite creations.</p>
+ 
+<p>Inspired by the old-school baking book (full to the brim with loose paper and notes), the application features hand-drawn graphics and fonts designed to bring the users back to a time of scribbled recipes, in a more organised fashion, through a simplistic and intuitive user interface. </p>
+ 
+<p>The recipe database encourages users to create an account that will allow them to upload and store their favourite baking recipes as well as find new inspiration from other users, saving their favourites for later.</p>
 
 [View the live project here](https://bake-it-til-you-make-it.herokuapp.com/)
-
+<hr>
 </div>
-
-## Table of contents
-1. [UX](#UX)
-     1. [Project Goals](#Project-Goals)
-     2. [User Stories](#User-Stories)
-     3. [Development Planes](#Development-Planes)
-2. [Data Schema](#Data-Schema)
-3. [Features](#Features)
-     1. [Design Features](#Design-Features) 
-     2. [Existing Features](#Existing-Features)
-     3. [Features to Implement in the future](#Features-to-Implement-in-the-future)
-4. [Issues and Bugs](#Issues-and-Bugs)
-5. [Technologies Used](#Technologies-Used)
-     1. [Languages](#Languages)
-     2. [Tools](#Tools)
-     2. [Libraries](#Libraries)
-6. [Testing](#Testing) ☞ **[Testing.md](TESTING.md)**
-7. [Deployment](#Deployment)
-     1. [1. Database Creation](#1-Database-Creation)
-     2. [1. Local Copy Creation](#2-Local-Copy-Creation)
-     3. [1. Heroku App Creation](#3-Heroku-App-Creation)
-8. [Credits](#Credits)
-9. [Acknowledgements](#Acknowledgements)
-10. [Technical Support](#Technical-Support)
-***
 
 ![Bake It 'til You Make It Responsiveness](static/images/readme-files/responsive.png)
 
