@@ -6,3 +6,5 @@ __pycache__/
 *.py[cod]
 node_modules/
 .DS_Store
+static/.DS_Store
+.DS_Store

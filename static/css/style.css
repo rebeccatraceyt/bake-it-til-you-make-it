@@ -38,6 +38,11 @@ body {
     background-color: var(--yellow); 
     background-image: -webkit-image-set(url("../images/wood-texture.png") 1x, url("../images/wood-texture-sm.png") 2x);
     background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
     display: block;
 }
 a:hover {
@@ -132,6 +137,11 @@ li {
     margin: auto; 
     padding-bottom: 5%;
     background-image: -webkit-image-set(url("../images/paper-bg.png") 1x, url("../images/paper-bg-sm.png") 2x);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
     background-repeat: no-repeat;
 
     -webkit-box-shadow: 5px 14px 20px 4px grey;  
@@ -1034,24 +1044,27 @@ li {
     flex-wrap: wrap;
     justify-content: center;
 }
-#rec-directions ol li:first-child {
+#rec-directions ol li {
     /* sourced and edited from :
         https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5--net-13934  */
+    min-width: 100%;    
     background-image: -webkit-image-set(url("../images/stickynote-bg.png") 1x, url("../images/stickynote-bg-sm.png") 2x);
-    min-width: 100%;
-    padding: 10px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
     -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7); 
     -moz-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
     box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-
+}
+#rec-directions ol li:first-child {    
+    padding: 10px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px;
 }
 #rec-directions ol li:not(:first-child) {
-    background-image: -webkit-image-set(url("../images/stickynote-bg.png") 1x, url("../images/stickynote-bg-sm.png") 2x);
-    min-width: 100%;
     padding:1em;
     transform: rotate(-1deg);
     margin:1em;
@@ -1059,10 +1072,6 @@ li {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    
-    -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7); 
-    -moz-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
 }
 #rec-directions ol li:nth-child(even) {
     transform:rotate(1deg);
@@ -1126,6 +1135,10 @@ footer li {
 
 .form-content {
     background-image: -webkit-image-set(url("../images/paper-bg.png") 1x, url("../images/paper-bg-sm.png") 2x);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     color: var(--text);
 
     -webkit-border-radius: 10px;
@@ -1196,6 +1209,11 @@ footer li {
 
 .delete-content {
     background-image: -webkit-image-set(url("../images/paper-bg.png") 1x, url("../images/paper-bg-sm.png") 2x);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
     color: var(--text);
 
     -webkit-border-radius: 10px;
@@ -1555,7 +1573,6 @@ footer li {
     }
     #lg-right {
         background-image: -webkit-image-set(url("../images/paper-bg.png") 1x, url("../images/paper-bg-sm.png") 2x);
-
         background-repeat: no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -1597,6 +1614,10 @@ footer li {
     }
     .user-logo img {
         background-image: -webkit-image-set(url("../images/white-texture.png") 1x, url("../images/white-texture-sm.png") 2x);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         padding: 4px;
         margin: auto 0;
         display: flex;
@@ -1934,6 +1955,11 @@ footer li {
     }
     .user-logo img {
         background-image: -webkit-image-set(url("../images/white-texture.png") 1x, url("../images/white-texture-sm.png") 2x);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        
         padding: 4px;
         margin: auto 0;
         display: flex;
