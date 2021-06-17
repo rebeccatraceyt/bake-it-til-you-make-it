@@ -21,7 +21,7 @@
 2. [Data Schema](#Data-Schema)
      1. [Users Collection](#Users-Collection)
      2. [Recipes Collection](#Recipes-Collection)
-     3. [Categories Collection](#Categories Collection)
+     3. [Categories Collection](#Categories-Collection)
 3. [Features](#Features)
      1. [Design Features](#Design-Features) 
      2. [Existing Features](#Existing-Features)
