@@ -28,16 +28,16 @@
                             <div class="profile-btns col-sm-12 col-md-6 col-lg-12">
                                 <div class="row no-gutters">
                                     <div class="col-6 col-md-12">
-                                        <a href="{{ url_for('edit_user', username=session['user']) }}">Edit Profile</a>
+                                        <a href="{{ url_for('edit_user', username=session['user']) }}" aria-label="Edit Profile">Edit Profile</a>
                                     </div>
                                     <div class="col-6 col-md-12">
-                                        <a href="{{ url_for('create_recipe') }}">Create Recipe</a>
+                                        <a href="{{ url_for('create_recipe') }}" aria-label="Create Recipe">Create Recipe</a>
                                     </div>
                                     <div class="col-6 col-md-12">
-                                        <a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a>  
+                                        <a href="{{ url_for('my_recipes', username=session['user']) }}" aria-label="My Recipes">My Recipes</a>  
                                     </div>
                                     <div class="col-6 col-md-12 white-btn">
-                                        <a href="{{ url_for('logout') }}">Log Out</a>
+                                        <a href="{{ url_for('logout') }}" aria-label="Log Out">Log Out</a>
                                     </div>
                                 </div>
                             </div>
@@ -48,6 +48,7 @@
                 <!-- When User has 0 Favourites -->
                 {% if recipes|length == 0 %}
                     <div class="col-12 col-lg-8">
+
                             <!-- Introduction to favourites -->
                             <div class="row profile-intro">
                                 <div class="col-12 profile-text">
@@ -59,20 +60,20 @@
                                 </div>
                             </div>
     
-                            <!-- User Quick Links -->
+
+                            <!-- Recommended Recipes -->
                             <div id="rec-links" class="row profile-recipes">
-                                <!-- Recommended Recipes -->
                                 {% for rec in recommended %}
                                     <div class="recipe-cards col-sm-12 col-md-6">
                                         <div class="card">
     
                                             <!-- Recipe Img -->
-                                            <a class="" href="{{ url_for('recipe', recipe_id=rec._id) }}"><img class="recipe-card-img card-img-top" src="{{ rec.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ rec.recipe_name }}"></a>
+                                            <a href="{{ url_for('recipe', recipe_id=rec._id) }}"><img class="recipe-card-img card-img-top" src="{{ rec.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ rec.recipe_name }}"></a>
                                             
                                             <!-- Recipe Card Body -->
                                             <div class="card-body">
     
-                                                <h3  class="recipe-name"><a class="" href="{{ url_for('recipe', recipe_id=rec._id) }}">{{ rec.recipe_name }}</a></h3>
+                                                <h3 class="recipe-name"><a class="" href="{{ url_for('recipe', recipe_id=rec._id) }}">{{ rec.recipe_name }}</a></h3>
                                                 
                                                 <div class="row recipe-text">
     
@@ -117,6 +118,7 @@
                             </div>
                     </div>
                 {% else %}
+
                     <!-- Favourited Recipes -->
                     <div class="col-12 col-lg-8">
                         <div class="profile-recipes container-fluid">
@@ -126,7 +128,7 @@
                                         <div class="card">
 
                                             <!-- Recipe Img -->
-                                            <a class="" href="{{ url_for('recipe', recipe_id=favourite._id) }}"><img class="recipe-card-img card-img-top" src="{{ favourite.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ favourite.recipe_name }}"></a>
+                                            <a href="{{ url_for('recipe', recipe_id=favourite._id) }}"><img class="recipe-card-img card-img-top" src="{{ favourite.recipe_img }}"  onerror="this.src='../../static/images/default-img.png';" alt="{{ favourite.recipe_name }}"></a>
 
                                             <!-- Recipe Card Body -->
                                             <div class="card-body">
@@ -172,9 +174,12 @@
                                         </div>
                                     </div>
                                 {% endfor %}
+
+                                <!-- Pagination -->
                                 <div class="col-12 pagination-box">
                                     {{ pagination.links }}
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
