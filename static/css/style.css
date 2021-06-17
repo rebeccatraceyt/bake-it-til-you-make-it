@@ -1410,7 +1410,7 @@ footer li {
     .carousel-btn i {
         font-size: 4em;
     }
-    #carousel-img.recipe-card-img {
+    .carousel-img.recipe-card-img {
         /* Accommodated the col size change on home page */
         height: 500px;
     }
