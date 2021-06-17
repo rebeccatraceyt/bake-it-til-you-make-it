@@ -1,9 +1,9 @@
-/*------------------------------------------------------- Font Import */
+/* --- Font Import --- */
+
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Work+Sans:wght@300;400;700&display=swap');
 
-/*------------------------------------------------------- Root Variables */
+/* --- Root Variables --- */
 
-/* General Root Variables */
 :root {
     /* Font variables */ 
     --body-font: 'Work Sans', sans-serif;
@@ -24,10 +24,10 @@
     --border-line: #3329256e;
     --dark-box: rgba(0,0,0,0.8);
     --light-box: rgba(0, 0, 0, 0.534);
-
 }
 
-/*------------------------------------------------------- Special Styling */
+/* --- Special Styling --- */
+
 html, body {
     max-width: 100vw;
     min-height: 100vh;
@@ -35,17 +35,14 @@ html, body {
 body {
     font-family: var(--body-font);
     color: var(--text);
-    
     background-color: var(--yellow); 
-    background-image: url("../images/wood-texture.png");
+    background-image: -webkit-image-set(url("../images/wood-texture.png") 1x, url("../images/wood-texture-sm.png") 2x);
     background-repeat: no-repeat;
-
     display: block;
 }
 a:hover {
     text-decoration: none;
 }
-
 li {
     list-style-type: none;
 }
@@ -53,17 +50,16 @@ li {
     color: var(--text);
 }
 .db-name {
-    /* Ensuring user information is displayed consistently */
     font-family: var(--body-font);
     text-transform: capitalize;
 }
 
-/*------------------------------------------------------- Navbar */
-/* Sourced and edited from:
-    https://codingyaar.com/responsive-bootstrap-navbar-center-logo/ */
+/* --- Navbar --- */
+
 .navbar {
     font-family: var(--accent-font);
-    background: url("../images/bg-sm.png");
+    background-image: -webkit-image-set(url("../images/nav-bg.png") 1x , url("../images/nav-bg-sm.png") 2x);
+
     background-position: top;
     background-repeat: repeat-x;
     -webkit-background-size: cover;
@@ -87,8 +83,6 @@ li {
     color: var(--white);
 }
 .navbar .navbar-nav .nav-link.active{
-    /* sets active link in Jinja Templates
-        ref: https://stackoverflow.com/questions/29902575/highlight-menu-item-based-on-current-view */
     color: var(--white);
 }
 .navbar-brand {
@@ -105,7 +99,7 @@ li {
     color: var(--text); 
     line-height: 130%;
 }
-/* Styling for navbar toggler */
+/* Navbar toggler */
 .navbar-toggler {
     margin: 12px 12px 30px 0px;
 } 
@@ -120,19 +114,16 @@ li {
 .custom-toggler:active {
     border-color: transparent;
 } 
-
-/* Defines actions to be taken by navbar on scroll - For mobile devices
-    Sourced from https://jsfiddle.net/we9L9h2r/ */
+/* Navbar on scroll - https://jsfiddle.net/we9L9h2r/ */
 #scroll-nav.scrolled {
     background-color: var(--nav-purple) !important;
     transition: background-color 200ms linear;
     border-bottom: 3px inset var(--border-line);
 }
 
-/*------------------------------------------------------- Page Section */
-/* For consistent design on all pages */
+/* --- Page Section --- */
 
-/* -- Section Styling -- */
+/* Sections */
 #lg-right {
     padding-bottom: 15px;
 }
@@ -140,18 +131,17 @@ li {
     max-width: 95vw;
     margin: auto; 
     padding-bottom: 5%;
-    background-image: url("../images/paper-bg.png");
-    background-repeat: repeat;
+    background-image: -webkit-image-set(url("../images/paper-bg.png") 1x, url("../images/paper-bg-sm.png") 2x);
+    background-repeat: no-repeat;
 
     -webkit-box-shadow: 5px 14px 20px 4px grey;  
     -moz-box-shadow: 5px 14px 20px 4px grey;  
     box-shadow: 5px 14px 20px 4px grey;  
     border-bottom: 3px inset var(--border-line);
 }
-
-/* -- Page Banner and Title -- */
+/* Banner and Title */
 .page-banner {
-    background-image: url("../images/banner.png");
+    background-image: -webkit-image-set(url("../images/banner.png") 1x, url("../images/banner-sm.png") 2x);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -173,10 +163,9 @@ li {
 .page-intro {
     text-align: center;
 }
-
-/* -- Flash Messages -- */
+/* Flash Messages */
 #flash-box {
-    background-image: url("../images/white-lined.png");
+    background-image: -webkit-image-set(url("../images/white-lined.png") 1x, url("../images/white-lined-sm.png") 2x);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -215,7 +204,8 @@ li {
 }
 
 /* -- Pagination -- */
-/* Sourced and adapted from:
+
+/* Adapted from:
     https://stackoverflow.com/questions/32355009/changing-pagination-colour-bootstrap */
 .pagination-box {
     display: flex;
@@ -234,7 +224,6 @@ li {
 .pagination > li > a:hover,
 .pagination > li > span:focus,
 .pagination > li > span:hover {
-
     color: var(--text);
     background-color: var(--white);
 }
@@ -253,10 +242,10 @@ li {
     border: solid 1px var(--text) !important;
 }
 
-/*------------------------------------------------------- Recipe Cards */
-/* General styling for Recipe Cards throughout */
+/* --- Recipe Cards -- */
+
 .card {
-    background-image: url("../images/white-lined.png");
+    background-image: -webkit-image-set(url("../images/white-lined.png") 1x, url("../images/white-lined-sm.png") 2x);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -305,9 +294,10 @@ li {
     margin: auto;
 }
 
-/*------------------------------------------------------- Homepage */
+/* --- Homepage -- */
+
 #no-header {
-    /* Avoids duplicate of header image on Homepage */
+    /* Avoids duplicate on Homepage */
     display: none;
 }
 #home-title {
@@ -376,17 +366,31 @@ li {
     -moz-box-shadow: var(--dark-box) 0 0 10px;
     box-shadow: var(--dark-box) 0 0 10px;
 }
-
-/* Sourced from Stack Overflow to re-colour the carousel control buttons (RGB value had to be entered instead of root variable).
+/* Sourced from:
     https://stackoverflow.com/questions/46249541/change-arrow-colors-in-bootstraps-carousel */
+.carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23c4dac9' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  background-image: none;
 }
-.carousel-control-prev-icon {
-   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23c4dac9' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important; 
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 50px;
+  color: var(--white);
+}
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 50px;
+  color: var(--white);
 }
 
-/*------------------------------------------------------- Find Recipes Page */
+/* --- Find Recipes Page -- */
+
 #search-function {
     margin: auto;
 }
@@ -446,7 +450,8 @@ li {
     margin: 20px 0 0 0;
 }
 
-/*------------------------------------------------------- Search Page */
+/* --- Search Page -- */
+
 .search-area.search-results {
     border: none;
 }
@@ -489,7 +494,7 @@ li {
     font-family: var(--accent-font);
     font-size: 1em;
 
-    background-image: url("../images/white-lined.png");
+    background-image: -webkit-image-set(url("../images/white-lined.png") 1x, url("../images/white-lined-sm.png") 2x);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -511,13 +516,13 @@ li {
     margin-bottom: 0;
 }
 
-/*------------------------------------------------------- Accounts Page */
-/* Sign Up and Log In are style the same for consistency */
+/* --- Sign Up/Login/Edit User -- */
+
 .page-padding .accounts-bg {
     margin-top: 20px;
 }
 .accounts-bg {
-    background-image: url("../images/yellow-lined.png");
+    background-image: -webkit-image-set(url("../images/yellow-lined.png") 1x, url("../images/yellow-lined-sm.png") 2x);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -591,10 +596,8 @@ li {
     color: var(--white);
 }
 .end-input {
-    /* styling for end input field to provide extra breathing room */
     padding-bottom: 15px;
 }
-
 /* Specific to Register */
 .accounts-btn button.submit-btn.disabled {
     opacity: 0.7; 
@@ -604,12 +607,10 @@ li {
     background-color: var(--text);
     color: var(--white);  
 }
-
 /* Specific to Login */
 #login-page.page-padding {
     min-height: 65vh;
 }
-
 /* Specific to Edit User */
 .edit-btn {
     text-align: center;
@@ -618,7 +619,8 @@ li {
     margin: auto;
     padding: 10px;
 }
-.edit-btn button, .edit-btn a {
+.edit-btn button, 
+.edit-btn a {
     min-width: 80%;
     background-color: var(--text);
     color: var(--white);
@@ -635,7 +637,8 @@ li {
 .edit-btn button {
     padding: 8px 15px;
 }
-.edit-btn button:hover, .edit-btn a:hover {
+.edit-btn button:hover, 
+.edit-btn a:hover {
     background: var(--white);
     color: var(--text);
 }
@@ -648,10 +651,10 @@ li {
     color: var(--white);  
 }
 
-/*------------------------------------------------------- Create/Edit Recipe Page */
-/* Create and Edit a Recipe pages are style the same for consistency */
+/* --- Create/Edit Recipe Page -- */
+
 .create-bg {
-    background-image: url("../images/yellow-lined.png");
+    background-image: -webkit-image-set(url("../images/yellow-lined.png") 1x, url("../images/yellow-lined-sm.png") 2x);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -676,20 +679,19 @@ li {
     padding-left: 5px;
 }
 .img-container {
-    background-image: url("../images/white-texture.png");
+    background-image: -webkit-image-set(url("../images/white-texture.png") 1x, url("../images/white-texture-sm.png") 2x);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
     margin: 0 auto 1rem auto;
     padding: 15px;
     max-width: 80%;
-
     font-family: var(--accent-font);
     font-size: 1.3em;
     font-weight: bold;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -713,40 +715,40 @@ li {
     max-width: 100%;    
 }
 .new-img {
-    /* Set to none by default, changed using onclick function */
+    /* changed using onclick function */
     display: none;
 }
-.add-ing-btn, .add-dir-btn {
+.add-ing-btn, 
+.add-dir-btn {
     background-color: var(--text);
     padding: 5px 10px;
+    font-size: .9em;
+    float: right;
+    color: var(--white);
 
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
 
-    font-size: .9em;
-    float: right;
-    color: var(--white);
-
     -webkit-box-shadow: 3px 3px 3px 3px var(--light-box); 
     -moz-box-shadow: 3px 3px 3px 3px var(--light-box); 
     box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
-.add-ing-btn:hover, .add-dir-btn:hover {
+.add-ing-btn:hover, 
+.add-dir-btn:hover {
     color: var(--text);
     background-color: var(--white);
 }
 .remove_field {
     background-color: var(--red);
     padding: 5px 10px;
+    font-size: .9em;
+    float: right;
+    color: var(--white);
 
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-
-    font-size: .9em;
-    float: right;
-    color: var(--white);
 
     -webkit-box-shadow: 3px 3px 3px 3px var(--light-box); 
     -moz-box-shadow: 3px 3px 3px 3px var(--light-box); 
@@ -764,7 +766,8 @@ li {
     margin: auto;
     padding: 10px 15px;
 }
-.create-btn button, .create-btn a {
+.create-btn button, 
+.create-btn a {
     min-width: 90%;
     background-color: var(--text);
     color: var(--white);
@@ -773,7 +776,8 @@ li {
     -moz-box-shadow: 3px 3px 3px 3px var(--light-box); 
     box-shadow: 3px 3px 3px 3px var(--light-box); 
 }
-.create-btn button:hover, .create-btn a:hover {
+.create-btn button:hover, 
+.create-btn a:hover {
     background-color: var(--white);
     color: var(--text);
 }
@@ -785,13 +789,13 @@ li {
     margin-bottom: 2%;
 }
 
-/*------------------------------------------------------- My Recipes/Favourites Page */
-/* My Recipes and My Favourites pages are style the same for consistency */
+/* --- My Recipes/ My Favourites --- */
+
 .profile-info {
     margin: 20px auto;
 }
 .profile-img-box {
-    background-image: url("../images/white-lined.png");
+    background-image: -webkit-image-set(url("../images/white-lined.png") 1x, url("../images/white-lined-sm.png") 2x);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -804,8 +808,6 @@ li {
     width: 95%;
     height: 300px;
 
-    /* Used to fix issue between border radius and shadow
-        http://www.corelangs.com/css/box/shadow.html */
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -874,15 +876,15 @@ li {
     padding-top: 10px;
 }
 
-/*------------------------------------------------------- Individual Recipe Page */
+/* --- Individual Recipe Page -- */
+
 #recipe-intro {
-    background-image: url("../images/white-texture.png");
+    background-image: -webkit-image-set(url("../images/white-texture.png") 1x, url("../images/white-texture-sm.png") 2x);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    
     margin: auto;
 
     -webkit-border-radius: 20px;
@@ -977,7 +979,7 @@ li {
     color: var(--text);
 }
 #rec-ingredients {
-    background-image: url("../images/white-texture.png");
+    background-image: -webkit-image-set(url("../images/white-texture.png") 1x, url("../images/white-texture-sm.png") 2x);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -992,12 +994,11 @@ li {
     display: flex;
     max-width: 95%;
     padding: 10px;
+    justify-content: center;
 
     -webkit-box-shadow: var(--dark-box) 0px 2px 10px 2px;
     -moz-box-shadow: var(--dark-box) 0 2px 10px 2px;
     box-shadow: var(--dark-box) 0 2px 10px 2px;
-
-    justify-content: center;
 }
 #ingredient-title {
     padding-top: 15px;
@@ -1036,7 +1037,7 @@ li {
 #rec-directions ol li:first-child {
     /* sourced and edited from :
         https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5--net-13934  */
-    background-image: url(../images/stickynote-bg.png);
+    background-image: -webkit-image-set(url("../images/stickynote-bg.png") 1x, url("../images/stickynote-bg-sm.png") 2x);
     min-width: 100%;
     padding: 10px;
 
@@ -1049,9 +1050,11 @@ li {
     border-radius: 15px;
 }
 #rec-directions ol li:not(:first-child) {
-    background-image: url(../images/stickynote-bg.png);
+    background-image: -webkit-image-set(url("../images/stickynote-bg.png") 1x, url("../images/stickynote-bg-sm.png") 2x);
     min-width: 100%;
     padding:1em;
+    transform: rotate(-1deg);
+    margin:1em;
 
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -1060,9 +1063,6 @@ li {
     -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7); 
     -moz-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
     box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-
-    transform: rotate(-1deg);
-    margin:1em;
 }
 #rec-directions ol li:nth-child(even) {
     transform:rotate(1deg);
@@ -1079,9 +1079,9 @@ li {
     text-decoration: underline;
 }
 
-/*------------------------------------------------------- Footer */
+/* --- Footer --- */
 footer {
-    background-image: url("../images/paper-bg.png");
+    background-image: -webkit-image-set(url("../images/paper-bg.png") 1x, url("../images/paper-bg-sm.png") 2x);
     background-color: var(--white);
     background-repeat: repeat-x;
     -webkit-background-size: cover;
@@ -1110,9 +1110,8 @@ footer li {
 #dev-info {
     font-size: .8em; 
 }
-
 .hide-disclaimer {
-    /* Disclaimer notice is hidden by default */
+    /* hidden by default */
     display: none;
 }
 .iconify.footer-btn {
@@ -1123,9 +1122,10 @@ footer li {
     color: var(--white);
 }
 
-/*------------------------------------------------------- Form Modal */
+/* --- Form Modal --- */
+
 .form-content {
-    background-image: url("../images/paper-bg.png");
+    background-image: -webkit-image-set(url("../images/paper-bg.png") 1x, url("../images/paper-bg-sm.png") 2x);
     color: var(--text);
 
     -webkit-border-radius: 10px;
@@ -1148,7 +1148,7 @@ footer li {
     padding-top: 1rem;
 }
 /* Edited from W3School's example to style contact form 
-        reference: https://www.w3schools.com/howto/howto_css_contact_form.asp */
+    reference: https://www.w3schools.com/howto/howto_css_contact_form.asp */
 .form-body input[type='text'], .form-body input[type='email'], .form-body textarea {
     width: 100%;
     padding: 7px;
@@ -1171,7 +1171,7 @@ footer li {
     background-color: var(--white);
     color: var(--text);
 }
-/* Edited from W3School's CSS placeholder example for better readability and consistency 
+/* Edited from W3School's CSS placeholder example 
     reference: https://www.w3schools.com/howto/howto_css_placeholder.asp */
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: var(--text);;
@@ -1192,9 +1192,10 @@ footer li {
     font-weight: 700;
 }
 
-/*------------------------------------------------------- Delete Modals */
+/* --- Delete Modals --- */
+
 .delete-content {
-    background-image: url("../images/paper-bg.png");
+    background-image: -webkit-image-set(url("../images/paper-bg.png") 1x, url("../images/paper-bg-sm.png") 2x);
     color: var(--text);
 
     -webkit-border-radius: 10px;
@@ -1248,9 +1249,10 @@ footer li {
     color: var(--text);
 }
 
-/*------------------------------------------------------- Danger Button Stylings */
-/* Styling for certain buttons where the structure needs to remain consistent with others, 
-    but need a slight design change. Placed below other :hover pseudo classes to avoid conflict */
+/* --- Danger Buttons --- */
+/* Slight design changes.
+     Placed below other :hover pseudo classes to avoid conflict */
+
 .red-btn button, .red-btn a {
     background-color: var(--red);
     color: var(--white);
@@ -1271,7 +1273,8 @@ footer li {
     border: 1px solid var(--text);
 }
 
-/*------------------------------------------------------- Error Pages Styling */
+/* --- Error Pages --- */
+
 .error-img {
     max-width: 100%;
     height: auto;
@@ -1306,9 +1309,9 @@ footer li {
     background-color: var(--white);
 }
 
-/*------------------------------------------------------- Media Queries */
+/* --- Media Queries -- */
 
-/* Breakpoint to maintain structural integrity on a Tablet device */
+/* Breakpoint on Tablet device */
 @media (min-width: 700px) and (max-width: 991px) {
     
     /* -- Navbar -- */
@@ -1326,9 +1329,6 @@ footer li {
         padding-left: 30px;
         padding-right: 30px;
     }
-    /* .navbar-nav li:not(:first-child) {
-        border-left: 2px inset var(--border-line);
-    } */
     #md-nav {
         padding-top: 30px;
     }
@@ -1346,7 +1346,7 @@ footer li {
         padding: 0 7px;
     }
 
-    /* Page Section */
+    /* -- Page Section -- */
     #main-section {
         min-height: 68vh;
     }
@@ -1455,7 +1455,7 @@ footer li {
         max-width: 70%;
     }
 
-    /* -- Create/Edit Recipe Profile */
+    /* -- Create/Edit Recipe -- */
     .create-bg {
         margin: 1% 10%;
     }
@@ -1477,7 +1477,7 @@ footer li {
         font-size: 1em;
     }
 
-    /* -- My Recipes/Favourites Page */
+    /* -- My Recipes/My Favourites -- */
     .profile-img-box {
         width: 80%;
         height: 300px;
@@ -1502,7 +1502,7 @@ footer li {
         padding-top: 30px;
     }
 
-    /* -- Individual Recipe Page */
+    /* -- Individual Recipe Page -- */
     #recipe-intro {
         padding: 10px;
     }
@@ -1521,7 +1521,7 @@ footer li {
         padding: 5px 20px;
     }
 
-    /* -- Error Pages */
+    /* -- Error Pages -- */
     .error-img {
         width: 80%;
     }
@@ -1534,7 +1534,7 @@ footer li {
 
 }
 
-/* Breakpoint to maintain structural integrity on a Larger Tablet device */
+/* Breakpoint on Larger Tablet device */
 @media (min-width: 992px) and (max-width: 1024px) {
 
     /* -- Background -- */
@@ -1554,7 +1554,8 @@ footer li {
         height: 98vh;
     }
     #lg-right {
-        background-image: url("../images/paper-bg.png");
+        background-image: -webkit-image-set(url("../images/paper-bg.png") 1x, url("../images/paper-bg-sm.png") 2x);
+
         background-repeat: no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -1572,9 +1573,10 @@ footer li {
         box-shadow: 13px 19px 8px 2px grey;
         padding-left: 0;
     }
+
     /* -- Navbar -- */
     .navbar {
-        background-image: url("../images/paper-bg.png");
+        background-image: -webkit-image-set(url("../images/paper-bg.png") 1x, url("../images/paper-bg-sm.png") 2x);
         background-repeat: no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -1594,7 +1596,7 @@ footer li {
         margin: auto;
     }
     .user-logo img {
-        background-image: url("../images/white-texture.png");
+        background-image: -webkit-image-set(url("../images/white-texture.png") 1x, url("../images/white-texture-sm.png") 2x);
         padding: 4px;
         margin: auto 0;
         display: flex;
@@ -1755,7 +1757,7 @@ footer li {
         padding-bottom: 30px;
     }
 
-    /* Create/Edit Recipe Page */
+    /* -- Create/Edit Recipe -- */
     .create-bg {
         margin: 2% 20%;
     }
@@ -1776,7 +1778,7 @@ footer li {
         font-size: 1em;
     }
 
-    /* -- My Recipes/Favourites Page */
+    /* -- My Recipes/My Favourites -- */
     .profile-img-box {
         max-width: 100%;
         height: 18em;
@@ -1817,7 +1819,7 @@ footer li {
         padding-top: 0;
     }
 
-    /* -- Individual Recipe Page */
+    /* -- Individual Recipe Page -- */
     #recipe-intro {
         margin: 4% 5% 2% 5%;
         padding: 20px 10px;
@@ -1857,7 +1859,7 @@ footer li {
         font-size: 1.3em;
     }
 
-    /* -- Error Pages */
+    /* -- Error Pages -- */
     .error-img {
         width: 40%;
     }
@@ -1868,7 +1870,8 @@ footer li {
         font-size: 1.5em;
     }
 }
-/* Breakpoint to maintain structural integrity on a Laptop Screen */
+
+/* Breakpoint on a Laptop Screen */
 @media (min-width: 1025px){ 
 
     /* -- Background -- */
@@ -1888,7 +1891,7 @@ footer li {
         height: 98vh;
     }
     #lg-right {
-        background-image: url("../images/paper-bg.png");
+        background-image: -webkit-image-set(url("../images/paper-bg.png") 1x, url("../images/paper-bg-sm.png") 2x);
         background-repeat: no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -1910,7 +1913,7 @@ footer li {
 
     /* -- Navbar -- */
     .navbar {
-        background-image: url("../images/paper-bg.png");
+        background-image: -webkit-image-set(url("../images/paper-bg.png") 1x, url("../images/paper-bg-sm.png") 2x);
         background-repeat: no-repeat;
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -1930,7 +1933,7 @@ footer li {
         margin: auto;
     }
     .user-logo img {
-        background-image: url("../images/white-texture.png");
+        background-image: -webkit-image-set(url("../images/white-texture.png") 1x, url("../images/white-texture-sm.png") 2x);
         padding: 4px;
         margin: auto 0;
         display: flex;
@@ -2104,7 +2107,7 @@ footer li {
         padding-bottom: 30px;
     }
 
-    /* Create/Edit Recipe Page */
+    /* Create/Edit Recipe -- */
     .create-bg {
         margin: 2% 20%;
     }
@@ -2125,7 +2128,7 @@ footer li {
         font-size: 1em;
     }
 
-    /* -- My Recipes/Favourites Page */
+    /* -- My Recipes/My Favourites -- */
     .profile-img-box {
         max-width: 100%;
         height: 30em;
@@ -2166,7 +2169,7 @@ footer li {
         padding-top: 0;
     }
 
-    /* -- Individual Recipe Page */
+    /* -- Individual Recipe Page -- */
     #recipe-intro {
         margin: 4% 5% 2% 5%;
         padding: 20px 10px;
@@ -2206,7 +2209,7 @@ footer li {
         font-size: 1.3em;
     }
 
-    /* -- Error Pages */
+    /* -- Error Pages -- */
     .error-img {
         width: 40%;
     }
@@ -2215,6 +2218,5 @@ footer li {
     }
     .error-page p {
         font-size: 1.5em;
-    }
-    
+    } 
 }
