@@ -146,6 +146,24 @@ Manual testing was conducted on the following elements that appear on every page
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
+- The user can log out from numerous points:
+
+    - My Recipes:
+
+        ![Example](static/images/testing-files/manual/inserthere.gif)
+    
+    - My Favourites:
+
+        ![Example](static/images/testing-files/manual/inserthere.gif)
+    
+    - Quick Links:
+
+        ![Example](static/images/testing-files/manual/inserthere.gif)
+    
+    - On Mobile Devices:
+
+        ![Example](static/images/testing-files/manual/inserthere.gif)
+
 ### Page Elements Testing
 
 #### Home Page
@@ -209,10 +227,6 @@ Manual testing was conducted on the following elements on the **Sign Up** Page:
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
-- Hovering over the **Call to Action** buttons provide user feedback:
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
 - Clicking **Login** redirects user to login page:
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
@@ -253,7 +267,7 @@ Manual testing was conducted on the following elements on the **My Recipes** Pag
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
-- Clicking **Logout** redirects user back to login page:
+- The Responsiveness of the **My Recipes Page**:
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
@@ -262,10 +276,6 @@ Manual testing was conducted on the following elements on the **My Recipes** Pag
 Manual testing was conducted on the following elements on the **My Favourites** Page:
 
 - Hovering over **Call to Action** buttons provide user feedback: 
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- Clicking **Logout** redirects user back to login page:
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
@@ -324,7 +334,7 @@ Manual testing was conducted on the following elements on the **Edit Accounts** 
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
--   Clicking **Back** redirects user to Edit Profile page:
+- Clicking **Back** redirects user to Edit Profile page:
 
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
@@ -420,18 +430,8 @@ Manual testing was conducted on the following elements on the **Edit Recipe** Pa
 
 Manual testing was conducted on the following elements on the **Recipe** Page:
 
-- Clicking the recipe card (image or name) will direct the user to the Individual Recipe Page:
+- Clicking the **Back** button will return the user to the previous page: 
 
-    Home Page:
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-    Find A Recipe:
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-    My Recipes:
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-    My Favourites:
     ![Example](static/images/testing-files/manual/inserthere.gif)
 
 - If the user is not logged in, the **Login To Add Favourites** Button will redirect them to the **Login** page: 
