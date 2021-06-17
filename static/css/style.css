@@ -39,10 +39,6 @@ body {
     background-color: var(--yellow); 
     background-image: url("../images/wood-texture.png");
     background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 
     display: block;
 }
@@ -1323,11 +1319,14 @@ footer li {
         flex-direction: row;   
     }
     .navbar-nav li { 
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
-    .navbar-nav li:not(:first-child) {
-        border-left: 1px inset var(--border-line);
+    /* .navbar-nav li:not(:first-child) {
+        border-left: 2px inset var(--border-line);
+    } */
+    #md-nav {
+        padding-top: 30px;
     }
 
     /* -- Recipe Cards -- */
@@ -1949,10 +1948,16 @@ footer li {
         font-size: 1.3em;
         padding: 15px;
     }
+    #user-quicklinks .dropdown-item.active,
+    #user-quicklinks .dropdown-item:focus,
+    #user-quicklinks .dropdown-item:hover {
+        color: var(--text);
+        background-color: var(--white);
+    }
     .dropdown-item {
-    color: var(--white);
-    width: 100%;
-}
+        color: var(--white);
+        width: 100%;
+    }
 
     /* -- Page Section -- */
     #main-section {
