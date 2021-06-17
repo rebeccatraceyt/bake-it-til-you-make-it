@@ -1232,7 +1232,7 @@ footer li {
     padding-bottom: 20px;
 }
 .delete-btn a {
-    min-width: 80%;
+    width: 80%;
     background-color: var(--text);
     color: var(--white);
     font-size: 1.1em;

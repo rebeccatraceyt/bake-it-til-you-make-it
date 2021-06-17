@@ -110,6 +110,7 @@
                                             </div>
                                             <div class="col-6">
                                                 <div class="recipe-btn red-btn">
+                                                    <!-- Modal Trigger -->
                                                     <a href="#" data-toggle="modal" data-target="#modal-{{ recipe._id }}" aria-label="Delete"><i class="fas fa-trash-alt"></i> Delete</a>
                                                 </div>
                                             </div>
@@ -208,20 +209,20 @@
                 </div>
                 <div class="modal-body delete-body">
                     <hr class="delete-hr">
-                    <h5>Are you <strong>sure</strong> you want to delete the recipe for <br> <strong>{{ recipe.recipe_name }}</strong>?</h5>
+                    <h5>Are you <strong>sure</strong> you want to delete the recipe <br> <strong>{{ recipe.recipe_name }}</strong>?</h5>
                     <p>Your creation will be lost!</p>
                     <hr class="delete-hr">
                 </div>
                 <div class="modal-footer delete-footer">
-                    <div class="col-6 delete-btn red-btn">
+                    <div class="delete-btn red-btn">
                         <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" aria-label="Yes, Delete!">Yes, Delete!</a>
                     </div>
-                    <div class="col-6 delete-btn">
+                    <div class="delete-btn">
                         <a href="#" data-dismiss="modal" aria-label="No, Go Back!">No, Go Back!</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>  
+    </div>   
 
 {% endblock %}

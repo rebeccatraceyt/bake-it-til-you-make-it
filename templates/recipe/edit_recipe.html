@@ -182,8 +182,10 @@
                     
                 </div>
 
+                <!-- Delete Modal -->
                 <div class="row">
                     <div id="delete-recipe-btn" class="col-12 create-btn red-btn">
+                        <!-- Button Trigger -->
                         <button type="button" class="btn" data-toggle="modal" data-target="#modal-{{ recipe._id }}" aria-label="Delete">
                             Delete
                         </button>
@@ -202,7 +204,7 @@
                             </div>
                             <div class="modal-body delete-body">
                                 <hr class="delete-hr">
-                                <h5>Are you <strong>sure</strong> you want to delete the recipe for <br> <strong>{{ recipe.recipe_name }}</strong>?</h5>
+                                <h5>Are you <strong>sure</strong> you want to delete the recipe <br> <strong>{{ recipe.recipe_name }}</strong>?</h5>
                                 <p>Your creation will be lost!</p>
                                 <hr class="delete-hr">
                             </div>
