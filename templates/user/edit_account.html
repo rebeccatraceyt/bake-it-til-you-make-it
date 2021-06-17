@@ -16,7 +16,7 @@
         <div class="row accounts-bg">
             <div class="container-fluid">
                 <div class="row accounts-label">
-                    <form class="col-12" method="POST" action="{{ url_for('edit_account', username=session['user']) }}">
+                    <form class="col-12" method="POST" action="{{ url_for('edit_account', username=session['user']) }}" aria-label="Edit Account">
 
                         <!-- New Password -->
                         <div class="row">
@@ -38,10 +38,10 @@
                         <!-- Submit button -->
                         <div class="row no-gutters edit-btns">
                             <div class="col-6 edit-btn white-btn">
-                                <a href="{{ url_for('edit_user', username=session['user']) }}">Back</a>
+                                <a href="{{ url_for('edit_user', username=session['user']) }}" aria-label="Back">Back</a>
                             </div>
                             <div class="col-6 edit-btn">
-                                <button class="submit-btn" type="submit">
+                                <button class="submit-btn" type="submit" aria-label="Save">
                                     Save
                                 </button>
                             </div>
@@ -51,7 +51,7 @@
                         <div class="row">
                             <div class="col-12 edit-btn end-edit-btn red-btn">
                                 <!-- Button trigger -->
-                                <button type="button" class="btn" data-toggle="modal" data-target="#modal-{{ user._id }}">
+                                <button type="button" class="btn" data-toggle="modal" data-target="#modal-{{ user._id }}" aria-label="Delete Account">
                                     Delete Account
                                 </button>
                             </div>
@@ -73,12 +73,12 @@
                                             <hr class="delete-hr">
                                         </div>
                                         <div class="modal-footer delete-footer">
-                                            <button type="button" class="btn delete-btn red-btn">
-                                                <a href="{{ url_for('delete_user', username=user.username) }}">Yes, Delete!</a>
-                                            </button>
-                                            <button type="button" class="btn delete-btn">
-                                                <a href="#" data-dismiss="modal">No, Go Back!</a>
-                                            </button>
+                                            <div class="col-6 delete-btn red-btn">
+                                                <a href="{{ url_for('delete_user', username=user.username) }}" aria-label="Yes, Delete!">Yes, Delete!</a>
+                                            </div>
+                                            <div class="col-6 delete-btn">
+                                                <a href="#" data-dismiss="modal" aria-label="No, Go Back!">No, Go Back!</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

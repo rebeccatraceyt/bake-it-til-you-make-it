@@ -1229,15 +1229,9 @@ footer li {
 .delete-footer {
     margin: auto;
     border: none;
+    width: 80%;
 }
-.delete-btn {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    padding: 10px;
-}
-.delete-btn button, .delete-btn a {
+.delete-btn a {
     min-width: 80%;
     background-color: var(--text);
     color: var(--white);
@@ -1252,7 +1246,7 @@ footer li {
     box-shadow: 3px 3px 3px 3px var(--light-box); 
     padding: 10px 15px;
 }
-.delete-btn button:hover, .delete-btn a:hover{
+.delete-btn a:hover{
     background-color: var(--white);
     color: var(--text);
 }
