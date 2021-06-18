@@ -1,5 +1,5 @@
 <h1 align="center">
-     <a href="https://bake-it-til-you-make-it.herokuapp.com/" target="_blank"><img src="https://i.ibb.co/jfFtJNB/logo-readme.png" alt="Bake It 'Til You Make It"></a>
+     <a href="https://bake-it-til-you-make-it.herokuapp.com/" target="_blank"><img src="https://i.ibb.co/k99xn4b/bakeit-banner.png" alt="Bake It 'Til You Make It"></a>
 </h1>
 
 <h1 align="center"> Testing </h1>
@@ -112,57 +112,63 @@ Manual testing was conducted on the following elements that appear on every page
 
 - Clicking the Logo located on the top-left of the screen will redirect the user back to the **Home Page**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Logo Click](static/images/testing-files/manual/logo-click.gif)
 
 - Hovering over the **Navigation Links** will trigger the hover effect, confirming the page the user is on:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Navigation Bar Hover class](static/images/testing-files/manual/nav-hover.gif)
 
 - Collapsible `hamburger` button on mobile and tablet devices reveals **Navigation** menu:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Collapsible Navigation Bar](static/images/testing-files/manual/nav-mob.gif)
 
 - Hovering over the **Footer** icons will trigger the hover effect, confirming the action the user is about to take:
     
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Footer Hover class](static/images/testing-files/manual/footer-hover.gif)
 
 - Clicking the **Footer Social Icons** opens the Developers social platform in a new tab:
 
-    **GitHub:**
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    - **GitHub:**
+    ![Github Link](static/images/testing-files/manual/github.gif)
 
-    **LinkedIn:**
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    - **LinkedIn:**
+    ![LinkedIn Link](static/images/testing-files/manual/linkedin.gif)
 
 - Clicking the **Footer Contact Icon** opens the contact modal, with the appropriate user feedback:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Contact Form](static/images/testing-files/manual/contact.gif)
 
 - Clicking the **Disclaimer** icon triggers the disclaimer notice: 
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- If the User is logged in, their **user image** will be visible in the top-right of larger screens. Clicking on this will trigger the **dropdown** quick-links menu: 
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Disclaimer](static/images/testing-files/manual/disclaimer.gif)
 
 - The user can log out from numerous points:
 
     - My Recipes:
 
-        ![Example](static/images/testing-files/manual/inserthere.gif)
+        ![Log out @ My Recipes](static/images/testing-files/manual/lo-recipes.gif)
     
     - My Favourites:
 
-        ![Example](static/images/testing-files/manual/inserthere.gif)
+        ![Log out @ My Favourites](static/images/testing-files/manual/lo-faves.gif)
     
     - Quick Links:
 
-        ![Example](static/images/testing-files/manual/inserthere.gif)
+        ![Log out @ Quick Links](static/images/testing-files/manual/lo-quicklink.gif)
     
     - On Mobile Devices:
 
-        ![Example](static/images/testing-files/manual/inserthere.gif)
+        ![Log out on mobile](static/images/testing-files/manual/lo-mobile.gif)
+
+- Recipes can be accessed by clicking:
+
+    - Image
+
+        ![Recipe Image Click](static/images/testing-files/manual/recipe-img.gif)
+
+    - Name
+
+        ![Recipe Image Name](static/images/testing-files/manual/recipe-name.gif)
 
 ### Page Elements Testing
 
@@ -172,16 +178,15 @@ Manual testing was conducted on the following elements on the **Home** Page:
 
 - Using the **Carousel Controls**, the user can browse the featured recipes (the last four to be uploaded):
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Carousel Controls](static/images/testing-files/manual/carousel.gif)
 
 - Hovering over the **Call to Action** buttons will provide feedback to the user: 
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
+    ![Home Page Buttons](static/images/testing-files/manual/home-btns.gif)
 
 - The Responsiveness of the **Home Page**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Home Page Responsiveness](static/images/testing-files/manual/home-res.gif)
 
 #### Find A Recipe Page
 
@@ -189,75 +194,63 @@ Manual testing was conducted on the following elements on the **Find A Recipe** 
 
 - The Search Bar allows users to enter their search query:
 
-    Results Found:
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    - When Results are found:
+    
+        ![Search Results](static/images/testing-files/manual/search-results.gif)
 
-    No Results Found:
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    - No Results Found:
+    
+        ![No Search Results](static/images/testing-files/manual/search-no-results.gif)
 
 - The **Dropdown** Menus allow the user to filter their search:
 
-    Category Search:
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    - Category Search:
+    
+        ![Category Filter Search](static/images/testing-files/manual/category.gif)
 
-    Difficulty Search:
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    - Difficulty Search:
+    
+        ![Level Filter Search](static/images/testing-files/manual/level.gif)
 
 - The **Pagination** function only displays 6 recipes at a time, allowing the user to browse through pages:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Pagination](static/images/testing-files/manual/paginate.gif)
 
 - The Responsiveness of the **Find A Recipe Page**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Find A Recipe Responsiveness](static/images/testing-files/manual/search-res.gif)
 
 #### Sign Up Page
 
 Manual testing was conducted on the following elements on the **Sign Up** Page:
 
-- User can enter their details into the input fields: 
+- User can intuitively create an account: 
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- On entering the image url, an image preview will be displayed: 
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- Passwords must match: 
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Registration Process](static/images/testing-files/manual/register.gif)
 
 - Clicking **Login** redirects user to login page:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- Upon registering, user is directed to **My Recipes** page:
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Sign Up to Log in](static/images/testing-files/manual/reg-log.gif)
 
 - The Responsiveness of the **Sign Up Page**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Sign Up Page Responsiveness](static/images/testing-files/manual/register-res.gif)
 
 #### Login Page
 
 Manual testing was conducted on the following elements on the **Login** Page:
 
-- User can enter their details into the input fields:
+- User can intuitively enter their details to log into their account:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Login Process](static/images/testing-files/manual/login.gif)
 
 - Clicking **Sign Up** redirects user to registration page:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- Upon login, user is directed to **My Recipes** page:
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Log in to Sign Up](static/images/testing-files/manual/log-reg.gif)
 
 - The Responsiveness of the **Login Page**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Login Page Responsiveness](static/images/testing-files/manual/login-res.gif)
 
 #### My Recipes Page
 
@@ -265,11 +258,11 @@ Manual testing was conducted on the following elements on the **My Recipes** Pag
 
 - Hovering over **Call to Action** buttons provide user feedback: 
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![My Recipes buttons hover class](static/images/testing-files/manual/recipe-btns.gif)
 
 - The Responsiveness of the **My Recipes Page**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![My Recipes Responsiveness](static/images/testing-files/manual/myrecipes-res.gif)
 
 #### My Favourites Page
 
@@ -277,154 +270,105 @@ Manual testing was conducted on the following elements on the **My Favourites** 
 
 - Hovering over **Call to Action** buttons provide user feedback: 
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![My Recipes buttons hover class](static/images/testing-files/manual/fave-btns.gif)
 
 - The Responsiveness of the **My Favourites Page**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![My Recipes Responsiveness](static/images/testing-files/manual/faves-res.gif)
 
 #### Edit User Page
 
 Manual testing was conducted on the following elements on the **Edit User** Page:
 
-- The Edit User page is only accessible from *login authenticated* pages: 
+- User can intuitively edit their profile: 
     
-    My Recipes:
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-    My Favourites:
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-    Quicklinks:
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- User can enter their details in the input fields (where their current information is the default value):
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- On entering the image url, an image preview will be displayed: 
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- **Call to action** buttons provide user feedback: 
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Edit User Process](static/images/testing-files/manual/edit-user.gif)
 
 - Clicking **Cancel** redirects user to My Recipes page:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- Clicking **Save** redirects user to My Recipes page:
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- Clicking **Account Settings** directs user to **Edit Accounts Page**:
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Edit User - Cancel button](static/images/testing-files/manual/edit-user-cancel.gif)
 
 - The Responsiveness of the **Edit User Page**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Edit User Page Responsiveness](static/images/testing-files/manual/edit-user-res.gif)
 
 #### Edit Accounts Page
 
 Manual testing was conducted on the following elements on the **Edit Accounts** Page:
 
-- Passwords must match:
+- User can intuitively edit their account:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Edit Account Process](static/images/testing-files/manual/edit-acc.gif)
 
 - Clicking **Back** redirects user to Edit Profile page:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- Clicking **Save** redirects user to Login page:
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Edit Account - Back button](static/images/testing-files/manual/edit-acc-back.gif)
 
 - Clicking **Delete Account** opens **Delete Modal**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Delete Account Modal](static/images/testing-files/manual/delete-acc.gif)
 
 - The Responsiveness of the **Edit Accounts Page**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Edit Account Page Responsiveness](static/images/testing-files/manual/edit-acc-res.gif)
 
 #### Create Recipe Page
 
 Manual testing was conducted on the following elements on the **Create Recipe** Page:
 
-- User can enter Recipe details:
+- The creative process for entering recipe details is as follows:
+    
+    - Enter Recipe name
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+        ![Enter Recipe Name](static/images/testing-files/manual/create-name.gif)
 
-- On adding an image url, an image preview will be displayed:
- 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    - Enter image url, an image preview will be displayed:
+    
+        ![Enter Recipe Img URL](static/images/testing-files/manual/create-img.gif)
 
-- User can use **Dropdown** menus to refine recipe:
+    - User can use **Dropdown** menus to refine recipe:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+        ![Refine Recipe by Dropdowns](static/images/testing-files/manual/create-dropdown.gif)
 
-- User can add and remove ingredients **dynamically**:
+    - Add and remove ingredients **dynamically**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+        ![Add and Remove Ingredients](static/images/testing-files/manual/create-ingred.gif)
 
-- User can add and remove directions **dynamically**:
+    - Add and remove directions **dynamically**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- Clicking **Cancel** will return the user back to the previous page: 
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+        ![Add and Remove Directions](static/images/testing-files/manual/create-direct.gif)
 
 - Clicking **Save** will redirect the user to My Recipes page: 
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Click Save](static/images/testing-files/manual/create-save.gif)
+
+- Clicking **Cancel** will return the user back to the previous page: 
+
+    ![Click Cancel](static/images/testing-files/manual/create-cancel.gif)
 
 - The Responsiveness of the **Create Recipe Page**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Create Recipe Page Responsiveness](static/images/testing-files/manual/create-res.gif)
 
 #### Edit Recipe Page
 
 Manual testing was conducted on the following elements on the **Edit Recipe** Page:
 
-- User can enter Recipe details (current information will be the default value):
+- Current information will be the default value, User can edit as needed:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- On adding an image url, an image preview will be displayed:
- 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- User can use **Dropdown** menus to refine recipe:
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- User can add and remove ingredients **dynamically**:
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- User can add and remove directions **dynamically**:
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Edit Recipe Process](static/images/testing-files/manual/edit-rec.gif)
 
 - Clicking **Cancel** will return the user back to the recipe page: 
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-- Clicking **Save** will redirect the user to the recipe page: 
-
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Edit Recipe Cancel button](static/images/testing-files/manual/edit-cancel.gif)
 
 - Clicking **Delete** opens **Delete Modal**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Edit Recipe Delete Modal](static/images/testing-files/manual/edit-delete.gif)
 
-- The Responsiveness of the **Create Recipe Page**:
+- The Responsiveness of the **Edit Recipe Page**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Edit Recipe Page Responsiveness ](static/images/testing-files/manual/edit-rec-res.gif)
  
 #### Recipe Page
 
@@ -432,31 +376,31 @@ Manual testing was conducted on the following elements on the **Recipe** Page:
 
 - Clicking the **Back** button will return the user to the previous page: 
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Recipe Page Back button](static/images/testing-files/manual/rec-back.gif)
 
 - If the user is not logged in, the **Login To Add Favourites** Button will redirect them to the **Login** page: 
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Non-User on Recipe Page](static/images/testing-files/manual/rec-non.gif)
 
 - If the user is **not** the recipe author, they can add the recipe to, or remove it from their Favourites:
 
-    **Add to Favourites**:
-    ![Example](static/images/testing-files/manual/inserthere.gif)
-
-    **Remove from Favourites**:
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Not Author on Recipe Page](static/images/testing-files/manual/rec-user.gif)
 
 - If the user **is** the author, they can edit or delete the recipe:
 
-    **Edit** directs to **Edit Recipe Page**:
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Author on Recipe Page](static/images/testing-files/manual/rec-auth.gif)
 
-    **Delete** opens the **Delete Modal**:
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    - **Edit** directs to **Edit Recipe Page**:
+    
+        ![Recipe to Edit Recipe](static/images/testing-files/manual/rec-edit.gif)
+
+    - **Delete** opens the **Delete Modal**:
+    
+        ![Recipe Delete Modal](static/images/testing-files/manual/rec-delete.gif)
 
 - The Responsiveness of the **Recipe Page**:
 
-    ![Example](static/images/testing-files/manual/inserthere.gif)
+    ![Recipe Page Responsiveness](static/images/testing-files/manual/rec-res.gif)
 
 
 [Back to top ⇧](#table-of-contents)
@@ -469,9 +413,11 @@ Manual testing was conducted on the following elements on the **Recipe** Page:
 
     - All errors highlighted and resolved, with the exception of the errors thrown by Jinja.
 
+
 -  [W3C CSS Validator](https://jigsaw.w3.org/css-validator/ "Link to W3C CSS Validator") was used to validate the `CSS` code used.
 
     ![Style sheet validation results](static/images/testing-files/automated/css-val.png)
+
 
 - [JSHint](https://jshint.com/ "Link to JSHint") was used to validate the `JavaScript` and `JQuery` code used.
 
@@ -489,24 +435,24 @@ Manual testing was conducted on the following elements on the **Recipe** Page:
 ### Browser Validation
 **Chrome:**
 
-![test image](static/images/testing-files/automated/chrome.png)
+![Chrome test image](static/images/testing-files/automated/chrome.png)
 
 **Safari:**
 
-![test image](static/images/testing-files/automated/safari.png)
+![Safari test image](static/images/testing-files/automated/safari.png)
 
 **Edge:**
 
-![test image](static/images/testing-files/automated/edge.png)
+![Edge test image](static/images/testing-files/automated/edge.png)
 
 
 **Opera:**
 
-![test image](static/images/testing-files/automated/opera.png)
+![Opera test image](static/images/testing-files/automated/opera.png)
 
 **Firefox:**
 
-![test image](static/images/testing-files/automated/firefox.png)
+![Firefox test image](static/images/testing-files/automated/firefox.png)
 
 ### Lighthouse Auditing
 
