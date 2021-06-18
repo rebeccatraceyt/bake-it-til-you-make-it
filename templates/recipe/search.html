@@ -4,6 +4,7 @@
 {% block header %}
 
     <!-- Page Title -->
+    <!-- Contional text based on results -->
     <h2>{% if results_count == 0 %} No {% else %} {{ results_count }} {% endif %} {% if results_count == 1 %} Result {% else %} Results {% endif %} Found For <br class="d-block d-md-none"> "<span class="text-uppercase">{{ query }}</span>"</h2>
         
 {% endblock %}
@@ -84,6 +85,7 @@
                 </div>
             </div>
                 
+            <!-- When there is 0 results -->
             {% else %}
                 <!-- Search Again Function -->
                 <div class="row search-again">
@@ -97,7 +99,7 @@
                     </div>
                 </div>
 
-                <!-- Recommended recipes (No Results) -->
+                <!-- Recommended recipes -->
                 <div class="row search-area search-rec ">
                     {% for rec in recommended %}
                         <!-- Recipe Cards  -->

@@ -9,10 +9,15 @@
 
 {% block content %}
     <div class="error-page">
+
+        <!-- 500 Img  -->
         <img class="error-img" src="../static/images/error.png" alt="Page does not exist, click button to return home">
+
+        <!-- Error Text -->
         <h1>Oops!</h1>
         <p>It's not you, it's us.</p> 
         <p>Don't worry, we're working on it!</p>
         <p>Click <a href="{{ url_for('home') }}">here</a> to return to safety</p>
+        
     </div>
 {% endblock %}

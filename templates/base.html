@@ -41,7 +41,7 @@
 
     <body>
 
-        <!-- Section containing Navbar, Page Content and Footer -->
+        <!-- Page Body -->
         <section aria-label="Main Site Section - with Navigation, Page Content and Footer">
             <div id="content-div" class="container-fluid">
                 <div class="row no-gutters">
@@ -57,12 +57,16 @@
                         <!-- Navbar -->
                         <nav id="scroll-nav" class="navbar navbar-expand-lg sticky-top">
 
+                            <!-- Logo -->
                             <a class="navbar-brand" href="{{ url_for('home') }}"><img src="../static/images/logo.png" alt="Bake It Til You Make It Logo"></a>
 
+                            <!-- Hamburger Icon -->
                             <button id="custom-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hamburger-nav"
                                 aria-controls="hamburger-nav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
+
+                            <!-- Navigation -->
                             <div class="collapse navbar-collapse" id="hamburger-nav">
                                 <ul class="navbar-nav mx-auto">
                                     <li class="nav-item">
@@ -71,6 +75,8 @@
                                     <li class="nav-item">
                                         <a class="nav-link {% block nav_find_recipes %}{% endblock %}" href="{{ url_for('find_recipes') }}">Find A Recipe</a>
                                     </li>
+
+                                    <!-- Conditional to user Logged in -->
                                     {% if session.user|lower %}
                                         <li class="nav-item">
                                             <a class="nav-link {% block nav_recipes %}{% endblock %}" href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a>
@@ -96,6 +102,8 @@
                                         </li>
                                     {% endif %}
                                 </ul>
+
+                                <!-- User Image dropdown menu -->
                                 {% if session.user|lower %}
                                     <div class="dropdown mr-0 d-none d-lg-block">
                                         <button class="btn user-logo dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -108,6 +116,8 @@
                                         </div>
                                     </div>
                                 {% endif %}
+
+                                <!-- Extra conditional links in Hamburger menu -->
                                 {% if session.user|lower %}
                                 <ul id="md-nav" class="navbar-nav mx-auto d-none d-md-flex d-lg-none">
                                     <li class="nav-item">
@@ -127,11 +137,13 @@
                         <!-- Block content section for each page-->
                         <section id="main-section" aria-label="Main Section unique to each page">
                             
+                            <!-- Page Header -->
                             <div {% block noheader %}{% endblock %} class="page-banner">
                                 {% block header %}
                                 {% endblock %}
                             </div>
                             
+                            <!-- Flash Messages -->
                             {% block flash %}
                                 {% with messages = get_flashed_messages() %}
                                     {% if messages %}
@@ -147,6 +159,7 @@
                                 {% endwith %}
                             {% endblock %}
 
+                            <!-- Page Content -->
                             {% block content %}
                             {% endblock %}
 

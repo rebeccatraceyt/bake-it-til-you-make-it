@@ -20,11 +20,14 @@
                     <div class="profile-info container-fluid">
                         <div class="row">
                             <div class=" profile-img-box col-sm-12 col-md-6 col-lg-12">
+
+                                <!-- Image -->
                                 <div class="profile-img">
                                     <img src="{{ user.user_img }}" onerror="this.src='../../static/images/default-user.png';" alt="User's Profile Image">
                                 </div>
                             </div>
 
+                            <!-- User Buttons -->
                             <div class="profile-btns col-sm-12 col-md-6 col-lg-12">
                                 <div class="row no-gutters">
                                     <div class="col-6 col-md-12">
@@ -75,6 +78,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 {% else %}
                     <!-- Uploaded Recipes -->
                     <div class="col-12 col-lg-8">
