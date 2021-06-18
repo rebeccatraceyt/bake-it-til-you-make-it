@@ -3,7 +3,7 @@
 </h1>
 
 <div align="center">
-<p>A community-based web application for those who love the art of baking, where users can search and share their favourite creations.</p>
+<p><strong>Bake It 'Til You Make It</strong> is a community-based web application for those who love the art of baking, where users can search and share their favourite creations.</p>
  
 <p>Inspired by the old-school baking book (full to the brim with loose paper and notes), the application features hand-drawn graphics and fonts designed to bring the users back to a time of scribbled recipes, in a more organised fashion, through a simplistic and intuitive user interface. </p>
  
@@ -61,14 +61,14 @@ The user is looking for:
 
     - Create a user account.
     - See their user information, as applicable.
-    - Edit their user account.
+    - Update (Edit) their user account.
     - Delete their user account.
 
 - An easy-to-use dataset management system with **CRUD** conventions to:
 
     - Create recipes.
     - Read recipe dashboards.
-    - Edit their own recipe creations.
+    - Update (Edit) their own recipe creations.
     - Delete their own recipe creations.
 
 - An  intuitive and aesthetically pleasing interface.
@@ -78,7 +78,7 @@ The Developer is looking to:
 
 - Create an inviting, community-drive application that they themselves would use to share their passion for baking.
 - Demonstrate their proficiency in a variety of software development skills, using newly learned languages and libraries as well as a document database system.
-- Deploy a project they are proud and excited to have on their portfolio.
+- Deploy a project they are proud of, and excited to have, on their portfolio.
 
 
 ### User Stories
@@ -247,61 +247,39 @@ The information architecture was organized in order to ensure that users could n
 
 Wireframe mockups were created in a [Figma Workspace](https://www.figma.com/file/dNAkS4orUIJwt5yptbgRqP/Bake-It-Til-You-Make-It "Link to Bake It Figma Workspace") with providing a positive user experience in mind:
 
-- Home Page (Non-User links Example):
+![Home Page Wireframe](static/images/readme-files/wireframes/home-non.png "Home Page Wireframe")
 
-     ![Home Page Wireframe](static/images/readme-files/wireframes/home-non.png "Home Page Wireframe")
+![Home Page Wireframe](static/images/readme-files/wireframes/home-user.png "Home Page Wireframe")
 
-- Home Page (User links Example):
+![Sign Up Page Wireframe](static/images/readme-files/wireframes/register.png "Sign Up Page Wireframe")
 
-     ![Home Page Wireframe](static/images/readme-files/wireframes/home-user.png "Home Page Wireframe")
+![Log In Page Wireframe](static/images/readme-files/wireframes/login.png "Log In Page Wireframe")
 
-- Sign Up Page:
+<p align='center'>(Edit Profile and Edit Accounts pages are styled like this in order to remain consistent)</p>
 
-     ![Sign Up Page Wireframe](static/images/readme-files/wireframes/register.png "Sign Up Page Wireframe")
+![Find Recipes Page Wireframe](static/images/readme-files/wireframes/find-recipe.png "Find Recipes Page Wireframe")
 
-- Log In Page:
+![My Recipes Page Wireframe](static/images/readme-files/wireframes/recipes.png "My Recipes Page Wireframe")
 
-     ![Log In Page Wireframe](static/images/readme-files/wireframes/login.png "Log In Page Wireframe")
+![My Favourites Page Wireframe](static/images/readme-files/wireframes/faves.png "My Favourites Page Wireframe")
 
-     (Edit Profile and Edit Accounts pages are styled like this in order to remain consistent)
+![Recipe Page Wireframe](static/images/readme-files/wireframes/recipe.png "Recipe Page Wireframe")
 
-- Find Recipes Page:
+![Create Recipe Page Wireframe](static/images/readme-files/wireframes/create-recipe.png "Create Recipe Page Wireframe")
 
-     ![Find Recipes Page Wireframe](static/images/readme-files/wireframes/find-recipe.png "Find Recipes Page Wireframe")
+![Edit Recipe Page Wireframe](static/images/readme-files/wireframes/edit-recipe.png "Edit Recipe Page Wireframe")
 
-- My Recipes Page:
+![Modal Wireframe](static/images/readme-files/wireframes/contact.png "Modal Wireframe")
 
-     ![My Recipes Page Wireframe](static/images/readme-files/wireframes/recipes.png "My Recipes Page Wireframe")
-
-- My Favourites Page:
-
-     ![My Favourites Page Wireframe](static/images/readme-files/wireframes/faves.png "My Favourites Page Wireframe")
-
-- Individual Recipes Page:
-
-     ![Recipe Page Wireframe](static/images/readme-files/wireframes/recipe.png "Recipe Page Wireframe")
-
-- Create Recipe Page:
-
-     ![Create Recipe Page Wireframe](static/images/readme-files/wireframes/create-recipe.png "Create Recipe Page Wireframe")
-
-- Edit Recipe Page:
-
-     ![Edit Recipe Page Wireframe](static/images/readme-files/wireframes/edit-recipe.png "Edit Recipe Page Wireframe")
-
-- Contact Modal:
-
-     ![Modal Wireframe](static/images/readme-files/wireframes/contact.png "Modal Wireframe")
-
-     (All modals were styled the same, using their unique content, in order to remain consistent)
+<p align='center'>(All modals were styled the same, using their unique content, in order to remain consistent)</p>
 
 **Post Mock-Up Design Changes:** </br>
-While the developer relied heavily on these Wireframes in order to maintain the desired design, there are differences between the Mockups and the final product:
+While the developer relied heavily on these Wireframes in order to maintain the desired design, there are several differences between the Mockups and the final product:
 - Most notably, the graphics were changed on the header images for readability purposes to create a better User Experience.
 - The colouring for the buttons were altered to distinguish their purpose:
-     - *Brown* for normal functionality.
-     - *White* for 'cancel' actions (return or logout).
-     - *Red* for 'danger' actions (delete or alter account and recipes).
+     - **Brown** for normal functionality.
+     - **White** for 'cancel' actions (return or logout).
+     - **Red** for 'danger' actions (delete or alter account and recipes).
 - A quick-links menu for logged in users, providing them with links to the most used pages:
      - Edit Profile
      - Create Recipe
@@ -359,19 +337,19 @@ For this project, the NoSQL database [MongoDB](https://www.mongodb.com/ "Link to
      - Username (unique identifier)
      - Email Address
      - Password (hashed)
-     - User Image (not required, default used in its place)
+     - User Image (not required, default can be used in its place)
 
 - The remaining fields (**favourite_recipes** and **is_admin**) are provided default values, ensuring that, on registration:
      - **favourite_recipes** array is empty. 
      - **is_admin** value is **False**.
 
-- If a user favourites a recipe, that Recipe's **_id** will be included in the **favourite_recipes** array.
+- If a user favourites a recipe, that Recipe's **id** will be included in the **favourite_recipes** array.
 
 ### Recipes Collection
 - When creating a recipe, the user provides:
      - Recipe Name
-     - Recipe Image (not required, default used in its place)
-     - Recipe URL Source (not required in the event it is not an online recipe)
+     - Recipe Image (not required, default can be used in its place)
+     - Recipe URL Source (not required, in the event it is not an online recipe)
      - Description
      - Category
      - Difficulty Level
@@ -379,13 +357,15 @@ For this project, the NoSQL database [MongoDB](https://www.mongodb.com/ "Link to
      - Time
      - Ingredients
      - Directions
-- The Ingredients and Directions are entered dynamically to create an array.
+- The Ingredients and Directions are arrays, allowing data to be entered dynamically.
 
 - The remaining fields (**baker** and **favourite_count**) are provided default values, ensuring that:
-     - **baker** is automatically the current user (**session.user**), storing their **ObjectId** and **username**.
+     - **baker** is automatically the current **session** user, storing their **ObjectId** and **username**.
      - **favourite_count** is empty.
 
 - When a user favourites the recipe, the number is incremented.
+
+- Similarly, when a user removes the recipe from their favourites, the number is decremented. 
 
 ### Categories Collection
 - There are four specified categories that the developer chose from researching multiple baking sources.
@@ -457,7 +437,7 @@ Each page of the website features a consistently responsive and intuitive naviga
 
      - On larger devices a conventionally placed `user_img` will appear on the right side of the navigation menu, with a dropdown list of the additional links.
 
-- Recipe **Cards** are used throughout the website, providing users with a snapshot of the recipe and it's information before they view the entire recipe page. Each card is designed the same for consistency purposes and allows the user to either click on the recipe **image** or **name** in order to be directed to the recipe page.
+- Recipe **Cards** are used throughout the website, providing users with a snapshot of the recipe and it's information before they view the entire recipe page. Each card is designed the same for consistency purposes and allows the user to either click on the recipe **image** or **name**, in order to be directed to the recipe page.
  
 
 ### Existing Features
@@ -465,14 +445,14 @@ Each page of the website features a consistently responsive and intuitive naviga
 **[Home Page](http://bake-it-til-you-make-it.herokuapp.com/home "Link to Home page")**
 | Feature      | Description  |
 |--------------|--------------|
-| Carousel     | Bootstrap Carousel Component that displays the last four uploaded recipes |
-| Call to Action | Buttons connecting users to **Sign Up** or **Login** pages (**if not signed in**) or **My Recipes** or **My Favourites** pages (**if signed in**)|
+| Carousel     | Bootstrap Carousel Component that displays the l**ast four uploaded** recipes |
+| Call to Action | Buttons connecting users to **Sign Up** or **Login** pages, if **not signed in**, or **My Recipes** or **My Favourites** pages, if **signed in**|
 
 
 **[Find A Recipe Page](http://bake-it-til-you-make-it.herokuapp.com/find_recipes "Link to Find A Recipe page")**
 | Feature       | Description  |
 |---------------|--------------|
-| Search Bar    | Search bar function allowing users to **search** for their preferred recipes. Using a text search will direct users to the `search.html` page |
+| Search Bar    | Search bar function allowing users to **search** for their preferred recipes. Using a text search will direct users to the `search.html` page, displaying results. From there, they can **search again** to return. |
 | Dropdown Menu | Nested dropdown menu to **refine** the users search by either **Category** or **Level**|
 | Pagination    | The **Pagination** functionality will be activated once the amount of recipes to be displayed is over `6`. This was to avoid overwhelming the user.|
 
@@ -484,7 +464,7 @@ Each page of the website features a consistently responsive and intuitive naviga
 **[Sign Up Page](http://bake-it-til-you-make-it.herokuapp.com/register "Link to Sign Up page")**
 | Feature       | Description  |
 |---------------|--------------|
-| Input Fields    | The **input** fields allow users to enter their information. The user can enter a profile image if they wish, or a default image will be used instead.|
+| Input Fields    | The **input** fields allow users to enter their information. The user can enter a profile image if they wish, or a default image will be used in it's place.|
 | Image Preview | On adding an image url to the `Profile Picture` field, the user can preview their image to ensure that the link is correct and it is the image they would like to use. |
 | Password Authentication | The **password** field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information") to hash the password on entry and **confirm password** is validated using **Javascript**. If the passwords do not match, a `disabled` class is added to the **Register** button, preventing a password error. |
 | Call to Action | Once the input fields are completed as required, the user can click to **Register** or, if they already have an account, they can **Login**. |
@@ -493,7 +473,7 @@ Each page of the website features a consistently responsive and intuitive naviga
 | Feature       | Description  |
 |---------------|--------------|
 | Input Fields    | The **input** fields allow users to enter their username. |
-| Password Authentication | The **password** field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information") to un-hash the salted password for login authentication|
+| Password Authentication | The **password** field uses [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/ "Link to Werkzeug information") to un-hash the password for login authentication|
 | Call to Action | Once the input fields are completed as required, the user can click to **Login** or, if they do not already have an account, they can **Register**. |
 
 **My Recipes Page** (This page requires login authentication)
@@ -511,7 +491,7 @@ Each page of the website features a consistently responsive and intuitive naviga
 |---------------|--------------|
 | Input Fields | The user is able to edit their profile image as they see fit. Their current information is used as the **default** value for the fields |
 | Image Preview | The `Profile Image` field allows the user to preview their current profile image. Changing the image url calls a `JavaScript` function, allowing the user to get real-time feedback as they change the image.|
-| Call to Action | The user can choose to **Cancel** their actions or **Save** their new information. Another button directs the user to the **Account Settings** page for user to take further action |
+| Call to Action | The user can choose to **Cancel** their actions or **Save** their new information. Both return the user to **My Recipes**. Another button directs the user to the **Account Settings** page for user to take further action. |
 
 **Edit Account Page** (This page requires login authentication)
 | Feature       | Description  |
@@ -525,7 +505,7 @@ Each page of the website features a consistently responsive and intuitive naviga
 | Feature       | Description  |
 |---------------|--------------|
 | Input Fields | The **input fields** allow the user to input the recipe information as necessary. All fields are appropriately **validated**, with the exception of `Recipe Image` and `Recipe URL` to allow for the upload of recipes not available online.|
-| Image Preview | Addint to the `Recipe Image` field calls a `JavaScript` function, allowing the user to get real-time feedback of the image.|
+| Image Preview | Adding to the `Recipe Image` field calls a `JavaScript` function, allowing the user to get real-time feedback of the image.|
 | Dropdown Menu| User can refine their recipe using the dropdown menu|
 | Dynamic Input Fields| The fields for `Ingredients` and `Directions` allow for dynamic input. The user can use the **Add Ingredient**, **Add Direction** or **Delete** buttons to add or remove fields as necessary. This was used in order to create a dynamic array of both lists for a much cleaner and readable display.|
 | Call to Action | As well as the **Add Ingredient** and **Add Direction** buttons, there is a **Cancel** and **Add Recipe** button, directing the user to their **Recipes** page.|
@@ -544,10 +524,10 @@ Each page of the website features a consistently responsive and intuitive naviga
 The **Call to Action** buttons on the recipe page are conditional to the user's role on the website, with the following break down:
 
 | Role       | Conditional Buttons  |
-|---------------|--------------|
+|:---------------:|--------------|
 | Not Logged in| **Login To Add Favourites** - directing the user to login in, in order to save the recipe to their favourites|
 | Logged in user is **not** author | **Add To Favourites** - directing the user to add the recipe to their favourites. They are then redirected back to the recipe page with a new **Remove from Favourites** button.|
-| Logged in user is **Author** | **Edit** and **Delete** buttons direct the user to **Edit Recipe Page** and `delete_recipe` **modal** respectively.|
+| Logged in user **is** author | **Edit** and **Delete** buttons direct the user to **Edit Recipe Page** and `delete_recipe` **modal** respectively.|
 | Logged in user is **Admin** | The administrative user has access to **Edit** and **Delete** buttons as well as the **Add To Favourites** or **Remove from Favourites** (should they want to save it)|
 | **All Users**| A **breadcrumb** button (powered by `JavaScript`) allows the user to return to their previous page, giving them more control.|
 
@@ -566,7 +546,7 @@ The **Call to Action** buttons on the recipe page are conditional to the user's 
 
 - **More Community Capabilities**
      - A feature that would allow users to share ideas and help other users on the site, creating a more dynamically involved community focus.
-     - This idea was in the original plans but the developer chose to scale the scope down, excluding this feature, as they knew their present capabilities would give it the justice the feature deserved.
+     - This idea was in the original plans but the developer chose to scale the scope down, excluding this feature, as they knew their present capabilities would not give it the justice the feature deserved.
 
 - **Email Verification**
      - A feature that would allow for the developer to send an automated email to users on registration, verifying their email and account.
@@ -575,7 +555,7 @@ The **Call to Action** buttons on the recipe page are conditional to the user's 
 [Back to top ⇧](#table-of-contents)
 
 ## Issues and Bugs 
-The developer ran into a number of issues during the development of the website, with the noteworthy ones listed below, along with solutions or ideas to implement in the future.
+The developer encountered a number of issues during the development of the website, with the noteworthy ones listed below, along with solutions or ideas to implement in the future.
 
 **Base.html** <br>
 The `base.html` page uses Jinja templates in order to extend its components (e.g. page design, `navbar` & `footer`) to all other pages. In trying to implement an pseudo `active` class on the anchor links in the navigation bar, an issue arose where the special state would be applied to all links, not just the active link. It was through a post of a similar problem on [Stack Overflow](https://stackoverflow.com/questions/29902575/highlight-menu-item-based-on-current-view "Solution to problem on Stack Overflow") that the developer found a solution, using `block` elements for each class.
@@ -587,10 +567,10 @@ The recipe card panel used throughout the website (for consistency) was implemen
 The Homepage uses a Bootstrap Carousel feature to highlight the four latest baking recipes added to the database. An issue arose with the carousel whereby only one recipe would be called on repeat. In their endless Google searching, the developer found a helpful article on [Stack Overflow](http://www.zhishibo.com/articles/30623.html "Solution to problem on Stack Overflow") that recommended using a `loop.index` method on the `active` class of the carousel in order to loop through the latest recipes.
 
 **Edit User Page** <br>
-In order to make the `edit_user.html` functionality more user-friendly, the developer tried to create a possibility that the user would not have to change their password if they did not wish to (e.g. if they only wanted to change their user image). The problem with this was that should the user leave the password field blank (choosing not to change it), it would automatically change the users password to 'blank' on the database. This was insufficient and in no ways user-friendly, so the developer researched other methods. Their first thought was to use the user's password value as the default value for the field but, as the password is hashed and salted using `werkzeug.security` import, this would not work. The alternative, and the conclusive solution, was to create a separate accounts settings page, where the user has the freedom to change their password or delete their account.
+In order to make the `edit_user.html` functionality more user-friendly, the developer tried to create a possibility that the user would not have to change their password if they did not wish to (e.g. if they only wanted to change their user image). The problem with this was that should the user leave the password field blank (choosing not to change it), it would automatically change the users password to 'blank' on the database. This was insufficient and in no ways user-friendly, so the developer researched other methods. Their first thought was to use the user's password value as the default value for the field but, as the password is hashed, using `werkzeug.security` import, this would not work. The alternative, and conclusive, solution was to create a separate accounts settings page, where the user has the freedom to change their password or delete their account.
 
 **Password Authentication** <br>
-The developer encountered a bug in authenticating passwords on both **Edit User** and **Register** page. The `password` and `confirm password` fields are validated using a `JavaScript` function to confirm that the values match. The problem with this was that it did not matter to either the **Save** button or the **Register** whether the passwords match and so a user could accidentally create a faulty password, losing access to their account. In order to fix this bug, the developer, on the advice of their mentor, created a conditional `disabled` class for the buttons alongside the `JavaScript` function, preventing the user submitting a password error.
+The developer encountered a bug in authenticating passwords on both **Edit User** and **Register** page. The `password` and `confirm password` fields are validated using a `JavaScript` function to confirm that the values match. The problem with this was that it did not matter to either the **Save** or the **Register** button whether the passwords match and so a user could accidentally create a faulty password, losing access to their account. In order to fix this bug, the developer, on the advice of their mentor, created a conditional `disabled` class for the buttons alongside the `JavaScript` function, preventing the user submitting a password error.
 
 **Pagination** <br>
 In implementing the pagination functionality, a linting error was raised in the terminal due to the developer using the `Pylint` extension in their IDE. The message was:
@@ -644,7 +624,7 @@ The developer was forced to revert two commits ([1](https://github.com/rebeccatr
 - [Iconify](https://iconify.design/ "Link to Iconify Design site")
      - Iconify was used in conjunction with Font Awecome for icons used throughout the website.
 
-     *The developer made the decision to use both websites for icons as neither had **all** the icons the developer needed to use for UI purposes. Although this may not be best practice, it provided the necessary design functionality for several items, most notably the conditional icons for each category.*
+     *The developer made the decision to use both websites for icons as neither had **all** the icons the developer needed to use for UI purposes. Although this may not be best practice, it provided the necessary design functionality for several items, most notably the **conditional** icons for each category.*
 
 ### Libraries
 - [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/ "Link to Bootstrap page")
@@ -652,11 +632,9 @@ The developer was forced to revert two commits ([1](https://github.com/rebeccatr
 - [jQuery](https://jquery.com/ "Link to jQuery page")
      - jQuery was used to simplify the JavaScript code used.
 - [Google Fonts](https://fonts.google.com/ "Link to Google Fonts")
-    - Google fonts was used to import the fonts "Indie Flower" and "Work Sans" into the style.css file. These fonts were used throughout the project.
-- [Font Awesome](https://fontawesome.com/ "Link to FontAwesome")
-     - Font Awesome was used on all pages throughout the website to import icons for UX purposes.
+    - Google fonts was used to import the fonts **"Indie Flower"** and **"Work Sans"** into the style.css file. These fonts were used throughout the project.
 - [jQuery Validation](https://jqueryvalidation.org/ "Link to jQuery Validation page")
-     - jQuery Validation was used to simplify form validation for the **Suggestions Form**.
+     - jQuery Validation was used to simplify form validation for the **Contact Form**.
 - [SweetAlert2](https://sweetalert2.github.io/ "Link to Sweet Alert 2 page")
      - SweetAlert2 was used to customise the **Contact Form** success message for UX purposes.
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/ "Link to Flask Homepage")
@@ -825,7 +803,7 @@ The deployed version can now be viewed by selecting `View App` in the top-right 
 [Back to top ⇧](#table-of-contents)
 
 ## Credits 
-The developer consulted multiple sites in order to better understand the code they were trying to implement. 
+The developer consulted multiple sites in order to better understand the code they needed to implement their deisgn. 
 
 The [Code Institute Task Manager Mini Project](https://github.com/Code-Institute-Solutions/TaskManagerAuth) mini project was used as a reference point for the developer in the development of the core **CRUD** functionality of the website. The lessons included with the mini-project helped the developer to get a better understanding of each functionality and how to customise it to suit their project.
 
