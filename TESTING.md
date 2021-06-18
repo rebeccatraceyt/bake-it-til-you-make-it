@@ -4,14 +4,14 @@
 
 <h1 align="center"> Testing </h1>
 
-[Main README.md file](README.md "Link to README file")
+[Return to README.md file](README.md "Link to README file")
 
 [View live project](https://bake-it-til-you-make-it.herokuapp.com/ "Link to Live project")
 
-[View project Repository](https://github.com/rebeccatraceyt/bake-it-til-you-make-it "Link to Repository")
+[View Repository](https://github.com/rebeccatraceyt/bake-it-til-you-make-it "Link to Repository")
 
 ***
-## Table of contents
+### Table of contents
 1. [Testing User Stories](#Testing-User-Stories)
 2. [Manual Testing](#Manual-Testing)
     1. [Common Elements Testing](#Common-Elements-Testing)
@@ -21,6 +21,7 @@
      - [Browser Validation](#Browser-Validation)
      - [Lighthouse Auditing](#Lighthouse-Auditing)
 4. [User Testing](#User-Testing)
+5. [Note To Accessor](#Note-To-Accessor)
 
 ***
 
@@ -30,80 +31,117 @@
 
 ## Testing User Stories
 
-**General User**
+User stories were tested to ensure the needs of the user were being met, with the following results:
 
-1. As a General User, I want to intuitively find recipes on the database. 
-    - On all pages, the **Find a Recipe** page is visible.
-    - Clicking the **Find a Recipe** page, users will be able to view all recipes.
-    - Using the search bar allows users to pinpoint their search.
-    - Using the dropdown menu allows the user to refine their search.
-2. As a General User, I want to view the selected recipe's dashboard to get necessary information.
-    - Clicking either the **Recipe Image** or **Recipe Name** will direct the user to the recipe page.
-    - There, all information pertaining to the recipe can be found.
-3. As a General User, I want to seek contact information to send useful feedback to Developer / Site Owner.
-    - On all pages the **Footer** is visible.
-    - Selecting one of the **social** icons directs the user to:
-        - The Developers LinkedIn page.
-        - The Developers GitHub page.
-        - The Contact Modal.
+### General User
 
-**Non-Registered User**
+**1. As a General User, I want to intuitively find recipes on the database.**
 
-1. As a Non-Registered User, I want to navigate to Sign-Up page to Register an account.
-    - A Non-Register User can click the **Sign Up** button on the **Home Page** or in the **Navigation Links** to be directed to the **Sign Up Page**.
-    - There, they can enter their details and submit their registration.
-    - On registering, they will be directed to the **My Recipes Page**.
+- **Find a Recipe** page is visible on all pages througout the site.
+- On clicking the **Find a Recipe** page, users will be able to view all recipes.
+- Using the **Search Bar** helps to pinpoint their search.
+- Using the **Dropdown menu** allows the user to refine their search.
 
-**Registered User**
+**2. As a General User, I want to view the selected recipe's dashboard to get necessary information.**
 
-1. As a Registered User, I want to log into my account to gain access to the full functionality of the site.
-    - Users can click the **Login** button on the **Home Page** or in the **Navigation Links** to be directed to the **Login Page**.
-    - There, they can enter their login details.
-    - On Login, they will be directed to the **My Recipes** page.
-    - The conditional links will allow the user the full functionality of the site (Create, Read, Update, Delete).
-2. As a Registered User, I want to navigate to my user profile to edit my account information.
-    - On **My Recipes Page**, **My Favourites Page** and the user **quicklinks dropdown menu** (on larger screens only), the user can navigate to the **Edit Profile** page.
-    - There, they can edit their account details (**username** and **image**).
-    - Their current details will be the default values.
-    - On clicking **Save**, they will be directed to **My Recipes**.
-    - On clicking **Cancel**, they will be directed to **My Recipes**.
-    - On clicking **Account Settings**, they will be directed to the **Edit Account** page.
-3. As a Registered User, I want to navigate to my account settings to delete my account information.
-    - On the **Edit Profile** page, the user can navigate to **Account Settings** in order to edit their password or delete their account.
-    - On clicking **Save**, they will be directed to **Login**.
-    - On clicking **Back**, they will be directed to **Edit Profile Page**.
-    - On clicking **Delete Account**, the **Delete Modal** will open.
-4. As a Registered User, I want to navigate to my recipes page to view my uploaded recipes.
-    - If is user is logging in, they will be directed to **My Recipes**.
-    - **My Recipes** can also be accessed through the **Navigation Links** or **My Favourites** page.
-5. As a Registered User, I want to navigate to upload page to add my recipe to the database.
-    - On **My Recipes Page**, **My Favourites Page** and the user **quicklinks dropdown menu** (on larger screens only), the user can navigate to the **Create Recipe** page.
-6. As a Registered User, I want to view my own recipe's dashboard to edit recipe as needed.
-    - If the user is viewing a **Recipe Page** where they are the recipe's author, the conditional buttons displayed will allow them to **edit** or **delete** the recipe.
-    - Clicking **Edit** will bring them to the **Edit Recipe** page.
-7. As a Registered User, I want to view my own recipe's dashboard to delete recipe.
-    - If the user is viewing a **Recipe Page** where they are the recipe's author, the conditional buttons displayed will allow them to **edit** or **delete** the recipe.
-    - Clicking **Delete** will open the **Delete Modal**.
-8. As a Registered User, I want to use a save function to save my favourite recipes from other users.
-    - If the user is viewing a **Recipe Page** where they are **NOT** the recipe's author, the conditional buttons displayed will allow them to **Add to favourites** or **Remove from Favourites**.
-    - Clicking either will redirect the user back to the **Recipe Page**.
-9. As a Registered User, I want to navigate to my favourites page to view the recipes I have saved from other users.
-    - - **My Favourites** can be accessed through the **Navigation Links** or **My Recipes** page.
+- Users can click either the **Recipe Image** or **Recipe Name** to navigate to the recipe's page.
+- There, the recipe dashboard will provide all of the necessary information the user will need.
 
-**Administrative Account Holder:**
+**3. As a General User, I want to seek contact information to send useful feedback to Developer / Site Owner.**
 
-1. As an Administrative Account holder, I want to view **any** recipe dashboard to edit recipe as needed.
-    - The Administrative Accounts have 'admin privileges' that allow them to monitor all recipes entered.
-    - If the  Administrative Account holder is viewing a **Recipe Page**, the conditional buttons displayed will allow them to **edit** the recipe.
-    - Clicking **Edit** will bring them to the **Edit Recipe** page.
-2. As an Administrative Account holder, I want to view **any** recipe dashboard to delete recipe as needed.
-    - If the  Administrative Account holder is viewing a **Recipe Page**, the conditional buttons displayed will allow them to **delete** the recipe.
-    - Clicking **Delete** will open the **Delete Modal**.
-3. As an Administrative Account holder, I want to still maintain a save function to save my favourite recipes from other users.
-    - - If the  Administrative Account holder is viewing a **Recipe Page**, the conditional buttons displayed will allow them to **Add to favourites** or **Remove from Favourites**.
-    - Clicking either will redirect the user back to the **Recipe Page**.
+- On all pages the **Footer** is visible and conventionally placed.
+- Selecting one of the **social** icons allows the user to connect with the developer by:
+    - The Developers LinkedIn page.
+    - The Developers GitHub page.
+    - The Contact Modal.
+
+### Non-Registered User
+
+**1. As a Non-Registered User, I want to navigate to Sign-Up page to Register an account.**
+
+- A Non-Registered User can click the **Sign Up** call-to-action button located on the **Home Page**, or in the **Navigation Links** to be directed to the **Sign Up Page**.
+- There, they can enter their details and submit their registration.
+- On registering, they will be directed to the **My Recipes Page**.
+
+### Registered User
+
+**1. As a Registered User, I want to log into my account to gain access to the full functionality of the site.**
+
+- Users can click the **Login** call-to-action button on the **Home Page**, or in the **Navigation Links** to be directed to the **Login Page**.
+- There, they can enter their login details.
+- Once logged in, they will be directed to their **My Recipes** page.
+- The conditional links will allow the user the full functionality of the site:
+    - Create and edit recipes
+    - Add or Remove favourites
+    - Manage their account
+
+**2. As a Registered User, I want to navigate to my user profile to edit my account information.**
+
+- On **My Recipes Page**, **My Favourites Page** and the user **quick-links dropdown menu**, the user can navigate to their **Edit Profile** page.
+- There, they can edit their profile **image**.
+    - Their current image will be the default values, and will be displayed in the preview window.
+    - When they paste a new image, the image preview window will change to reflect that.
+- On clicking **Save**, they will be directed to **My Recipes**.
+- On clicking **Cancel**, they will be directed to **My Recipes**.
+- On clicking **Account Settings**, they will be directed to the **Edit Account** page.
+
+**3. As a Registered User, I want to navigate to my account settings to delete my account information.**
+
+- On the **Edit Profile** page, the user can navigate to **Account Settings**.
+- There, they can edit their password or delete their account.
+- On clicking **Save**, they will be directed to **Login**.
+- On clicking **Back**, they will be directed to **Edit Profile Page**.
+- On clicking **Delete Account**, the **Delete Modal** will open.
+
+**4. As a Registered User, I want to navigate to my recipes page to view my uploaded recipes.**
+
+- If is user is logging in, they will be directed to **My Recipes**.
+- **My Recipes** can also be accessed through the **Navigation Links** or **My Favourites** page.
+
+**5. As a Registered User, I want to navigate to upload page to add my recipe to the database.**
+
+- On **My Recipes Page**, **My Favourites Page** and the user **quicklinks dropdown menu**, the user can navigate to the **Create Recipe** page.
+
+**6. As a Registered User, I want to view my own recipe's dashboard to edit recipe as needed.**
+
+- If the user is viewing a **Recipe Page** where they are the recipe's author, the conditional buttons displayed will allow them to **edit** the recipe.
+- Clicking the **Edit** button will direct the user to the **Edit Recipe** page.
+
+**7. As a Registered User, I want to view my own recipe's dashboard to delete recipe.**
+
+- If the user is viewing a **Recipe Page** where they are the recipe's author, the conditional buttons displayed will allow them to **edit** or **delete** the recipe.
+- Clicking **Delete** will open the **Delete Modal**.
+
+**8. As a Registered User, I want to use a save function to save my favourite recipes from other users.**
+
+- If the user is viewing a **Recipe Page** where they are **NOT** the recipe's author, the conditional buttons displayed will allow them to **Add to favourites** or **Remove from Favourites** (depending on whether it is already in their favourites_count).
+- Clicking either will redirect the user back to the **Recipe Page**.
+
+**9. As a Registered User, I want to navigate to my favourites page to view the recipes I have saved from other users.**
+
+- **My Favourites** can be accessed through the **Navigation Links** or **My Recipes** page.
+
+### Administrative Account Holder:
+
+**1. As an Administrative Account holder, I want to view **any** recipe dashboard to edit recipe as needed.**
+
+- The Administrative Accounts have 'admin privileges' that allow them to monitor all recipes entered.
+- If the  Administrative Account holder is viewing a **Recipe Page**, the conditional buttons displayed will allow them to **edit** the recipe.
+- Clicking **Edit** will bring them to the **Edit Recipe** page.
+
+**2. As an Administrative Account holder, I want to view **any** recipe dashboard to delete recipe as needed.**
+
+- If the  Administrative Account holder is viewing a **Recipe Page**, the conditional buttons displayed will allow them to **delete** the recipe.
+- Clicking **Delete** will open the **Delete Modal**.
+
+**3. As an Administrative Account holder, I want to still maintain a save function to save my favourite recipes from other users.**
+
+- If the  Administrative Account holder is viewing a **Recipe Page**, the conditional buttons displayed will allow them to **Add to favourites** or **Remove from Favourites**.
+- Clicking either will redirect the user back to the **Recipe Page**.
 
 [Back to top ⇧](#table-of-contents)
+
+***
 
 ## Manual Testing
 
@@ -212,7 +250,7 @@ Manual testing was conducted on the following elements on the **Find A Recipe** 
     
         ![Level Filter Search](static/images/testing-files/manual/level.gif)
 
-- The **Pagination** function only displays 6 recipes at a time, allowing the user to browse through pages:
+- The **Pagination** function only displays 6 recipes at a time, allowing the user to browse through pages without suffering from information-overload:
 
     ![Pagination](static/images/testing-files/manual/paginate.gif)
 
@@ -405,23 +443,24 @@ Manual testing was conducted on the following elements on the **Recipe** Page:
 
 [Back to top ⇧](#table-of-contents)
 
+***
+
 ## Automated Testing
 
 ### Code Validation
 
 - [W3C Markup Validator](https://validator.w3.org/ "Link to W3C Markup Validator") was used to validate the `HTML` code used, using the `Validate by URI` method.
 
-    - All errors highlighted and resolved, with the exception of the errors thrown by Jinja.
+    - All errors that were highlighted were resolved.
 
-
--  [W3C CSS Validator](https://jigsaw.w3.org/css-validator/ "Link to W3C CSS Validator") was used to validate the `CSS` code used.
+-  [W3C CSS Validator](https://jigsaw.w3.org/css-validator/ "Link to W3C CSS Validator") was used to validate the `CSS` code used with the following result:
 
     ![Style sheet validation results](static/images/testing-files/automated/css-val.png)
 
 
 - [JSHint](https://jshint.com/ "Link to JSHint") was used to validate the `JavaScript` and `JQuery` code used.
 
-    - Errors highlighted in `script.js` pertain to [SweetAlert2](https://sweetalert2.github.io/ "Link to Sweet Alert 2 page") and [jQuery Validation](https://jqueryvalidation.org/ "Link to jQuery Validation page") as well as the `onclick` functions:
+    - Errors highlighted in `script.js` pertain to [SweetAlert2](https://sweetalert2.github.io/ "Link to Sweet Alert 2 page") (used for contact form feedback) and [jQuery Validation](https://jqueryvalidation.org/ "Link to jQuery Validation page")(used for validating contact form) as well as the `onclick` functions used for image preview and disclaimer:
 
         ![Script Validation Results](static/images/testing-files/automated/js-val.png) 
 
@@ -430,7 +469,7 @@ Manual testing was conducted on the following elements on the **Recipe** Page:
 
 - [PEP8 Online](http://pep8online.com/ "Link to PEP8 Online") was used to validate `Python` code.
     
-    - All highlighted errors and warnings resolved.
+    - All highlighted errors and warnings were resolved.
 
 ### Browser Validation
 **Chrome:**
@@ -490,7 +529,7 @@ Manual testing was conducted on the following elements on the **Recipe** Page:
 
 | Page | Error / Warning | Comment |
 |:-----:|:---------------:|:-------|
-| All Pages | Largest Contentful Paint | The images rendered on each page threw this error due to a number of reasons. The developer was able to pre-load images rendered using the `rel="preload"` attribute in **HTML** and using `-webkit-image-set()` in **CSS** ([Source](https://web.dev/preload-responsive-images/)). The problem still persists due to the use of third party images throughout the site.|
+| All Pages | Largest Contentful Paint | The images rendered on each page threw this error due to a number of reasons. The developer was able to pre-load their **own** images rendered using the `rel="preload"` attribute in **HTML** and using `-webkit-image-set()` in **CSS** ([Source](https://web.dev/preload-responsive-images/)). The problem still persists due to the use of third party images throughout the site.|
 | All Pages | Render-blocking resources | This warning stems from the use of `emailJS` for the contact form. The developer attempted to resolve this issue using the `defer` attribute within the script tag, but this only created an issue whereby the function sending the email was not called. |
 | Home Page | Tap targets not sized appropriately | Relating to the carousel controls. Issue was resolved by resizing the anchor tag of the controls. |
 | Home Page | Defer offscreen images | This relates to the carousel feature of the home page. The researched solution was to 'lazy-load' the images but that is not an option in this release due to the use of image urls, in lieu of uploads. |
@@ -502,19 +541,31 @@ Manual testing was conducted on the following elements on the **Recipe** Page:
 
 [Back to top ⇧](#table-of-contents)
 
+***
+
 ## User testing 
 Family members and friends were asked to review the site and documentation to point out any bugs and/or user experience issues. Their helpful advice throughout the process led to many UX changes in order to create a better experience. 
 
-It was through this testing that the following changes were made:
-- Update to Logo to be more conventionally positioned. The original designs were for a floating logo but that was quickly replaced due to the issues it cause.
-- Change to Recipe Card `font-size` and `max-length` in order to create consistency across all recipes. It was noted that some of the recipe names were longer than others, creating a spacing issue.
-- Create conditional buttons for each category in order to better distinguish the differences.
-- Create a 'quick-links' function for users to create a more streamline experience.
-- Create a separate **Accounts Settings** page just for changing password or deleting account, in order to avoid the "danger" zone as much as possible.
-- Create a live image preview window, allowing the user to see the current image on the **Edit User** and **Edit Recipe** pages.
-- A **breadcrumbs** button on the Recipe page, allowing the users to return to their previous page for convenience. 
-- Create a *Search Again* button on the **Find Recipes** search results in order to provide the user with easy return access.
+| It was through this testing that the following changes were made:|
+|-----------------------|
+| Update to Logo to be more conventionally positioned. The original designs were for a floating logo but that was quickly replaced due to the issues it caused (most notable `padding` and `z-index` errors).|
+| Change to Recipe Card `font-size` and `max-length` in order to create consistency across all recipes. It was noted that some of the recipe names were longer than others, creating a spacing issue, taking away from the User Experience.|
+| Create conditional buttons for each category in order to better distinguish the differences, giving these graphical cues helped users to visual the category.|
+| Create a 'quick-links' function for users to create a more streamline experience. |
+| Create a separate **Accounts Settings** page just for changing password or deleting account, in order to avoid the "danger" zone as much as possible. |
+| Create a live image preview window, allowing the user to see the current image on the **Edit User** and **Edit Recipe** pages.|
+| A **breadcrumbs** button on the Recipe page, allowing the users to return to their previous page for convenience.|
+| Create a *Search Again* button on the **Find Recipes** search results in order to provide the user with easy return access.|
 
 [Back to top ⇧](#table-of-contents)
 
 ***
+
+## Note to Accessor
+If you would like to log in, to gain access to the full functionality of the site, a *test* account has been created *(login information provided in Project Submission)*. This account has recipes already created and favourited, for your convenience.
+
+The developer recommends that you create your own account in order to get the complete experience in using the site. A [Recipes](recipe-example.md) File has been created for you to copy and paste a recipe to get the **Creating a Recipe** experience (without having to search the internet).
+
+***
+
+[Back to top ⇧](#table-of-contents)
